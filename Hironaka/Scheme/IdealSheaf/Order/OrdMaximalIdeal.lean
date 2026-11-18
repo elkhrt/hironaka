@@ -47,11 +47,11 @@ theorem ord_maximalIdeal_eq_one (h : maximalIdeal R ≠ ⊥) : ord (maximalIdeal
     · exact_mod_cast Nat.lt_succ_iff.mp hr2
     · exfalso
       have hsq : maximalIdeal R ≤ maximalIdeal R ^ 2 := hr.trans (Ideal.pow_le_pow_right hr2)
-      refine h (Submodule.eq_bot_of_le_smul_of_le_jacobson_bot (maximalIdeal R) (maximalIdeal R)
+      refine h (Submodule.eq_bot_of_le_smul_of_le_jacobson (maximalIdeal R) (maximalIdeal R)
         (IsNoetherian.noetherian _) ?_ ?_)
       · rw [Ideal.smul_eq_mul, ← pow_two]
         exact hsq
-      · rw [jacobson_eq_maximalIdeal (⊥ : Ideal R) bot_ne_top]
+      · rw [ringJacobson_eq_maximalIdeal]
   · have := le_ord_of_le (I := maximalIdeal R) (r := 1) (by rw [pow_one])
     simpa using this
 

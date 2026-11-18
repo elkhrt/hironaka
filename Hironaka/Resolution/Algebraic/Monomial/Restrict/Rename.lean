@@ -124,7 +124,7 @@ variable {ρ σ : ℕ → ℕ} {D P : MonomialState} (h : Rel ρ σ D P)
 include h
 
 theorem injOn_of_subset {T : Finset ℕ} (hT : ∀ c ∈ T, c < D.nextComp) : Set.InjOn ρ T :=
-  h.mono.injOn.mono hT
+  h.mono.injOn.mono fun c hc => hT c hc
 
 theorem injOn_face {T : Finset ℕ} (hT : T ∈ D.nerve) : Set.InjOn ρ T :=
   h.injOn_of_subset fun _ hc => D.lt_nextComp_of_mem hT hc

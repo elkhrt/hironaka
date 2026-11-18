@@ -49,11 +49,12 @@ theorem ideal_sup_eq_top_of_sup_eq_top (h : I ⊔ J = ⊤) (U : X.affineOpens) :
   exact this
 
 /-- The product of comaximal ideal sheaves is their intersection (Mathlib's
-`Ideal.mul_eq_inf_of_coprime` on every affine open). -/
+`Ideal.mul_eq_inf_of_isCoprime` on every affine open). -/
 theorem mul_eq_inf_of_sup_eq_top (h : I ⊔ J = ⊤) : I * J = I ⊓ J := by
   ext U : 2
   rw [ideal_mul, ideal_inf, Pi.mul_apply, Pi.inf_apply]
-  exact Ideal.mul_eq_inf_of_coprime (ideal_sup_eq_top_of_sup_eq_top I J h U)
+  exact Ideal.mul_eq_inf_of_isCoprime
+    (Ideal.isCoprime_iff_sup_eq.mpr (ideal_sup_eq_top_of_sup_eq_top I J h U))
 
 /-- The colon of the product by the first factor is the second, for comaximal ideal sheaves:
 `(I · J) : I = J`. -/

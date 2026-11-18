@@ -116,12 +116,12 @@ end CharZero
 
 section Sum
 
-/-- Evaluating a finite sum of derivations (Mathlib has `Derivation.coeFnAddMonoidHom` but no
+/-- Evaluating a finite sum of derivations (Mathlib has `FunLike.coeAddMonoidHom` but no
 summed evaluation lemma). -/
 theorem derivation_sum_apply {R A M ι : Type*} [CommSemiring R] [CommSemiring A]
     [AddCommMonoid M] [Algebra R A] [Module A M] [Module R M] (s : Finset ι)
     (D : ι → Derivation R A M) (a : A) : (∑ i ∈ s, D i) a = ∑ i ∈ s, D i a := by
-  change Derivation.coeFnAddMonoidHom (∑ i ∈ s, D i) a = _
+  change FunLike.coeAddMonoidHom (Derivation R A M) A M (∑ i ∈ s, D i) a = _
   rw [map_sum, Finset.sum_apply]
   rfl
 
@@ -173,7 +173,7 @@ noncomputable def transportPderiv (x' : Fin n → R) : Fin n → Derivation ℚ 
 theorem transportPderiv_apply (x' : Fin n → R) (j : Fin n) (f : R) :
     c.transportPderiv x' j f = ∑ l, (c.jacobian x')⁻¹ j l * c.pderiv l f := by
   rw [transportPderiv, derivation_sum_apply]
-  simp only [Derivation.smul_apply, smul_eq_mul]
+  simp only [smul_apply, smul_eq_mul]
 
 /-- If `x'` also generates the maximal ideal, the Jacobian matrix `∂ᵢ x'ⱼ` is invertible over
 `R`.  Uses `dim R = n` (regularity) through the minimal number of generators of the maximal
@@ -231,8 +231,8 @@ theorem isUnit_jacobian (x' : Fin n → R) (hx' : maximalIdeal R = Ideal.span (S
   have hle : maximalIdeal R ≤ N ⊔ maximalIdeal R • maximalIdeal R :=
     hx'.le.trans (Ideal.span_le.mpr hgen)
   have hNle : maximalIdeal R ≤ N :=
-    Submodule.le_of_le_smul_of_le_jacobson_bot (IsNoetherian.noetherian _)
-      (le_of_eq (jacobson_eq_maximalIdeal (⊥ : Ideal R) bot_ne_top).symm) hle
+    Submodule.le_of_le_smul_of_le_jacobson (IsNoetherian.noetherian _)
+      (ringJacobson_eq_maximalIdeal R).ge hle
   have hNeq : maximalIdeal R = N := by
     refine le_antisymm hNle ?_
     rw [hN_def, Ideal.span_le]
@@ -300,7 +300,7 @@ theorem pderiv_eq_sum_transportPderiv (x' : Fin n → R)
   have h1 : ∀ j, (c.jacobian x' i j • c.transportPderiv x' j) f =
       ∑ l, c.jacobian x' i j * ((c.jacobian x')⁻¹ j l * c.pderiv l f) := by
     intro j
-    rw [Derivation.smul_apply, smul_eq_mul, transportPderiv_apply, Finset.mul_sum]
+    rw [smul_apply, smul_eq_mul, transportPderiv_apply, Finset.mul_sum]
   rw [Finset.sum_congr rfl fun j _ => h1 j, Finset.sum_comm]
   have h2 : ∀ l, ∑ j, c.jacobian x' i j * ((c.jacobian x')⁻¹ j l * c.pderiv l f) =
       (c.jacobian x' * (c.jacobian x')⁻¹) i l * c.pderiv l f := by

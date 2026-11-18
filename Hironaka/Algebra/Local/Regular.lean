@@ -61,7 +61,7 @@ allows two non-prime members of the family; `𝔪²` occupies one of them.
 minimal prime (prime avoidance).  By the quotient theorem `R/⟨x⟩` is regular of dimension `m`,
 hence a domain by induction, so `⟨x⟩` is prime.  Let `P ⊆ ⟨x⟩` be a minimal prime.  For
 `y ∈ P` write `y = z x`; since `x ∉ P` and `P` is prime, `z ∈ P`, so `P = x P ⊆ 𝔪 P`, and
-Nakayama (`Submodule.eq_bot_of_le_smul_of_le_jacobson_bot`) gives `P = 0`.  A prime zero ideal
+Nakayama (`Submodule.eq_bot_of_le_smul_of_le_jacobson`) gives `P = 0`.  A prime zero ideal
 makes `R` a domain (`IsDomain.of_bot_isPrime`).  The Stacks Project's own proof through the
 associated graded ring is not followed, since the associated graded ring is absent from Mathlib.
 
@@ -349,10 +349,10 @@ theorem isDomain_of_isRegularLocalRing_of_ringKrullDim_eq (n : ℕ) :
       have hz : z ∈ P := (hPprime.mem_or_mem hy).resolve_right hxP
       rw [mul_comm]
       exact Submodule.smul_mem_smul (mem_span_singleton_self x) hz
-    have hjac : span {x} ≤ Ideal.jacobson ⊥ :=
-      ((span_singleton_le_iff_mem _).mpr mem).trans (maximalIdeal_le_jacobson _)
+    have hjac : span {x} ≤ Ring.jacobson R :=
+      ((span_singleton_le_iff_mem _).mpr mem).trans (ringJacobson_eq_maximalIdeal R).ge
     have hPbot : P = ⊥ :=
-      Submodule.eq_bot_of_le_smul_of_le_jacobson_bot (span {x}) P P.fg_of_isNoetherianRing hle hjac
+      Submodule.eq_bot_of_le_smul_of_le_jacobson (span {x}) P P.fg_of_isNoetherianRing hle hjac
     have : (⊥ : Ideal R).IsPrime := hPbot ▸ hPprime
     exact IsDomain.of_bot_isPrime R
 

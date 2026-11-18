@@ -83,8 +83,10 @@ complement is the union of the components inside `V(Y)`. -/
 noncomputable def componentsOutside (Y : X.IdealSheafData) : Closeds X :=
   ⟨⋃₀ {C | C ∈ irreducibleComponents X ∧ ¬ C ⊆ (Y.support : Set X)}, by
     rw [Set.sUnion_eq_biUnion]
-    exact (NoetherianSpace.finite_irreducibleComponents.subset fun C hC => hC.1).isClosed_biUnion
-      fun C hC => isClosed_of_mem_irreducibleComponents C hC.1⟩
+    let S : Set (Set X) := {C | C ∈ irreducibleComponents X ∧ ¬ C ⊆ (Y.support : Set X)}
+    have hfin : S.Finite :=
+      (NoetherianSpace.finite_irreducibleComponents (α := X)).subset fun _ hC => hC.1
+    exact hfin.isClosed_biUnion fun C (hC : C ∈ S) => isClosed_of_mem_irreducibleComponents C hC.1⟩
 
 theorem mem_componentsOutside_iff (Y : X.IdealSheafData) (x : X) :
     x ∈ componentsOutside Y ↔

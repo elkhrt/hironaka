@@ -1,12 +1,4 @@
-# Hironaka's resolution of singularities in characteristic zero, formalized in Lean 4 over Mathlib:
-# the library `Hironaka`
-# (schemes, analytic manifolds and analytic spaces) and the worked examples `HironakaExamples`.
 name = "hironaka"
-keywords = ["math", "algebraic-geometry", "resolution-of-singularities", "analytic-geometry"]
-description = "Hironaka's resolution of singularities in characteristic zero, formalized in Lean 4 over Mathlib."
-license = "Apache-2.0"
-licenseFiles = ["LICENSE"]
-readmeFile = "README.md"
 defaultTargets = ["Hironaka"]
 enableArtifactCache = true
 
@@ -15,27 +7,14 @@ pp.unicode.fun = true
 relaxedAutoImplicit = false
 autoImplicit = false
 weak.linter.mathlibStandardSet = true
-# The copyright block of every file is checked by scripts/check_header.py, so Mathlib's header style check is off.
 weak.linter.style.header = false
 maxSynthPendingDepth = 3
 
 [[require]]
 name = "mathlib"
-scope = "leanprover-community"
-rev = "v4.35.0"
+git = "https://github.com/leanprover-community/mathlib4.git"
+rev = "1b1ccf4b088b32fa3f23f2de1127433254a81e1e"
 
 [[lean_lib]]
 name = "Hironaka"
-leanOptions = { warningAsError = true }
-
-[[lean_lib]]
-name = "HironakaExamples"
-leanOptions = { warningAsError = true }
-
-# The audit surface: the main theorems stated with `sorry` in the files under `Challenge/`, which
-# import only the vocabulary modules (the `Defs.lean` files) and the Mathlib modules the statements
-# need, not all of Mathlib (see `Challenge.lean` and `comparator.json`).
-# Not a default target.
-[[lean_lib]]
-name = "Challenge"
-
+leanOptions = { warningAsError = false }

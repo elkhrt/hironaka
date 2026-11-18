@@ -161,7 +161,7 @@ theorem localization_comm (D₁ D₂ : Derivation k A A) (h : ∀ a, D₁ (D₂ 
     intro a
     rw [Derivation.commutator_apply, Derivation.localization_algebraMap,
       Derivation.localization_algebraMap, Derivation.localization_algebraMap,
-      Derivation.localization_algebraMap, h a, sub_self, Derivation.zero_apply, map_zero]
+      Derivation.localization_algebraMap, h a, sub_self, _root_.zero_apply, map_zero]
   have hz := congrArg (fun D : Derivation k (Localization M) (Localization M) => D z) hcomm
   rw [zero_localization] at hz
   simpa [Derivation.commutator_apply, sub_eq_zero] using hz
