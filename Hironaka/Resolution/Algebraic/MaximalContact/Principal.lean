@@ -22,6 +22,9 @@ Only the definition lives here; its characterizing lemmas (`principal_ideal`,
 `stalkIdeal_principal`, `principal_le_iff`, `principal_one`, `ord_principal`) and the proof of
 Theorem 80 (2) are in `Hironaka/Resolution/Algebraic/MaximalContact/Existence.lean`. -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
@@ -29,6 +32,8 @@ universe u
 open CategoryTheory AlgebraicGeometry
 
 namespace AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
 
 variable {X : Scheme.{u}}
 
@@ -39,3 +44,7 @@ noncomputable abbrev principal (h : Γ(X, ⊤)) : X.IdealSheafData :=
   ofIdealTop (Ideal.span {h})
 
 end AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry
+
+end
+end ResolutionHironaka

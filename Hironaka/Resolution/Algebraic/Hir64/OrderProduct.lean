@@ -52,18 +52,25 @@ lemmas behind that sentence, which the source does not state:
   the same `d`, so the termwise inequalities are equalities.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry Scheme.IdealSheafData Scheme.BlowUpSequence
-  TopologicalSpace IsLocalRing
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence _root_.TopologicalSpace
+open _root_.ResolutionHironaka.TopologicalSpace _root_.IsLocalRing
+open _root_.ResolutionHironaka.IsLocalRing
 
 /-! ### The local lemma: the order of a product of ideals -/
 
 namespace Hironaka.Local
 
-open IsLocalRing
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing
 
 variable {R : Type*} [CommRing R] [IsLocalRing R] [IsNoetherianRing R]
 
@@ -105,7 +112,7 @@ end Hironaka.Local
 
 namespace Hironaka.Sequence
 
-open AlgebraicGeometry
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
 
 variable {k : Type u} [Field k] [CharZero k] {X : Scheme.{u}}
 
@@ -266,3 +273,6 @@ theorem ord_factors_const_on_center
 end Corollary
 
 end Hironaka.Sequence
+
+end
+end ResolutionHironaka

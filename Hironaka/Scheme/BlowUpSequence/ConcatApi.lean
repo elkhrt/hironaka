@@ -29,15 +29,24 @@ followed by one of order `d` for the induced triple is one of order `d` (`isOrde
 `last`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry Scheme BlowUpSequence Scheme.IdealSheafData
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
 namespace AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme
 
-open IdealSheafData
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
 variable {X : Scheme.{u}}
 
@@ -118,6 +127,7 @@ theorem forall_center_concat (P : ∀ {Y : Scheme.{u}}, Y.IdealSheafData → Pro
 end AlgebraicGeometry.Scheme.BlowUpSequence
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
 variable {X : Scheme.{u}} {k : Type u} [Field k]
 
@@ -143,3 +153,6 @@ theorem isOrderSeq_concat (f : X ⟶ Spec (.of k)) (S : BlowUpSequence X) (T : B
     exact ih (D.blowUpπ ≫ f) T ht hT
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

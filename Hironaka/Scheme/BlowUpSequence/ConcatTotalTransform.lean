@@ -37,15 +37,21 @@ Nothing here goes beyond the recursive definitions; the composition of the passe
 resolution algorithm is in [Wlo05, Theorem 4.7.1].
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry Scheme.BlowUpSequence
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
 
 namespace AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme
 
-open IdealSheafData
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
 variable {X : Scheme.{u}}
 
@@ -102,3 +108,6 @@ theorem comap_composite_concat (S : BlowUpSequence X) (T : BlowUpSequence S.last
   rw [composite_concat, Scheme.IdealSheafData.comap_comp, Scheme.IdealSheafData.comap_comp]
 
 end AlgebraicGeometry.Scheme.BlowUpSequence
+
+end
+end ResolutionHironaka

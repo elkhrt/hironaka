@@ -38,12 +38,20 @@ The three theorems take the hypotheses of the theorem — empty boundary, reduce
 forms used by `Hironaka.Resolution.Algebraic.Wlo05.EmbeddedFunctorClauses`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace Hironaka Scheme.BlowUpSequence
-  Scheme.IdealSheafData Hironaka.Stage
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.ResolutionHironaka.Hironaka
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.Hironaka.Stage
 
 namespace Hironaka.Resolution
 
@@ -119,3 +127,6 @@ theorem BED_hasSncWith_center (TX : Triple k) (_hE : IsEmpty TX.E.ι) :
   fun i => ((isOrderGeSeq_BED TX).2 i).1
 
 end Hironaka.Resolution
+
+end
+end ResolutionHironaka

@@ -45,13 +45,19 @@ bookkeeping, for arbitrary schemes:
   the strict transform (`isClosedImmersion_pullbackStageHom`, `ker_pullbackStageHom`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry Scheme BlowUpSequence
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
 variable {X Y : Scheme.{u}}
 
@@ -154,3 +160,6 @@ theorem restrictedCenterHasPointOver_iff_of_isClosedImmersion (S : BlowUpSequenc
       exact hp
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

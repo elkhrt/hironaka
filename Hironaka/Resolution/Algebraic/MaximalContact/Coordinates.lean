@@ -35,11 +35,17 @@ that `(x₁, y)` and `(x₁', y)` are both regular systems of parameters; `x₁,
 `H_p, H'_p ⊆ MC(I)_p`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 namespace AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
 
-open CategoryTheory IsLocalRing Scheme
+open CategoryTheory _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
 
 universe u
 
@@ -186,3 +192,6 @@ theorem exists_coordinates (I : X.IdealSheafData) {m : ℕ} (hm : 1 ≤ m) (E : 
 end Main
 
 end AlgebraicGeometry.Scheme.IdealSheafData
+
+end
+end ResolutionHironaka

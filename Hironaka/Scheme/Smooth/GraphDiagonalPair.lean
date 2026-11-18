@@ -34,13 +34,18 @@ The existence statement `exists_etaleNbhdPair_of_etaleCoordinates` packages the 
 on an `EtaleNbhdPair`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
-open AlgebraicGeometry CategoryTheory CategoryTheory.Limits IsLocalRing
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
+open CategoryTheory.Limits _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing
 
 /-- Two equal morphisms have equal stalk maps, up to the transport of the source stalk along the
 two (propositionally equal) image points. -/
@@ -218,3 +223,6 @@ end DiagonalPair
 end EtaleCoordinates
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

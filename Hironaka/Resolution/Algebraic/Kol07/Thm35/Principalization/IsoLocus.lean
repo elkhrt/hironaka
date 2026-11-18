@@ -43,11 +43,18 @@ concatenation is the composite of the two after the identification of the last s
 (`isIso_eraseEmpty_composite_restrict`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace Hironaka Scheme.BlowUpSequence Hironaka.Stage
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.ResolutionHironaka.Hironaka
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.ResolutionHironaka.Hironaka.Stage
 
 namespace Hironaka.Sequence
 
@@ -102,3 +109,6 @@ theorem BP_isIso_restrict (T : Triple k) :
   exact @isIso_eraseEmpty_composite_restrict _ _ _ hSR
 
 end Hironaka.Sequence
+
+end
+end ResolutionHironaka

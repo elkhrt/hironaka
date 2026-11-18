@@ -39,13 +39,20 @@ and orders along the exceptional divisor are computed in the worked examples
   `AlgebraicGeometry.Scheme.IdealSheafData.blowUp`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
-open Scheme.IdealSheafData
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
-open AlgebraicGeometry CategoryTheory Scheme.IdealSheafData TopologicalSpace
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData TopologicalSpace
 
 universe u
 
@@ -105,7 +112,8 @@ theorem eq_specIdealSheaf (L : (Spec (.of R)).IdealSheafData) :
 
 /-- The image of a two-generator ideal under a ring map, `f(a, b) = (f a, f b)`: Mathlib's
 `Ideal.map_span` with `Set.image_pair`.  Used for the chart substitutions of the worked examples. -/
-theorem _root_.Ideal.map_span_pair {A B : Type*} [Semiring A] [Semiring B] {F : Type*}
+theorem _root_.ResolutionHironaka.Ideal.map_span_pair
+    {A B : Type*} [Semiring A] [Semiring B] {F : Type*}
     [FunLike F A B] [RingHomClass F A B] (f : F) (a b : A) :
     (Ideal.span {a, b}).map f = Ideal.span {f a, f b} := by
   rw [Ideal.map_span, Set.image_pair]
@@ -156,3 +164,6 @@ theorem comap_comap_chart (K : X.IdealSheafData) :
 end Chart
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

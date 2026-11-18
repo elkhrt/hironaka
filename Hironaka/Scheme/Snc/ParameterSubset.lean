@@ -30,11 +30,14 @@ with `S ⧸ (φ z_j)` regular — the local form of Kollár's remark after Defin
 again a simple normal crossing divisor on `Z`, whose members `E^i ∩ Z` are smooth divisors of `Z`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 namespace AlgebraicGeometry
 
-open IsLocalRing Ideal
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing Ideal
 
 universe u v
 
@@ -320,3 +323,6 @@ theorem span_range_comp_compl_eq_maximalIdeal (hz : maximalIdeal R = span (Set.r
 end Surjective
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

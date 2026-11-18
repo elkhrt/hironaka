@@ -46,9 +46,13 @@ Used throughout for the orders at the generic points of centres and along specia
 `Hironaka/Resolution/Algebraic/Tuning/Corollary101.lean`, among others).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 namespace TopologicalSpace
+open _root_.TopologicalSpace
 
 variable {X : Type*} [TopologicalSpace X]
 
@@ -88,8 +92,10 @@ theorem Closeds.exists_mem_genericPoints_specializes [T0Space X] [QuasiSober X] 
 end TopologicalSpace
 
 namespace AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
 
-open TopologicalSpace
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
 
 universe u
 
@@ -202,3 +208,6 @@ theorem leOrdAlong_iff_forall_mem (Z : Closeds X) (m : ℕ∞) :
 end Smooth
 
 end AlgebraicGeometry.Scheme.IdealSheafData
+
+end
+end ResolutionHironaka

@@ -53,13 +53,21 @@ induction along the sequence in `Hironaka/Resolution/Algebraic/Kol07/Theorem88Se
   [Kol07, Lemma 74 (1)], used at the end of the proof.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry Scheme.IdealSheafData Scheme BlowUpSequence
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
 
 namespace Ideal
+open _root_.Ideal
 
 variable {k A : Type*} [CommRing k] [CommRing A] [Algebra k A]
 
@@ -74,6 +82,7 @@ theorem logDerivativeIter_top (r : ℕ) (I : Ideal A) :
 end Ideal
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
 variable {k : Type u} [Field k] {X : Scheme.{u}}
 
@@ -179,3 +188,6 @@ theorem logDerivativeIter_markedTransformSeq_le_derivativeIter (h : B.IsOrderGeS
 end Supset
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

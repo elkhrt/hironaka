@@ -52,6 +52,9 @@ Zero divisors among `a`, `b` are allowed.  If `ab = 0` then `R_{ab} = 0` and bot
 are the zero ring, consistently.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
@@ -346,3 +349,6 @@ end Transition
 end affineBlowUpAlgebra
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

@@ -60,16 +60,25 @@ centers; no field, no smoothness) and the propagation of the disjointness along 
 The restriction-level form of the isomorphism statement, `IsIso (S.composite ∣_ U)`, is in
 `Hironaka/Resolution/Algebraic/Kol07/IsoRestrict.lean`. -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace IsLocalRing
-  Scheme.IdealSheafData Scheme BlowUpSequence IdealSheafData
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace _root_.IsLocalRing
+open _root_.ResolutionHironaka.IsLocalRing _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
 namespace Hironaka.Sequence
 
-open AlgebraicGeometry
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
 
 section AnyScheme
 
@@ -238,3 +247,6 @@ theorem center_disjoint_of_isOrderGeSeq_of_lt : ∀ {X : Scheme.{u}} (f : X ⟶ 
 end Smooth
 
 end Hironaka.Sequence
+
+end
+end ResolutionHironaka

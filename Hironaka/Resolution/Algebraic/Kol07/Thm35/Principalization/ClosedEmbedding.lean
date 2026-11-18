@@ -33,11 +33,18 @@ says that `BP` does not see how an empty boundary is indexed, through the indiff
 to unit members; with it the clause holds for any empty boundary on `Y`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry Hironaka Scheme BlowUpSequence Hironaka.Stage
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.ResolutionHironaka.Hironaka _root_.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.ResolutionHironaka.Hironaka.Stage
 
 namespace Hironaka.Sequence
 
@@ -85,3 +92,6 @@ theorem BP_eq_of_isEmpty (T : Triple k) (E' : DivisorFamily T.X.left) (hE' : E'.
     OrderEmbedding.ofIsEmpty (fun i => isEmptyElim i) (fun b _ => hE.elim b) hT hT'
 
 end Hironaka.Sequence
+
+end
+end ResolutionHironaka

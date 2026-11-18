@@ -36,6 +36,9 @@ map, `I.map φ = J` for the `Proj.map` hypothesis.  `φ = id` gives the identity
 (`reesAlgebra.mapOfLe_id`) and composites compose (`reesAlgebra.mapOfLe_comp`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 open AlgebraicGeometry
@@ -170,3 +173,5 @@ theorem AlgebraicGeometry.Proj.map_toSpecZero :
 
 end ProjMap
 
+end
+end ResolutionHironaka

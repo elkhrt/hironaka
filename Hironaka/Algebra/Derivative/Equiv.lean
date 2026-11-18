@@ -21,9 +21,13 @@ manifolds for the stalk maps of local analytic isomorphisms
 `Ideal.derivative` of `Hironaka/Algebra/Derivative/Basic.lean`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 namespace Derivation
+open _root_.Derivation
 
 variable {k A B : Type*} [CommRing k] [CommRing A] [CommRing B] [Algebra k A] [Algebra k B]
 
@@ -42,6 +46,7 @@ theorem conjAlgEquiv_apply (e : A ≃ₐ[k] B) (δ : Derivation k A A) (b : B) :
 end Derivation
 
 namespace Ideal
+open _root_.Ideal
 
 variable {k A B : Type*} [CommRing k] [CommRing A] [CommRing B] [Algebra k A] [Algebra k B]
 
@@ -79,3 +84,6 @@ theorem derivativeIter_map_algEquiv (e : A ≃ₐ[k] B) (r : ℕ) (J : Ideal A) 
     rw [h1, h2, ih, derivative_map_algEquiv]
 
 end Ideal
+
+end
+end ResolutionHironaka

@@ -21,11 +21,15 @@ listed in [Kol07, Definition 59] are restatements of the calculus of the order
 structure in `Hironaka/Algebra/Local/Derivative.lean`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 namespace IsLocalRing
+open _root_.IsLocalRing
 
-open IsLocalRing
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing
 
 /-- **A marked ideal** [Kol07, Definitions 48 and 59]: an ideal `I` together with a mark
 `m : ℕ`. -/
@@ -177,3 +181,6 @@ theorem inCosupp_iff_mem_pow (a : MarkedElem R) : a.InCosupp ↔ a.f ∈ maximal
 end MarkedElem
 
 end IsLocalRing
+
+end
+end ResolutionHironaka

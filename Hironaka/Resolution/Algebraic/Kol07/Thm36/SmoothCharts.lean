@@ -56,12 +56,16 @@ the base change of `AY₁ → UA` (relative dimension `d'`) and a restriction of
 dimension `d`), and `V ∋ y` is nonempty (`SmoothOfRelativeDimension.eq_of_nonempty`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open CategoryTheory CategoryTheory.Limits AlgebraicGeometry TopologicalSpace
-  Hironaka.Sequence
+open CategoryTheory CategoryTheory.Limits _root_.AlgebraicGeometry
+open _root_.ResolutionHironaka.AlgebraicGeometry _root_.TopologicalSpace
+open _root_.ResolutionHironaka.TopologicalSpace _root_.ResolutionHironaka.Hironaka.Sequence
 
 namespace Hironaka.Resolution
 
@@ -210,3 +214,6 @@ theorem exists_chart_mem {X Y AX AY : Scheme.{u}} (h : Y ⟶ X) (d : ℕ)
   exact ⟨⟨⟨y, hyV⟩, hyW⟩, rfl⟩
 
 end Hironaka.Resolution
+
+end
+end ResolutionHironaka

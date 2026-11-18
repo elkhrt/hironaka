@@ -52,12 +52,22 @@ Definition 60]. These statements are not in the literature. Used in
 `Hironaka.Resolution.Algebraic.Wlo05.EmbeddedCP5`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace IsLocalRing Ideal Scheme.IdealSheafData
-  Scheme BlowUpSequence IdealSheafData
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace _root_.IsLocalRing
+open _root_.ResolutionHironaka.IsLocalRing _root_.Ideal _root_.ResolutionHironaka.Ideal
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
 namespace Hironaka.Resolution
 
@@ -285,3 +295,6 @@ theorem markedTransform_biInf_inf_of_admissible
 end Main
 
 end Hironaka.Resolution
+
+end
+end ResolutionHironaka

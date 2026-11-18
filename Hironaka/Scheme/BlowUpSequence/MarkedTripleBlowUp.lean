@@ -29,14 +29,22 @@ transform (`support_exceptionalDivisor_le`). They are used by the marked order r
 (`Hironaka/Resolution/Algebraic/MarkedOrderReduction/`), whose namespace `Hironaka.BMO` they share.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace Scheme.IdealSheafData Hironaka
-  Scheme.BlowUpSequence
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.Hironaka
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
 /-- The power of the exceptional ideal at the exceptional order divides the total transform: the
 set `{c | F^c ∣ π^* J}` is either all of `ℕ` or bounded, and a bounded nonempty set of naturals
@@ -93,3 +101,6 @@ theorem support_exceptionalDivisor_le :
 end Transform
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

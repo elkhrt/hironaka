@@ -39,11 +39,15 @@ The family produced is indexed by `(n, m)`; the single functors of Theorems 68 a
 `Hironaka.Resolution.Algebraic.Stage.DimFree` and `Hironaka.Resolution.Algebraic.Stage.Theorem68`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry Hironaka
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.ResolutionHironaka.Hironaka
 
 namespace Hironaka
 
@@ -171,3 +175,6 @@ theorem exists_tower (base : OrderReductionStage.{u} 0) :
   ⟨tower base, rfl, fun _ => rfl⟩
 
 end Hironaka.Stage
+
+end
+end ResolutionHironaka

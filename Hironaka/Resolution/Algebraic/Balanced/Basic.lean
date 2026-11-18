@@ -29,11 +29,15 @@ contact [Kol07, Theorem 84]; the tuned ideal `W_s(I)` of `Hironaka.Tuning` is D-
 dichotomy of D-balanced ideal sheaves.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
 namespace Ideal
+open _root_.Ideal
 
 variable (k : Type*) {A : Type*} [CommRing k] [CommRing A] [Algebra k A]
 
@@ -58,6 +62,8 @@ theorem isDBalanced_zero (J : Ideal A) : IsDBalanced k J 0 := fun _ h => (Nat.no
 end Ideal
 
 namespace AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
 
 open CategoryTheory
 
@@ -82,3 +88,6 @@ theorem isDBalanced_zero (I : X.IdealSheafData) : IsDBalanced f I 0 :=
   fun _ h => (Nat.not_lt_zero _ h).elim
 
 end AlgebraicGeometry.Scheme.IdealSheafData
+
+end
+end ResolutionHironaka

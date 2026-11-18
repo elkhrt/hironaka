@@ -25,13 +25,21 @@ between the points of order `≥ m` of the weak transform and the strict transfo
 at the end of a concatenation (`disjoint_cosupp_concat_iff`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry Scheme IdealSheafData BlowUpSequence
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
 variable {X : Scheme.{u}}
 
@@ -83,3 +91,6 @@ theorem disjoint_cosupp_concat_iff : ∀ {X : Scheme.{u}} (S : BlowUpSequence X)
     disjoint_cosupp_concat_iff rest T (J.weakTransform D₀) (D.strictTransform D₀) m
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

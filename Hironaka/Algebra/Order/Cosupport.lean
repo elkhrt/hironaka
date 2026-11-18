@@ -29,11 +29,15 @@ Used by `Hironaka/Algebra/Derivative/Basic.lean` and
 `Hironaka/Scheme/IdealSheaf/Derivative/Cosupport.lean`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 namespace IsLocalRing
+open _root_.IsLocalRing
 
-open IsLocalRing
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing
 
 /-! ### Any derivation lowers the adic order by at most one -/
 
@@ -88,7 +92,7 @@ theorem le_maximalIdeal_pow_iff_Dpow_le_maximalIdeal {m : ℕ} (hm : 1 ≤ m) :
 
 omit [Algebra ℚ R] in
 /-- An ideal of a local ring is proper exactly when it lies in the maximal ideal. -/
-theorem _root_.IsLocalRing.le_maximalIdeal_iff_ne_top {J : Ideal R} :
+theorem _root_.ResolutionHironaka.IsLocalRing.le_maximalIdeal_iff_ne_top {J : Ideal R} :
     J ≤ maximalIdeal R ↔ J ≠ ⊤ :=
   ⟨fun h htop => (maximalIdeal.isMaximal R).ne_top (top_le_iff.mp (htop ▸ h)),
     fun h => le_maximalIdeal h⟩
@@ -108,3 +112,6 @@ theorem le_ord_iff_Dpow_le_maximalIdeal {m : ℕ} (hm : 1 ≤ m) :
 end RegularCoords
 
 end IsLocalRing
+
+end
+end ResolutionHironaka

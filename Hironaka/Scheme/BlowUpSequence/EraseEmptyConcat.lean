@@ -33,13 +33,19 @@ it:
   piece has already been cleaned is deleting them from the concatenation itself.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry Scheme BlowUpSequence
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
 variable {X Y : Scheme.{u}}
 
@@ -162,3 +168,6 @@ theorem eraseEmpty_concat_eraseEmpty (S : BlowUpSequence X) (T : BlowUpSequence 
   rw [eraseEmpty_concat, eraseEmpty_concat, eraseEmpty_eraseEmpty]
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

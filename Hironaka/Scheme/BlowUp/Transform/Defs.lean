@@ -37,13 +37,18 @@ Boundary cases: `J.comap π = 0` gives exceptional order `0` and weak transform 
 the total transform as controlled transform.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
-open Scheme.IdealSheafData
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
 section Along
 
@@ -124,3 +129,6 @@ noncomputable def Scheme.IdealSheafData.reducedTransform (E D : X.IdealSheafData
 end BlowUp
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

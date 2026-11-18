@@ -60,12 +60,21 @@ embedded-resolution modules `Hironaka/Resolution/Algebraic/Wlo05/EmbeddedCP1Step
 `Hironaka/Resolution/Algebraic/Wlo05/EmbeddedCP3Tower.lean`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace Hironaka Scheme BlowUpSequence
-  Scheme.IdealSheafData IsLocalRing Hironaka.BO
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.ResolutionHironaka.Hironaka _root_.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData _root_.IsLocalRing
+open _root_.ResolutionHironaka.IsLocalRing _root_.ResolutionHironaka.Hironaka.BO
 
 namespace Hironaka.BD
 
@@ -248,3 +257,6 @@ theorem exists_bdData (n m j : ℕ)
   ⟨bdData n m j Dom B hDom hB hsm hbc, fun k _ _ T hT => by cases m <;> rfl⟩
 
 end Hironaka.BD
+
+end
+end ResolutionHironaka

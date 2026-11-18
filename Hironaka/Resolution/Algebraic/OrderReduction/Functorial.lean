@@ -81,15 +81,25 @@ of [Kol07, Theorem 107]
 (`Hironaka/Resolution/Algebraic/MarkedOrderReduction/BaseChangeParameters.lean`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace Scheme.IdealSheafData IsLocalRing
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData _root_.IsLocalRing
+open _root_.ResolutionHironaka.IsLocalRing
 
 namespace Hironaka.BO
 
-open Hironaka Scheme AlgebraicGeometry BlowUpSequence
+open _root_.ResolutionHironaka.Hironaka _root_.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme _root_.AlgebraicGeometry
+open _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
 
 variable {k : Type u} [Field k] {X : Scheme.{u}}
 
@@ -363,7 +373,7 @@ end Hironaka.BO
 
 namespace Hironaka.BMO
 
-open Hironaka.Sequence
+open _root_.ResolutionHironaka.Hironaka.Sequence
 
 variable {k : Type u} [Field k] [CharZero k] {L : Type u} [Field L] {X Y : Scheme.{u}}
 
@@ -389,3 +399,6 @@ theorem ord_comap_of_isPullback_specMap {p : Y ⟶ X} {g' : Y ⟶ Spec (.of L)}
           mem_support_comap_iff_apply]
 
 end Hironaka.BMO
+
+end
+end ResolutionHironaka

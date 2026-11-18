@@ -36,11 +36,19 @@ rewrite. The lemmas are used by the analysis of the loop
 `Hironaka.Resolution.Algebraic.Wlo05.EmbeddedStep`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u v
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace Scheme BlowUpSequence Scheme.IdealSheafData
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
 namespace Hironaka.Resolution
 
@@ -145,3 +153,6 @@ theorem comap_composite_concat_heq (I : X.IdealSheafData) :
 end Concat
 
 end Hironaka.Resolution
+
+end
+end ResolutionHironaka

@@ -27,6 +27,9 @@ The morphisms that the universal property of the blow-up provides [Hau14, Defini
   push-forward of a blow-up sequence along a closed immersion [Kol07, Definition 30, 30.3].
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
@@ -34,8 +37,11 @@ universe u
 open CategoryTheory CategoryTheory.Limits
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
-open Scheme.IdealSheafData Scheme.Hom
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry.Scheme.Hom
 
 section Lift
 
@@ -108,3 +114,6 @@ noncomputable def Scheme.Hom.pushforwardBlowUp (j : Y ⟶ X) [IsClosedImmersion 
 end Pushforward
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

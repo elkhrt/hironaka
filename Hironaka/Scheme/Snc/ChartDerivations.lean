@@ -37,9 +37,12 @@ classes in the cotangent space and extend to a regular system of parameters
 (6)] and [Hau03, Appendix C (7)] at an arbitrary point of the chart.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
-open IsLocalRing Ideal
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing Ideal
 
 namespace AlgebraicGeometry
 
@@ -50,7 +53,8 @@ variable {k R L : Type*} [CommRing k] [CommRing R] [CommRing L] [Algebra k R] [A
 
 /-- A derivation of `L` over `k` preserving an `R`-subalgebra `S` restricts to a derivation of
 `S`. -/
-noncomputable def _root_.Derivation.restrictSubalgebra (D : Derivation k L L) (S : Subalgebra R L)
+noncomputable def _root_.ResolutionHironaka.Derivation.restrictSubalgebra
+    (D : Derivation k L L) (S : Subalgebra R L)
     (hS : ∀ a ∈ S, D a ∈ S) : Derivation k S S where
   toFun a := ⟨D a, hS a a.2⟩
   map_add' a b := Subtype.ext (by simp)
@@ -58,7 +62,8 @@ noncomputable def _root_.Derivation.restrictSubalgebra (D : Derivation k L L) (S
   map_one_eq_zero' := Subtype.ext (by simp)
   leibniz' a b := Subtype.ext (by simp [Derivation.leibniz])
 
-theorem _root_.Derivation.coe_restrictSubalgebra_apply (D : Derivation k L L) (S : Subalgebra R L)
+theorem _root_.ResolutionHironaka.Derivation.coe_restrictSubalgebra_apply
+    (D : Derivation k L L) (S : Subalgebra R L)
     (hS : ∀ a ∈ S, D a ∈ S) (a : S) : (D.restrictSubalgebra S hS a : L) = D a := rfl
 
 end Restrict
@@ -272,3 +277,6 @@ theorem exists_span_eq_maximalIdeal_extend_chartYR (𝔮 : Ideal (chartRing x r)
 end Chart
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

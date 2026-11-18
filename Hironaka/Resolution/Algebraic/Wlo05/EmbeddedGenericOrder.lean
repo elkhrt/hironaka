@@ -42,12 +42,22 @@ in the round of order `1` of Step 1 of the proof of [Kol07, Theorem 107]. Used i
 `Hironaka.Resolution.Algebraic.Wlo05.EmbeddedClaimStep1`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace Scheme Hironaka BlowUpSequence
-  Scheme.IdealSheafData IsLocalRing Hironaka.BMO Hironaka.Sequence
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.Hironaka
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData _root_.IsLocalRing
+open _root_.ResolutionHironaka.IsLocalRing _root_.ResolutionHironaka.Hironaka.BMO
+open _root_.ResolutionHironaka.Hironaka.Sequence
 
 namespace Hironaka.Resolution
 
@@ -194,3 +204,6 @@ theorem exists_genericPoint_ord_nonmonomialPart_bmoOneRun_eq_one (T : MarkedTrip
     hηE hIc (T.isNonzeroEverywhere η) i hmap havoid⟩
 
 end Hironaka.Resolution
+
+end
+end ResolutionHironaka

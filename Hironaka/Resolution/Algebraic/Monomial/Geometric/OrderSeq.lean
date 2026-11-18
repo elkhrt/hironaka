@@ -53,12 +53,21 @@ These are the properties of the third step of `BMO_{n,m}` that
 `Hironaka/Resolution/Algebraic/MarkedOrderReduction/Step3Input.lean` packages.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open AlgebraicGeometry CategoryTheory TopologicalSpace Scheme IdealSheafData
-  BlowUpSequence Scheme.IdealSheafData
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
 namespace Hironaka.Monomial.PieceFamily
 
@@ -286,3 +295,6 @@ theorem realize_maxOrd_lt (hE : E.IsSnc) (hΦ : Φ.Realizes E e) (hV : Φ.IsVali
   exact hord.le.trans (by exact_mod_cast hle)
 
 end Hironaka.Monomial.PieceFamily
+
+end
+end ResolutionHironaka

@@ -71,12 +71,20 @@ The clauses are assembled on the whole affine `X` and on the class in
 `Hironaka.Resolution.Algebraic.Kol07.Thm36.Theorem36Assembly`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry Hironaka Scheme BlowUpSequence TopologicalSpace
-  Scheme.IdealSheafData Hironaka.Sequence
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.ResolutionHironaka.Hironaka _root_.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence _root_.TopologicalSpace
+open _root_.ResolutionHironaka.TopologicalSpace _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.Hironaka.Sequence
 
 namespace Hironaka.Resolution
 
@@ -478,3 +486,6 @@ theorem exists_snc_preimage_singularLocus_BR_affine_of_class (hne : Nonempty X)
       not_restrictedCenterHasPointOver_BP_of_mem_smoothLocus_of_class (d := d) TA emb hadm hne hx i
 
 end Hironaka.Resolution
+
+end
+end ResolutionHironaka

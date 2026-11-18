@@ -40,11 +40,17 @@ chart rings is the local blow-up of [Hau14, Definitions 4.15 and 4.16].  The tra
 the first section are bookkeeping for affine schemes.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
-open AlgebraicGeometry CategoryTheory Scheme.IdealSheafData TopologicalSpace
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData TopologicalSpace
 
 universe u
 
@@ -297,3 +303,6 @@ theorem affineBlowUp.exists_factor_of_mem_chart (a : I) (x : affineBlowUp I)
 end Chart
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

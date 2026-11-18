@@ -38,9 +38,14 @@ Used for Theorem 76 and Theorem 88 on schemes
 (`Hironaka/Resolution/Algebraic/Balanced/Basic.lean`) and throughout `Hironaka/Derivative`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 namespace AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
 
 open CategoryTheory
 
@@ -53,7 +58,8 @@ variable {k : Type u} [Field k] {X : Scheme.{u}} (f : X ⟶ Spec (.of k))
 coordinate structures `RegularCoords` and the derivative ideals of `Hironaka/Local` need
 `[Algebra ℚ R]`. -/
 @[instance_reducible]
-noncomputable def _root_.AlgebraicGeometry.Scheme.Hom.stalkAlgebraRat [CharZero k] (x : X) :
+noncomputable def _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.Hom.stalkAlgebraRat
+    [CharZero k] (x : X) :
     Algebra ℚ (X.presheaf.stalk x) :=
   letI := f.stalkAlgebra x
   ((algebraMap k (X.presheaf.stalk x)).comp (algebraMap ℚ k)).toAlgebra
@@ -157,3 +163,6 @@ theorem stalkIdeal_derivativeIter (r : ℕ) (I : X.IdealSheafData) (x : X) :
 end FiniteType
 
 end AlgebraicGeometry.Scheme.IdealSheafData
+
+end
+end ResolutionHironaka

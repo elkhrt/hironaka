@@ -19,13 +19,17 @@ induce composites (`affineProjectiveBundle.map_eq_comp`), from Mathlib's `Proj.m
 the generators `ι(M)` and the constants (`SymmetricAlgebra.ringHom_ext`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open CategoryTheory SymmetricAlgebra
+open CategoryTheory _root_.SymmetricAlgebra _root_.ResolutionHironaka.SymmetricAlgebra
 
 namespace SymmetricAlgebra
+open _root_.SymmetricAlgebra
 
 variable {R : Type u} {M : Type u} [CommRing R] [AddCommGroup M] [Module R M]
 variable {S : Type u} {N : Type u} [CommRing S] [AddCommGroup N] [Module S N]
@@ -54,6 +58,7 @@ theorem gradedMap_eq_comp (φ : R →+* S) (ψ : S →+* T) (f : M →ₛₗ[φ]
 end SymmetricAlgebra
 
 namespace AlgebraicGeometry.affineProjectiveBundle
+open _root_.AlgebraicGeometry
 
 variable {R : Type u} {M : Type u} [CommRing R] [AddCommGroup M] [Module R M]
 variable {S : Type u} {N : Type u} [CommRing S] [AddCommGroup N] [Module S N]
@@ -123,3 +128,6 @@ theorem mapHom_π (φ : R' ⟶ S') (f : M' →ₛₗ[φ.hom] N')
 end CommRingCat
 
 end AlgebraicGeometry.affineProjectiveBundle
+
+end
+end ResolutionHironaka

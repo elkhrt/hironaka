@@ -37,11 +37,19 @@ strict transform of the whole scheme is compared with the centres containing the
 of its components.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace Scheme IdealSheafData Hironaka.Sequence
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.Hironaka.Sequence
 
 namespace Hironaka.Resolution
 
@@ -143,3 +151,6 @@ theorem isReduced_strictTransformSeq_subscheme (S : BlowUpSequence X) (J : X.Ide
 end StrictTransform
 
 end Hironaka.Resolution
+
+end
+end ResolutionHironaka

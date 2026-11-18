@@ -32,12 +32,19 @@ with the base-change square). These are the change-of-fields forms of
 such.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory CategoryTheory.Limits AlgebraicGeometry TopologicalSpace Hironaka
-  Scheme.IdealSheafData Hironaka.Sequence
+open CategoryTheory CategoryTheory.Limits _root_.AlgebraicGeometry
+open _root_.ResolutionHironaka.AlgebraicGeometry _root_.TopologicalSpace
+open _root_.ResolutionHironaka.TopologicalSpace _root_.ResolutionHironaka.Hironaka
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.Hironaka.Sequence
 
 namespace Hironaka.BMO
 
@@ -109,3 +116,6 @@ theorem sepOrder_of_isBaseChangeOf {L : Type u} [Field L] [CharZero L] (T : Mark
 end Parameters
 
 end Hironaka.BMO
+
+end
+end ResolutionHironaka

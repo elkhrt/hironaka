@@ -54,12 +54,22 @@ The abbreviation `Triple.withBoundary` used throughout is defined in
 is treated in `Hironaka/Resolution/Algebraic/OrderReduction/EmptyIndifferentGlobal.lean`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace Hironaka Scheme BlowUpSequence
-  Scheme.IdealSheafData Hironaka.Sequence IsLocalRing
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.ResolutionHironaka.Hironaka _root_.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.Hironaka.Sequence _root_.IsLocalRing
+open _root_.ResolutionHironaka.IsLocalRing
 
 namespace Hironaka.BO
 
@@ -429,3 +439,6 @@ theorem maxContactCase_indifferentToEmptyMembers
 end MaxContactCase
 
 end Hironaka.BO
+
+end
+end ResolutionHironaka

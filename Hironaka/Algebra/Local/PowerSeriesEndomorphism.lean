@@ -43,11 +43,16 @@ clause asks for a substitution) — Kollár's description of the automorphisms o
 substitutions `xᵢ ↦ gᵢ` [Kol07, Notation 93].
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 namespace IsLocalRing
+open _root_.IsLocalRing
 
-open MvPowerSeries IsLocalRing
+open _root_.MvPowerSeries _root_.ResolutionHironaka.MvPowerSeries _root_.IsLocalRing
+open _root_.ResolutionHironaka.IsLocalRing
 
 variable {K : Type*} [Field K] {n : ℕ}
 
@@ -197,3 +202,6 @@ theorem algHom_ext_of_forall_X_mem (τ : MvPowerSeries (Fin n) K →ₐ[K] MvPow
 end Endomorphism
 
 end IsLocalRing
+
+end
+end ResolutionHironaka

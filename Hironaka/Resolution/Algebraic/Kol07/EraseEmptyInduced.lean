@@ -50,15 +50,22 @@ members (the exceptional member of an empty blow-up is the unit ideal, `exceptio
 That is the subject of `Hironaka/Resolution/Algebraic/Kol07/EraseEmptyEmbedding.lean`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry Scheme IdealSheafData BlowUpSequence
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
 
 namespace Hironaka.Sequence
 
-open AlgebraicGeometry
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
 
 variable {X Y : Scheme.{u}}
 
@@ -259,7 +266,8 @@ theorem comap_comap_comap_comap {A B C W Z : Scheme.{u}} (I : Z.IdealSheafData) 
     Scheme.IdealSheafData.comap_comp]
 
 /-- The same for divisor families. -/
-theorem _root_.AlgebraicGeometry.Scheme.DivisorFamily.comap_comap_inv {Z W : Scheme.{u}}
+theorem _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.DivisorFamily.comap_comap_inv
+    {Z W : Scheme.{u}}
     (π : Z ⟶ W) [IsIso π]
     (E : DivisorFamily W) : (E.comap π).comap (inv π) = E := by
   rw [← DivisorFamily.comap_comp, IsIso.inv_hom_id, DivisorFamily.comap_id]
@@ -424,7 +432,7 @@ end Hironaka.Sequence
 
 namespace Hironaka.BMO
 
-open Hironaka.Sequence
+open _root_.ResolutionHironaka.Hironaka.Sequence
 
 /-- The last-stage isomorphism of an erased sequence is smooth (an isomorphism, hence an open
 immersion); the form used by the marked order reduction. -/
@@ -435,3 +443,6 @@ theorem smooth_eraseEmptyLastHom' {X : Scheme.{u}} (S : BlowUpSequence X) :
   infer_instance
 
 end Hironaka.BMO
+
+end
+end ResolutionHironaka

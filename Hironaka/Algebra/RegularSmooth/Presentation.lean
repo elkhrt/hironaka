@@ -24,6 +24,9 @@ on the `d x_i`; and the localized map is a local homomorphism inducing an isomor
 fields. The surjectivity and kernel statements hold for any surjection of commutative rings.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u v
@@ -31,6 +34,7 @@ universe u v
 open IsLocalRing
 
 namespace Localization
+open _root_.Localization
 
 variable {A S : Type*} [CommRing A] [CommRing S] (φ : A →+* S) (𝔮 : Ideal S) [𝔮.IsPrime]
 
@@ -97,6 +101,7 @@ theorem bijective_residueField_map_localRingHom_of_surjective (hφ : Function.Su
 end Localization
 
 namespace MvPolynomial
+open _root_.MvPolynomial
 
 variable {k : Type u} [Field k] {ι : Type v} [Finite ι] (Q : Ideal (MvPolynomial ι k)) [Q.IsPrime]
 
@@ -125,3 +130,6 @@ theorem fg_of_localization_atPrime (I : Ideal (Localization.AtPrime Q)) : I.FG :
   IsNoetherian.noetherian I
 
 end MvPolynomial
+
+end
+end ResolutionHironaka

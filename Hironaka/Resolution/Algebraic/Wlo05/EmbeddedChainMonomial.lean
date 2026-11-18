@@ -52,12 +52,22 @@ Used in `Hironaka.Resolution.Algebraic.Wlo05.EmbeddedCP1Step1` and
 `Hironaka.Resolution.Algebraic.Wlo05.EmbeddedChainCaseA`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace Scheme IdealSheafData
-  BlowUpSequence Scheme.IdealSheafData Ideal
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData _root_.Ideal
+open _root_.ResolutionHironaka.Ideal
 
 namespace Hironaka.Resolution
 
@@ -309,3 +319,6 @@ theorem chainRelativeAt_markedTransformSeq_mul_monomial [IsNoetherian X] (n : â„
 end Pullback
 
 end Hironaka.Resolution
+
+end
+end ResolutionHironaka

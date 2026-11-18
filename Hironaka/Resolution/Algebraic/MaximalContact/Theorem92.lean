@@ -62,13 +62,20 @@ the order-reduction functor from the hypersurface
 (`Hironaka/Resolution/Algebraic/MaximalContact/FunctorIndependence.lean`) uses.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
 namespace AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
 
-open CategoryTheory IsLocalRing Scheme AlgebraicGeometry
+open CategoryTheory _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
 
 variable {k : Type u} [Field k] [CharZero k] {X : Scheme.{u}} (f : X ⟶ Spec (.of k)) (n : ℕ)
   [SmoothOfRelativeDimension n f]
@@ -141,3 +148,6 @@ theorem etaleEquiv_of_isMCInvariant (I : X.IdealSheafData) {m : ℕ} (hm : 1 ≤
   exact nonempty_etaleEquiv_of_forall_isClosed f n I m E H H' Q V hqV hf h1 h2 h3 h4
 
 end AlgebraicGeometry.Scheme.IdealSheafData
+
+end
+end ResolutionHironaka

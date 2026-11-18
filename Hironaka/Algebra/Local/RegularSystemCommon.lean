@@ -42,11 +42,15 @@ In both cases the protected coordinates `zᵢ`, `i ∈ T`, are members of `y` un
 `span_eq_maximalIdeal_iff_span_toCotangent_eq_top` of `Hironaka/Algebra/Local/RegularSystem.lean`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 namespace IsLocalRing
+open _root_.IsLocalRing
 
-open IsLocalRing
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing
 
 variable {R : Type*} [CommRing R] [IsRegularLocalRing R]
 
@@ -238,3 +242,6 @@ theorem exists_cons_regularSystem_common {d : ℕ} (z : Fin (d + 1) → R)
   rw [tiltedComplement_apply, htj, zero_mul, add_zero]
 
 end IsLocalRing
+
+end
+end ResolutionHironaka

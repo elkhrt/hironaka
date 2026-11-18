@@ -18,13 +18,17 @@ the ambient scheme of a triple or of an embedded pair is smooth. `AlgScheme.of X
 a structure morphism `f`; both unfold to their underlying scheme under reducible transparency.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
 namespace AlgScheme
 
@@ -79,3 +83,6 @@ instance smooth (P : EmbeddedPair k) : Smooth (P.X.left ↘ Spec (.of k)) :=
 end EmbeddedPair
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

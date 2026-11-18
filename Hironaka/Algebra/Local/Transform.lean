@@ -58,11 +58,15 @@ into `𝔪̄²`, while `ψ(y₀² + x₁) = x̄₁`.  The order in the local rin
 `mem_pow_of_algebraMap_mem_map_pow`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 namespace IsLocalRing
+open _root_.IsLocalRing
 
-open IsLocalRing
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing
 
 universe u
 
@@ -613,3 +617,6 @@ theorem ordElem_transformElem_X_sq_add_X_cube (hf : Xq 0 ^ 2 + Xq 1 ^ 3 ∈ char
 end PowerSeries
 
 end IsLocalRing
+
+end
+end ResolutionHironaka

@@ -41,6 +41,9 @@ For `I = 0` the Rees algebra is its own degree-zero piece and the equivalence is
 `finiteType_of_fg`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 
@@ -88,3 +91,5 @@ theorem reesAlgebra.finiteType_of_fg (hI : I.FG) :
     ⟨(reesAlgebra I).fg_top.mpr (reesAlgebra.fg hI)⟩
   Algebra.FiniteType.of_restrictScalars_finiteType R (reesAlgebra.grading I 0) (reesAlgebra I)
 
+end
+end ResolutionHironaka

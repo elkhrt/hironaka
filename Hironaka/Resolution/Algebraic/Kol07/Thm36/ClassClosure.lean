@@ -56,11 +56,17 @@ class too. This file proves the closure properties:
   a component IS the component; `support_irreducibleComponentIdeal`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open CategoryTheory CategoryTheory.Limits AlgebraicGeometry TopologicalSpace Scheme Topology
+open CategoryTheory CategoryTheory.Limits _root_.AlgebraicGeometry
+open _root_.ResolutionHironaka.AlgebraicGeometry _root_.TopologicalSpace
+open _root_.ResolutionHironaka.TopologicalSpace _root_.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme Topology
 
 namespace Hironaka.Resolution
 
@@ -103,8 +109,9 @@ end Hironaka.Resolution
 /-! ### The class is closed under open subschemes, disjoint covers and disjoint unions -/
 
 namespace AlgebraicGeometry.Scheme.HasDisjointIntegralComponents
+open _root_.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme
 
-open Hironaka.Resolution
+open _root_.ResolutionHironaka.Hironaka.Resolution
 
 /-- An open subscheme of a member of the class is in the class: reducedness is local, and two
 components of `Y` meeting are the traces of two components of `X` meeting. -/
@@ -283,6 +290,7 @@ instance Hironaka.Resolution.instQuasiCompactAffineCoverPair (k : Type u) [Field
 /-! ### The class of reduced equidimensional schemes -/
 
 namespace AlgebraicGeometry.Scheme.IsReducedEquidimensional
+open _root_.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme
 
 variable {k : Type u} [Field k]
 
@@ -471,3 +479,6 @@ theorem isReducedEquidimensional_of_isIntegral {k : Type u} [Field k] [CharZero 
   exact exists_smoothOfRelativeDimension_of_preconnectedSpace (F.smoothLocus.ι ≫ F)
 
 end Hironaka.Resolution
+
+end
+end ResolutionHironaka

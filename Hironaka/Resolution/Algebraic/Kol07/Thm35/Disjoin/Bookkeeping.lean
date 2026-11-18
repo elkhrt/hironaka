@@ -20,13 +20,17 @@ the component at the index of `E_a` is the strict transform of `E_a` along the s
 (`strictTransformSeq`, the birational transform of [Kol07, 30.2]).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open AlgebraicGeometry CategoryTheory
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
 
 namespace AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme
 
 variable {X : Scheme.{u}}
 
@@ -52,3 +56,6 @@ theorem component_originalIdx : ∀ {X : Scheme.{u}} (S : BlowUpSequence X) (E :
       (toLex (Sum.inl a))
 
 end AlgebraicGeometry.Scheme.BlowUpSequence
+
+end
+end ResolutionHironaka

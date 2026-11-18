@@ -35,13 +35,19 @@ definitions only; the dictionary itself is proved in `Hironaka/Scheme/Snc/Dictio
 `DictionaryBoundary.lean` and `DictionaryComponents.lean`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open AlgebraicGeometry CategoryTheory TopologicalSpace Scheme
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
 
 namespace TopologicalSpace.Closeds
+open _root_.TopologicalSpace _root_.TopologicalSpace.Closeds
 
 variable {Y : Type*} [TopologicalSpace Y]
 
@@ -80,6 +86,8 @@ instance instFiniteGenericPoints [T0Space Y] [QuasiSober Y] [NoetherianSpace Y] 
 end TopologicalSpace.Closeds
 
 namespace AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
 
 variable {X : Scheme.{u}}
 
@@ -100,6 +108,7 @@ noncomputable def componentFamily (E : X.IdealSheafData) [Finite E.support.gener
 end AlgebraicGeometry.Scheme.IdealSheafData
 
 namespace AlgebraicGeometry.Scheme.DivisorFamily
+open _root_.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme
 
 variable {X : Scheme.{u}}
 
@@ -111,3 +120,6 @@ noncomputable def unionIdeal (F : DivisorFamily X) : X.IdealSheafData :=
   Scheme.IdealSheafData.vanishingIdeal F.support
 
 end AlgebraicGeometry.Scheme.DivisorFamily
+
+end
+end ResolutionHironaka

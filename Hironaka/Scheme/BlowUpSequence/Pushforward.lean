@@ -42,18 +42,27 @@ embedding ([Kol07, 34.3]). The last section gives the descent of the identity `B
 along a smooth surjection, used for the closed-embedding clause [Kol07, Claim 71.2].
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry Scheme.Hom Scheme Hironaka BlowUpSequence
-open AlgebraicGeometry (comap_map_of_isClosedImmersion eqToHom_comp_blowUpπ
-    ker_blowUpMap_of_isClosedImmersion isClosedImmersion_blowUpMap_of_isClosedImmersion blowUpMap_π
-    comap_map_of_isPullback isPullback_blowUpMap_of_isPullback isPullback_of_heq
-    comap_comap_eq_of_comm property_of_isPullback isPullback_blowUpMap)
-open IdealSheafData (strictTransformAlong)
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.AlgebraicGeometry.Scheme.Hom _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.Hom
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.Hironaka
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.ResolutionHironaka.AlgebraicGeometry (comap_map_of_isClosedImmersion
+    eqToHom_comp_blowUpπ ker_blowUpMap_of_isClosedImmersion
+    isClosedImmersion_blowUpMap_of_isClosedImmersion blowUpMap_π comap_map_of_isPullback
+    isPullback_blowUpMap_of_isPullback isPullback_of_heq comap_comap_eq_of_comm
+    property_of_isPullback isPullback_blowUpMap)
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData (strictTransformAlong)
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
 variable {X Y : Scheme.{u}}
 
@@ -67,6 +76,7 @@ theorem length_pushforward (S : BlowUpSequence Y) (j : Y ⟶ X) [IsClosedImmersi
 end AlgebraicGeometry
 
 namespace AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme
 
 variable {X Y : Scheme.{u}}
 
@@ -95,8 +105,9 @@ noncomputable def pushforwardStageHom : {Y : Scheme.{u}} → (S : BlowUpSequence
 end AlgebraicGeometry.Scheme.BlowUpSequence
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
-open Hironaka
+open _root_.ResolutionHironaka.Hironaka
 
 variable {X Y : Scheme.{u}}
 
@@ -482,8 +493,9 @@ end AlgebraicGeometry
 smooth surjection -/
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
-open AlgebraicGeometry
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
 
 variable {X Y : Scheme.{u}}
 
@@ -538,3 +550,6 @@ theorem seq_eq_pushforward_of_cover {Dom : MarkedTriple k → Prop} {B : OrderGe
         (pullback_pushforward_of_isPullback_of_flat _ j g j' hS sq).symm
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

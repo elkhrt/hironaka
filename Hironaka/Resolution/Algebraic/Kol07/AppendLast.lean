@@ -26,11 +26,14 @@ the last position of a lexicographic sum with a one-element right summand is tha
 (`monoEquivOfFin_lex_inr_last`), the counterpart for `inr` of `monoEquivOfFin_lex_inl`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u v
 
-open AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
 
 namespace Hironaka.Sequence
 
@@ -85,3 +88,6 @@ theorem nth_append_last (E : DivisorFamily X) (J : X.IdealSheafData)
   rfl
 
 end Hironaka.Sequence
+
+end
+end ResolutionHironaka

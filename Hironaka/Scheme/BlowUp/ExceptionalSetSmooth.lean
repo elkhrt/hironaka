@@ -45,13 +45,17 @@ Mathlib carries.
   with the inclusion of `Hironaka.Scheme.BlowUp.ExceptionalSet`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory Limits TopologicalSpace
+open CategoryTheory _root_.CategoryTheory.Limits TopologicalSpace
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
 section RelativeDimension
 
@@ -115,6 +119,7 @@ theorem SmoothOfRelativeDimension.eq_of_nonempty (f : X ⟶ Y) [Nonempty X] {n m
 end RelativeDimension
 
 namespace Scheme.IdealSheafData
+open _root_.AlgebraicGeometry.Scheme _root_.AlgebraicGeometry.Scheme.IdealSheafData
 
 variable {X Y : Scheme.{u}}
 
@@ -130,7 +135,8 @@ theorem isOpenImmersion_subschemeMap_of_comap (f : Y ⟶ X) [IsOpenImmersion f]
   exact MorphismProperty.IsStableUnderBaseChange.of_isPullback sq inferInstance
 
 /-- A point of an open `U` is the image of a point of the open subscheme `U`. -/
-theorem _root_.AlgebraicGeometry.Scheme.Opens.exists_ι_eq_of_mem {Z : Scheme.{u}} {U : Z.Opens}
+theorem _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.Opens.exists_ι_eq_of_mem
+    {Z : Scheme.{u}} {U : Z.Opens}
     {u : Z} (hu : u ∈ U) : ∃ y : U.toScheme, U.ι y = u := by
   have : u ∈ U.ι.opensRange := by rwa [Opens.opensRange_ι]
   exact Scheme.Hom.mem_opensRange.mp this
@@ -140,8 +146,11 @@ end Scheme.IdealSheafData
 end AlgebraicGeometry
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
-open AlgebraicGeometry Scheme.IdealSheafData
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
 /-- **Every point of the exceptional divisor is exceptional** when the divisor is smooth of
 positive relative dimension over the centre [Kol07, Definition 25]: if the induced map
@@ -202,3 +211,6 @@ theorem support_comap_subset_exceptionalSet {B X : Scheme.{u}} (π : B ⟶ X)
   omega
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

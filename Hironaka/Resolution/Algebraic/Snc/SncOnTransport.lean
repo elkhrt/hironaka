@@ -35,15 +35,22 @@ empty sub-family (`isSncOn_subfamily_false_append`).
 Sources: [Kol07, Definition 24; Definition 25; 104] (Step 2.1).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry Scheme IdealSheafData IsLocalRing
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData _root_.IsLocalRing
+open _root_.ResolutionHironaka.IsLocalRing
 
 namespace Hironaka.Snc
 
-open AlgebraicGeometry
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
 
 variable {X : Scheme.{u}}
 
@@ -187,3 +194,6 @@ theorem isSncOn_subfamily_false_append (f : X ⟶ Spec (.of k)) [Smooth f] (E : 
   · rfl
 
 end Hironaka.Snc
+
+end
+end ResolutionHironaka

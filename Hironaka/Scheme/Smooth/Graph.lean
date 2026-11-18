@@ -32,11 +32,16 @@ The properties of the graph are proved in `GraphBasic.lean`, `GraphPoint.lean`, 
 (`Hironaka/Resolution/Algebraic/MaximalContact/`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
-open AlgebraicGeometry CategoryTheory CategoryTheory.Limits TopologicalSpace
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
+open CategoryTheory.Limits TopologicalSpace
 
 universe u
 
@@ -155,3 +160,6 @@ noncomputable def NbhdPair.toEtaleNbhdPair {p : X} {hpU : p ∈ U.1} (P : c.Nbhd
 end EtaleCoordinates
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

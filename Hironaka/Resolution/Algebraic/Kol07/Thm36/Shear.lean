@@ -24,11 +24,14 @@ The `IsIso` instances are used in the proof of Lemma 39 (`exists_aut_conj_embedd
 v ≫ inv (shearX w)`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
 
 namespace Hironaka.Resolution
 
@@ -135,3 +138,6 @@ instance isIso_shearX {n m : ℕ} (w : Fin n → MvPolynomial (Fin m) k) : IsIso
     rwa [neg_neg] at this⟩
 
 end Hironaka.Resolution
+
+end
+end ResolutionHironaka

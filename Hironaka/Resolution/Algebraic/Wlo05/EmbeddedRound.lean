@@ -32,12 +32,21 @@ These are unfoldings of the definitions, used by
 `Hironaka.Resolution.Algebraic.Wlo05.EmbeddedNilInvariant`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace Scheme Hironaka
-  BlowUpSequence Scheme.IdealSheafData Hironaka.Stage
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.Hironaka
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.Hironaka.Stage
 
 namespace Hironaka.Resolution
 
@@ -96,3 +105,6 @@ theorem remainingAt_cons_zero : remainingAt ((BlowUpSequence.cons T.X.left D res
 end Cons
 
 end Hironaka.Resolution
+
+end
+end ResolutionHironaka

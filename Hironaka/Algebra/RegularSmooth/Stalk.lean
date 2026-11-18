@@ -20,11 +20,15 @@ transcendence degree over `k` enters the dimension formula of `RegularSmooth/Sch
 Like `sectionsAlgebra`, it is a definition bound with `letI`, not an instance: it depends on `f`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
 open CategoryTheory
 
@@ -72,3 +76,6 @@ theorem Scheme.Hom.isScalarTower_sectionsAlgebra_stalk (f : X ⟶ Spec (.of k)) 
   IsScalarTower.of_algebraMap_eq' (f.germ_comp_algebraMap_sectionsAlgebra U hx).symm
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

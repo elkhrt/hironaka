@@ -38,11 +38,15 @@ determined by its values on the coordinates, which is how the completion of the 
 formal isomorphism between two points is identified.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 namespace IsLocalRing
+open _root_.IsLocalRing
 
-open IsLocalRing
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing
 
 /-- Two `k`-algebra homomorphisms from a formally unramified `k`-algebra `A` into an `𝔪`-adically
 separated local `k`-algebra `B` with the same residue composite are equal: the uniqueness
@@ -85,3 +89,6 @@ theorem algHom_ext_of_residue_eq {k A B : Type*} [CommRing k] [CommRing A] [Comm
   exact key m a
 
 end IsLocalRing
+
+end
+end ResolutionHironaka

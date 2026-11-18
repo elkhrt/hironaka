@@ -25,6 +25,9 @@ restrictions to the members of an open cover of `U` lie in the ideals of those m
 is the localization of `I(U)` at `g`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
@@ -32,6 +35,8 @@ universe u
 open CategoryTheory Opposite TopologicalSpace
 
 namespace AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
 
 variable {X : Scheme.{u}} (I : X.IdealSheafData)
 
@@ -165,3 +170,6 @@ theorem coe_toModulesSectionsEquiv_restrictionMap {U V : X.affineOpens} (h : U â
   rfl
 
 end AlgebraicGeometry.Scheme.IdealSheafData
+
+end
+end ResolutionHironaka

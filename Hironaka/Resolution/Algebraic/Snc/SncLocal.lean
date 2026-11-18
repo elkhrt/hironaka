@@ -68,12 +68,19 @@ Sources: [Kol07, Definition 24] (the pointwise condition); [Hir64, Definition 2]
 through a regular system of parameters, the form the dictionary uses).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u v
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace Scheme Scheme.IdealSheafData
-  Hironaka.Sequence
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.Hironaka.Sequence
 
 namespace Hironaka.Snc
 
@@ -84,7 +91,8 @@ variable {α : Type*} [TopologicalSpace α]
 /-- A generic point of a closed set `Z` lying in a closed subset `Z' ≤ Z` is a generic point of `Z'`
 (`Closeds.mem_genericPoints_iff`: the closure of the point is a maximal irreducible subset of `Z`,
 hence of `Z'`). -/
-theorem _root_.TopologicalSpace.Closeds.mem_genericPoints_of_le [T0Space α] [QuasiSober α]
+theorem _root_.ResolutionHironaka.TopologicalSpace.Closeds.mem_genericPoints_of_le
+    [T0Space α] [QuasiSober α]
     {Z Z' : Closeds α} (hle : Z' ≤ Z) {η : α} (hη : η ∈ Z.genericPoints) (hη' : η ∈ Z') :
     η ∈ Z'.genericPoints := by
   rw [Closeds.mem_genericPoints_iff] at hη ⊢
@@ -263,3 +271,6 @@ theorem exists_snc_of_openCover [NoetherianSpace Y] (S : Set Y) (𝒰 : Y.OpenCo
 end Main
 
 end Hironaka.Snc
+
+end
+end ResolutionHironaka

@@ -19,13 +19,19 @@ singular locus is rewritten as a single blow-up with a suitably chosen center, a
 following Main Theorem I in [Hir64, pp. 132–133].
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry Scheme BlowUpSequence
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
 /-- The centers of a concatenation lie over `Z` when those of `S` do and those of `T` do after
 `S.composite` (structural recursion on `S`: the first center of `cons X D rest` is `D` under
@@ -66,3 +72,6 @@ theorem forall_center_concat_mem :
     exact h2
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

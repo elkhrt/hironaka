@@ -40,11 +40,15 @@ theorem, as for the quotients by a regular system of parameters in
   (`IsRegularLocalRing.of_spanFinrank_maximalIdeal_le`) and `dim A' = n`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 namespace IsLocalRing
+open _root_.IsLocalRing
 
-open IsLocalRing
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing
 
 section ChartLocal
 
@@ -370,3 +374,6 @@ theorem ringKrullDim_localization_chartOrigin
 end ChartLocal
 
 end IsLocalRing
+
+end
+end ResolutionHironaka

@@ -31,11 +31,17 @@ along `I` [Hau14, Definition 4.4 and Theorem 4.18]; [Sta, Tag 0806]:
   lies over `f` (`liftOn_π`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
-open AlgebraicGeometry CategoryTheory Scheme.IdealSheafData
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
 universe u
 
@@ -117,3 +123,6 @@ theorem liftOn_π : liftOn I f V a hβa hI ≫ affineBlowUp.π I = V.1.ι ≫ f 
 end LiftOn
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

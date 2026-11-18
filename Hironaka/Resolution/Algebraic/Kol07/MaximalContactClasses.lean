@@ -41,15 +41,19 @@ of Theorem 105 is proved in `Hironaka/Resolution/Algebraic/Kol07/MaximalContactG
 * `Triple.MaximalContactClass n m`: `LT_{n,m}`, the members of `GT_{n,m}` admitting one.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
 
 namespace AlgebraicGeometry.Triple
+open _root_.AlgebraicGeometry
 
-open Hironaka
+open _root_.ResolutionHironaka.Hironaka
 
 variable {k : Type u} [Field k]
 
@@ -81,3 +85,6 @@ def MaximalContactClass (n m : ℕ) (T : Triple k) : Prop :=
   OrderClass n m T ∧ T.HasMaximalContact m
 
 end AlgebraicGeometry.Triple
+
+end
+end ResolutionHironaka

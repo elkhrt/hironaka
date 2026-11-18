@@ -47,13 +47,18 @@ are explicit hypotheses. The last section states the consequences for the predic
 `HasSncWith.isSmoothDivisor_comap`, `IsSncAt.exists_isSncAt_comap`, `HasSncWith.isSnc_comap`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open AlgebraicGeometry CategoryTheory IsLocalRing Ideal
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing Ideal
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
 variable {X : Scheme.{u}}
 
@@ -256,10 +261,12 @@ The namespace is reopened so that the section variables are bound in the order `
 -/
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
 section Smooth
 
-open Scheme DivisorFamily
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.DivisorFamily
 
 variable {k : Type u} [Field k] {X : Scheme.{u}}
 
@@ -393,3 +400,6 @@ theorem HasSncWith.isSnc_comap (f : X ⟶ Spec (.of k)) [Smooth f] {E : DivisorF
 end Smooth
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

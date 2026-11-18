@@ -28,11 +28,15 @@ contact (`Hironaka/Scheme/Smooth/Graph.lean`,
   of a surjection onto the field `k`); `origin k n` is the point `0`, `t_0 = ⋯ = t_{n-1} = 0`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
-open AlgebraicGeometry CategoryTheory
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
 
 universe u
 
@@ -83,3 +87,6 @@ noncomputable abbrev origin (k : Type u) [Field k] (n : ℕ) : Spec (.of (MvPoly
   ratPoint fun _ : Fin n => (0 : k)
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

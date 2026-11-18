@@ -23,6 +23,9 @@ main theorems quantify.
   [Kol07, Proposition 37 and the proof of Theorem 36].
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
@@ -30,6 +33,7 @@ universe u
 open CategoryTheory
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
 /-- A morphism of schemes is of finite type if it is locally of finite type and quasi-compact. -/
 @[stacks 01T0]
@@ -37,3 +41,6 @@ class FiniteType {X Y : Scheme.{u}} (f : X ⟶ Y) : Prop
     extends LocallyOfFiniteType f, QuasiCompact f
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

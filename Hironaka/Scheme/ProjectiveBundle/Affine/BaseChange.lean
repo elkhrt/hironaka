@@ -35,13 +35,18 @@ cartesian (Mathlib's `Scheme.isPullback_of_openCover`). This is the argument of
 `AlgebraicGeometry.Proj.isPullback_projMap` for polynomial rings.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open CategoryTheory CategoryTheory.Limits SymmetricAlgebra HomogeneousLocalization
+open CategoryTheory CategoryTheory.Limits _root_.SymmetricAlgebra
+open _root_.ResolutionHironaka.SymmetricAlgebra HomogeneousLocalization
 
 namespace AlgebraicGeometry.affineProjectiveBundle
+open _root_.AlgebraicGeometry
 
 variable {R : Type u} {M : Type u} [CommRing R] [AddCommGroup M] [Module R M]
 
@@ -112,6 +117,7 @@ theorem isPullback_map :
 end AlgebraicGeometry.affineProjectiveBundle
 
 namespace AlgebraicGeometry.affineProjectiveBundle
+open _root_.AlgebraicGeometry
 
 variable {R S : CommRingCat.{u}} {M N : Type u} [AddCommGroup M] [Module R M] [AddCommGroup N]
   [Module S N]
@@ -126,3 +132,6 @@ theorem isPullback_mapHom (φ : R ⟶ S) (f : M →ₛₗ[φ.hom] N)
   rwa [CommRingCat.ofHom_hom] at this
 
 end AlgebraicGeometry.affineProjectiveBundle
+
+end
+end ResolutionHironaka

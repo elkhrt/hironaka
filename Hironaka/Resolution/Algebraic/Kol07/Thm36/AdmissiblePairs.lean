@@ -47,12 +47,19 @@ These pairs are used to evaluate the affine resolution `BRAffine`
 (`Hironaka.Resolution.Algebraic.Kol07.Thm36.BRDescent`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory CategoryTheory.Limits AlgebraicGeometry TopologicalSpace Hironaka
-  Scheme.IdealSheafData Hironaka.Sequence
+open CategoryTheory CategoryTheory.Limits _root_.AlgebraicGeometry
+open _root_.ResolutionHironaka.AlgebraicGeometry _root_.TopologicalSpace
+open _root_.ResolutionHironaka.TopologicalSpace _root_.ResolutionHironaka.Hironaka
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.Hironaka.Sequence
 
 namespace Hironaka.Resolution
 
@@ -165,3 +172,6 @@ theorem exists_admissibleEmbedding_of_codim (X : Scheme.{u})
     exact le_trans h2 hle
 
 end Hironaka.Resolution
+
+end
+end ResolutionHironaka

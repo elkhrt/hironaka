@@ -42,11 +42,16 @@ passage from affine schemes to all schemes in [Kol07, Proposition 37].
   point `y` over `q` for both maps.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open CategoryTheory CategoryTheory.Limits AlgebraicGeometry Hironaka Scheme
+open CategoryTheory CategoryTheory.Limits _root_.AlgebraicGeometry
+open _root_.ResolutionHironaka.AlgebraicGeometry _root_.ResolutionHironaka.Hironaka
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
 
 namespace Hironaka.Sequence
 
@@ -154,7 +159,8 @@ theorem comap_completionDesc_eq {W : Scheme.{u}} {TA : Triple k} (ψ ψ' : W ⟶
         ι_some_comp_completionDesc, ι_some_comp_completionDesc]
 
 /-- The inverse images of a divisor family with an empty index type along two morphisms agree. -/
-theorem _root_.AlgebraicGeometry.Scheme.DivisorFamily.comap_eq_comap_of_isEmpty {X Y : Scheme.{u}}
+theorem _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.DivisorFamily.comap_eq_comap_of_isEmpty
+    {X Y : Scheme.{u}}
     (E : DivisorFamily X)
     (h h' : Y ⟶ X) (hE : IsEmpty E.ι) : E.comap h = E.comap h' := by
   unfold DivisorFamily.comap
@@ -226,3 +232,6 @@ pullback data of `TA`, and every `q : W` has a point `y : T'.X.left` with `g y =
 end Triple
 
 end Hironaka.Sequence
+
+end
+end ResolutionHironaka

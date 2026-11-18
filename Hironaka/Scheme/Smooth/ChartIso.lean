@@ -40,15 +40,22 @@ the chart rings `Γ(U)[J/x_j]`, the form in which the order of an ideal is compu
 (`Hironaka/Scheme/Snc/ChartStalk.lean`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
-open AlgebraicGeometry CategoryTheory
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
 
 universe u
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
-open AlgebraicGeometry Scheme.IdealSheafData affineBlowUpAlgebra
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.affineBlowUpAlgebra
 
 variable {k : Type u} [Field k] {X : Scheme.{u}} {f : X ⟶ Spec (.of k)} {n r : ℕ}
   {Z : X.IdealSheafData} {x : X}
@@ -135,3 +142,6 @@ theorem exists_ringEquiv_stalk_localization (E : EtaleCoordinatesAdapted f n r Z
   exists_ringEquiv_stalk_chart E.centerIdeal (E.coord j hj) p
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

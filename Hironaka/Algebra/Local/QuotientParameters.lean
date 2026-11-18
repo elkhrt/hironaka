@@ -39,13 +39,16 @@ a Noetherian local domain drops the dimension by exactly one (Mathlib's
 ideal of `R/J` with a quotient of the full dimension is zero: `I/J = 0`, i.e. `I = J`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open IsLocalRing Ideal
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing Ideal
 
-open IsLocalRing
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing
 
 variable {R : Type u} [CommRing R]
 
@@ -247,3 +250,5 @@ theorem IsRegularLocalRing.exists_span_eq_maximalIdeal_and_eq_span_image_lt [IsR
   rw [← hJ]
   exact le_antisymm (((Ideal.map_eq_bot_iff_le_ker _).mp hIJ).trans_eq Ideal.mk_ker) hJI
 
+end
+end ResolutionHironaka

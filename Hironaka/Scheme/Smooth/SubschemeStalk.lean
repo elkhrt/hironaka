@@ -32,9 +32,14 @@ Used wherever the local ring of a closed subscheme is computed from that of the 
 `Hironaka/Resolution/`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 namespace AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
 
 open CategoryTheory IsLocalRing TopologicalSpace
 
@@ -127,3 +132,6 @@ theorem isClosed_singleton_of_subschemeι_eq {z : Z.subscheme} {x : X} (hzx : Z.
   exact hx.preimage Z.subschemeι.continuous
 
 end AlgebraicGeometry.Scheme.IdealSheafData
+
+end
+end ResolutionHironaka

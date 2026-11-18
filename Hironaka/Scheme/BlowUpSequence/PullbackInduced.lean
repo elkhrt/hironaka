@@ -63,14 +63,23 @@ equidimensionality of the source `Y` over `k` (suffix `_of_equidim`, `_of_smooth
 available when the pulled-back triple is given.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry Limits Scheme IdealSheafData BlowUpSequence
-  TopologicalSpace
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.CategoryTheory.Limits _root_.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence _root_.TopologicalSpace
+open _root_.ResolutionHironaka.TopologicalSpace
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
 variable {X Y : Scheme.{u}}
 
@@ -592,3 +601,6 @@ theorem IsOrderSeq.inducedTriple_pullback [CharZero k] (f : X ⟶ Spec (.of k)) 
 end OrderAlong
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

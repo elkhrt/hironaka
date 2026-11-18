@@ -37,13 +37,18 @@ disjoint components as a product is also used in
 `Hironaka.Resolution.Algebraic.Wlo05.StrictTransformReduced`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory TopologicalSpace
+open CategoryTheory _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
 
 namespace AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
 
 variable {X : Scheme.{u}}
 
@@ -112,3 +117,6 @@ theorem colon_prod_filter {ι : Type*} (I : ι → X.IdealSheafData) (C : Finset
   exact hdisj ha'.1 hb'.1 (fun h => hb'.2 (h ▸ ha'.2))
 
 end AlgebraicGeometry.Scheme.IdealSheafData
+
+end
+end ResolutionHironaka

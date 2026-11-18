@@ -45,11 +45,15 @@ The argument at the non-rational points is the library's own. Used for Lemma 61 
 hypersurface of maximal contact (`Hironaka/Resolution/Algebraic/MaximalContact/Transform.lean`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 namespace IsLocalRing
+open _root_.IsLocalRing
 
-open IsLocalRing MvPolynomial
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing MvPolynomial
 
 universe u
 
@@ -150,3 +154,6 @@ theorem ord_map_transformIdeal_le_of_le_comap (ùîÆ : Ideal (chartRing x r)) [ù
     (Ideal.mem_map_of_mem _ (transformElem_mem_transformIdeal x r hfI (hI hfI)))))
 
 end IsLocalRing
+
+end
+end ResolutionHironaka

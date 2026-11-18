@@ -49,12 +49,20 @@ the stronger form in which the point need not lie on the strict transform of `Y`
   form used by `Hironaka.Resolution.Algebraic.Wlo05.EmbeddedFunctorClauses`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory CategoryTheory.Limits AlgebraicGeometry TopologicalSpace Hironaka
-  Scheme.BlowUpSequence Scheme.IdealSheafData Hironaka.Sequence
+open CategoryTheory CategoryTheory.Limits _root_.AlgebraicGeometry
+open _root_.ResolutionHironaka.AlgebraicGeometry _root_.TopologicalSpace
+open _root_.ResolutionHironaka.TopologicalSpace _root_.ResolutionHironaka.Hironaka
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.Hironaka.Sequence
 
 namespace Hironaka.Resolution
 
@@ -274,3 +282,6 @@ theorem BED_center_disjoint_reg (TX : Triple k) (hE : IsEmpty TX.E.ι) [IsReduce
   exact hyW
 
 end Hironaka.Resolution
+
+end
+end ResolutionHironaka

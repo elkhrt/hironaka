@@ -34,12 +34,20 @@ Simple normal crossings and the total transform are those of [Kol07, Definition 
 two elementary lemmas on disjoint closed sets, throughout the loop modules.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace Scheme.IdealSheafData
-  Scheme BlowUpSequence Hironaka.Sequence
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.ResolutionHironaka.Hironaka.Sequence
 
 namespace Hironaka.Resolution
 
@@ -150,3 +158,6 @@ theorem notContainedInMembers_totalTransform_strictTransform_of_disjoint [IsLoca
   · exact (hex hi).elim
 
 end Hironaka.Resolution
+
+end
+end ResolutionHironaka

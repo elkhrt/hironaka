@@ -63,9 +63,14 @@ Used for Theorem 88 and Corollary 89 on schemes
 (`Hironaka/Manifold/IdealSheaf/LogDerivRestrict.lean`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 namespace AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
 
 open CategoryTheory
 
@@ -215,3 +220,6 @@ theorem logDerivativeIter_comap_subschemeι (r : ℕ) :
 end Restriction
 
 end AlgebraicGeometry.Scheme.IdealSheafData
+
+end
+end ResolutionHironaka

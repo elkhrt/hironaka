@@ -39,11 +39,15 @@ This is the adaptedness clause of `EtaleCoordinatesAdapted` (`EtaleCoordinatesDe
 center.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
-open AlgebraicGeometry CategoryTheory
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
 
 universe u
 
@@ -237,3 +241,6 @@ theorem exists_comap_eq_comap_coordinateSubspace (Z : X.IdealSheafData) {x : X}
 end
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

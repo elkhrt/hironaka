@@ -32,11 +32,15 @@ in `L⟦Y⟧` is Mathlib's `MvPowerSeries.order` (`MvPowerSeries.ordElem_eq_orde
 of any of its monomials.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 namespace IsLocalRing
+open _root_.IsLocalRing
 
-open IsLocalRing MvPolynomial
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing MvPolynomial
 
 section Singleton
 
@@ -165,3 +169,6 @@ theorem ordElem_algebraMap_le_totalDegree (𝔮 : Ideal (MvPolynomial σ K)) [�
 end Polynomial
 
 end IsLocalRing
+
+end
+end ResolutionHironaka

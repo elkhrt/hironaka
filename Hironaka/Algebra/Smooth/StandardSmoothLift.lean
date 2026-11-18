@@ -40,11 +40,15 @@ The scheme-level assembly (the charts, the `Spec` square, the shrinking to a sur
 étale morphism of embedded affine varieties to the ambient spaces.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 open Algebra MvPolynomial _root_.TensorProduct
 
 namespace Algebra.StandardSmoothLift
+open _root_.Algebra
 
 universe u
 
@@ -294,3 +298,7 @@ theorem ambientToS_surjective : Function.Surjective (ambientToS hφ P) := fun s 
 end Lift
 
 end Algebra.StandardSmoothLift
+open _root_.ResolutionHironaka.Algebra
+
+end
+end ResolutionHironaka

@@ -47,12 +47,22 @@ end result.
   `Hironaka.Resolution.Algebraic.Kol07.Thm36.AffineTheorem36` discharges.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace Scheme IdealSheafData
-  Hironaka BlowUpSequence Hironaka.Sequence Scheme.IdealSheafData
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.Hironaka
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.ResolutionHironaka.Hironaka.Sequence _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
 namespace Hironaka.Resolution
 
@@ -242,3 +252,6 @@ theorem smooth_composite_BR_affine_of_smooth_center (TA : Triple k) {X : Scheme.
 end Triple
 
 end Hironaka.Resolution
+
+end
+end ResolutionHironaka

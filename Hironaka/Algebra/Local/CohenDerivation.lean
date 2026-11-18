@@ -55,11 +55,16 @@ coefficient field and `Φ : K⟦X⟧ ≃ₐ[k] R̂` the Cohen isomorphism with `
    [Kol07, Definition 91, (2)].
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 namespace IsLocalRing
+open _root_.IsLocalRing
 
-open IsLocalRing MvPowerSeries
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing _root_.MvPowerSeries
+open _root_.ResolutionHironaka.MvPowerSeries
 
 section Noetherian
 
@@ -83,7 +88,8 @@ theorem comap_maximalIdeal_ringEquiv {B : Type*} [CommRing B] [IsLocalRing A] [I
 
 /-- In a Noetherian ring an automorphism mapping an ideal into itself maps it onto itself — the
 ascending chain `J ⊆ e⁻¹J ⊆ e⁻²J ⊆ ⋯` stabilizes. -/
-theorem _root_.Ideal.map_eq_of_map_le (e : A ≃+* A) (J : Ideal A) (h : J.map (e : A →+* A) ≤ J) :
+theorem _root_.ResolutionHironaka.Ideal.map_eq_of_map_le
+    (e : A ≃+* A) (J : Ideal A) (h : J.map (e : A →+* A) ≤ J) :
     J.map (e : A →+* A) = J := by
   have h1 : J ≤ J.comap (e : A →+* A) := Ideal.map_le_iff_le_comap.mp h
   have hpow : ∀ n : ℕ, ((e ^ (n + 1) : A ≃+* A) : A →+* A) =
@@ -294,3 +300,6 @@ theorem map_comap_cohenAlgEquivCoords_eq_of_isOnePlus [Algebra.IsAlgebraic k (Re
 end Cohen
 
 end IsLocalRing
+
+end
+end ResolutionHironaka

@@ -49,11 +49,16 @@ the order of an ideal is invariant under isomorphisms of local rings (`ord_map_r
 throughout `Hironaka/Order` and `Hironaka/Sequence`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 namespace IsLocalRing
+open _root_.IsLocalRing
 
-open IsLocalRing MvPowerSeries
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing _root_.MvPowerSeries
+open _root_.ResolutionHironaka.MvPowerSeries
 
 section Transport
 
@@ -199,3 +204,6 @@ theorem ord_map_ringEquiv (e : A ≃+* B) (K : Ideal A) : ord (K.map (e : A →+
 end Equiv
 
 end IsLocalRing
+
+end
+end ResolutionHironaka

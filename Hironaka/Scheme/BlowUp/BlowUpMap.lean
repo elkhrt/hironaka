@@ -33,13 +33,21 @@ theorems of the blow-up calculus proved for an abstract `IsBlowUp`
 `Hironaka.Scheme.BlowUp.Transform.StrictTransform`) instantiate at the blow-up.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
-open Scheme.IdealSheafData Scheme.Hom
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry.Scheme.Hom _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.Hom
 
-open AlgebraicGeometry CategoryTheory Scheme.IdealSheafData
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
 universe u
 
@@ -93,3 +101,6 @@ theorem isPullback_blowUpMap [Flat h] :
   exact H
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

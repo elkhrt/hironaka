@@ -32,11 +32,17 @@ forms used by the marked order reduction. Kollár's standing characteristic-zero
 carried as the statements carry it.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace Hironaka Scheme.IdealSheafData
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.ResolutionHironaka.Hironaka _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
 namespace Hironaka.BMO
 
@@ -173,3 +179,6 @@ theorem nonmonomialPart_baseChange [CharZero k] (T : Triple k) {L : Type u} [Fie
   exact nonmonomialPart_comap_of_flat T (T'.X.left ↘ Spec (.of L)) p hsnc'
 
 end Hironaka.BMO
+
+end
+end ResolutionHironaka

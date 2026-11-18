@@ -46,13 +46,20 @@ Sources: [Hau14, Proposition 5.4 (5)–(7); Definition 6.2],
 [Hau03, Appendix C (5), (7) and its proof], [Kol07, Definition 60].
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open AlgebraicGeometry CategoryTheory IsLocalRing Ideal Scheme.IdealSheafData _root_.Algebra
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing Ideal
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData _root_.Algebra
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
 section LocalDomain
 
@@ -202,3 +209,6 @@ theorem mem_maximalIdeal_iff_mem_support_strictTransformAlong {i : ι} {c : Fin 
 end Chart
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

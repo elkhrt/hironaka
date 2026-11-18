@@ -58,16 +58,24 @@ of [Hir64, Main Theorem II] along a sequence of order `d`
 Hironaka's boundaries are their reduced unions).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open AlgebraicGeometry CategoryTheory TopologicalSpace IsLocalRing Scheme.IdealSheafData Scheme
-  DivisorFamily BlowUpSequence
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace _root_.IsLocalRing
+open _root_.ResolutionHironaka.IsLocalRing _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.DivisorFamily
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
 
 namespace Hironaka.Sequence
 
-open AlgebraicGeometry
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
 
 variable {k : Type u} [Field k] {X : Scheme.{u}}
 
@@ -422,3 +430,6 @@ theorem IsOrderSeq.isSncBoundary_boundarySeq {J : X.IdealSheafData} {d : ℕ}
 end Boundaries
 
 end Hironaka.Sequence
+
+end
+end ResolutionHironaka

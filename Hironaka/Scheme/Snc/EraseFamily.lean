@@ -37,15 +37,20 @@ Kollár writes `E − E^j` for the divisor `E = ∑_i E^i` with its member `E^j`
   (`IsEraseOf.hasSncWith_of_le`, `hasSncWith_of_erase`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
 
 namespace AlgebraicGeometry.Scheme.DivisorFamily
+open _root_.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme
 
-open IdealSheafData
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
 variable {X : Scheme.{u}}
 
@@ -210,3 +215,6 @@ theorem hasSncWith_of_erase (E : DivisorFamily X) (j : E.ι) {k : Type u} [Field
   (isEraseOf_erase E j).hasSncWith_of_le f hE hZ h
 
 end AlgebraicGeometry.Scheme.DivisorFamily
+
+end
+end ResolutionHironaka

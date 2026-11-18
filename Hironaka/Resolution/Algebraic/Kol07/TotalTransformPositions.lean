@@ -30,11 +30,18 @@ hence Mathlib's unique increasing enumeration (`Finset.orderEmbOfFin_unique`).
 This is what lets the boundary-clearing step of the proof of Theorem 103 [Kol07, 104, Step 2.1]
 speak of the transform of the `j`-th original member at every stage. -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry Scheme IdealSheafData BlowUpSequence
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
 
 namespace Hironaka.Sequence
 
@@ -131,3 +138,6 @@ theorem nth_totalTransformSeq_of_lt : ∀ {X : Scheme.{u}} (S : BlowUpSequence X
     rw [ih, nth_totalTransform_inl]
 
 end Hironaka.Sequence
+
+end
+end ResolutionHironaka

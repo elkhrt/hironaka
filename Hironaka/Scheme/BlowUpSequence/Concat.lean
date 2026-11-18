@@ -32,13 +32,18 @@ the rounds of the order reduction and resolution algorithms into one sequence.
 * `concat_nil`, `concat_cons` (the recursion), `length_concat`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry Scheme.BlowUpSequence
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
 
 namespace AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme
 
 variable {X : Scheme.{u}}
 
@@ -69,3 +74,6 @@ theorem length_concat (S : BlowUpSequence X) (T : BlowUpSequence S.last) :
     exact Nat.add_right_comm _ _ _
 
 end AlgebraicGeometry.Scheme.BlowUpSequence
+
+end
+end ResolutionHironaka

@@ -58,11 +58,16 @@ Nothing is assumed about `𝒰` beyond being an open cover indexed in the univer
 members and their overlaps may be non-affine and infinite in number.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 namespace AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
 
-open CategoryTheory Limits TopologicalSpace
+open CategoryTheory _root_.CategoryTheory.Limits TopologicalSpace
 
 universe u
 
@@ -91,7 +96,8 @@ theorem ext_of_openCover {J K : X.IdealSheafData} (𝒱 : X.OpenCover.{u})
   exact stalkIdeal_eq_of_comap_eq (𝒱.f i) (h i) y
 
 /-- A point of an open subscheme, viewed in the ambient scheme, lies in the open. -/
-theorem _root_.AlgebraicGeometry.Scheme.Opens.ι_mem {Z : Scheme.{u}} {U : Z.Opens}
+theorem _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.Opens.ι_mem
+    {Z : Scheme.{u}} {U : Z.Opens}
     (x : U.toScheme) : U.ι x ∈ U := by
   have : U.ι x ∈ U.ι.opensRange := Scheme.Hom.mem_opensRange.mpr ⟨x, rfl⟩
   rwa [Opens.opensRange_ι] at this
@@ -378,3 +384,6 @@ theorem glue_unique (J : X.IdealSheafData) (hJ : ∀ i, J.comap (𝒰.f i) = I i
 end Data
 
 end AlgebraicGeometry.Scheme.IdealSheafData
+
+end
+end ResolutionHironaka

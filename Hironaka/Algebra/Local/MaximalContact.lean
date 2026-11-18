@@ -28,11 +28,15 @@ The coordinate half of the construction needs a system of coordinates containing
 derivations (as in `changeCoordsOfSpans`); `reindex` moves `h` to the first position.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 namespace IsLocalRing
+open _root_.IsLocalRing
 
-open IsLocalRing
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing
 
 namespace RegularCoords
 
@@ -195,3 +199,6 @@ theorem not_isMCInvariant_span_singleton_x_mul_x {i j : Fin n} (hij : i ≠ j)
 end RegularCoords
 
 end IsLocalRing
+
+end
+end ResolutionHironaka

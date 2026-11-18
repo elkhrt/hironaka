@@ -38,13 +38,20 @@ independence of the order-reduction functor from the hypersurface of maximal con
 (`Hironaka/Resolution/Algebraic/MaximalContact/FunctorIndependence.lean`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
 namespace AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
 
-open CategoryTheory Scheme BlowUpSequence
+open CategoryTheory _root_.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
 
 variable {k : Type u} [Field k] {X : Scheme.{u}}
 
@@ -71,3 +78,6 @@ theorem eq_of_etaleEquivSeq [CharZero k] (f : X ⟶ Spec (.of k)) (n : ℕ)
     f n hm hB hB' e
 
 end AlgebraicGeometry.Scheme.IdealSheafData
+
+end
+end ResolutionHironaka

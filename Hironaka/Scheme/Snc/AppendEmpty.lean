@@ -18,13 +18,17 @@ snc (`isSnc_append_top`) — the new member passes through no point, so the coor
 [Kol07, Definition 24] at every point are unchanged, and the empty subscheme is regular vacuously.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
 
 namespace AlgebraicGeometry.Scheme.DivisorFamily
+open _root_.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme
 
 variable {X : Scheme.{u}}
 
@@ -72,3 +76,6 @@ theorem isSnc_append_top (E : DivisorFamily X) (hE : E.IsSnc) : (E.append ⊤).I
       exact h1
 
 end AlgebraicGeometry.Scheme.DivisorFamily
+
+end
+end ResolutionHironaka

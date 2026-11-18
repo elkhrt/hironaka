@@ -65,18 +65,24 @@ functorial resolution use the field-free form
 (`Hironaka/Resolution/Algebraic/Kol07/Thm36/SmoothCharts.lean`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry CategoryTheory.Limits Algebra.StandardSmoothLift
+open CategoryTheory AlgebraicGeometry CategoryTheory.Limits
+open _root_.ResolutionHironaka.Algebra.StandardSmoothLift
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
 /-- A pullback square whose top map factors through a mono can be cut at the mono:
 `Spec S = Spec R ×_{Spec R'} Spec T` and `Spec S → Spec T` lands in the open `D(Δ)`, so
 `Spec S = Spec R ×_{Spec R'} D(Δ)`. -/
-theorem _root_.CategoryTheory.IsPullback.of_comp_mono_fst {C : Type*} [Category C]
+theorem _root_.ResolutionHironaka.CategoryTheory.IsPullback.of_comp_mono_fst
+    {C : Type*} [Category C]
     {P X X' Y Z : C} {fst : P ⟶ X} {i : X ⟶ X'} [Mono i] {snd : P ⟶ Y} {f : X' ⟶ Z} {g : Y ⟶ Z}
     (H : IsPullback (fst ≫ i) snd f g) : IsPullback fst snd (i ≫ f) g := by
   refine IsPullback.of_isLimit' ⟨by rw [← Category.assoc, H.w]⟩ ?_
@@ -299,3 +305,7 @@ theorem exists_smooth_ambient_lift {k : Type u} [Field k]
     j, hj, rfl, sq⟩
 
 end AlgebraicGeometry
+open _root_.ResolutionHironaka.AlgebraicGeometry
+
+end
+end ResolutionHironaka

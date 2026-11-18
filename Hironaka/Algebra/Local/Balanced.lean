@@ -23,11 +23,15 @@ respect to `2`, since `D ⟨xᵢ xⱼ⟩ = ⟨xᵢ, xⱼ⟩` and `xᵢ² ∉ ⟨
 `HironakaExamples/Balanced/PowerSeriesTwoVariables.lean`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 namespace IsLocalRing
+open _root_.IsLocalRing
 
-open IsLocalRing
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing
 
 namespace RegularCoords
 
@@ -133,3 +137,6 @@ theorem X_sq_notMem_span_X_mul_X {σ K : Type*} [Field K] {i j : σ} (hij : i �
   exact one_ne_zero this
 
 end IsLocalRing
+
+end
+end ResolutionHironaka

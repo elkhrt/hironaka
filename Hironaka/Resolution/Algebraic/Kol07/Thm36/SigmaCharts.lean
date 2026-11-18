@@ -52,12 +52,18 @@ The relative dimension `d` common to the charts is that of `h`
 charts are assembled in `Hironaka.Resolution.Algebraic.Kol07.Thm36.AffineFunctoriality`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open CategoryTheory CategoryTheory.Limits AlgebraicGeometry TopologicalSpace Hironaka
-  Scheme.BlowUpSequence Hironaka.Sequence
+open CategoryTheory CategoryTheory.Limits _root_.AlgebraicGeometry
+open _root_.ResolutionHironaka.AlgebraicGeometry _root_.TopologicalSpace
+open _root_.ResolutionHironaka.TopologicalSpace _root_.ResolutionHironaka.Hironaka
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.ResolutionHironaka.Hironaka.Sequence
 
 namespace Hironaka.Resolution
 
@@ -338,3 +344,6 @@ theorem admissibleEmbedding_sigma {Y₀ : Scheme.{u}} [Y₀.Over (Spec (CommRing
 end SigmaTriple
 
 end Hironaka.Resolution
+
+end
+end ResolutionHironaka

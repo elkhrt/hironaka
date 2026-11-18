@@ -37,9 +37,13 @@ Theorem 76 on schemes (`Hironaka/Scheme/BlowUpSequence/TransformDerivative.lean`
 (`Hironaka/Analytic/Rueckert/Hypersurface.lean`). The statement is not in the sources.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 namespace Derivation
+open _root_.Derivation
 
 variable (k : Type*) {A B : Type*} [CommRing k] [CommRing A] [CommRing B] [Algebra k A]
   [Algebra A B] [Algebra k B] [IsScalarTower k A B] (M : Submonoid A) [IsLocalization M B]
@@ -87,6 +91,7 @@ theorem extendToLocalization_algebraMap (D : Derivation k A A) (a : A) :
 end Derivation
 
 namespace Ideal
+open _root_.Ideal
 
 open KaehlerDifferential
 
@@ -147,3 +152,6 @@ theorem derivative_map (M : Submonoid A) [IsLocalization M B]
       (Ideal.mul_mem_right _ _ (Ideal.map_mono (le_derivative J) hx'))
 
 end Ideal
+
+end
+end ResolutionHironaka

@@ -43,12 +43,21 @@ is that of the proof of [Wlo05, Theorem 4.7.1]. This is not in the literature. U
 `Hironaka.Resolution.Algebraic.Wlo05.EmbeddedCPBridge`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace Hironaka Scheme BlowUpSequence
-  Scheme.IdealSheafData Hironaka.BMO
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.ResolutionHironaka.Hironaka _root_.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.Hironaka.BMO
 
 namespace Hironaka.Resolution
 
@@ -130,3 +139,6 @@ theorem invCE_isolatedTriple (T : MarkedTriple k) (hm : T.m = 1)
     (invCE_isolated hinv)
 
 end Hironaka.Resolution
+
+end
+end ResolutionHironaka

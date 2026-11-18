@@ -65,9 +65,13 @@ coordinate derivations of the chart used in `Hironaka/Algebra/Local/ChartCoords.
 `Hironaka/Algebra/Local/TransformDeriv.lean`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 namespace Derivation
+open _root_.Derivation
 
 variable {k A : Type*} [CommRing k] [CommRing A] [Algebra k A]
 
@@ -112,8 +116,9 @@ theorem extendAway_mk (D : Derivation k A A) (a f : A) (m : ℕ) :
 end Derivation
 
 namespace IsLocalRing
+open _root_.IsLocalRing
 
-open IsLocalRing Ideal
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing Ideal
 
 universe u
 
@@ -763,7 +768,7 @@ end RegularCoords
 element of the segment going to a prescribed `k ∈ s` (Kollár's convention `Z = (y_1 = ⋯ = y_r = 0)`
 with the chart coordinate `y_r`); a combinatorial tool for the charts of
 `Hironaka/Resolution/Algebraic/Monomial/Geometric/Chart.lean`. -/
-theorem _root_.exists_equiv_image_eq {n : ℕ} (s : Finset (Fin n)) {kk : Fin n}
+theorem _root_.ResolutionHironaka.exists_equiv_image_eq {n : ℕ} (s : Finset (Fin n)) {kk : Fin n}
     (hk : kk ∈ s) :
     ∃ σ : Fin n ≃ Fin n, (∀ i : Fin n, σ i ∈ s ↔ i.val < s.card) ∧
       ∀ h : s.card - 1 < n, σ ⟨s.card - 1, h⟩ = kk := by
@@ -838,3 +843,6 @@ theorem _root_.exists_equiv_image_eq {n : ℕ} (s : Finset (Fin n)) {kk : Fin n}
     exact hi₀
 
 end IsLocalRing
+
+end
+end ResolutionHironaka

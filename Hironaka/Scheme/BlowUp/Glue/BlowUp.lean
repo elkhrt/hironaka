@@ -21,13 +21,18 @@ Noetherian `X`. The exceptional ideal `I·𝒪_B = I.comap (blowUpπ I)`, the id
 exceptional divisor `π⁻¹(Z)`, is `IdealSheafData.exceptionalDivisor I` (`BlowUp/Defs.lean`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
-open Scheme.IdealSheafData
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
-open AlgebraicGeometry CategoryTheory
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
 
 universe u
 
@@ -100,3 +105,6 @@ theorem Scheme.IdealSheafData.blowUp.isProper_π [IsLocallyNoetherian X] : IsPro
   blowUpOf.isProper_π I _
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

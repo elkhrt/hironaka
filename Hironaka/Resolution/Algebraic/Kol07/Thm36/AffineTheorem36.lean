@@ -52,12 +52,18 @@ standing hypotheses of an algebraic `k`-scheme on `X` (locally of finite type, q
 separated over `k`) are carried by every statement although not every proof uses them.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace Hironaka Scheme.BlowUpSequence
-  Hironaka.Sequence
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.ResolutionHironaka.Hironaka
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.ResolutionHironaka.Hironaka.Sequence
 
 namespace Hironaka.Resolution
 
@@ -171,3 +177,6 @@ theorem smooth_composite_BR_affine_of_integral {X : Scheme.{u}} [X.Over (Spec (C
     (fun _ hy => stageMap_mem_support_of_mem_center_BP TA hE _ hy)
 
 end Hironaka.Resolution
+
+end
+end ResolutionHironaka

@@ -40,13 +40,19 @@ the blow-up sequences of the resolution.
   `Hironaka.Scheme.BlowUp.Descent`, kept under these names.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open AlgebraicGeometry CategoryTheory TopologicalSpace
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
+open TopologicalSpace
 
 namespace AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
 
 variable {X : Scheme.{u}}
 
@@ -190,3 +196,6 @@ theorem le_of_forall_stalkIdeal_le_of_isClosed [JacobsonSpace X] {I J : X.IdealS
   exact hP'
 
 end AlgebraicGeometry.Scheme.IdealSheafData
+
+end
+end ResolutionHironaka

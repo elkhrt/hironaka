@@ -36,6 +36,9 @@ first is what the induction uses (`a = x`, `g₀ = xy` in `ℚ[x, y]` is a count
 statement without it).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 namespace AlgebraicGeometry.affineBlowUpAlgebra
@@ -219,3 +222,6 @@ theorem isSMulRegular_pow_quotient_presentationIdeal (h : IsWeaklyRegular A (a :
   (isSMulRegular_quotient_presentationIdeal a g h).pow d
 
 end AlgebraicGeometry.affineBlowUpAlgebra
+
+end
+end ResolutionHironaka

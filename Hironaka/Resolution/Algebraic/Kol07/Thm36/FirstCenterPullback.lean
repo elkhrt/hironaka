@@ -43,11 +43,19 @@ forces `Z_n ∋ η_n`, that is, `Z_n ⊇ X̄_n`. Neither surjectivity nor smooth
 flatness suffices (open immersions are the case used).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace Scheme BlowUpSequence Scheme.IdealSheafData
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
 namespace Hironaka.Resolution
 
@@ -189,3 +197,6 @@ theorem firstCenterIndex_pullback_of_flat_of_mem_range [Flat h] [IsLocallyNoethe
     rw [dite_eq_right hex', dite_eq_right hex, length_pullback]
 
 end Hironaka.Resolution
+
+end
+end ResolutionHironaka

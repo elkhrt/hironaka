@@ -20,11 +20,16 @@ completed ideal, is the unit ideal (`completionIdeal_eq_top_of_notMem_support`),
 ring map. Everything is the behaviour of `Ideal.map` on a principal ideal: `(a).map φ = (φ a)`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 namespace AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
 
-open CategoryTheory IsLocalRing
+open CategoryTheory _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing
 
 universe u
 
@@ -61,3 +66,6 @@ theorem map_completionIdeal_eq_of_stalkIdeal_eq_span {p : X} (J J' : X.IdealShea
     completionIdeal_eq_span_of_stalkIdeal_eq_span hJ', Ideal.map_span, Set.image_singleton, hφ]
 
 end AlgebraicGeometry.Scheme.IdealSheafData
+
+end
+end ResolutionHironaka

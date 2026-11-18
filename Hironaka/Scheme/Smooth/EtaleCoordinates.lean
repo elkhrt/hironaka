@@ -35,13 +35,17 @@ its properties to the ring map `k[t] → Γ(X, U)`, `t_i ↦ v_i`:
 These are the tools with which étale coordinates are produced throughout `Hironaka/Smooth/`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
-open Algebra
+open _root_.Algebra _root_.ResolutionHironaka.Algebra
 
-open AlgebraicGeometry CategoryTheory
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
 
 universe u
 
@@ -269,3 +273,6 @@ theorem exists_etale_toAffineSpace_of_basis {x : X} (V : X.affineOpens) (hxV : x
 end Assembly
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

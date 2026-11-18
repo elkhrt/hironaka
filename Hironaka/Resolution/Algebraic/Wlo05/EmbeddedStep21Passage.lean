@@ -35,12 +35,20 @@ the exceptional sub-family to the full boundary along Step 2.2
 `Hironaka.Resolution.Algebraic.Wlo05.EmbeddedCP3Step22`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace Hironaka Scheme.BlowUpSequence
-  Scheme.IdealSheafData Hironaka.Sequence
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.ResolutionHironaka.Hironaka
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.Hironaka.Sequence
 
 namespace Hironaka.Resolution
 
@@ -84,3 +92,6 @@ theorem disjoint_support_markedTransformSeq_step21_final {n : ℕ} (T : Triple k
   exact hdisj
 
 end Hironaka.Resolution
+
+end
+end ResolutionHironaka

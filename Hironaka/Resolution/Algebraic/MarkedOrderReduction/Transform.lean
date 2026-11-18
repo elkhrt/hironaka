@@ -57,16 +57,26 @@ in `Hironaka/Scheme/BlowUpSequence/MarkedTripleBlowUp.lean` and
 `Hironaka/Resolution/Algebraic/Snc/DictionaryGenericPoints.lean`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace Scheme.IdealSheafData
-  Scheme Hironaka BlowUpSequence IdealSheafData
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.Hironaka
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
 namespace Hironaka.BMO
 
-open AlgebraicGeometry
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
 
 section Auxiliary
 
@@ -256,3 +266,6 @@ theorem nonmonomialPart_markedTransform_of_le_ord (a : ℕ)
 end Transform
 
 end Hironaka.BMO
+
+end
+end ResolutionHironaka

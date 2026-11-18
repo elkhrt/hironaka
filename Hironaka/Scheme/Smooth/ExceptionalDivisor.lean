@@ -58,15 +58,21 @@ smooth of relative dimension `r − 1` over `κ(z)`.
 The projective-bundle structure of `F` over `Z` is in `ExceptionalBundle.lean`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open AlgebraicGeometry CategoryTheory Scheme.IdealSheafData TopologicalSpace
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData TopologicalSpace
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
-open Scheme.Hom
+open _root_.AlgebraicGeometry.Scheme.Hom _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.Hom
 
 /-- Two induced maps of closed subschemes along equal morphisms are equal. -/
 theorem subschemeMap_congr_hom {B Y : Scheme.{u}} {K : B.IdealSheafData} {L : Y.IdealSheafData}
@@ -156,8 +162,10 @@ theorem le_map_comap_restrictHom_comp :
 end AlgebraicGeometry
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
-open AlgebraicGeometry Scheme.Hom
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.AlgebraicGeometry.Scheme.Hom _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.Hom
 
 variable {k : Type u} [Field k] [PerfectField k] {X : Scheme.{u}} (f : X ⟶ Spec (.of k)) (n r : ℕ)
   [SmoothOfRelativeDimension n f] (Z : X.IdealSheafData)
@@ -296,3 +304,6 @@ theorem smoothOfRelativeDimension_fiberToSpecResidueField_exceptional (z : Z.sub
     (IsPullback.of_hasPullback _ (Z.subscheme.fromSpecResidueField z)) this
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

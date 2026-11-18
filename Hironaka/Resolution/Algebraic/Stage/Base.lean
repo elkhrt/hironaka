@@ -28,15 +28,23 @@ empty sequence `nil` on their classes: clause (1) of Theorems 68 and 69 holds si
 (`Hironaka.Stage.tower`, whose base is a parameter), and `HironakaExamples.Stage.BaseCases` shows
 that it is the ONLY stage-`0` package. -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry Hironaka Scheme BlowUpSequence Scheme.IdealSheafData
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.ResolutionHironaka.Hironaka _root_.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
 namespace Hironaka.Stage
 
-open AlgebraicGeometry
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
 
 /-- The functor `BO_{0,m}`: the empty blow-up sequence on every triple of dimension `≤ 0`
 ("everything is resolved without blow-ups", [Kol07, 70]). -/
@@ -112,3 +120,6 @@ theorem stage0_bmo_seq (m : ℕ) (k : Type u) [Field k] [CharZero k] (T : Marked
     ((stage0.{u}.bmo m).functor k).seq T hT = BlowUpSequence.nil T.X.left := rfl
 
 end Hironaka.Stage
+
+end
+end ResolutionHironaka

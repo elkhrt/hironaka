@@ -17,6 +17,9 @@ of sections over the affine opens from which the projective bundle `P(F)` of a q
 sheaf is glued [Sta, Tag 01OB].
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
@@ -24,6 +27,8 @@ universe u
 open CategoryTheory
 
 namespace AlgebraicGeometry.Scheme.Modules
+open _root_.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.Modules
 
 variable {X : Scheme.{u}} (F : X.Modules)
 
@@ -36,3 +41,6 @@ noncomputable def restrictionMap {U V : X.Opens} (h : U ≤ V) :
   map_smul' := fun r x => F.val.map_smul (homOfLE h).op r x
 
 end AlgebraicGeometry.Scheme.Modules
+
+end
+end ResolutionHironaka

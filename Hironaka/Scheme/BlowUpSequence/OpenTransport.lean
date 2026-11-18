@@ -42,14 +42,21 @@ the corollary needs:
   transforms commute with flat pull-back). The pull-back of a sequence is that of [Kol07, 30.1].
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory CategoryTheory.Limits AlgebraicGeometry Scheme.IdealSheafData
-  Scheme BlowUpSequence
+open CategoryTheory CategoryTheory.Limits _root_.AlgebraicGeometry
+open _root_.ResolutionHironaka.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
 variable {X Y : Scheme.{u}}
 
@@ -260,3 +267,6 @@ theorem weakTransformSeq_pullback_of_isOpenImmersion (f : X ⟶ Spec (.of k)) (n
 end WeakTransform
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

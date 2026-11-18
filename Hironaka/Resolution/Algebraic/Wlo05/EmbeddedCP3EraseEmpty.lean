@@ -54,12 +54,22 @@ These transports are not in the literature. Used in
 `Hironaka.Resolution.Algebraic.Wlo05.EmbeddedCP5`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace Scheme Hironaka
-  IdealSheafData BlowUpSequence Scheme.IdealSheafData Hironaka.Sequence
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.Hironaka _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.Hironaka.Sequence
 
 namespace Hironaka.Resolution
 
@@ -219,3 +229,6 @@ theorem cp3For_of_pullback_cover (T T' : Triple k) (g : T'.X.left ⟶ T.X.left)
   exact hres z c σ a b hfree hb
 
 end Hironaka.Resolution
+
+end
+end ResolutionHironaka

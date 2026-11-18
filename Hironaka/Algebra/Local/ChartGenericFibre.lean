@@ -60,13 +60,17 @@ hypersurface of maximal contact (`Hironaka/Resolution/Algebraic/MaximalContact/T
 on manifolds (`Hironaka/Resolution/Analytic/OrderReduction/BMO/Step1Purity.lean`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
 namespace IsLocalRing
+open _root_.IsLocalRing
 
-open IsLocalRing MvPolynomial
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing MvPolynomial
 
 variable {R : Type u} [CommRing R] [IsRegularLocalRing R] {n : ℕ} (x : Fin n → R)
 
@@ -889,3 +893,6 @@ theorem ordAlong_span_algebraMap_x_map (I : Ideal R) :
 end Exceptional
 
 end IsLocalRing
+
+end
+end ResolutionHironaka

@@ -68,6 +68,9 @@ a scheme is `Hironaka.Monomial.PieceFamily`
 procedure on its own piece families.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 namespace Hironaka.Monomial
@@ -591,3 +594,6 @@ theorem valid_self (st : MonomialState) :
 end MonomialState
 
 end Hironaka.Monomial
+
+end
+end ResolutionHironaka

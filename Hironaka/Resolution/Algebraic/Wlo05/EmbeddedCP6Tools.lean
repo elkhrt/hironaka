@@ -73,12 +73,19 @@ These lemmas are not in the literature. Used in
 `Hironaka.Resolution.Algebraic.Wlo05.EmbeddedCP5`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open Ideal CategoryTheory AlgebraicGeometry TopologicalSpace Scheme.IdealSheafData
-  Scheme BlowUpSequence
+open _root_.Ideal _root_.ResolutionHironaka.Ideal CategoryTheory _root_.AlgebraicGeometry
+open _root_.ResolutionHironaka.AlgebraicGeometry _root_.TopologicalSpace
+open _root_.ResolutionHironaka.TopologicalSpace _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
 
 namespace Hironaka.Resolution
 
@@ -302,3 +309,6 @@ theorem strictTransformSeq_biInf_of_pairwise_disjoint [IsLocallyNoetherian X]
 end Bridge
 
 end Hironaka.Resolution
+
+end
+end ResolutionHironaka

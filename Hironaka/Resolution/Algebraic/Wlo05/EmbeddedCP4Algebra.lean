@@ -55,11 +55,15 @@ statements are in `Hironaka.Resolution.Algebraic.Wlo05.EmbeddedCP4Chart`,
 `Hironaka.Resolution.Algebraic.Wlo05.EmbeddedCP4`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open Ideal IsLocalRing
+open _root_.Ideal _root_.ResolutionHironaka.Ideal _root_.IsLocalRing
+open _root_.ResolutionHironaka.IsLocalRing
 
 namespace Hironaka.Resolution
 
@@ -635,3 +639,6 @@ theorem chainIdeal_eq_chainKIdeal_of_isUnit (φ M : Fin (r + 1) → R) {i₀ : F
 end UnitEquation
 
 end Hironaka.Resolution
+
+end
+end ResolutionHironaka

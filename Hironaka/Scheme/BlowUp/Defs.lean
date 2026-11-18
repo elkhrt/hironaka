@@ -26,6 +26,9 @@ blow-up map `IdealSheafData.blowUpπ I : blowUp I ⟶ X` and its exceptional div
 closed subscheme is `π⁻¹(Z)`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
@@ -33,8 +36,10 @@ universe u
 open CategoryTheory
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
-open Scheme.IdealSheafData
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
 variable {X : Scheme.{u}} (I : X.IdealSheafData)
 
@@ -67,3 +72,6 @@ noncomputable def Scheme.IdealSheafData.exceptionalDivisor (D : X.IdealSheafData
   D.comap D.blowUpπ
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

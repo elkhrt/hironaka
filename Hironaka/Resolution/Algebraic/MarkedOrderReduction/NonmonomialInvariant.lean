@@ -39,12 +39,20 @@ for the rounds of Step 1, is `nonmonomialPart_markedTransformSeq_last_eq` in
   structural on a sequence over a fixed scheme).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace Scheme.IdealSheafData
-  Hironaka Scheme BlowUpSequence
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.Hironaka _root_.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
 
 namespace Hironaka.BMO
 
@@ -121,3 +129,6 @@ theorem nonmonomialPart_markedTransformSeq_eq_of_isOrderGeSeq (T : MarkedTriple 
   nonmonomialPart_markedTransformSeq_eq_of_isOrderGeSeq_aux S.length T S rfl hJ hS hge hN
 
 end Hironaka.BMO
+
+end
+end ResolutionHironaka

@@ -64,11 +64,16 @@ Every morphism to `Spec k`, `k` a field, is flat (`flat_of_field`, in
 field an instance of flat base change.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
-open AlgebraicGeometry CategoryTheory Limits
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
+open _root_.CategoryTheory.Limits
 
 universe u
 
@@ -185,3 +190,6 @@ theorem exists_isPullback_prod {S Z Y BY B' : Scheme.{u}} (fZ : Z ⟶ S) [Flat f
 end IsBlowUp
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

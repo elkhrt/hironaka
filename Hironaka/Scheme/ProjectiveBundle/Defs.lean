@@ -28,6 +28,9 @@ quasi-coherent `𝒪_Y`-module `E` of finite type: `f` is a closed immersion `X 
 `P(E) ⟶ Y`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
@@ -35,6 +38,7 @@ universe u
 open CategoryTheory
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
 section ProjectiveBundle
 
@@ -80,3 +84,6 @@ class IsProjective {X Y : Scheme.{u}} (f : X ⟶ Y) : Prop where
     IsClosedImmersion i ∧ i ≫ E.projectiveBundleπ = f
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

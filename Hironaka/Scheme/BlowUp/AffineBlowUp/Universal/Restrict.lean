@@ -36,11 +36,17 @@ the blow-up of the base change is only the strict transform inside the fibre pro
 [Hau14, Proposition 5.1]. A chartwise proof is also possible [Sta, Tag 0805].
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
-open AlgebraicGeometry CategoryTheory Scheme.IdealSheafData TopologicalSpace
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData TopologicalSpace
 
 universe u
 
@@ -187,3 +193,6 @@ theorem affineBlowUp.exists_iso_preimage :
   ⟨blowUpIsoPreimage φ hJ, blowUpIsoPreimage_hom_ι φ hJ⟩
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

@@ -50,16 +50,26 @@ blow-up sequence of order `≥ m` starting with `(X, I, m)` is a smooth blow-up 
   [Kol07, Definition 59, (1)]) (`tuning_mp`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace Scheme IdealSheafData
-  BlowUpSequence Scheme.IdealSheafData IsLocalRing
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData _root_.IsLocalRing
+open _root_.ResolutionHironaka.IsLocalRing
 
 namespace Hironaka.Local
 
-open IsLocalRing
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing
 
 variable {R : Type*} [CommRing R] [IsLocalRing R]
 
@@ -81,7 +91,7 @@ end Hironaka.Local
 
 namespace Hironaka.Sequence
 
-open AlgebraicGeometry
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
 
 variable {X : Scheme.{u}} {k : Type u} [Field k] [CharZero k] (f : X ⟶ Spec (.of k)) (n : ℕ)
   [SmoothOfRelativeDimension n f]
@@ -218,3 +228,6 @@ theorem tuning_mp (hJW : J ≤ W f I m (m * s)) (h : S.IsOrderGeSeq f I m E) :
 end Assemble
 
 end Hironaka.Sequence
+
+end
+end ResolutionHironaka

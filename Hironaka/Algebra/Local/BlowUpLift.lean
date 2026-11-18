@@ -36,11 +36,15 @@ ideal sheaf at a non-closed point involves `k`-derivations that are not combinat
 transformed derivatives in the chart, [Kol07, 75].
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 namespace Derivation
+open _root_.Derivation
 
-open IsLocalRing
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing
 
 universe u
 
@@ -117,3 +121,6 @@ theorem coe_blowupLift (z : chartRing x r) :
   rw [blowupLift, Derivation.coe_restrictSubalgebra_apply, awayBlowUpLift_apply]
 
 end Derivation
+
+end
+end ResolutionHironaka

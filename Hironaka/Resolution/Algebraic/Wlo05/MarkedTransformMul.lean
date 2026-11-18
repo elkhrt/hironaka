@@ -31,15 +31,22 @@ resolution: the marked ideal `I' · I_Γ` transforms as the marked transform of 
 pull-back of the ideal of the isolated components.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry Scheme BlowUpSequence Scheme.IdealSheafData
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
 namespace Hironaka.Sequence
 
-open AlgebraicGeometry
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
 
 variable {X : Scheme.{u}}
 
@@ -106,3 +113,6 @@ theorem markedTransformSeq_mul_comap_last_of_isOrderGeSeq {k : Type u} [Field k]
     (exceptionalAt_pow_dvd_comap_step_of_isOrderGeSeq f n S J m E hS) (Fin.last _)
 
 end Hironaka.Sequence
+
+end
+end ResolutionHironaka

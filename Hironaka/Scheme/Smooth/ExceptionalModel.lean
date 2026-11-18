@@ -61,13 +61,19 @@ divisors and the maps to `L` along (`prop_subschemeι_comp_iff_of_eq_comap`,
   two statements for the glued `blowUp (coordinateSubspace k n r)`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open AlgebraicGeometry CategoryTheory Scheme.IdealSheafData MvPolynomial
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData MvPolynomial
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
 section SpecQuotient
 
@@ -187,7 +193,7 @@ end Transport
 
 namespace CoordinateSubspace
 
-open affineBlowUpAlgebra
+open _root_.ResolutionHironaka.AlgebraicGeometry.affineBlowUpAlgebra
 
 variable (A : Type u) [CommRing A] (n r : ℕ)
 
@@ -371,8 +377,12 @@ end CoordinateSubspace
 end AlgebraicGeometry
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
-open AlgebraicGeometry Scheme.IdealSheafData CoordinateSubspace
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.CoordinateSubspace
 
 variable (k : Type u) [Field k] (n r : ℕ)
 
@@ -426,3 +436,6 @@ theorem smoothOfRelativeDimension_subschemeMap_exceptional_coordinateSubspace (h
   exact smoothOfRelativeDimension_subschemeMap_exceptionalIdeal_modelBlowUp k n r hrn
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

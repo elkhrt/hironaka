@@ -35,15 +35,20 @@ absorbed into the last-stage lift `pullbackLastHom` (`subfamily_totalTransformSe
 used for the functoriality of the boundary-clearing sequence of [Kol07, 104, Step 2.2].
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry Scheme BlowUpSequence
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
 
 namespace Hironaka.Sequence
 
-open AlgebraicGeometry
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
 
 variable {X Y : Scheme.{u}}
 
@@ -108,3 +113,6 @@ theorem exceptionalFamily_pullback (S : BlowUpSequence X) (h : Y ⟶ X) [Flat h]
   exact (DivisorFamily.comap_comp _ _ _).symm
 
 end Hironaka.Sequence
+
+end
+end ResolutionHironaka

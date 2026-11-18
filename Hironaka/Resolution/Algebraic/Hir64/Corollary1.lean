@@ -72,16 +72,25 @@ on `d` and concatenation (`concat`, with the per-stage clauses of
 `Hironaka/Scheme/BlowUpSequence/ConcatClauses.lean`) finish; at `T_0 = ∅` the empty sequence does.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry Scheme.IdealSheafData Scheme Hironaka
-  BlowUpSequence TopologicalSpace IsLocalRing
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.Hironaka
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence _root_.TopologicalSpace
+open _root_.ResolutionHironaka.TopologicalSpace _root_.IsLocalRing
+open _root_.ResolutionHironaka.IsLocalRing
 
 namespace Hironaka.Sequence
 
-open AlgebraicGeometry
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
 
 variable {X : Scheme.{u}}
 
@@ -787,3 +796,6 @@ theorem hironaka_corollary1 (X : Scheme.{u}) [X.Over (Spec (CommRingCat.of k))]
 end Assembly
 
 end Hironaka.Sequence
+
+end
+end ResolutionHironaka

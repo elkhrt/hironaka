@@ -53,12 +53,16 @@ Used to show that the functorial resolution is an isomorphism over the smooth lo
 (`Hironaka/Resolution/Algebraic/Kol07/Thm36/IsoOverSmoothLocus.lean`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
-open AlgebraicGeometry CategoryTheory CategoryTheory.Limits IsLocalRing KaehlerDifferential
-  TensorProduct
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
+open CategoryTheory.Limits IsLocalRing KaehlerDifferential TensorProduct
 
 universe u
 
@@ -207,3 +211,6 @@ theorem exists_etale_pair_of_isClosedImmersion {A : Scheme.{u}} (fA : A ⟶ Spec
     hx hx'
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

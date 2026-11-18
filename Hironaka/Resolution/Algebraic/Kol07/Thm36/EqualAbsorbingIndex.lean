@@ -65,12 +65,19 @@ the equality the first centre containing the strict transform of `X` would be th
 LAST component is absorbed, and the components absorbed earlier would be blown up along themselves.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry Hironaka Scheme BlowUpSequence TopologicalSpace
-  Scheme.IdealSheafData
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.ResolutionHironaka.Hironaka _root_.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence _root_.TopologicalSpace
+open _root_.ResolutionHironaka.TopologicalSpace _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
 namespace Hironaka.Resolution
 
@@ -357,3 +364,6 @@ theorem firstCenterIndex_eq_componentIndex {d : ℕ}
     fun C' hC' => componentIndex_eq X (d := d) TA emb hadm C' C hC' hC
 
 end Hironaka.Resolution
+
+end
+end ResolutionHironaka

@@ -52,12 +52,20 @@ Used also by `OrderSeqAssignment.ofTunedClass`,
 `Hironaka/Resolution/Algebraic/OrderReduction/Step22Cosupp.lean`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace Scheme BlowUpSequence Scheme.IdealSheafData
-  IsLocalRing Hironaka.Sequence
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData _root_.IsLocalRing
+open _root_.ResolutionHironaka.IsLocalRing _root_.ResolutionHironaka.Hironaka.Sequence
 
 namespace Hironaka.BD
 
@@ -118,3 +126,6 @@ theorem le_ord_weakTransformSeq_iff_tuned (hI : I.maxOrd = m) (hm : 1 ≤ m)
       (ENat.natCast_ne_top s')).mp h3
 
 end Hironaka.BD
+
+end
+end ResolutionHironaka

@@ -39,15 +39,22 @@ This is the step that keeps the ambient scheme smooth along a sequence of smooth
 (`Hironaka/Scheme/BlowUpSequence/Basic.lean`, `Hironaka/Scheme/BlowUpSequence/SmoothCenter.lean`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
-open AlgebraicGeometry CategoryTheory TopologicalSpace
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
+open TopologicalSpace
 
 universe u
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
-open AlgebraicGeometry Scheme.IdealSheafData
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
 variable {k : Type u} [Field k] {X : Scheme.{u}}
 
@@ -158,3 +165,6 @@ theorem smooth_blowUpπ_comp : Smooth (blowUpπ Z ≫ f) := by
 end Main
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

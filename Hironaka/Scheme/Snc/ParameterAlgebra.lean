@@ -30,13 +30,18 @@ behind the splitting of an ideal into its monomial and non-monomial parts along 
 `Hironaka.BMO` of the order-reduction modules that use them.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open IsLocalRing Ideal
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing _root_.Ideal
+open _root_.ResolutionHironaka.Ideal
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
 /-! ### A. Parameters of a regular local ring -/
 
@@ -174,3 +179,6 @@ theorem ordElem_parameter {R : Type u} [CommRing R] [IsRegularLocalRing R] {n : 
   ordElem_eq_one_iff.mpr (mem_maximalIdeal_and_notMem_sq_of_span_eq hz c)
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

@@ -56,12 +56,19 @@ that is functorial under smooth surjections (the hypothesis `hfun`), and for a t
   point of `X^{ns}`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory CategoryTheory.Limits AlgebraicGeometry Hironaka Scheme BlowUpSequence
-  Hironaka.Sequence TopologicalSpace
+open CategoryTheory CategoryTheory.Limits _root_.AlgebraicGeometry
+open _root_.ResolutionHironaka.AlgebraicGeometry _root_.ResolutionHironaka.Hironaka
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.ResolutionHironaka.Hironaka.Sequence _root_.TopologicalSpace
+open _root_.ResolutionHironaka.TopologicalSpace
 
 namespace Hironaka.Resolution
 
@@ -321,3 +328,6 @@ theorem not_restrictedCenterHasPointOver_of_mem_smoothLocus [IsIntegral X] (hE :
   exact ⟨i', key.2 hi'⟩
 
 end Hironaka.Resolution
+
+end
+end ResolutionHironaka

@@ -48,11 +48,17 @@ the transport of the first centre along flat covers
 (`Hironaka.Resolution.Algebraic.Kol07.Thm36.FirstCenterPullback`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry Hironaka Scheme BlowUpSequence
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.ResolutionHironaka.Hironaka _root_.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
 
 namespace Hironaka.Resolution
 
@@ -156,3 +162,6 @@ theorem surjective_of_isBaseChangeOf (σ : k →+* L) (TA : Triple k) (TA' : Tri
 end BRAffine
 
 end Hironaka.Resolution
+
+end
+end ResolutionHironaka

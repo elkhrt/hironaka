@@ -58,9 +58,14 @@ supports; in the application to maximal contact, `f` is étale with open image a
 of the centres lie in it.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 namespace AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
 
 open CategoryTheory TopologicalSpace
 
@@ -136,7 +141,7 @@ variable (f : U ⟶ X) [Flat f]
 rings, hence faithfully flat (`Module.FaithfullyFlat.of_flat_of_isLocalHom`), so the contraction
 of the extension of an ideal `K` of `𝒪_{X, f u}` is `K`
 (`Ideal.comap_map_eq_self_of_faithfullyFlat`; [Sta, Tag 00HQ] at the local rings). -/
-theorem _root_.AlgebraicGeometry.Scheme.Hom.comap_stalkMap_map_eq_self (u : U)
+theorem _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.Hom.comap_stalkMap_map_eq_self (u : U)
     (K : Ideal (X.presheaf.stalk (f u))) :
     (K.map (f.stalkMap u).hom).comap (f.stalkMap u).hom = K := by
   have hφ : (f.stalkMap u).hom.Flat := Flat.stalkMap f u
@@ -217,3 +222,6 @@ theorem eq_of_comap_eq_of_agreeOn (g : U ⟶ X) [Flat g] (Z Z' : X.IdealSheafDat
 end Descent
 
 end AlgebraicGeometry.Scheme.IdealSheafData
+
+end
+end ResolutionHironaka

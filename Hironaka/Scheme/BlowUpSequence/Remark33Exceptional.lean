@@ -32,14 +32,21 @@ General lemmas written for the exceptional divisors of [Kol07, Remark 33] on the
 * `specIdealSheaf_top`: the ideal sheaf of the unit ideal is the unit ideal sheaf.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open CategoryTheory Limits AlgebraicGeometry Scheme.IdealSheafData Scheme.Hom
-  affineBlowUpAlgebra MvPolynomial
+open CategoryTheory _root_.CategoryTheory.Limits _root_.AlgebraicGeometry
+open _root_.ResolutionHironaka.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry.Scheme.Hom _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.Hom
+open _root_.ResolutionHironaka.AlgebraicGeometry.affineBlowUpAlgebra MvPolynomial
 
 namespace AlgebraicGeometry.Remark33
+open _root_.AlgebraicGeometry
 
 /-! ### Covers by open immersions from arbitrary schemes -/
 
@@ -128,3 +135,6 @@ theorem specIdealSheaf_top : specIdealSheaf (⊤ : Ideal R) = ⊤ :=
 end Spec
 
 end AlgebraicGeometry.Remark33
+
+end
+end ResolutionHironaka

@@ -39,11 +39,14 @@ K-shape. For example, `(x, e a, e² y) : (x, a, y) = (x, e a, e²)`. The identit
 not taken from the literature.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open Ideal
+open _root_.Ideal _root_.ResolutionHironaka.Ideal
 
 namespace Hironaka.Resolution
 
@@ -345,3 +348,6 @@ theorem colon_chainIdeal_eq_chainKIdeal :
       (mem_sup_left (mul_mem_left _ _ hd))
 
 end Hironaka.Resolution
+
+end
+end ResolutionHironaka

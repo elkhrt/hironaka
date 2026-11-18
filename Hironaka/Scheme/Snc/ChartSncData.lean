@@ -35,13 +35,18 @@ shapes of `TotalTransformData`.
 `σ c` are distinct and differ from `σ j` for `c ≠ j`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open AlgebraicGeometry CategoryTheory IsLocalRing Ideal affineBlowUpAlgebra
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory IsLocalRing
+open Ideal _root_.ResolutionHironaka.AlgebraicGeometry.affineBlowUpAlgebra
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
 variable {k : Type u} [Field k] {X : Scheme.{u}} {f : X ⟶ Spec (.of k)} {n r : ℕ}
   {Z : X.IdealSheafData} {x₀ : X} (E : EtaleCoordinatesAdapted f n r Z x₀) {j : Fin n}
@@ -225,3 +230,6 @@ theorem totalTransformData_chart (hjq : chartCoord E hj j ∈ q) {ι : Type*}
 end Shape
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

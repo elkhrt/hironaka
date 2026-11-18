@@ -51,14 +51,19 @@ extension is formally smooth (Mathlib's `FormallySmooth.of_perfectField`), which
 used for schemes in `Hironaka/Algebra/RegularSmooth/RegularSmoothEquiv.lean`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u v
 
-open IsLocalRing KaehlerDifferential
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing _root_.KaehlerDifferential
+open _root_.ResolutionHironaka.KaehlerDifferential
 open scoped TensorProduct
 
 namespace Algebra
+open _root_.Algebra
 
 section Transport
 
@@ -261,3 +266,6 @@ theorem IsSmoothAt.of_isRegularLocalRing_of_perfectField [PerfectField k] [Algeb
 end Kernel
 
 end Algebra
+
+end
+end ResolutionHironaka

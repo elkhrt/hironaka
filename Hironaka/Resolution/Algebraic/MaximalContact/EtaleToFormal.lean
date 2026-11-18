@@ -60,15 +60,20 @@ such a pair and need not cover the cosupport), and `formallyEquivalentAt_of_etal
 étale equivalence `Q : EtaleEquiv f I m E H H'` and a point `u ∈ U` over `p`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry Scheme IsLocalRing
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing
 
 namespace Hironaka.Local
 
-open IsLocalRing
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing
 
 section Closedness
 
@@ -124,6 +129,8 @@ end Closedness
 end Hironaka.Local
 
 namespace AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
 
 variable {X : Scheme.{u}}
 
@@ -157,8 +164,11 @@ theorem germ_app_sub_germ_app_mem_stalkIdeal {W : Scheme.{u}} (ψ ψ' : W ⟶ X)
 end AlgebraicGeometry.Scheme.IdealSheafData
 
 namespace AlgebraicGeometry.EtaleNbhdPair
+open _root_.AlgebraicGeometry
 
-open AlgebraicGeometry.Scheme.IdealSheafData IsLocalRing
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData _root_.IsLocalRing
+open _root_.ResolutionHironaka.IsLocalRing
 
 variable {X : Scheme.{u}} {p : X} (Q : EtaleNbhdPair X p)
 
@@ -307,8 +317,11 @@ end Transport
 end AlgebraicGeometry.EtaleNbhdPair
 
 namespace AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
 
-open AlgebraicGeometry IsLocalRing
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry _root_.IsLocalRing
+open _root_.ResolutionHironaka.IsLocalRing
 
 variable {k : Type u} [Field k] {X : Scheme.{u}}
 
@@ -356,3 +369,6 @@ theorem formallyEquivalentAt_of_etaleEquiv (f : X ⟶ Spec (.of k)) [Smooth f]
       EtaleNbhdPair X p) Q.comp_eq Q.h1 Q.h2 Q.h3 Q.h4
 
 end AlgebraicGeometry.Scheme.IdealSheafData
+
+end
+end ResolutionHironaka

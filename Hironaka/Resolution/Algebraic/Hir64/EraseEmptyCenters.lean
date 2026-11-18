@@ -36,16 +36,22 @@ the isomorphism `inv (blowUpπ X ⊤)`, which is a flat pull-back
 (`exists_restrictedCenterHasPointOver_bot_eraseEmpty_iff`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry Scheme BlowUpSequence
-open AlgebraicGeometry.Scheme.IdealSheafData
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
 namespace Hironaka.Sequence
 
-open AlgebraicGeometry
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
 
 variable {X Y : Scheme.{u}}
 
@@ -148,3 +154,6 @@ theorem exists_restrictedCenterHasPointOver_bot_eraseEmpty_iff :
         exists_restrictedCenterHasPointOver_bot_eraseEmpty_iff rest q)
 
 end Hironaka.Sequence
+
+end
+end ResolutionHironaka

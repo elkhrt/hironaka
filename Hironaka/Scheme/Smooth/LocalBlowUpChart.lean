@@ -44,13 +44,20 @@ Used for the order of an ideal at a point of the exceptional divisor
 (`Hironaka/Scheme/BlowUpSequence/SmoothCenter.lean`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
-open AlgebraicGeometry CategoryTheory IsLocalRing Scheme.IdealSheafData
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
 universe u
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
 variable {X : Scheme.{u}}
 
@@ -286,3 +293,6 @@ theorem exists_stalk_equiv_localization_chart {k : Type u} [Field k] [CharZero k
   exact ⟨n', y ∘ Equiv.swap j ρ, ρ, hn', by rw [hy, hrange], hZ'', 𝔮, hprime, hle, e, he⟩
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

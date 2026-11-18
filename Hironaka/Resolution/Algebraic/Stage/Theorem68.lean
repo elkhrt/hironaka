@@ -29,11 +29,15 @@ principalization `Hironaka.Sequence.BP` (Theorem 35), the order reduction of Mai
 II(N) and the embedded desingularization (`Hironaka.Resolution.Algebraic.Wlo05.Embedded`) are built.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open AlgebraicGeometry Hironaka
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.ResolutionHironaka.Hironaka
 
 namespace Hironaka.Stage
 
@@ -50,3 +54,6 @@ noncomputable def BMO_m (m : ℕ) (k : Type u) [Field k] [CharZero k] :
   dimFreeBMO stage0 m k
 
 end Hironaka.Stage
+
+end
+end ResolutionHironaka

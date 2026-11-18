@@ -44,18 +44,25 @@ built from two functorial pieces, so the proofs are assemblies.
   (`eraseEmpty_pullback_eraseEmpty'`, `eraseEmpty_concat_eraseEmpty`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry Hironaka Scheme BlowUpSequence Hironaka.Stage
-  Hironaka.Sequence
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.ResolutionHironaka.Hironaka _root_.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.ResolutionHironaka.Hironaka.Stage _root_.ResolutionHironaka.Hironaka.Sequence
 
 namespace AlgebraicGeometry.Triple
+open _root_.AlgebraicGeometry
 
-open Hironaka
+open _root_.ResolutionHironaka.Hironaka
 
-open Scheme
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
 
 variable {k : Type u} [Field k] [CharZero k] {L : Type u} [Field L] [CharZero L]
 
@@ -78,7 +85,7 @@ end AlgebraicGeometry.Triple
 
 namespace Hironaka.Sequence
 
-open AlgebraicGeometry
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
 
 variable {k : Type u} [Field k] [CharZero k]
 
@@ -188,3 +195,6 @@ theorem BP_baseChange {L : Type u} [Field L] [CharZero L] (σ : k →+* L) (T : 
     (concat_pullback_eqToHom e _))
 
 end Hironaka.Sequence
+
+end
+end ResolutionHironaka

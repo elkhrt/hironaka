@@ -35,11 +35,16 @@ Theorem 92): the two coordinate projections `ψ_p, ψ_p' : U_2(p) ⇉ X` induce 
   `GraphPoint.lean`, named).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
-open AlgebraicGeometry CategoryTheory CategoryTheory.Limits IsLocalRing TopologicalSpace
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
+open CategoryTheory.Limits _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing TopologicalSpace
 
 universe u
 
@@ -205,3 +210,6 @@ end GraphPoint
 end EtaleCoordinates
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

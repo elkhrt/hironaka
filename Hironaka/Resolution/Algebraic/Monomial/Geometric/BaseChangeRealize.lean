@@ -53,11 +53,17 @@ The third statement is what `Hironaka/Resolution/Algebraic/MarkedOrderReduction/
 uses for the Step 3 part of clause (2) of [Kol07, Theorem 107].
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open AlgebraicGeometry CategoryTheory TopologicalSpace Hironaka Scheme.IdealSheafData
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.ResolutionHironaka.Hironaka _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
 namespace Hironaka.Monomial.PieceFamily
 
@@ -123,3 +129,6 @@ theorem realize_pullback_of_isBaseChangeOf (hbc : T'.IsBaseChangeOf T σ p) (hΦ
     (MonomialState.step3_isRun _) Φ' hρ.toW hE' hΦ' hlab hV' hn' hR
 
 end Hironaka.Monomial.PieceFamily
+
+end
+end ResolutionHironaka

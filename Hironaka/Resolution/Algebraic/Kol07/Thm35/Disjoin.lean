@@ -57,11 +57,18 @@ The disjoined triple `(X', π^* I, ∑ E^i)`
 reduction functor in the construction of the principalization functor.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open AlgebraicGeometry CategoryTheory TopologicalSpace Scheme IdealSheafData
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
+open TopologicalSpace _root_.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
 namespace Hironaka.Sequence
 
@@ -108,6 +115,7 @@ noncomputable def disjoinSeq (E : DivisorFamily X) : BlowUpSequence X :=
 end Hironaka.Sequence
 
 namespace AlgebraicGeometry.Scheme.DivisorFamily
+open _root_.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme
 
 variable {X : Scheme.{u}}
 
@@ -132,6 +140,7 @@ noncomputable def collapse (F : DivisorFamily X) (p : F.ι → Prop) [DecidableP
 end AlgebraicGeometry.Scheme.DivisorFamily
 
 namespace AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme
 
 variable {X : Scheme.{u}}
 
@@ -165,3 +174,6 @@ noncomputable def collapsedFamily (S : BlowUpSequence X) (E : DivisorFamily X) :
     (fun a => a ∈ Set.range (S.originalIdx E (Fin.last _)))
 
 end Hironaka.Sequence
+
+end
+end ResolutionHironaka

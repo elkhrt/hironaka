@@ -68,6 +68,9 @@ that need it.  The fraction `x/a` is `algebraMap R R_a x * invSelf a` with
 `R[R/a] = R_a`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u v
@@ -369,3 +372,6 @@ end Lift
 end affineBlowUpAlgebra
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

@@ -76,13 +76,17 @@ Invertibility is `IsInvertible` (locally a nonzerodivisor generator). Integralit
 Mathlib's `IsIntegral`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open AlgebraicGeometry CategoryTheory
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
 /-! ### Ring lemmas -/
 
@@ -171,6 +175,8 @@ end Ring
 end AlgebraicGeometry
 
 namespace AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
 
 variable {X : Scheme.{u}} (E : X.IdealSheafData)
 
@@ -238,10 +244,12 @@ theorem mem_ideal_of_map_mem_of_isIntegral_subscheme {U V : X.affineOpens} (h : 
 end AlgebraicGeometry.Scheme.IdealSheafData
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
-open Scheme.IdealSheafData
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
-open AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
 
 variable {B X : Scheme.{u}} (π : B ⟶ X) (E : B.IdealSheafData) (J : X.IdealSheafData)
 
@@ -487,3 +495,6 @@ theorem weakTransformAlong_eq_strictTransformAlong_of_locally_principal' [IsLoca
   weakTransformAlong_eq_strictTransformAlong_of_locally_principal π E J hE hJ
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

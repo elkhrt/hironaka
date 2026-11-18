@@ -31,12 +31,19 @@ Used for clause (3) of [Kol07, Theorem 36]: a point of the end result `X̄_r` ov
 center `Z_m` lies over the restricted center `Z_m ∩ X̄_m`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry Scheme IdealSheafData BlowUpSequence
-  TopologicalSpace
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence _root_.TopologicalSpace
+open _root_.ResolutionHironaka.TopologicalSpace
 
 namespace Hironaka.Sequence
 
@@ -110,3 +117,6 @@ theorem stageMapBetween_mem_support_strictTransformSeq [IsLocallyNoetherian X]
   exact stageMapBetween_mem_support_strictTransformSeq_mk S J i j hi hj hji p hp
 
 end Hironaka.Sequence
+
+end
+end ResolutionHironaka

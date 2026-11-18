@@ -55,13 +55,19 @@ change of `F_L → L` along `Z ∩ U → L`, hence smooth of relative dimension 
 cover.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open AlgebraicGeometry CategoryTheory Scheme.IdealSheafData
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
 section Pasting
 
@@ -96,8 +102,11 @@ end Pasting
 end AlgebraicGeometry
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
-open Scheme.IdealSheafData AlgebraicGeometry
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData _root_.AlgebraicGeometry
+open _root_.ResolutionHironaka.AlgebraicGeometry
 
 variable {k : Type u} [Field k] {X : Scheme.{u}} {f : X ⟶ Spec (.of k)} {n r : ℕ}
   {Z : X.IdealSheafData} {x : X} (E : EtaleCoordinatesAdapted f n r Z x)
@@ -279,3 +288,6 @@ theorem smoothOfRelativeDimension_subschemeMap_exceptional_comap_comp (hrn : r �
   rwa [add_zero] at this
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

@@ -71,11 +71,17 @@ The empty scheme is in the class; both definitions return the empty sequence on 
 (`BRAffine_eq_nil_of_isEmpty`, `BR_empty`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open CategoryTheory CategoryTheory.Limits AlgebraicGeometry Scheme Hironaka BlowUpSequence
+open CategoryTheory CategoryTheory.Limits _root_.AlgebraicGeometry
+open _root_.ResolutionHironaka.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.Hironaka
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
 
 namespace Hironaka.Resolution
 
@@ -95,7 +101,8 @@ theorem eraseEmpty_eq_nil_of_isEmpty {X : Scheme.{u}} (S : BlowUpSequence X) (hX
 
 /-- On an empty scheme two blow-up sequences of the same length are equal: every ideal sheaf on an
 empty scheme is `⊤` and the blow-up of an empty scheme is empty. -/
-theorem _root_.AlgebraicGeometry.Scheme.BlowUpSequence.eq_of_length_eq_of_isEmpty :
+theorem _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence.eq_of_length_eq_of_isEmpty
+    :
     ∀ {Z : Scheme.{u}} [IsEmpty Z] (S S' : BlowUpSequence Z), S.length = S'.length → S = S'
   | _, _, nil _, nil _, _ => rfl
   | _, _, nil _, cons _ _ rest, h => (Nat.succ_ne_zero rest.length h.symm).elim
@@ -266,3 +273,6 @@ theorem BR_empty (X : Scheme.{u}) [X.Over (Spec (CommRingCat.of k))]
   · exact BR_eq_nil_of_not_class k X hX
 
 end Hironaka.Resolution
+
+end
+end ResolutionHironaka

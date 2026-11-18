@@ -41,13 +41,20 @@ sequence of order `m` ([Wlo05, Proposition 2.4.2 (2)]), and the form with the em
 deleted follows in `Hironaka/Scheme/BlowUpSequence/PullbackEraseEmpty.lean`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry Scheme BlowUpSequence IsLocalRing
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence _root_.IsLocalRing
+open _root_.ResolutionHironaka.IsLocalRing
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
 variable {X Y : Scheme.{u}}
 
@@ -227,3 +234,6 @@ theorem IsOrderGeSeq.pullback [CharZero k] (f : X ⟶ Spec (.of k)) (n : ℕ)
 end OrderSeq
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

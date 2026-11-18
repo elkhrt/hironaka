@@ -26,13 +26,19 @@ Theorem 103 needs to read the conclusion `max-ord I_r < m` for the boundary-clea
 followed by the restriction to the hypersurface from the latter alone [Kol07, 104, Step 2.2].
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry Scheme BlowUpSequence
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
 /-- The maximal order of an ideal sheaf is unchanged by the inverse image along the
 identification of two equal schemes. -/
@@ -52,3 +58,6 @@ theorem maxOrd_weakTransformSeq_concat_last {X : Scheme.{u}} (S : BlowUpSequence
   exact maxOrd_comap_eqToHom (last_concat S T) _
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

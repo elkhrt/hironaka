@@ -43,12 +43,21 @@ facts about blow-up sequences used in that argument, none of which mentions the 
   of `h⁻¹ V(Z)`, for an irreducible `V(Z)`, is the generic point of `V(Z)`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace Scheme IdealSheafData
-  BlowUpSequence Scheme.IdealSheafData
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
 namespace Hironaka.Resolution
 
@@ -353,3 +362,6 @@ theorem isGenericPoint_of_mem_genericPoints_comap {W : Scheme.{u}} (j : W ⟶ X)
   exact hξ
 
 end Hironaka.Resolution
+
+end
+end ResolutionHironaka

@@ -42,12 +42,19 @@ The local algebra used here is in `Hironaka/Scheme/Snc/ParameterAlgebra.lean`,
 `Hironaka/Resolution/Algebraic/Snc/ComponentStalks.lean`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace Scheme Scheme.IdealSheafData IsLocalRing
-  Ideal
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData _root_.IsLocalRing
+open _root_.ResolutionHironaka.IsLocalRing Ideal
 
 namespace Hironaka.BMO
 
@@ -87,3 +94,6 @@ theorem ord_monomial_genericPoint [NoetherianSpace X] {i : E.ι} {η : X}
 end Snc
 
 end Hironaka.BMO
+
+end
+end ResolutionHironaka

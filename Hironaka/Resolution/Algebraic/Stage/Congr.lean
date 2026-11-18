@@ -48,12 +48,22 @@ are arguments):
 * `Hironaka.BO.data_congr` — Theorem 103 as data (`BO.data`) at `bdData`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace Hironaka Scheme BlowUpSequence
-  Scheme.IdealSheafData Hironaka.Sequence IsLocalRing
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.ResolutionHironaka.Hironaka _root_.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.Hironaka.Sequence _root_.IsLocalRing
+open _root_.ResolutionHironaka.IsLocalRing
 
 namespace Hironaka.BD
 
@@ -301,3 +311,6 @@ theorem data_congr {n n' m : ℕ} (hle : n' ≤ n)
       hbc hbc' hagree k T₀ h₁ h₂) hle T hT hT'
 
 end Hironaka.BO
+
+end
+end ResolutionHironaka

@@ -43,13 +43,20 @@ property to the affine case, by uniqueness on overlaps, is the argument of
 [Hau14, Theorem 4.18, proof (a)].
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
-open Scheme.IdealSheafData
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
-open AlgebraicGeometry CategoryTheory CategoryTheory.Limits Scheme.IdealSheafData TopologicalSpace
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
+open CategoryTheory.Limits _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData TopologicalSpace
 
 universe u
 
@@ -232,3 +239,6 @@ theorem Scheme.IdealSheafData.blowUp.isBlowUp : IsBlowUp I (blowUpπ I) :=
   ⟨blowUp.isInvertible_comap_π I, fun f hf => blowUp.existsUnique_lift I f hf⟩
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

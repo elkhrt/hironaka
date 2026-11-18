@@ -31,9 +31,13 @@ of a regular local ring (`∂̂ᵢ xⱼ = δᵢⱼ`, commutation, linearity over
 `RegularCoords` structure on `R̂`) are proved in `Hironaka/Algebra/Local/CompletionCoords.lean`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 namespace Derivation
+open _root_.Derivation
 
 variable {k R : Type*} [CommRing k] [CommRing R] [Algebra k R] (I : Ideal R)
   (D : Derivation k R R)
@@ -168,3 +172,6 @@ theorem adicCompletion_algebraMap (f : R) :
   exact adicCompletion_of I D f
 
 end Derivation
+
+end
+end ResolutionHironaka

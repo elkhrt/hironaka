@@ -36,15 +36,19 @@ Used to read the stalks of `B_Z X` on the charts of the local blow-up (`LocalBlo
 `Hironaka/Scheme/Snc/LocalBlowUpPoint.lean`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
-open AlgebraicGeometry CategoryTheory
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
 
 universe u
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
-open AlgebraicGeometry
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
 
 variable {X : Scheme.{u}}
 
@@ -80,3 +84,6 @@ theorem isIso_stalkMap_of_isPullback_fromSpecStalk {x : X} {Y B : Scheme.{u}} {�
   exact ‹RingHom.FaithfullyFlat _›.injective
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

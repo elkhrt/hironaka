@@ -34,11 +34,16 @@ only relations among the `gⱼ/gᵢ` over `R` are the trivial ones, so that
   gives `p ∈ ⟨x_r Yᵢ − xᵢ⟩`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 namespace IsLocalRing
+open _root_.IsLocalRing
 
-open IsLocalRing MvPolynomial RingTheory.Sequence AlgebraicGeometry.affineBlowUpAlgebra
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing MvPolynomial RingTheory.Sequence
+open _root_.ResolutionHironaka.AlgebraicGeometry.affineBlowUpAlgebra
 
 variable {R : Type*} [CommRing R] [IsRegularLocalRing R] {n : ℕ} (x : Fin n → R) (r : Fin n)
 
@@ -143,3 +148,6 @@ theorem ker_chartPresentation (hx : maximalIdeal R = Ideal.span (Set.range x))
   exact mem_presentationIdeal_of_C_pow_mul_mem _ _ (isWeaklyRegular_chartList x r hx hn) d p hdc
 
 end IsLocalRing
+
+end
+end ResolutionHironaka

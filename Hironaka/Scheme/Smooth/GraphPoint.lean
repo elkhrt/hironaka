@@ -24,11 +24,16 @@ isomorphisms (`isIso_residueFieldMap_of_comp`). The morphism `Spec κ(p) ⟶ W` 
 neighbourhood pair at this point.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
-open AlgebraicGeometry CategoryTheory CategoryTheory.Limits IsLocalRing
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
+open CategoryTheory.Limits IsLocalRing
 
 universe u
 
@@ -164,3 +169,6 @@ theorem exists_graph_point {p : X} (hpU : p ∈ U.1)
 end EtaleCoordinates
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

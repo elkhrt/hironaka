@@ -39,12 +39,19 @@ it is a radical ideal sheaf, and the vanishing ideal sheaf of its support is its
 * `disjoinCenter_eq_vanishingIdeal`: the center is the reduced subscheme on Kollár's subset.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open AlgebraicGeometry CategoryTheory TopologicalSpace IsLocalRing Ideal Scheme
-  Scheme.IdealSheafData
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
+open TopologicalSpace _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing _root_.Ideal
+open _root_.ResolutionHironaka.Ideal _root_.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
 namespace Hironaka.Sequence
 
@@ -89,3 +96,6 @@ theorem disjoinCenter_eq_vanishingIdeal {k : Type u} [Field k] (f : X ⟶ Spec (
     rw [IdealSheafData.stalkIdeal_eq_top_of_notMem_support _ hx, Ideal.radical_top]
 
 end Hironaka.Sequence
+
+end
+end ResolutionHironaka

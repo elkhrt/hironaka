@@ -54,12 +54,24 @@ the literature. Used in `Hironaka.Resolution.Algebraic.Wlo05.EmbeddedCP3Step3` a
 `Hironaka.Resolution.Algebraic.Wlo05.EmbeddedCP3Step1`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace IsLocalRing Scheme IdealSheafData
-  BlowUpSequence Scheme.IdealSheafData Hironaka.Sequence Hironaka.BMO Hironaka.BMO.Snc
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace _root_.IsLocalRing
+open _root_.ResolutionHironaka.IsLocalRing _root_.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.Hironaka.Sequence _root_.ResolutionHironaka.Hironaka.BMO
+open _root_.ResolutionHironaka.Hironaka.BMO.Snc
 
 namespace Hironaka.Resolution
 
@@ -293,3 +305,6 @@ theorem stalkIdeal_nonmonomialPart_of_iShape [IsNoetherian X] (f : X ⟶ Spec (C
   exact notMem_span_singleton_of_ne hz (hσc 0 j) (hle hmem)
 
 end Hironaka.Resolution
+
+end
+end ResolutionHironaka

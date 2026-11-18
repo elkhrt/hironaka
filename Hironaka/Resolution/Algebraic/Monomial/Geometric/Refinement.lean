@@ -62,12 +62,19 @@ The runs are compared in `Hironaka/Resolution/Algebraic/Monomial/Geometric/Pullb
 `Hironaka/Resolution/Algebraic/Monomial/Geometric/PullbackErase.lean`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open AlgebraicGeometry CategoryTheory TopologicalSpace IsLocalRing Ideal Scheme
-  Scheme.IdealSheafData
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace _root_.IsLocalRing
+open _root_.ResolutionHironaka.IsLocalRing _root_.Ideal _root_.ResolutionHironaka.Ideal
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
 namespace Hironaka.Monomial.PieceFamily
 
@@ -488,3 +495,6 @@ theorem monomial_comap_exponentAt (hE : E.IsSnc) (hΦ : Φ.Realizes E e) {Φ' : 
 end Monomial
 
 end Hironaka.Monomial.PieceFamily
+
+end
+end ResolutionHironaka

@@ -43,12 +43,20 @@ The assembly `embeddedEnd_bedAux_of_invCE` and its instance `embeddedEnd_BED_of_
 [Wlo05, Theorem 4.7.1]; the route through CP1–CP6 is not in the literature.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace Hironaka Scheme.BlowUpSequence
-  Scheme.IdealSheafData Hironaka.Sequence Hironaka.Snc
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.ResolutionHironaka.Hironaka
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.Hironaka.Sequence _root_.ResolutionHironaka.Hironaka.Snc
 
 namespace Hironaka.Resolution
 
@@ -124,3 +132,6 @@ theorem embeddedEnd_BED_of_invCE (TX : Triple k) (hE : IsEmpty TX.E.ι)
     (embeddedStateData_componentIdeals TX hE).invCE
 
 end Hironaka.Resolution
+
+end
+end ResolutionHironaka

@@ -80,11 +80,17 @@ disjoint. This is what makes `X'` and `X''` triples: `X' → Spec k` factors thr
   [Kol07, Proposition 37], recovered from Theorem 105.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory CategoryTheory.Limits AlgebraicGeometry Scheme TopologicalSpace
+open CategoryTheory CategoryTheory.Limits _root_.AlgebraicGeometry
+open _root_.ResolutionHironaka.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme _root_.TopologicalSpace
+open _root_.ResolutionHironaka.TopologicalSpace
 
 namespace Hironaka.Sequence
 
@@ -251,7 +257,8 @@ end ClassLemmas
 
 /-- On the empty scheme every ideal sheaf is `⊤` (two ideal sheaves with equal stalks are equal,
 vacuously), so a blow-up sequence without empty centers is `nil`. -/
-theorem _root_.AlgebraicGeometry.Scheme.BlowUpSequence.eq_nil_of_noEmptyCenters {X : Scheme.{u}}
+theorem _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence.eq_nil_of_noEmptyCenters
+    {X : Scheme.{u}}
     [IsEmpty X]
     (S : BlowUpSequence X) (h : S.NoEmptyCenters) : S = BlowUpSequence.nil X := by
   cases S with
@@ -268,19 +275,25 @@ namespace Hironaka
 
 variable {k : Type u} [Field k] {m : ℕ} {GT LT : Triple k → Prop}
 
-open Hironaka.Sequence Scheme AlgebraicGeometry
+open _root_.ResolutionHironaka.Hironaka.Sequence _root_.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme _root_.AlgebraicGeometry
+open _root_.ResolutionHironaka.AlgebraicGeometry
 
 end Hironaka
 
 namespace AlgebraicGeometry.Triple
+open _root_.AlgebraicGeometry
 
-open Hironaka
+open _root_.ResolutionHironaka.Hironaka
 
 variable {k : Type u} [Field k] {m : ℕ} {GT LT : Triple k → Prop}
 
-open Hironaka.Sequence Scheme AlgebraicGeometry
+open _root_.ResolutionHironaka.Hironaka.Sequence _root_.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme _root_.AlgebraicGeometry
+open _root_.ResolutionHironaka.AlgebraicGeometry
 
-open AlgebraicGeometry Scheme
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
 
 /-! ### The finite local cover and `X' = ∐ Uₓᵢ` -/
 
@@ -476,11 +489,13 @@ namespace Hironaka
 
 variable {k : Type u} [Field k] {m : ℕ} {GT LT : Triple k → Prop}
 
-open Hironaka.Sequence Scheme AlgebraicGeometry
+open _root_.ResolutionHironaka.Hironaka.Sequence _root_.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme _root_.AlgebraicGeometry
+open _root_.ResolutionHironaka.AlgebraicGeometry
 
 namespace OrderSeqAssignment
 
-open AlgebraicGeometry
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
 
 /-! ### The descent datum (105.4) for whole sequences -/
 
@@ -528,3 +543,6 @@ theorem globalization_unique [CharZero k] (D : Triple.GlobalizationData openImme
 end OrderSeqAssignment
 
 end Hironaka
+
+end
+end ResolutionHironaka

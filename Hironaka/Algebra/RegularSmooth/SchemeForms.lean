@@ -32,6 +32,9 @@ of `Dimension.lean`. The closed-point form gives the dimension of the local ring
 variety, used for étale coordinates and normal crossings (`Hironaka/Smooth/`, `Hironaka/Snc/`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
@@ -39,6 +42,7 @@ universe u
 open CategoryTheory IsLocalRing
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
 variable {k : Type u} [Field k] {X : Scheme.{u}}
 
@@ -121,3 +125,6 @@ theorem Scheme.ringKrullDim_stalk_of_smoothOfRelativeDimension_of_isClosed [Perf
     (k := k) n 𝔮
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

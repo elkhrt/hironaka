@@ -78,12 +78,19 @@ Step 1 is followed by Step 2
 functor (`Hironaka/Resolution/Algebraic/MarkedOrderReduction/Assembly.lean`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace Hironaka
-  Scheme.IdealSheafData Scheme BlowUpSequence
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.ResolutionHironaka.Hironaka _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
 
 namespace Hironaka.BMO
 
@@ -440,3 +447,6 @@ theorem roundOrder_induced_step1_lt (T : MarkedTriple k) (hT : MarkedTriple.BMOC
 end Step1
 
 end Hironaka.BMO
+
+end
+end ResolutionHironaka

@@ -37,11 +37,17 @@ clauses:
 * the same three clauses pass between two sequences with the same erasure.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace Scheme BlowUpSequence
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
 
 namespace Hironaka.Sequence
 
@@ -138,3 +144,6 @@ theorem exists_isSnc_support_eq_preimage_of_eraseEmpty_eq {S S' : BlowUpSequence
     (by rw [Iso.symm_hom, ← eraseEmptyLastIso_hom_comp_composite, Iso.inv_hom_id_assoc]) f W h1
 
 end Hironaka.Sequence
+
+end
+end ResolutionHironaka

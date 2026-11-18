@@ -62,13 +62,20 @@ Sources: [Hau14, Proposition 5.3] (the proof); [Hau14, Proposition 5.4; Definiti
 [Hau03, Appendix C]; [Kol07, Definition 24; Definition 25].
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open AlgebraicGeometry CategoryTheory IsLocalRing Ideal Scheme.IdealSheafData _root_.Algebra
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing _root_.Ideal
+open _root_.ResolutionHironaka.Ideal _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData _root_.Algebra
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
 variable {k : Type u} [Field k] {X : Scheme.{u}}
 
@@ -401,3 +408,6 @@ theorem isSmoothDivisor_totalTransformFamily (k : ι ⊕ PUnit.{u + 1}) :
 end SmoothDivisor
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

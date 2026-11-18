@@ -48,12 +48,20 @@ is the conditional form of the same statement. This observation is not in the li
 `Hironaka.Resolution.Algebraic.Wlo05.EmbeddedCP2Entry`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace Hironaka Scheme BlowUpSequence
-  Scheme.IdealSheafData
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.ResolutionHironaka.Hironaka _root_.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
 namespace Hironaka.Resolution
 
@@ -154,3 +162,6 @@ theorem stalkIdeal_center_eq_strictTransformSeq_find (T : MarkedTriple k) (hm : 
     fun l hl hcl => Nat.find_min h hl ⟨_, hcC, hcl⟩
 
 end Hironaka.Resolution
+
+end
+end ResolutionHironaka

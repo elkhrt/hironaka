@@ -71,15 +71,21 @@ stage by stage.
   center of `S` would be an empty center of `g^* S` (`NoEmptyCenters.of_pullback`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open CategoryTheory CategoryTheory.Limits AlgebraicGeometry Scheme BlowUpSequence
+open CategoryTheory CategoryTheory.Limits _root_.AlgebraicGeometry
+open _root_.ResolutionHironaka.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
 
 namespace Hironaka.Sequence
 
-open AlgebraicGeometry
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
 
 variable {X Y : Scheme.{u}}
 
@@ -324,12 +330,13 @@ theorem OrderGeSeqAssignment.pullback_coverFst_eq_pullback_coverSnd [PerfectFiel
 end Hironaka
 
 namespace AlgebraicGeometry.Triple
+open _root_.AlgebraicGeometry
 
-open Hironaka
+open _root_.ResolutionHironaka.Hironaka
 
 variable {k : Type u} [Field k]
 
-open Scheme
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
 
 variable (T : Triple k)
 
@@ -601,3 +608,6 @@ namespace Hironaka
 variable {k : Type u} [Field k]
 
 end Hironaka
+
+end
+end ResolutionHironaka

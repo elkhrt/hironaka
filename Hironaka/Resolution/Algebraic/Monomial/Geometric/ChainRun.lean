@@ -33,6 +33,9 @@ The proofs are those of `phase_refine` and `phases_refine` with the stronger con
 the sources; bookkeeping for the first clause of [Kol07, 34.1].
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 namespace Hironaka.Monomial.MonomialState
@@ -189,3 +192,6 @@ theorem step3_chain {ρ : ℕ → ℕ} {Y L : MonomialState} (h : Refines ρ Y L
   exact phases_chain L.n 1 L (star_of_lt_one L) Y ρ h (star_of_lt_one Y)
 
 end Hironaka.Monomial.MonomialState
+
+end
+end ResolutionHironaka

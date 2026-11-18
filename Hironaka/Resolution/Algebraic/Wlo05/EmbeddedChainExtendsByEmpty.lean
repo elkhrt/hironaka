@@ -28,11 +28,17 @@ pulls back along a morphism whose stalk map at the point is an isomorphism (the 
 `chainRelativeAt_of_comap_of_isIso_stalkMap`, obtained from it along the inverse).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry Scheme Scheme.IdealSheafData
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
 namespace Hironaka.Resolution
 
@@ -116,3 +122,6 @@ theorem chainRelativeAt_comap_of_isIso_stalkMap (φ : Y ⟶ X) [IsIso φ] {E : D
   exact chainRelativeAt_of_comap_of_isIso_stalkMap (inv φ) h'
 
 end Hironaka.Resolution
+
+end
+end ResolutionHironaka

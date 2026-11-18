@@ -59,11 +59,15 @@ The scheme-level statements of Definition 47 (upper semicontinuity, `ord_Z`, `ma
 proved for the order of an ideal sheaf, `Scheme.IdealSheafData.ord`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 namespace IsLocalRing
+open _root_.IsLocalRing
 
-open IsLocalRing
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing
 
 variable {R : Type*} [CommRing R] [IsLocalRing R]
 
@@ -333,3 +337,6 @@ noncomputable def ordAlong (P : Ideal R) [P.IsPrime] (I : Ideal R) : ℕ∞ :=
 end Along
 
 end IsLocalRing
+
+end
+end ResolutionHironaka

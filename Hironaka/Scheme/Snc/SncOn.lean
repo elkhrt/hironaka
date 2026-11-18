@@ -23,13 +23,17 @@ Sources: [Kol07, Definition 24]; [Kol07, 104] (Step 2.1); [Kol07, Notation 64 (3
 index set).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
 
 namespace AlgebraicGeometry.Scheme.DivisorFamily
+open _root_.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme
 
 variable {X : Scheme.{u}}
 
@@ -63,3 +67,6 @@ theorem isSnc_iff_isSncOn_univ (E : DivisorFamily X) :
   ⟨fun h => ⟨h.1, fun x _ => h.2 x⟩, fun h => ⟨h.1, fun x => h.2 x trivial⟩⟩
 
 end AlgebraicGeometry.Scheme.DivisorFamily
+
+end
+end ResolutionHironaka

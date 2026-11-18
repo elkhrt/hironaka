@@ -31,6 +31,9 @@ for a separable algebraic extension, such as the residue field of a closed point
 `Hironaka/Algebra/RegularSmooth/Dimension.lean`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
@@ -39,6 +42,7 @@ open KaehlerDifferential
 open scoped TensorProduct IntermediateField.algebraAdjoinAdjoin
 
 namespace Algebra
+open _root_.Algebra
 
 variable (k K : Type u) [Field k] [Field K] [Algebra k K]
 
@@ -90,3 +94,6 @@ theorem subsingleton_kaehlerDifferential_of_isSeparable [Algebra.IsSeparable k K
   inferInstance
 
 end Algebra
+
+end
+end ResolutionHironaka

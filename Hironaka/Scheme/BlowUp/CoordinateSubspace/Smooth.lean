@@ -30,13 +30,18 @@ used wherever the model is compared with a blow-up of a smooth centre
 `Hironaka.Scheme.IdealSheaf.Order.AffineSpace`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u v w
 
-open AlgebraicGeometry CategoryTheory MvPolynomial Algebra
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
+open MvPolynomial Algebra
 
 namespace AlgebraicGeometry.CoordinateSubspace
+open _root_.AlgebraicGeometry
 
 /-- Standard smoothness of relative dimension `m` over `A` transports along an `A`-algebra
 isomorphism (the ring-hom form, so that the universes of `S` and `T` may differ). -/
@@ -150,3 +155,6 @@ theorem smoothOfRelativeDimension_modelBlowUp :
     exact smoothOfRelativeDimension_Spec_map_algebraMap_mvPolynomial A n
 
 end AlgebraicGeometry.CoordinateSubspace
+
+end
+end ResolutionHironaka

@@ -66,12 +66,21 @@ exponent of an old piece is unchanged and the exponent of the new piece `F_P = �
 `Hironaka/Resolution/Algebraic/Monomial/Geometric/OrderSeq.lean`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open AlgebraicGeometry CategoryTheory TopologicalSpace IsLocalRing Ideal
-  Scheme.IdealSheafData Scheme IdealSheafData
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace _root_.IsLocalRing
+open _root_.ResolutionHironaka.IsLocalRing _root_.Ideal _root_.ResolutionHironaka.Ideal
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
 namespace Hironaka.Monomial
 
@@ -460,3 +469,6 @@ theorem markedTransform_monomial (hE : E.IsSnc) (hΦ : Φ.Realizes E e) {S : Fin
 end PieceFamily
 
 end Hironaka.Monomial
+
+end
+end ResolutionHironaka

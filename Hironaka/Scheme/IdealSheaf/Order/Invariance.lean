@@ -50,11 +50,16 @@ Used for the transport of orders along open covers and isomorphisms
 `Hironaka/Resolution/Algebraic/BoundaryClearing/Transform.lean`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 namespace AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
 
-open CategoryTheory IsLocalRing
+open CategoryTheory _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing
 
 universe u
 
@@ -92,8 +97,9 @@ end AlgebraicGeometry.Scheme.IdealSheafData
 universe u
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
-open CategoryTheory AlgebraicGeometry
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
 
 variable {X Y : Scheme.{u}}
 
@@ -113,3 +119,6 @@ theorem maxOrd_comap_of_isIso (I : X.IdealSheafData) (f : Y ⟶ X) [IsIso f] :
       _ ≤ (I.comap f).maxOrd := (I.comap f).le_maxOrd _
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

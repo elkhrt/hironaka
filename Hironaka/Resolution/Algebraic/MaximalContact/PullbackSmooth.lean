@@ -34,13 +34,19 @@ Both statements are used in Step 3 of the proof of [Kol07, Theorem 103], the glo
 `Step3Cover.lean`), where the functor is pulled back along smooth morphisms.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry Scheme
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
 
 namespace AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
 
 variable {k : Type u} [Field k] {X Y : Scheme.{u}} (f : X ⟶ Spec (.of k)) (n : ℕ)
   [SmoothOfRelativeDimension n f]
@@ -60,7 +66,7 @@ end AlgebraicGeometry.Scheme.IdealSheafData
 
 namespace Hironaka.Snc
 
-open AlgebraicGeometry
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
 
 variable {k : Type u} [Field k] {X Y : Scheme.{u}}
 
@@ -79,3 +85,6 @@ theorem isSmoothDivisor_comap_of_smooth [CharZero k] (f : X ⟶ Spec (.of k)) [S
     (fun y => hsnc.2 y) hregY (toLex (Sum.inr PUnit.unit))
 
 end Hironaka.Snc
+
+end
+end ResolutionHironaka

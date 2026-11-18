@@ -40,6 +40,9 @@ restriction and refinement of the state is `Hironaka/Resolution/Algebraic/Monomi
 and its submodules.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 namespace Hironaka.Monomial.MonomialState
@@ -318,3 +321,6 @@ theorem step3_map_eq_of_step3Fuel {fuel : ℕ} {st : MonomialState} {α : Type*}
   rw [step3_eq_of_step3Fuel hres]
 
 end Hironaka.Monomial.MonomialState
+
+end
+end ResolutionHironaka

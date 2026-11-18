@@ -22,13 +22,17 @@ These are the pieces of the projective bundle `P(E)` of a quasi-coherent sheaf, 
 affine opens [Sta, Tag 01OB].
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open CategoryTheory SymmetricAlgebra
+open CategoryTheory _root_.SymmetricAlgebra _root_.ResolutionHironaka.SymmetricAlgebra
 
 namespace SymmetricAlgebra
+open _root_.SymmetricAlgebra
 
 variable {R : Type u} {M : Type u} [CommRing R] [AddCommGroup M] [Module R M]
 
@@ -77,6 +81,7 @@ theorem irrelevant_le_map_gradedMap (φ : R →+* S) (f : M →ₛₗ[φ] N)
 end SymmetricAlgebra
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
 variable (R : Type u) (M : Type u) [CommRing R] [AddCommGroup M] [Module R M]
 
@@ -110,3 +115,6 @@ noncomputable def affineProjectiveBundle.mapHom {R S : CommRingCat.{u}} {M N : T
   affineProjectiveBundle.map φ.hom f hf
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

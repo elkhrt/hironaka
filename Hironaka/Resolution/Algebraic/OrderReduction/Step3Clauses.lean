@@ -66,12 +66,21 @@ The clauses are packaged as `BOData n m` in
 `Hironaka/Resolution/Algebraic/OrderReduction/Step3Data.lean`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory CategoryTheory.Limits AlgebraicGeometry TopologicalSpace Hironaka Scheme
-  BlowUpSequence Hironaka.Sequence Hironaka.Snc Scheme.IdealSheafData
+open CategoryTheory CategoryTheory.Limits _root_.AlgebraicGeometry
+open _root_.ResolutionHironaka.AlgebraicGeometry _root_.TopologicalSpace
+open _root_.ResolutionHironaka.TopologicalSpace _root_.ResolutionHironaka.Hironaka
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.ResolutionHironaka.Hironaka.Sequence _root_.ResolutionHironaka.Hironaka.Snc
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
 namespace Hironaka.BO
 
@@ -348,3 +357,6 @@ theorem functor_commutesWithBaseChange {L : Type u} [Field L] [CharZero L] (σ :
 end Clauses
 
 end Hironaka.BO
+
+end
+end ResolutionHironaka

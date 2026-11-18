@@ -34,6 +34,9 @@ In the zero ring every element is a nonzerodivisor and a unit, and every stateme
 true.  A local ring is nontrivial by definition, so `1 ∉ 𝔪` in the last argument.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u v
@@ -100,3 +103,6 @@ theorem exists_generator_of_isLocalRing {R : Type v} [CommRing R] [IsLocalRing S
   rw [hI, hfi, ← hd i hi, Ideal.span_singleton_mul_left_unit hdu]
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

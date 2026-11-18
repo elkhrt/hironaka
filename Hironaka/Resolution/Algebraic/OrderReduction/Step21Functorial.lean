@@ -53,16 +53,26 @@ The second clause of [Kol07, 34.1], for an arbitrary smooth morphism, is
 `Hironaka/Resolution/Algebraic/OrderReduction/Step21EraseEmpty.lean`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace Hironaka Scheme BlowUpSequence
-  Scheme.IdealSheafData Hironaka.Sequence Hironaka.Snc Hironaka.Local
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.ResolutionHironaka.Hironaka _root_.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.Hironaka.Sequence _root_.ResolutionHironaka.Hironaka.Snc
+open _root_.ResolutionHironaka.Hironaka.Local
 
 namespace Hironaka.Sequence
 
-open AlgebraicGeometry
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
 
 variable {X Y : Scheme.{u}}
 
@@ -228,3 +238,6 @@ theorem step21Seq_baseChange {L : Type u} [Field L] [CharZero L] {T' : Triple L}
 end Step21
 
 end Hironaka.BO
+
+end
+end ResolutionHironaka

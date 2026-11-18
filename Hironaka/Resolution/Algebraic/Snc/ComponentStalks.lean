@@ -45,18 +45,25 @@ components of the boundary that the splitting of an ideal into its monomial and 
 without a structure morphism are in `Hironaka.Resolution.Algebraic.Snc.DictionaryRegular`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace Scheme Scheme.IdealSheafData IsLocalRing
-  Ideal
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData _root_.IsLocalRing
+open _root_.ResolutionHironaka.IsLocalRing _root_.Ideal _root_.ResolutionHironaka.Ideal
 
 namespace Hironaka.BMO
 
 namespace Snc
 
-open AlgebraicGeometry
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
 
 /-! An snc family `E` on a scheme `X` smooth over `k` (regular stalks); the statements on triples in
 `Hironaka.MarkedOrderReduction` are the instances of these at `T.X.left ↘ Spec k`, `T.E`, `T.I`. -/
@@ -221,3 +228,6 @@ theorem ord_stalkIdeal_component_pow {i : E.ι} {η : X}
 end Snc
 
 end Hironaka.BMO
+
+end
+end ResolutionHironaka

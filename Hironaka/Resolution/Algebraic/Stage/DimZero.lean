@@ -32,21 +32,27 @@ the value `nil` on a triple of dimension `≤ 0` — the base of the coherence i
 (`Hironaka.Resolution.Algebraic.Stage.Coherence`): at stage `n' = 0` both stage functors agree
 because both are empty. The lemmas hold unconditionally, over ANY field. -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry Scheme.BlowUpSequence Scheme.IdealSheafData
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
 namespace Hironaka
 
-open Scheme
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
 
 variable {k : Type u} [Field k]
 
 /-- The base case of [Kol07, 70]: on a triple of dimension `≤ 0` the stalks are fields, so an ideal
 nonzero on every component ([Kol07, Notation 64 (2)]) is the unit ideal. -/
-theorem _root_.AlgebraicGeometry.Triple.I_eq_top_of_hasDimLE_zero (T : Triple k)
+theorem _root_.ResolutionHironaka.AlgebraicGeometry.Triple.I_eq_top_of_hasDimLE_zero (T : Triple k)
     (h : T.HasDimLE 0) : T.I = ⊤ := by
   obtain ⟨d, hd, hdim⟩ := h
   obtain rfl : d = 0 := Nat.le_zero.mp hd
@@ -97,3 +103,6 @@ theorem OrderGeSeqAssignment.seq_eq_nil_of_hasDimLE_zero {Dom : MarkedTriple k �
     (B.isOrderGeSeq T hT) (B.noEmptyCenters T hT) hlt
 
 end Hironaka
+
+end
+end ResolutionHironaka

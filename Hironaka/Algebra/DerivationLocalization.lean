@@ -43,9 +43,13 @@ agreeing with `D` on `A` is determined on `1/s` by `D'(1/s) = -(1/s)² D'(s)`
 (`Derivation.leibniz_of_mul_eq_one`) and hence on every `a/s`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 namespace Derivation
+open _root_.Derivation
 
 variable {k A : Type*} [CommRing k] [CommRing A] [Algebra k A] (M : Submonoid A)
   (D : Derivation k A A)
@@ -167,3 +171,6 @@ theorem localization_comm (D₁ D₂ : Derivation k A A) (h : ∀ a, D₁ (D₂ 
   simpa [Derivation.commutator_apply, sub_eq_zero] using hz
 
 end Derivation
+
+end
+end ResolutionHironaka

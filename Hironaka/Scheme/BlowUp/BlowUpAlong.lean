@@ -18,6 +18,9 @@ public import Hironaka.Scheme.BlowUp.UniversalProperty
 `Scheme.Hom.isBlowUpAlong_iff_isBlowUp`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
@@ -25,6 +28,7 @@ universe u
 open CategoryTheory
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
 /-- An effective Cartier ideal sheaf is an invertible one, in the library's sense. -/
 theorem Scheme.IdealSheafData.isEffectiveCartier_iff_isInvertible {X : Scheme.{u}}
@@ -37,3 +41,6 @@ theorem Scheme.Hom.isBlowUpAlong_iff_isBlowUp {X B : Scheme.{u}} (π : B ⟶ X)
   ⟨fun h => ⟨h.1, h.2⟩, fun h => ⟨h.admissible, h.existsUnique_lift⟩⟩
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

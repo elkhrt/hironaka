@@ -80,13 +80,20 @@ complement of `Sing X` is a nonempty open of the irreducible `X`, hence dense, s
 at the generic point is a field (`isRegularAt_genericPoint_of_isIntegral`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace Scheme BlowUpSequence
-  Hironaka.Sequence
-open AlgebraicGeometry.Scheme.IdealSheafData
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.ResolutionHironaka.Hironaka.Sequence
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
 namespace Hironaka.Resolution
 
@@ -205,9 +212,13 @@ end
 
 universe u
 
-open CategoryTheory AlgebraicGeometry Scheme.IdealSheafData Scheme
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
 /-- **Hironaka's Main Theorem I** [Hir64, Main Theorem I, p. 132]. Let `X` be a reduced and
 irreducible (`IsIntegral`) algebraic `k`-scheme (`AlgScheme k`), `k` of characteristic zero. Then
@@ -277,3 +288,6 @@ theorem exists_dense_isIso_restrict_isRegular_blowUp {k : Type u} [Field k] [Cha
   exact fun h => h Hironaka.Resolution.isRegularAt_genericPoint_of_isIntegral
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

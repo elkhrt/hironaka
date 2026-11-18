@@ -20,6 +20,9 @@ on the class `IsReducedEquidimensional` (`Hironaka.Scheme.Resolution.Defs`), who
 components may meet but have one dimension.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
@@ -27,6 +30,7 @@ universe u
 open CategoryTheory
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
 /-- The class of reduced schemes with pairwise disjoint irreducible components: `X` is reduced and
 its irreducible components are pairwise disjoint — for a scheme of finite type over a field, a
@@ -41,3 +45,6 @@ def Scheme.HasDisjointIntegralComponents (X : Scheme.{u}) : Prop :=
     ∀ C₁ ∈ irreducibleComponents X, ∀ C₂ ∈ irreducibleComponents X, (C₁ ∩ C₂).Nonempty → C₁ = C₂
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

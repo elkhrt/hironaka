@@ -28,6 +28,9 @@ the stability of the class under change of fields and étale morphisms, are reco
 of `AlgebraicGeometry.exists_functorial_resolution`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
@@ -35,8 +38,10 @@ universe u
 open CategoryTheory
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
 namespace Scheme.IsReducedEquidimensional
+open _root_.AlgebraicGeometry.Scheme
 
 variable {k : Type u} [Field k] {X : Scheme.{u}} [X.Over (Spec (.of k))]
   [LocallyOfFiniteType (X ↘ Spec (.of k))]
@@ -52,3 +57,6 @@ theorem exists_smoothOfRelativeDimension (h : X.IsReducedEquidimensional k) :
 end Scheme.IsReducedEquidimensional
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

@@ -74,13 +74,20 @@ this case in a local chart; the induction along a sequence is in
   (`Dpow_le_derivativeIter`, `k`-linear coordinates).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry Scheme.IdealSheafData IsLocalRing
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData _root_.IsLocalRing
+open _root_.ResolutionHironaka.IsLocalRing
 
 namespace Derivation
+open _root_.Derivation
 
 /-- Leibniz on the generators of an image ideal: `δ (J B) ⊆ J B + span (δ (φ J))`. -/
 theorem mem_map_sup_span_image {k A B : Type*} [CommRing k] [CommRing A] [CommRing B] [Algebra k B]
@@ -91,6 +98,7 @@ theorem mem_map_sup_span_image {k A B : Type*} [CommRing k] [CommRing A] [CommRi
 end Derivation
 
 namespace Ideal
+open _root_.Ideal
 
 variable {k A B : Type*} [CommRing k] [CommRing A] [CommRing B] [Algebra k A] [Algebra k B]
   (e : A ≃+* B) (hk : ∀ a : k, e (algebraMap k A a) = algebraMap k B a)
@@ -143,7 +151,7 @@ end Ideal
 
 namespace Hironaka.Sequence
 
-open AlgebraicGeometry
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
 
 variable {k : Type u} [Field k] [CharZero k] {X : Scheme.{u}} (f : X ⟶ Spec (.of k)) (n : ℕ)
   [SmoothOfRelativeDimension n f] (Z : X.IdealSheafData) [Smooth (Z.subschemeι ≫ f)]
@@ -584,3 +592,6 @@ theorem derivativeIter_markedTransform_eq_iSup (hS : IsSmoothDivisor S) {m : ℕ
 end Main
 
 end Hironaka.Sequence
+
+end
+end ResolutionHironaka

@@ -28,13 +28,19 @@ A proposition is transported across them by generalizing the scheme, as in `ord_
 `Truncate.lean`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry Scheme BlowUpSequence
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
 variable {X : Scheme.{u}}
 
@@ -89,3 +95,6 @@ theorem composite_take_heq (S : BlowUpSequence X) {n : ℕ} (hn : n ≤ S.length
   exact stageMap_take_heq_mk S n n (lt_length_take_succ S hn) (Nat.lt_succ_of_le hn)
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

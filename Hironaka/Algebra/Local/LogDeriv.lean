@@ -29,11 +29,15 @@ of the ideals whose birational transform is controlled in
 `Hironaka/Algebra/Local/TransformLogDeriv.lean`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 namespace IsLocalRing
+open _root_.IsLocalRing
 
-open IsLocalRing
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing
 
 namespace RegularCoords
 
@@ -630,3 +634,6 @@ theorem Dlogpow_map_quotient (r : ℕ) (I : Ideal R) :
 end RegularCoords
 
 end IsLocalRing
+
+end
+end ResolutionHironaka

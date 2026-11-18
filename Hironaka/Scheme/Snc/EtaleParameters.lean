@@ -43,11 +43,15 @@ system of parameters containing the given elements
 (`exists_span_eq_maximalIdeal_of_linearIndependent`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u v
 
-open IsLocalRing Ideal Module
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing _root_.Ideal
+open _root_.ResolutionHironaka.Ideal Module
 
 namespace AlgebraicGeometry
 
@@ -56,7 +60,8 @@ section Cotangent
 variable {R : Type u} [CommRing R] [IsLocalRing R]
 
 /-- A derivation maps `𝔪²` into `𝔪`: `D (m n) = m D n + n D m` (Leibniz). -/
-theorem _root_.Derivation.map_mem_maximalIdeal_of_mem_sq {k : Type v} [CommRing k] [Algebra k R]
+theorem _root_.ResolutionHironaka.Derivation.map_mem_maximalIdeal_of_mem_sq
+    {k : Type v} [CommRing k] [Algebra k R]
     (D : Derivation k R R) {a : R} (ha : a ∈ maximalIdeal R ^ 2) : D a ∈ maximalIdeal R := by
   rw [pow_two] at ha
   refine Submodule.mul_induction_on ha (fun m hm n hn => ?_) (fun x y hx hy => ?_)
@@ -236,3 +241,6 @@ theorem exists_span_eq_maximalIdeal_of_etale_coordinates
 end Etale
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

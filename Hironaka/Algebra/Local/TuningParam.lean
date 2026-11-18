@@ -39,11 +39,15 @@ Used for the tuned triple of the order-reduction theorems
 (`Hironaka/Manifold/IdealSheaf/Tuning.lean`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 namespace IsLocalRing
+open _root_.IsLocalRing
 
-open IsLocalRing Nat
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing Nat
 
 /-! ### Number theory of `L_m` -/
 
@@ -200,3 +204,6 @@ theorem ord_W_tuningParam {m : ℕ} (hm : 1 ≤ m) {I : Ideal R} (hI : ord I = m
 end RegularCoords
 
 end IsLocalRing
+
+end
+end ResolutionHironaka

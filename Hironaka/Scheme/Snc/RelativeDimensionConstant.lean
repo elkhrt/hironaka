@@ -36,13 +36,17 @@ smooth locus.
 Sources: [Kol07, Notation 64; Theorem 27; 4.2]; [Sta, Tag 0A21].
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open AlgebraicGeometry CategoryTheory IsLocalRing
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory IsLocalRing
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
 variable {k : Type u} [Field k] {X : Scheme.{u}}
 
@@ -124,3 +128,6 @@ theorem exists_smoothOfRelativeDimension_of_preconnectedSpace [PerfectField k]
   exact ⟨V, hV, hxV, hstd⟩
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

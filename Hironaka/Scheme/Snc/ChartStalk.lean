@@ -40,13 +40,19 @@ elements of the chart ring (`exists_ringEquiv_stalk_localization`). Open immersi
 induce isomorphisms of stalks carrying the stalk ideals of inverse images to the stalk ideals.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open AlgebraicGeometry CategoryTheory IsLocalRing Ideal Scheme.IdealSheafData
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory IsLocalRing
+open Ideal _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
 section Affine
 
@@ -215,3 +221,6 @@ theorem exists_chart_point_map_stalkIdeal_eq (E : EtaleCoordinatesAdapted f n r 
 end BlowUp
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

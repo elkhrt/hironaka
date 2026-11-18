@@ -63,11 +63,18 @@ The invariance statement is used again in
 the étale half of Theorem 92 (`Hironaka/Resolution/Algebraic/MaximalContact/Theorem92.lean`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 namespace AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
 
-open CategoryTheory IsLocalRing Scheme MvPowerSeries
+open CategoryTheory _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.MvPowerSeries _root_.ResolutionHironaka.MvPowerSeries
 
 universe u
 
@@ -380,3 +387,6 @@ theorem formallyEquivalentAt_of_isMCInvariant (I : X.IdealSheafData) {m : ℕ} (
 end
 
 end AlgebraicGeometry.Scheme.IdealSheafData
+
+end
+end ResolutionHironaka

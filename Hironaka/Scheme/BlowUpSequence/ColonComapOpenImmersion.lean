@@ -30,13 +30,19 @@ ideal of the strict transforms already isolated (the proof of [Wlo05, Theorem 4.
 open window. The invertible forms are the special case; they are not restated here.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry Scheme.IdealSheafData
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
 namespace AlgebraicGeometry.Remark33
+open _root_.AlgebraicGeometry
 
 variable {M : Scheme.{u}}
 
@@ -104,3 +110,6 @@ theorem comap_colon_of_isOpenImmersion_of_isLocallyNoetherian [IsLocallyNoetheri
       hcov fun V => (key V).ge)
 
 end AlgebraicGeometry.Remark33
+
+end
+end ResolutionHironaka

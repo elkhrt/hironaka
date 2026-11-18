@@ -77,16 +77,21 @@ Used for the functoriality of order reduction under a change of fields
 `Hironaka/Resolution/Algebraic/BoundaryClearing/FunctorialityBaseChange.lean`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory CategoryTheory.Limits AlgebraicGeometry KaehlerDifferential
+open CategoryTheory CategoryTheory.Limits _root_.AlgebraicGeometry
+open _root_.ResolutionHironaka.AlgebraicGeometry KaehlerDifferential
 open scoped TensorProduct
 
 /-! ### Algebra: derivations along a base change -/
 
 namespace Derivation
+open _root_.Derivation
 
 variable {k L A B : Type*} [CommRing k] [CommRing L] [CommRing A] [CommRing B] [Algebra k L]
   [Algebra k A] [Algebra k B] [Algebra A B] [Algebra L B] [IsScalarTower k A B]
@@ -113,6 +118,7 @@ theorem exists_extension_of_isPushout [Algebra.IsPushout k L A B] (δ : Derivati
 end Derivation
 
 namespace Ideal
+open _root_.Ideal
 
 variable {k L A B : Type*} [CommRing k] [CommRing L] [CommRing A] [CommRing B] [Algebra k L]
   [Algebra k A] [Algebra k B] [Algebra A B] [Algebra L B] [IsScalarTower k A B]
@@ -146,6 +152,7 @@ end Ideal
 /-! ### Geometry: the algebra structures of a base-change square -/
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
 variable {k : Type u} [Field k] {L : Type u} [Field L] {X Y : Scheme.{u}}
 
@@ -270,6 +277,7 @@ theorem isPushout_appLE_of_isPullback_specMap
     exact Scheme.Opens.ι_comp_appTop_topIso_hom g' _
 
 namespace Scheme.IdealSheafData
+open _root_.AlgebraicGeometry.Scheme _root_.AlgebraicGeometry.Scheme.IdealSheafData
 
 /-- **The derivative ideal commutes with a change of the base field** ([Kol07, Lemma 74 (4)] for
 the base change of [Kol07, 34.2]): on the base-change square `p : X_L → X` along `σ : k → L` with
@@ -335,3 +343,6 @@ theorem derivativeIter_comap_of_isPullback_specMap [CharZero k]
 end Scheme.IdealSheafData
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

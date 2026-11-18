@@ -38,15 +38,22 @@ choices"; `m!` is of the admissible form when `m ≤ 2` or `m ≥ 6` (by `(m −
   the coordinate lemmas of the same names in `Hironaka.Local`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry Scheme BlowUpSequence Scheme.IdealSheafData
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
 namespace Hironaka.Local
 
-open IsLocalRing
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing
 
 /-- `s(1) = max 0 1 · lcm(∅) = 1`. -/
 theorem tuningParam_one : tuningParam 1 = 1 := by decide
@@ -57,8 +64,11 @@ theorem tuningParam_two : tuningParam 2 = 2 := by decide
 end Hironaka.Local
 
 namespace AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
 
-open Hironaka.Local IsLocalRing
+open _root_.ResolutionHironaka.Hironaka.Local _root_.IsLocalRing
+open _root_.ResolutionHironaka.IsLocalRing
 
 variable {k : Type u} [Field k] {X : Scheme.{u}} (f : X ⟶ Spec (.of k))
 
@@ -93,3 +103,6 @@ theorem isMCInvariant_W_tuningParam (hI : I.maxOrd = m) (hm : 1 ≤ m) :
   isMCInvariant_W f n I m hI hm (one_le_tuningParam m)
 
 end AlgebraicGeometry.Scheme.IdealSheafData
+
+end
+end ResolutionHironaka

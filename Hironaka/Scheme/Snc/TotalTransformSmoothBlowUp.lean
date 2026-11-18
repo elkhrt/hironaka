@@ -54,13 +54,22 @@ old components keep their coordinates `z_{c(i)}` and `F` takes `z_j`, a coordina
 component uses (`totalTransform_isSnc_of_isInvertible`; `Hironaka.Scheme.Snc.TrivialSncData`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
-open AlgebraicGeometry CategoryTheory IsLocalRing Ideal Scheme IdealSheafData
-  DivisorFamily
-open AlgebraicGeometry
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing _root_.Ideal
+open _root_.ResolutionHironaka.Ideal _root_.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.DivisorFamily
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
 universe u
 
@@ -222,3 +231,6 @@ theorem totalTransform_isSnc_of_isInvertible (f : X ⟶ Spec (.of k)) [Smooth f]
       exact Subtype.ext (ofLex.injective (Subtype.mk.inj (hc'inj h)))
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

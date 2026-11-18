@@ -44,12 +44,16 @@ The sheaf form is `Hironaka/Scheme/IdealSheaf/Derivative/Pullback.lean`; the ext
 derivations is also used for étale parameters (`Hironaka/Scheme/Snc/EtaleParameters.lean`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 open KaehlerDifferential
 open scoped TensorProduct
 
 namespace Derivation
+open _root_.Derivation
 
 variable {k A B : Type*} [CommRing k] [CommRing A] [CommRing B] [Algebra k A] [Algebra k B]
   [Algebra A B] [IsScalarTower k A B]
@@ -128,6 +132,7 @@ theorem mem_span_range_compDer_of_projective [Module.Finite A (Ω[A⁄k])]
 end Derivation
 
 namespace Ideal
+open _root_.Ideal
 
 variable {k A B : Type*} [CommRing k] [CommRing A] [CommRing B] [Algebra k A] [Algebra k B]
   [Algebra A B] [IsScalarTower k A B]
@@ -212,3 +217,6 @@ theorem derivative_map_mvPolynomial {σ : Type*} [Module.Finite A (Ω[A⁄k])]
   derivative_map_of_formallySmooth J
 
 end Ideal
+
+end
+end ResolutionHironaka

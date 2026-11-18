@@ -56,11 +56,16 @@ follows, at the end of the file, by applying the functorial resolution to an int
 Theorem I (`Hironaka.Resolution.Algebraic.Hir64.MainTheoremI`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry Scheme BlowUpSequence
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
 
 namespace Hironaka.Resolution
 
@@ -133,9 +138,13 @@ end
 
 universe u
 
-open CategoryTheory AlgebraicGeometry Scheme.IdealSheafData Scheme
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
 /-- **Kollár's functorial resolution** [Kol07, Theorem 36]. There is a family `BR` of blow-up
 sequence functors on reduced equidimensional algebraic `k`-schemes (`BlowUpSequenceFunctor
@@ -262,3 +271,6 @@ theorem exists_strong_resolution {k : Type u} [Field k] [CharZero k] (X : AlgSch
   exact ⟨BR k Y, hBR k Y⟩
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

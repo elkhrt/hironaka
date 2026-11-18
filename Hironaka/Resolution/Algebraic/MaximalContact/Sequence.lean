@@ -74,16 +74,24 @@ The containment `Z_i ⊆ H_i` is also [Wlo05, Lemma 2.7.6]. The results here fee
 (`Theorem97Induction.lean`) and the order reduction in the maximal contact case
 (`Hironaka/Resolution/Algebraic/OrderReduction/Step21MaximalContact.lean`). -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry Scheme IdealSheafData BlowUpSequence
-  Scheme.IdealSheafData
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
 namespace Hironaka.Sequence
 
-open AlgebraicGeometry
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
 
 variable {k : Type u} [Field k] {X : Scheme.{u}} (f : X ⟶ Spec (.of k)) [CharZero k] (n : ℕ)
   [SmoothOfRelativeDimension n f]
@@ -260,3 +268,6 @@ theorem isDynamicMaximalContact_of_isMaximalContact (I H : X.IdealSheafData) {m 
     (hH.comap_of_isOpenImmersion j) (h.comap f n j) i
 
 end Hironaka.Sequence
+
+end
+end ResolutionHironaka

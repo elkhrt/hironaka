@@ -78,16 +78,24 @@ theorems for every scheme smooth and of finite type over the field from that cas
   run at the level of the main theorem so that the equidimensionality of the triples never enters.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory TopologicalSpace AlgebraicGeometry Scheme Scheme.IdealSheafData
-  Scheme.BlowUpSequence
+open CategoryTheory _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
 
 namespace Hironaka.Sequence
 
-open AlgebraicGeometry Hironaka.Resolution
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.ResolutionHironaka.Hironaka.Resolution
 
 variable {X Y : Scheme.{u}}
 
@@ -960,9 +968,13 @@ end
 
 universe u
 
-open CategoryTheory AlgebraicGeometry Scheme.IdealSheafData Scheme
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
 /-- **Hironaka's Main Theorem II** [Hir64, Main Theorem II, pp. 142–143]: order reduction. Let `X`
 be a smooth algebraic `k`-scheme (`AlgScheme k`), `k` of characteristic zero, `J` an ideal sheaf on
@@ -1108,3 +1120,6 @@ theorem exists_blowUpSequence_weakTransformSeq_eq_top {k : Type u} [Field k] [Ch
   exact ⟨S, fun i => (h1 i).1, fun i => (h1 i).2.1, ⟨fun i => (h1 i).2.2, h2⟩, h3⟩
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

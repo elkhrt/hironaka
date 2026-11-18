@@ -60,14 +60,24 @@ with every flat base change (`IsOrderGeSeq.markedTransformSeq_pullback_mk_of_fla
 in the sources, which assert the transports without proof.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory CategoryTheory.Limits AlgebraicGeometry IsLocalRing TopologicalSpace
-  Scheme IdealSheafData BlowUpSequence
+open CategoryTheory CategoryTheory.Limits _root_.AlgebraicGeometry
+open _root_.ResolutionHironaka.AlgebraicGeometry _root_.IsLocalRing
+open _root_.ResolutionHironaka.IsLocalRing _root_.TopologicalSpace
+open _root_.ResolutionHironaka.TopologicalSpace _root_.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
 variable {X Y : Scheme.{u}}
 
@@ -320,3 +330,6 @@ theorem IsOrderGeSeq.markedTransformSeq_pullback_of_flat [CharZero k] (f : X ⟶
 end Marked
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

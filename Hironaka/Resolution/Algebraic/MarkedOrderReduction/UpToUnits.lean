@@ -58,12 +58,20 @@ These facts drive the functoriality of the loops for an arbitrary smooth morphis
 (`Hironaka/Resolution/Algebraic/MarkedOrderReduction/SmoothLoop.lean`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace Scheme BlowUpSequence Scheme.IdealSheafData
-  Hironaka.Sequence
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.Hironaka.Sequence
 
 namespace Hironaka.BMO
 
@@ -85,7 +93,9 @@ end Hironaka.BMO
 
 namespace Hironaka.MarkedTriple
 
-open Scheme IdealSheafData
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
 variable {k : Type u} [Field k]
 
@@ -226,7 +236,7 @@ end Hironaka.MarkedTriple
 
 namespace Hironaka.MarkedTriple
 
-open Scheme
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
 
 variable {k : Type u} [Field k] [CharZero k]
 
@@ -309,3 +319,6 @@ theorem isPullbackOfUpToUnits_induced_of_eq_seq {T' : MarkedTriple k}
   exact hq
 
 end Hironaka.MarkedTriple
+
+end
+end ResolutionHironaka

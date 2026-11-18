@@ -36,14 +36,23 @@ pull-back where it is defined [Kol07, Definition 60]
 statement is `weakTransformSeq_pullback_of_isOrderSeq`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry Scheme IdealSheafData BlowUpSequence
-  Scheme.IdealSheafData
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
 variable {k : Type u} [Field k] [CharZero k] {L : Type u} [Field L] [CharZero L]
   {X Y : Scheme.{u}}
@@ -101,6 +110,7 @@ theorem IsOrderSeq.weakTransformSeq_pullback_mk_of_flat (f : X ⟶ Spec (.of k))
 end AlgebraicGeometry
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
 /-- Along a flat pull-back of a smooth blow-up sequence of order `m` whose pull-back is again one
 of order `m`, the induced ideals of the pull-back are the pull-backs of the induced ideals under
@@ -118,3 +128,6 @@ theorem weakTransformSeq_pullback_of_isOrderSeq {k : Type u} [Field k] [CharZero
   exact IsOrderSeq.weakTransformSeq_pullback_mk_of_flat f n f' n' p hS hS' j hj
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

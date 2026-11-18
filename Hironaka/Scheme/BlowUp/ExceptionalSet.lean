@@ -33,9 +33,13 @@ The definition is placed in Mathlib's namespace `AlgebraicGeometry.Scheme.Hom` s
 is not needed for the definition or for these lemmas.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 namespace AlgebraicGeometry.Scheme.Hom
+open _root_.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme _root_.AlgebraicGeometry.Scheme.Hom
 
 open CategoryTheory TopologicalSpace
 
@@ -95,3 +99,6 @@ theorem exceptionalSet_subset_support_comap {B : Scheme.{u}} (π : B ⟶ X) (I :
   exact notMem_exceptionalSet_of_isIso_restrict π (V := I.support.compl) h hx
 
 end AlgebraicGeometry.Scheme.Hom
+
+end
+end ResolutionHironaka

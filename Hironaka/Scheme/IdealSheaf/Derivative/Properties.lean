@@ -58,13 +58,17 @@ Used for Theorem 88 (`Hironaka/Scheme/BlowUpSequence/Theorem88Basic.lean`,
 (`Hironaka/Resolution/Algebraic/OrderReduction/Functorial.lean`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
-open IsLocalRing
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing
 
 /-! ### The completion, in coordinates ([Kol07, Lemma 74 (5)]) -/
 
 namespace IsLocalRing.RegularCoords
+open _root_.IsLocalRing
 
 variable {k : Type*} [CommRing k] {R : Type*} [CommRing R] [IsRegularLocalRing R] [Algebra ℚ R]
   [Algebra k R] {n : ℕ} (c : RegularCoords R n)
@@ -81,8 +85,11 @@ theorem D_adicCompletion_derivative (hk : c.IsLinearOver k) (hs : c.SpansDerivat
 end IsLocalRing.RegularCoords
 
 namespace AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
 
-open CategoryTheory TopologicalSpace IsLocalRing
+open CategoryTheory _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing
 
 universe u
 
@@ -241,3 +248,6 @@ theorem exists_regularCoords_D_adicCompletion (I : X.IdealSheafData) (x : X)
 end Smooth
 
 end AlgebraicGeometry.Scheme.IdealSheafData
+
+end
+end ResolutionHironaka

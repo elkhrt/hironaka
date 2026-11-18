@@ -61,13 +61,22 @@ role played by `E`."
   for the added hypothesis `r ≥ 1`: Kollár's `r ≥ m − 1` allows `r = 0` when `m = 1`, where `s = 0`,
   `W_0(I) = 𝒪_X` and the equivalence fails. -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace Scheme BlowUpSequence IsLocalRing
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence _root_.IsLocalRing
+open _root_.ResolutionHironaka.IsLocalRing
 
 namespace AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
 
 variable {k : Type u} [Field k] [CharZero k] {X : Scheme.{u}} (f : X ⟶ Spec (.of k)) (n : ℕ)
   [SmoothOfRelativeDimension n f] (I : X.IdealSheafData) (m : ℕ)
@@ -183,7 +192,8 @@ end AlgebraicGeometry.Scheme.IdealSheafData
 
 namespace Hironaka.Sequence
 
-open Scheme.IdealSheafData
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
 variable {X : Scheme.{u}} {k : Type u} [Field k] (f : X ⟶ Spec (.of k))
 
@@ -257,3 +267,6 @@ theorem corollary101 (hI : I.maxOrd = m) (hm : 1 ≤ m) (_hE : E.IsSnc) {r : ℕ
     fun S => tuning_iff_E f n S I E m hI hm hr hr1⟩
 
 end Hironaka.Sequence
+
+end
+end ResolutionHironaka

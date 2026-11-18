@@ -22,23 +22,29 @@ Two constructions on Kollár's divisors with ordered index set `DivisorFamily X`
   divisor `H = V(J)` appended as its last member.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
 
 noncomputable section
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
-open Scheme
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
 
 variable {X Y : Scheme.{u}}
 
 namespace Scheme.DivisorFamily
+open _root_.AlgebraicGeometry.Scheme
 
-open IdealSheafData
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
 /-- The total transform of [Kol07, Definition 25] along a morphism `π : B ⟶ X` with a distinguished
 divisor `F` on `B`: the strict transforms along `π`
@@ -67,3 +73,6 @@ end Scheme.DivisorFamily
 end AlgebraicGeometry
 
 end
+
+end
+end ResolutionHironaka

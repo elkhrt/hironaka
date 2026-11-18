@@ -36,9 +36,12 @@ Pure topology, not stated in the sources; the schemes to which it is applied are
 of finite type over a field, Noetherian.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
-open TopologicalSpace Topology
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace Topology
 
 
 variable {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y]
@@ -141,3 +144,5 @@ theorem exists_mem_genericPoints_preimage_of_mem_genericPoints [T0Space X] [Quas
   have hmem : f η' ∈ closure {f y} := by rw [hmax]; exact subset_closure rfl
   exact ((hη'y.map hf).antisymm (specializes_iff_mem_closure.mpr hmem)).eq
 
+end
+end ResolutionHironaka

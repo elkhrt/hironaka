@@ -26,6 +26,9 @@ route through the regularity of the stalk and the dimension formula
 induction on the dimension (`Hironaka/Resolution/Algebraic/Stage/DimZero.lean`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
@@ -33,6 +36,7 @@ universe u
 open CategoryTheory AlgebraicGeometry
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
 variable {k : Type u} [Field k]
 
@@ -71,3 +75,7 @@ theorem isField_stalk_of_smoothOfRelativeDimension_zero {X : Scheme.{u}} (f : X 
   exact (IsLocalRing.isField_iff_maximalIdeal_eq).mpr hmap.symm
 
 end AlgebraicGeometry
+open _root_.ResolutionHironaka.AlgebraicGeometry
+
+end
+end ResolutionHironaka

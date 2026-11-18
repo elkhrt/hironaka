@@ -26,11 +26,17 @@ agree by the uniqueness theorem `affineBlowUp.hom_ext`, so they glue
 Uniqueness is `affineBlowUp.hom_ext`; together, `existsUnique_lift`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
-open AlgebraicGeometry CategoryTheory CategoryTheory.Limits Scheme.IdealSheafData TopologicalSpace
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
+open CategoryTheory.Limits _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData TopologicalSpace
 
 universe u
 
@@ -98,3 +104,6 @@ theorem affineBlowUp.eq_lift (f : Y ⟶ Spec (.of R))
   affineBlowUp.hom_ext I f hf g _ hg (affineBlowUp.lift_π I f hf)
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

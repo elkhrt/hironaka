@@ -48,13 +48,23 @@ Kollár's order reduction.
 Sources: [Kol07, Theorem 35 (2); Definition 24; Notation 64 (3); Definition–Lemma 110];
 [BM08, (5.2)]. -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace Scheme IdealSheafData Scheme.IdealSheafData
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
 namespace AlgebraicGeometry.Scheme.DivisorFamily
+open _root_.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme
 
 variable {X : Scheme.{u}} [NoetherianSpace X]
 
@@ -131,6 +141,8 @@ theorem isIdealOfSncDivisor_monomial {E : DivisorFamily X} (hE : E.IsSnc) (a : X
 end Hironaka.Snc
 
 namespace AlgebraicGeometry.Scheme.IdealSheafData.IsIdealOfSncDivisor
+open _root_.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
 
 variable {k : Type u} [Field k] [CharZero k] {X Y : Scheme.{u}}
 
@@ -145,3 +157,6 @@ theorem comap_of_smooth (f : X ⟶ Spec (.of k)) [Smooth f] (h : Y ⟶ X) [Smoot
   exact Finset.prod_congr rfl fun j _ => comap_pow _ _ _
 
 end AlgebraicGeometry.Scheme.IdealSheafData.IsIdealOfSncDivisor
+
+end
+end ResolutionHironaka

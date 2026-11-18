@@ -52,11 +52,16 @@ Used for the cosupport of the derivative ideals
 `Hironaka/Manifold/BlowUp/Transform/DerivTransform.lean`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
-open AlgebraicGeometry CategoryTheory IsLocalRing KaehlerDifferential
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing KaehlerDifferential
 
 universe u
 
@@ -316,3 +321,6 @@ theorem exists_regularCoords_stalk_of_isAlgebraic [CharZero k] (x : X)
   rw [hspan δ r, h0, add_zero]
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

@@ -51,12 +51,21 @@ Simple normal crossings and the total transform are those of [Kol07, Definition 
 `Hironaka.Resolution.Algebraic.Wlo05.EmbeddedIsolatedIdeal`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace Hironaka Scheme BlowUpSequence
-  Scheme.IdealSheafData Hironaka.BMO IsLocalRing
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.ResolutionHironaka.Hironaka _root_.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.Hironaka.BMO _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing
 
 namespace Hironaka.Resolution
 
@@ -187,3 +196,6 @@ theorem notMem_strictTransformSeq_support_of_mem_genericPoints_component (hKC : 
 end Absorbed
 
 end Hironaka.Resolution
+
+end
+end ResolutionHironaka

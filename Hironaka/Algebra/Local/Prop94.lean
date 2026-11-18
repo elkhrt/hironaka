@@ -33,11 +33,15 @@ proposition is applied, through the Cohen isomorphism, to the completed local ri
 of the formal equivalence of hypersurfaces of maximal contact [Kol07, Theorem 92].
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 namespace IsLocalRing
+open _root_.IsLocalRing
 
-open IsLocalRing
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing
 
 /-! ### The product rule read backwards, and (2) ⇒ (3) for any coordinate ring -/
 
@@ -94,7 +98,7 @@ end RegularCoords
 
 section PowerSeries
 
-open MvPowerSeries
+open _root_.MvPowerSeries _root_.ResolutionHironaka.MvPowerSeries
 
 variable {K : Type*} [Field K] [CharZero K] {n : ℕ}
 
@@ -394,3 +398,6 @@ theorem isMCInvariant_iff_isInvariantOnePlus (I : Ideal (MvPowerSeries (Fin n) K
 end PowerSeries
 
 end IsLocalRing
+
+end
+end ResolutionHironaka

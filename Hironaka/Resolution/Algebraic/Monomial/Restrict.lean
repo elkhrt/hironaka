@@ -40,6 +40,9 @@ They feed the functoriality of the geometric Step 3 in
 `Hironaka/Resolution/Algebraic/Monomial/Geometric/PullbackRun.lean`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 namespace Hironaka.Monomial.MonomialState
@@ -80,3 +83,6 @@ structure Refines (ρ : ℕ → ℕ) (Y L : MonomialState) : Prop where
   exists_lift : ∀ T' ∈ L.nerve, ∃ T ∈ Y.nerve, T.image ρ = T'
 
 end Hironaka.Monomial.MonomialState
+
+end
+end ResolutionHironaka

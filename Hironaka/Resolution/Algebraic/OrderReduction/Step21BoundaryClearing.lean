@@ -58,12 +58,21 @@ Step 2.1: nothing beyond the order clause is assumed of the transforms); they en
 about it in `Hironaka/Resolution/Algebraic/OrderReduction/Step21MaximalContact.lean`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace Scheme Hironaka BlowUpSequence
-  Scheme.IdealSheafData Hironaka.Sequence
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.Hironaka
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.Hironaka.Sequence
 
 namespace Hironaka.BO
 
@@ -121,3 +130,6 @@ noncomputable def step21Seq : (j : ℕ) →
     else step21Seq j
 
 end Hironaka.BO
+
+end
+end ResolutionHironaka

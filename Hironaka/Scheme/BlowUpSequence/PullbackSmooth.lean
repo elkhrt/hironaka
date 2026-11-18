@@ -27,13 +27,20 @@ relative dimension, additively) follows by composition. Applied at every stage w
 `IsSmoothOfRelativeDimension`; see also [Wlo05, Proposition 2.4.2 (1)].
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry Limits Scheme BlowUpSequence
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.CategoryTheory.Limits _root_.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
 variable {k : Type u} [Field k] {X Y : Scheme.{u}}
 
@@ -113,3 +120,6 @@ theorem IsSmoothOfRelativeDimension.pullback (f : X ⟶ Spec (.of k)) (h : Y ⟶
   rwa [hnat] at key
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

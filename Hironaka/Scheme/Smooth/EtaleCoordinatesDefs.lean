@@ -34,11 +34,15 @@ public import Mathlib.AlgebraicGeometry.Morphisms.Etale
   (`B_{Z∩U} U ≅ U ×_{𝔸ⁿ} B_L 𝔸ⁿ`, `Hironaka/Scheme/Smooth/BlowUpSmoothChart.lean`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
-open AlgebraicGeometry CategoryTheory
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
 
 universe u
 
@@ -76,3 +80,6 @@ structure EtaleCoordinatesAdapted (f : X ⟶ Spec (.of k)) (n r : ℕ) (Z : X.Id
   adapted : Z.comap U.1.ι = (coordinateSubspace k n r).comap (toAffineSpace f U.1 v)
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

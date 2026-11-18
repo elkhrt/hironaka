@@ -38,17 +38,24 @@ Kollár's schemes of finite type over a field, made separated); smoothness over 
 `Smooth` of the structure morphism.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open CategoryTheory TopologicalSpace AlgebraicGeometry
+open CategoryTheory TopologicalSpace _root_.AlgebraicGeometry
+open _root_.ResolutionHironaka.AlgebraicGeometry
 
 noncomputable section
 
 namespace AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme
 
-open IdealSheafData Scheme.Hom
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry.Scheme.Hom _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.Hom
 
 variable {X : Scheme.{u}}
 
@@ -67,7 +74,8 @@ inductive BlowUpSequence : Scheme.{u} → Type (u + 1)
 
 namespace BlowUpSequence
 
-open IdealSheafData
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
 /-- The number `r` of monoidal transformations in the succession. -/
 def length : {X : Scheme.{u}} → BlowUpSequence X → ℕ
@@ -147,14 +155,16 @@ end BlowUpSequence
 end AlgebraicGeometry.Scheme
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
-open Scheme
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
 
 variable {X Y : Scheme.{u}}
 
 /-! ### Pull-back, push-forward, and the deletion of empty blow-ups -/
 
 namespace Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry.Scheme
 
 /-- The pull-back `h^* B` of a succession along `h : Y ⟶ X` [Kol07, Definition 30.1]: blow up the
 inverse image centres `h⁻¹(Z_i)`; for smooth (more generally flat) `h` the stages are `X_i ×_X Y`.
@@ -196,3 +206,6 @@ end Scheme.BlowUpSequence
 end AlgebraicGeometry
 
 end
+
+end
+end ResolutionHironaka

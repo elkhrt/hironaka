@@ -21,13 +21,19 @@ This is the bookkeeping behind
 functoriality of each round, with the pullback of [Kol07, 30.1].
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry Scheme BlowUpSequence
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
 variable {X Y : Scheme.{u}}
 
@@ -65,3 +71,6 @@ theorem pullback_concat : ∀ {X : Scheme.{u}} (S : BlowUpSequence X) (T : BlowU
     rfl
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

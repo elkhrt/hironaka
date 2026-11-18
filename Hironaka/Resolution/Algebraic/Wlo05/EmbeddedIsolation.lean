@@ -44,12 +44,21 @@ Used throughout the CP modules (`Hironaka.Resolution.Algebraic.Wlo05.EmbeddedCP2
 `EmbeddedCP5`, `EmbeddedCP6Loop`, `EmbeddedCPBridge`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace Hironaka Scheme.BlowUpSequence
-  Scheme.IdealSheafData Hironaka.Stage Hironaka.Sequence Hironaka.BMO
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.ResolutionHironaka.Hironaka
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.Hironaka.Stage _root_.ResolutionHironaka.Hironaka.Sequence
+open _root_.ResolutionHironaka.Hironaka.BMO
 
 namespace Hironaka.Resolution
 
@@ -118,3 +127,6 @@ theorem exists_centerContains_bmoOneRun_of_invCE (T : MarkedTriple k) (hm : T.m 
     (markedTransformSeq_bmoOneRun_last_eq_top T hm)
 
 end Hironaka.Resolution
+
+end
+end ResolutionHironaka

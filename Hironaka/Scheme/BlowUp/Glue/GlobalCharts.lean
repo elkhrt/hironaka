@@ -28,13 +28,20 @@ together with two statements that rest on the universal property of the affine b
   the germ of `a` moved through `Spec Γ(X, U) → X` (`IsAffineOpen.fromSpec_app_self`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
-open Scheme.IdealSheafData
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
-open AlgebraicGeometry CategoryTheory Scheme.IdealSheafData TopologicalSpace
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData TopologicalSpace
 
 universe u
 
@@ -168,3 +175,6 @@ theorem Scheme.IdealSheafData.blowUp.mem_range_chart_iff (a : I.ideal U) (x' : b
 end Membership
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

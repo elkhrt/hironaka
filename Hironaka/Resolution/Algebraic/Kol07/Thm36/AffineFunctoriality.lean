@@ -61,12 +61,18 @@ of `Y` and a finite subcover (`Y` is quasi-compact over `k`); the empty `Y` is t
 `nil = nil` (`eraseEmpty_eq_nil_of_isEmpty`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory CategoryTheory.Limits AlgebraicGeometry TopologicalSpace Scheme Hironaka
-  BlowUpSequence
+open CategoryTheory CategoryTheory.Limits _root_.AlgebraicGeometry
+open _root_.ResolutionHironaka.AlgebraicGeometry _root_.TopologicalSpace
+open _root_.ResolutionHironaka.TopologicalSpace _root_.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.Hironaka
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
 
 namespace Hironaka.Resolution
 
@@ -193,3 +199,6 @@ theorem BRAffine_eq_eraseEmpty_pullback_of_smooth (X Y : Scheme.{u})
       (fun i : {y : Y // y ∈ t} => c i.1) hcov
 
 end Hironaka.Resolution
+
+end
+end ResolutionHironaka

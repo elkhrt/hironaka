@@ -37,14 +37,20 @@ at a general point it needs the injectivity of the conormal map
 Sources: [Hau14, Proposition 5.4 (6)]; [Hau03, Appendix C (7)]; [Sta, Tag 00TU].
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open AlgebraicGeometry CategoryTheory IsLocalRing Ideal
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing _root_.Ideal
+open _root_.ResolutionHironaka.Ideal
 open scoped TensorProduct
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
 variable {k : Type u} [Field k] {X : Scheme.{u}} (f : X ⟶ Spec (.of k))
 
@@ -167,3 +173,6 @@ theorem exists_derivation_dual [PerfectField k] [Smooth f] (x : X) {n : ℕ}
   rw [← hl j, LinearMap.comp_apply, h, LinearMap.proj_apply, Pi.single_apply]
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

@@ -34,9 +34,14 @@ The predicate is also used by the tuning of ideals (`Hironaka/Resolution/Algebra
 `Hironaka/Resolution/Algebraic/OrderReduction/Step22Indep.lean`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 namespace AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
 
 open CategoryTheory
 
@@ -57,3 +62,6 @@ theorem isMCInvariant_iff (I : X.IdealSheafData) (m : ℕ) :
   Iff.rfl
 
 end AlgebraicGeometry.Scheme.IdealSheafData
+
+end
+end ResolutionHironaka

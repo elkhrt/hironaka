@@ -75,12 +75,20 @@ The clauses are those of [Wlo05, Theorem 1.0.2]; the equidimensionality conventi
 `Hironaka.Resolution.Algebraic.Wlo05.EmbeddedFunctorClauses`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace IsLocalRing Scheme BlowUpSequence
-  Scheme.IdealSheafData CategoryTheory.Limits
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace _root_.IsLocalRing
+open _root_.ResolutionHironaka.IsLocalRing _root_.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData CategoryTheory.Limits
 
 namespace Hironaka.Resolution
 
@@ -859,3 +867,6 @@ theorem stageMap_notMem_image_smoothLocus_of_coreIdeal [IsReduced Y.subscheme]
 end RunGlue
 
 end Hironaka.Resolution
+
+end
+end ResolutionHironaka

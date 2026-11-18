@@ -36,12 +36,21 @@ the marked transform of `I = N(I) · M(I)` by `chainRelativeAt_markedTransformSe
 of [Kol07, 70]. Used in `Hironaka.Resolution.Algebraic.Wlo05.EmbeddedCP1Tower`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace Hironaka Scheme.BlowUpSequence
-  Scheme.IdealSheafData Hironaka.BMO Hironaka.Stage Hironaka.Sequence
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.ResolutionHironaka.Hironaka
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.Hironaka.BMO _root_.ResolutionHironaka.Hironaka.Stage
+open _root_.ResolutionHironaka.Hironaka.Sequence
 
 namespace Hironaka.Resolution
 
@@ -166,3 +175,6 @@ theorem cp1BMOAt_succ_of_cp1BOAt (n : ℕ) (hbo : CP1BOAt k (n + 1)) : CP1BMOAt 
   exact cp1For_bmoSeq _ hbo' T hT hη hηE hIc
 
 end Hironaka.Resolution
+
+end
+end ResolutionHironaka

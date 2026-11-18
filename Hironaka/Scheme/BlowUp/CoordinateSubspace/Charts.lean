@@ -39,13 +39,18 @@ centres (`Hironaka.Scheme.Smooth.ChartEtale`) and in the worked examples
 (`HironakaExamples.Sequence.Remark33Charts`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open AlgebraicGeometry CategoryTheory MvPolynomial
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
+open MvPolynomial
 
 namespace AlgebraicGeometry.CoordinateSubspace
+open _root_.AlgebraicGeometry
 
 variable (A : Type u) [CommRing A] (n r : ℕ)
 
@@ -125,8 +130,9 @@ end AlgebraicGeometry.CoordinateSubspace
 /-! ### The chart map and the cover -/
 
 namespace AlgebraicGeometry.CoordinateSubspace
+open _root_.AlgebraicGeometry
 
-open affineBlowUpAlgebra
+open _root_.ResolutionHironaka.AlgebraicGeometry.affineBlowUpAlgebra
 
 variable (A : Type u) [CommRing A] (n r : ℕ)
 
@@ -231,3 +237,6 @@ theorem modelTransition_X (j ℓ : Fin n) (i : Fin n) :
   rw [modelTransition, aeval_X]
 
 end AlgebraicGeometry.CoordinateSubspace
+
+end
+end ResolutionHironaka

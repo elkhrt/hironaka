@@ -32,14 +32,20 @@ For a quasi-coherent sheaf of modules `F` on a scheme `X` (Mathlib's `X.Modules`
   base change of the projective bundle of a module (`affineProjectiveBundle.isPullback_map`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry Opposite TopologicalSpace
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry Opposite
+open TopologicalSpace
 open scoped TensorProduct
 
 namespace AlgebraicGeometry.Scheme.Modules
+open _root_.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.Modules
 
 variable {X : Scheme.{u}} (F : X.Modules)
 
@@ -315,3 +321,6 @@ theorem exists_extend_restrictionMap [F.IsQuasicoherent] {U V : X.Opens}
   exact ⟨hb.lift gR, fun x => hb.lift_eq gR x⟩
 
 end AlgebraicGeometry.Scheme.Modules
+
+end
+end ResolutionHironaka

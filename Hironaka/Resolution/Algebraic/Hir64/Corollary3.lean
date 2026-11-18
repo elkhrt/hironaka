@@ -50,12 +50,23 @@ triple `(X, I_W, ∅)`:
   (`isInvertible_unionIdeal_of_isSnc`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace Topology Scheme IdealSheafData Hironaka
-  BlowUpSequence Scheme.IdealSheafData Hironaka.Sequence
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace Topology
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.Hironaka
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.Hironaka.Sequence
 
 namespace Hironaka.Resolution
 
@@ -106,3 +117,6 @@ theorem hironaka_corollary3 (X : Scheme.{u}) [X.Over (Spec (CommRingCat.of k))]
       @IsSnc.isSncBoundary_unionIdeal k _ _ _ hsmC _ (hFsnc.subfamily _)⟩
 
 end Hironaka.Resolution
+
+end
+end ResolutionHironaka

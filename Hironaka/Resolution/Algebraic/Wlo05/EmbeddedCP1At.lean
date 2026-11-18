@@ -28,12 +28,20 @@ hypotheses of `cp1For_concat`, kept verbatim). The run `bmoOneRun` of the loop i
 `Hironaka.Resolution.Algebraic.Wlo05.EmbeddedCP1Step1`, `EmbeddedCP1Step2` and `EmbeddedCP1Tower`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace Hironaka Scheme.BlowUpSequence
-  Scheme.IdealSheafData Hironaka.BMO Hironaka.Stage
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.ResolutionHironaka.Hironaka
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.Hironaka.BMO _root_.ResolutionHironaka.Hironaka.Stage
 
 namespace Hironaka.Resolution
 
@@ -57,3 +65,6 @@ def CP1BMOAt (n : ℕ) : Prop :=
     CP1For (bmoRun k n T hT) T.I T.E η
 
 end Hironaka.Resolution
+
+end
+end ResolutionHironaka

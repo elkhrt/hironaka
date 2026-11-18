@@ -78,15 +78,19 @@ The local hypersurfaces are the input of the globalization of blow-up sequences
 ([Kol07, Theorem 105], `Hironaka/Resolution/Algebraic/Kol07/MaximalContactGlobalization.lean`),
 which patches the order reduction on the opens `U` into one on `X`. -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry IsLocalRing
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing
 
 namespace Hironaka.Local
 
-open IsLocalRing
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing
 
 variable {R : Type*} [CommRing R] [IsLocalRing R]
 
@@ -97,6 +101,8 @@ theorem ordElem_mul_of_isUnit {a v : R} (hv : IsUnit v) : ordElem (a * v) = ordE
 end Hironaka.Local
 
 namespace AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
 
 variable {X : Scheme.{u}}
 
@@ -416,3 +422,6 @@ theorem exists_opens_isSmoothDivisor_isDynamicMaximalContact (I : X.IdealSheafDa
 end Assembly
 
 end AlgebraicGeometry.Scheme.IdealSheafData
+
+end
+end ResolutionHironaka

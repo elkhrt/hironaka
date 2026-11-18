@@ -44,11 +44,17 @@ are the level `0` (`M⁰`); the stratum's level is `l ≤ r`, so the last chain 
 never among the stratum's equations (`Γ ⊄ Z` locally). These statements are not in the literature.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open AlgebraicGeometry Scheme Scheme.IdealSheafData
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
 namespace Hironaka.Resolution
 
@@ -125,3 +131,6 @@ theorem AdmissibleChainStratumAt.isChainStratumAt {E : DivisorFamily X} {I Γ Z 
   exact ⟨⟨n, z, c, r, σ, a, hcc, l, s, hs, hZ⟩, ⟨n, z, c, r, σ, a, b, hcc, hb, hI⟩⟩
 
 end Hironaka.Resolution
+
+end
+end ResolutionHironaka

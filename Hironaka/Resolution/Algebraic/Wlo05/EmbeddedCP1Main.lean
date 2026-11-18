@@ -30,12 +30,19 @@ of the invariant CP5 and of the end identity CP6. The absorbing moment is that o
 [Wlo05, Theorem 4.7.1]; the tower induction behind `cp1BMOAt` is that of [Kol07, 70].
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace Hironaka Scheme.BlowUpSequence
-  Scheme.IdealSheafData
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.ResolutionHironaka.Hironaka
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
 namespace Hironaka.Resolution
 
@@ -71,3 +78,6 @@ theorem disjoint_strictTransformSeq_of_absorbed (T : MarkedTriple k) (hm : T.m =
     (chainRelativeAt_of_absorbed T hm C hinv h hcC hcc) hc'C hne
 
 end Hironaka.Resolution
+
+end
+end ResolutionHironaka

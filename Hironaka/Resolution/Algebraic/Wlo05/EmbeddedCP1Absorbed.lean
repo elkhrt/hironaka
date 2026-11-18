@@ -44,12 +44,20 @@ moment of the proof of [Wlo05, Theorem 4.7.1], with the chain form in place of W
 Used in `Hironaka.Resolution.Algebraic.Wlo05.EmbeddedCP1Main`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace Hironaka Scheme.BlowUpSequence
-  Scheme.IdealSheafData IsLocalRing
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.ResolutionHironaka.Hironaka
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData _root_.IsLocalRing
+open _root_.ResolutionHironaka.IsLocalRing
 
 namespace Hironaka.Resolution
 
@@ -218,3 +226,6 @@ theorem disjoint_strictTransformSeq_of_absorbed_of_chainRelativeAt (T : MarkedTr
   rw [hξ'.strict_eq, hξ.strict_eq, heq]
 
 end Hironaka.Resolution
+
+end
+end ResolutionHironaka

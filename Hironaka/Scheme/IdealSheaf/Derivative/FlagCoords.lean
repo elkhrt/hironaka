@@ -46,15 +46,20 @@ Used in the proof of [Kol07, Theorem 88] for one blow-up
 (`Hironaka/Resolution/Algebraic/Kol07/Theorem88BlowUp.lean`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open AlgebraicGeometry CategoryTheory IsLocalRing
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
-open IsLocalRing
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing
 
 variable {R : Type*} [CommRing R] [IsLocalRing R] {n : ℕ} (x : Fin n → R)
 
@@ -141,8 +146,11 @@ theorem exists_span_eq_and_chartCenter_eq (hx : maximalIdeal R = Ideal.span (Set
 end AlgebraicGeometry
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
-open IsLocalRing AlgebraicGeometry Scheme.IdealSheafData
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing _root_.AlgebraicGeometry
+open _root_.ResolutionHironaka.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
 variable {k : Type u} [Field k] [CharZero k] {X : Scheme.{u}} (f : X ⟶ Spec (.of k)) (n : ℕ)
   [SmoothOfRelativeDimension n f] (Z S : X.IdealSheafData) [Smooth (Z.subschemeι ≫ f)]
@@ -226,3 +234,6 @@ theorem exists_flagCoords_of_isAlgebraic (hS : IsSmoothDivisor S) (hZS : S ≤ Z
   rw [hspan δ a, h0', add_zero]
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

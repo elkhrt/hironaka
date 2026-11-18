@@ -33,9 +33,13 @@ Routine commutative algebra, not stated as such in the sources (the localization
 generated module, [Sta, Tag 00DQ], and Nakayama's lemma).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 namespace Algebra
+open _root_.Algebra
 
 open KaehlerDifferential _root_.TensorProduct
 
@@ -122,6 +126,7 @@ theorem span_eq_top_of_forall_smul_mem {S' : Type u} [CommRing S'] [Algebra k S'
 end Algebra
 
 namespace Algebra
+open _root_.Algebra
 
 open KaehlerDifferential _root_.TensorProduct
 
@@ -147,3 +152,6 @@ theorem span_eq_top_of_basis_tensor [IsLocalRing T] [Module.Finite T Ω[T⁄k]] 
   IsLocalRing.span_eq_top_of_tmul_eq_basis _ b fun i => (hb i).symm
 
 end Algebra
+
+end
+end ResolutionHironaka

@@ -40,11 +40,16 @@ ideal, `f ∈ 𝔪^k ↔ k ≤ order f` (`MvPowerSeries.mem_span_range_X_pow_iff
 `Hironaka/Algebra/Local/PowerSeries.lean`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 namespace IsLocalRing
+open _root_.IsLocalRing
 
-open MvPowerSeries IsLocalRing
+open _root_.MvPowerSeries _root_.ResolutionHironaka.MvPowerSeries _root_.IsLocalRing
+open _root_.ResolutionHironaka.IsLocalRing
 
 variable {K : Type*} [Field K] {n : ℕ}
 
@@ -387,7 +392,7 @@ evaluation at the images of the variables; under the discrete topology "evaluabl
 
 section Continuity
 
-open scoped MvPowerSeries.WithPiTopology
+open scoped _root_.MvPowerSeries.WithPiTopology
 
 variable [UniformSpace K] [DiscreteUniformity K]
 
@@ -670,3 +675,6 @@ theorem exists_onePlus_shift (B : Ideal (MvPowerSeries (Fin n) K))
 end Shift
 
 end IsLocalRing
+
+end
+end ResolutionHironaka

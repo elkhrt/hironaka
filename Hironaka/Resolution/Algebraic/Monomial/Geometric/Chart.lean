@@ -45,12 +45,17 @@ Not in the sources as statements; they are the coordinate computations that Koll
 Hauser's descriptions of the blow-up in charts take for granted.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open AlgebraicGeometry CategoryTheory TopologicalSpace IsLocalRing Ideal
-  Scheme.IdealSheafData
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
+open TopologicalSpace _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing Ideal
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
 namespace Hironaka.Monomial
 
@@ -153,7 +158,7 @@ end Chart
 
 section Origin
 
-open IsLocalRing
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing
 
 variable {k : Type u} [Field k] (f : X ⟶ Spec (CommRingCat.of k)) [Smooth f]
 
@@ -329,3 +334,6 @@ theorem exists_chartOrigin_point_of_mem (Z : X.IdealSheafData) (x : X) {n : ℕ}
 end Origin
 
 end Hironaka.Monomial
+
+end
+end ResolutionHironaka

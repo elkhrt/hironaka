@@ -38,12 +38,20 @@ carried along, as Corollary 101 needs it.
   `D(I)^2`); conversely `I` and `D(I)^2` are the generating products of `(1, 0, 0)` and `(0, 2, 0)`.
   The worked examples of `Hironaka.Balanced` compute this ideal for Kollár's Examples 11 and 106. -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace Scheme BlowUpSequence Scheme.IdealSheafData
-  IsLocalRing
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData _root_.IsLocalRing
+open _root_.ResolutionHironaka.IsLocalRing
 
 namespace Hironaka.Sequence
 
@@ -153,3 +161,6 @@ theorem tuning_iff_W (hI : I.maxOrd = m) (hs : 1 ≤ s) :
 end Bounds
 
 end Hironaka.Sequence
+
+end
+end ResolutionHironaka

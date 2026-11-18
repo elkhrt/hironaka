@@ -35,11 +35,15 @@ assembles it twice:
 The existence statements `exists_dataOfBD` and `exists_data` hold by `rfl` on these definitions.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry Hironaka IsLocalRing
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.ResolutionHironaka.Hironaka _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing
 
 namespace Hironaka.BO
 
@@ -97,3 +101,6 @@ theorem exists_data (n m : ℕ)
   ⟨data n m Dom B hDom hB hsm hbc hBind, fun _ _ _ => rfl⟩
 
 end Hironaka.BO
+
+end
+end ResolutionHironaka

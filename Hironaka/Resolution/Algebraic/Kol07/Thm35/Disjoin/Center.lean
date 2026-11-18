@@ -40,12 +40,18 @@ the unit ideal. Hence the center has simple normal crossings with the family
   `AlgebraicGeometry.HasSncWith.isRegular` and `HasSncWith.smooth` under the names used here.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open AlgebraicGeometry CategoryTheory TopologicalSpace IsLocalRing Ideal Scheme
-  Scheme.IdealSheafData
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
+open TopologicalSpace _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing Ideal
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
 namespace Hironaka.Sequence
 
@@ -170,3 +176,6 @@ theorem smooth_disjoinCenter [PerfectField k] (f : X ⟶ Spec (.of k)) [Smooth f
 end Smooth
 
 end Hironaka.Sequence
+
+end
+end ResolutionHironaka

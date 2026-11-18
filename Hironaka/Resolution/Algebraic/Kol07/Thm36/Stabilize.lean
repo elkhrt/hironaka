@@ -33,11 +33,17 @@ likewise), the situation in which the principalization functor commutes with clo
   which `Hironaka.Resolution.Algebraic.Kol07.Thm36.Assembly` supplies.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry Scheme.IdealSheafData Scheme.BlowUpSequence
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
 
 namespace Hironaka.Resolution
 
@@ -116,3 +122,6 @@ theorem affineSpaceTriple_closedEmbedding_coordInclSnd {n m : ℕ}
   ⟨coordInclSnd_comp_affineSpaceToSpec n m, rfl, (empty_comap (coordInclSnd n m)).symm⟩
 
 end Hironaka.Resolution
+
+end
+end ResolutionHironaka

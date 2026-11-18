@@ -64,15 +64,20 @@ index across the identification `pullbackStageIdx_last`). This module is the fir
 `isPullback_pullbackStageHom` (`BaseChange.lean`) together.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry Scheme BlowUpSequence
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
 
 namespace Hironaka.Sequence
 
-open AlgebraicGeometry
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
 
 variable {X Y : Scheme.{u}}
 
@@ -193,12 +198,14 @@ theorem collapsedFamily_pullback (S : BlowUpSequence X) (g : Y ⟶ X) [Flat g]
 end Hironaka.Sequence
 
 namespace AlgebraicGeometry.Triple
+open _root_.AlgebraicGeometry
 
-open Hironaka
+open _root_.ResolutionHironaka.Hironaka
 
-open Scheme
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
 
-open Hironaka.Sequence AlgebraicGeometry
+open _root_.ResolutionHironaka.Hironaka.Sequence _root_.AlgebraicGeometry
+open _root_.ResolutionHironaka.AlgebraicGeometry
 
 variable {k : Type u} [Field k] {L : Type u} [Field L]
 
@@ -318,3 +325,6 @@ theorem disjoinedTriple_isBaseChangeOf [CharZero k] [CharZero L] {T : Triple k} 
     rw [collapsedFamily_congr e, collapsedFamily_pullback, DivisorFamily.comap_comp]
 
 end AlgebraicGeometry.Triple
+
+end
+end ResolutionHironaka

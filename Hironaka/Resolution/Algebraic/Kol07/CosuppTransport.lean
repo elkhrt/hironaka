@@ -44,16 +44,23 @@ to the end (`disjoint_cosupp_strictTransformSeq_last_of_disjoint`).
 The weak transform is the birational transform `π_*^{-1} I` of [Kol07, 58].
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace IsLocalRing
-  Scheme.IdealSheafData Scheme BlowUpSequence
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace _root_.IsLocalRing
+open _root_.ResolutionHironaka.IsLocalRing _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
 
 namespace Hironaka.Sequence
 
-open AlgebraicGeometry
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
 
 variable {X : Scheme.{u}}
 
@@ -139,3 +146,6 @@ theorem disjoint_cosupp_strictTransformSeq_last_of_disjoint (n : ℕ) : ∀ {X :
       (D.strictTransform D₀) (disjoint_cosupp_strictTransform_of_disjoint D₀ J D hZ hD)
 
 end Hironaka.Sequence
+
+end
+end ResolutionHironaka

@@ -32,12 +32,21 @@ triple `(Y_i, (Y ↪ Y_i)_* J, 1, ∅)` of Kollár's chain a triple in the sense
 member is a simple normal crossing divisor on a smooth `k`-scheme.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory CategoryTheory.Limits AlgebraicGeometry TopologicalSpace Scheme BlowUpSequence
-  Scheme.IdealSheafData Hironaka.Sequence Hironaka.Snc
+open CategoryTheory CategoryTheory.Limits _root_.AlgebraicGeometry
+open _root_.ResolutionHironaka.AlgebraicGeometry _root_.TopologicalSpace
+open _root_.ResolutionHironaka.TopologicalSpace _root_.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.Hironaka.Sequence _root_.ResolutionHironaka.Hironaka.Snc
 
 namespace Hironaka.Stage
 
@@ -62,3 +71,6 @@ theorem isSnc_of_isEmpty (f : X ⟶ Spec (.of k)) [Smooth f] (E : DivisorFamily 
 end Transports
 
 end Hironaka.Stage
+
+end
+end ResolutionHironaka

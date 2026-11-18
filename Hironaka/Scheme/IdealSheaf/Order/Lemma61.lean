@@ -62,13 +62,20 @@ Used for the orders along centres in a blow-up sequence
 `Hironaka/Scheme/BlowUpSequence/TransformDerivative.lean`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
-open AlgebraicGeometry CategoryTheory IsLocalRing TopologicalSpace Scheme.IdealSheafData
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing _root_.TopologicalSpace
+open _root_.ResolutionHironaka.TopologicalSpace _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
 universe u
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
 variable {X : Scheme.{u}}
 
@@ -341,3 +348,6 @@ theorem maxOrd_weakTransform_le (m : ℕ) (hm : I.ord η = m) (hmax : I.maxOrd =
 end Global
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

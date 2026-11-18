@@ -42,14 +42,19 @@ used, only that it is a well-defined linear map).
 a regular local ring, and so is `S_𝔮`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open IsLocalRing KaehlerDifferential
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing _root_.KaehlerDifferential
+open _root_.ResolutionHironaka.KaehlerDifferential
 open scoped TensorProduct
 
 namespace Algebra
+open _root_.Algebra
 
 variable {k : Type u} [Field k] {S : Type u} [CommRing S] [Algebra k S]
 
@@ -227,3 +232,6 @@ theorem IsSmoothAt.isRegularLocalRing [Algebra.FiniteType k S] (𝔮 : Ideal S) 
       (Localization.AtPrime 𝔮)).toRingEquiv
 
 end Algebra
+
+end
+end ResolutionHironaka

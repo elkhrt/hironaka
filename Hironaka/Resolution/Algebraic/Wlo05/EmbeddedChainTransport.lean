@@ -31,11 +31,18 @@ are the members through `φ q` (`AlgebraicGeometry.mem_support_comap_iff_apply`)
 and `Hironaka.Resolution.Algebraic.Wlo05.EmbeddedChainExtendsByEmpty`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry Scheme Scheme.IdealSheafData Ideal
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData _root_.Ideal
+open _root_.ResolutionHironaka.Ideal
 
 namespace Hironaka.Resolution
 
@@ -87,3 +94,6 @@ theorem chainRelativeAt_of_comap_of_isIso_stalkMap (φ : Y ⟶ X) {E : DivisorFa
       ← chainIdeal_comp, Function.comp_assoc, hM]
 
 end Hironaka.Resolution
+
+end
+end ResolutionHironaka

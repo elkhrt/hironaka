@@ -37,6 +37,9 @@ For `I = 0` the irrelevant ideal is `0` and the statement is trivial; for `I = R
 elements are the `r t`, and the irrelevant ideal is `(t)`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 
@@ -124,3 +127,5 @@ theorem reesAlgebra.irrelevant_le_span_degreeOne_of_span_eq (s : Set R) (hs : Id
         Submodule.smul_of_tower_mem _ r (ih hx')
   exact key a (hs ▸ a.2) a.2
 
+end
+end ResolutionHironaka

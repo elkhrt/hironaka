@@ -40,12 +40,19 @@ the form `stageMap_mem_support_of_mem_center_BP`, to identify the first centre c
 transform of the embedded scheme (`Hironaka.Resolution.Algebraic.Kol07.Thm36.AffineTheorem36`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry Scheme IdealSheafData Hironaka
-  BlowUpSequence
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.Hironaka
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
 
 namespace Hironaka.Resolution
 
@@ -121,3 +128,6 @@ theorem stageMap_mem_support_of_mem_center_BP (TA : Triple k) (hE : IsEmpty TA.E
   exact key _ (Hironaka.Sequence.BP_of_isEmpty TA hE) i z hz
 
 end Hironaka.Resolution
+
+end
+end ResolutionHironaka

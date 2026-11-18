@@ -51,11 +51,15 @@ Used for the maximal coefficient ideal sheaf and Theorem 100
 (`Hironaka/Manifold/IdealSheaf/TuningLemmas.lean`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 namespace IsLocalRing
+open _root_.IsLocalRing
 
-open IsLocalRing
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing
 
 /-- The **weight** `∑ⱼ (m − j) cⱼ` of an exponent vector `c : {0, …, m} → ℕ`
 ([Kol07, Definition 98]). -/
@@ -647,3 +651,6 @@ end Prop99c
 end RegularCoords
 
 end IsLocalRing
+
+end
+end ResolutionHironaka

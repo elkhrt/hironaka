@@ -61,16 +61,25 @@ and the ideal-sheaf strict transforms. The results are used along the whole run 
 `Hironaka/Resolution/Algebraic/Monomial/Geometric/Realize.lean`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open AlgebraicGeometry CategoryTheory TopologicalSpace IsLocalRing Ideal
-  Scheme.IdealSheafData Scheme IdealSheafData
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace _root_.IsLocalRing
+open _root_.ResolutionHironaka.IsLocalRing _root_.Ideal _root_.ResolutionHironaka.Ideal
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
 namespace Hironaka.Monomial.PieceFamily
 
-open AlgebraicGeometry
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
 
 variable {k : Type u} [Field k] {X : Scheme.{u}} (f : X ⟶ Spec (CommRingCat.of k)) [Smooth f]
   (Φ : PieceFamily X) {E : DivisorFamily X} {e : E.ι ≃o Fin Φ.nextLabel}
@@ -746,3 +755,6 @@ theorem realizes_blowUpPieces [LocallyOfFiniteType f] (_hE : E.IsSnc) (hΦ : Φ.
           (Φ.eq_of_mem_faceSet_of_isCenter hS hP hQ hxP hxQ))
 
 end Hironaka.Monomial.PieceFamily
+
+end
+end ResolutionHironaka

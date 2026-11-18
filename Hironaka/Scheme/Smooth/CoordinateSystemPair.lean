@@ -35,11 +35,16 @@ basic open `U ⊆ U_1 ∩ U_2` around `p` is affine and étaleness restricts to 
 `TopCat.Presheaf.restrict_restrict`) and preserve germs (`germ_res_apply`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
-open AlgebraicGeometry CategoryTheory IsLocalRing KaehlerDifferential TensorProduct
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory IsLocalRing
+open KaehlerDifferential TensorProduct
 
 universe u
 
@@ -146,3 +151,6 @@ theorem exists_etaleCoordinates_pair {p : X} (hp : IsClosed ({p} : Set X))
     exact Function.update_of_ne hj _ _
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

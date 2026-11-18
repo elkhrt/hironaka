@@ -27,11 +27,16 @@ smaller affine open. The lifting lemma `exists_affineOpen_germ_eq` is used where
 stalk are spread out to sections (`EtaleCoordinatesAdapted.lean`, `CoordinateSystemPair.lean`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
-open AlgebraicGeometry CategoryTheory IsLocalRing KaehlerDifferential TensorProduct
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory IsLocalRing
+open KaehlerDifferential TensorProduct
 
 universe u
 
@@ -167,3 +172,6 @@ theorem exists_etale_toAffineSpace :
 end Count
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

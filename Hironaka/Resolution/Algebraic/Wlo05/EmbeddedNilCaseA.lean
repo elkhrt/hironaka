@@ -38,13 +38,23 @@ descent along the closed embedding). Used by the core lemma of the smooth case
 of `Y` is a generic point of `V(I)` lying in the first centre.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace Scheme Hironaka
-  BlowUpSequence Scheme.IdealSheafData Hironaka.Sequence Hironaka.Local IsLocalRing Hironaka.BO
-  Hironaka.BD
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.Hironaka
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.Hironaka.Sequence _root_.ResolutionHironaka.Hironaka.Local
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing _root_.ResolutionHironaka.Hironaka.BO
+open _root_.ResolutionHironaka.Hironaka.BD
 
 namespace Hironaka.Resolution
 
@@ -207,3 +217,6 @@ theorem maxContactCase_bdData_eq_cons_of_Zminus1_ne_top (hT : Triple.BOClass n 1
 end Step2
 
 end Hironaka.Resolution
+
+end
+end ResolutionHironaka

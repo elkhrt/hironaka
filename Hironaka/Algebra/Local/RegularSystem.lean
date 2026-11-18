@@ -51,11 +51,15 @@ list form `isRegular_of_span_eq_maximalIdeal` of Mathlib pull request 28683.  Fo
 `Pᵢ = 𝔪`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 namespace IsLocalRing
+open _root_.IsLocalRing
 
-open IsLocalRing Ideal
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing Ideal
 
 universe u v
 
@@ -368,3 +372,6 @@ theorem exists_regularSystem (R : Type u) [CommRing R] [IsRegularLocalRing R] :
 end Existence
 
 end IsLocalRing
+
+end
+end ResolutionHironaka

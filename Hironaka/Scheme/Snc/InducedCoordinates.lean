@@ -42,13 +42,20 @@ this back to `𝒪_{B,a'}`.
 Sources: [Hau14, Proposition 5.4 (6)]; [Hau03, Appendix C (7)]; [Kol07, Definition 60].
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open AlgebraicGeometry CategoryTheory IsLocalRing Ideal Scheme.IdealSheafData
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing Ideal
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
 section Reindex
 
@@ -286,3 +293,6 @@ theorem exists_isRegularSystemOfParameters_induced (w : Fin n → (blowUp Z).pre
 end Induced
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

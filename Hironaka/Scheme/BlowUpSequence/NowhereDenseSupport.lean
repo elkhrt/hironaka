@@ -26,13 +26,19 @@ dense) is not needed; `isNonzeroEverywhere_iff_irreducibleComponents` of
 `Hironaka/Scheme/BlowUpSequence/InducedData.lean` is the form in terms of irreducible components.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace Topology Scheme.IdealSheafData
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open TopologicalSpace Topology _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
 /-- On a locally Noetherian scheme, a closed subscheme with nowhere dense underlying set
 (Hironaka's hypothesis in [Hir64, Corollary 3]) has an ideal sheaf with nonzero stalks (Kollár's
@@ -82,3 +88,6 @@ theorem isNonzeroEverywhere_of_isNowhereDense_support {X : Scheme.{u}} [IsLocall
   exact hint
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

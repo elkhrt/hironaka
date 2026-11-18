@@ -20,6 +20,9 @@ blow-up of `X` up to isomorphism (`AlgebraicGeometry.exists_blowUp_composite_iso
 is projective (`AlgebraicGeometry.Scheme.BlowUpSequence.isProjective_composite`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
@@ -27,6 +30,7 @@ universe u
 open CategoryTheory
 
 namespace AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme
 
 /-- **The composite of a finite succession of blow-ups of a Noetherian scheme is projective**: it
 is a single blow-up up to isomorphism [Sta, Tag 080B], and blow-ups are projective
@@ -39,3 +43,6 @@ theorem isProjective_composite {X : Scheme.{u}} [IsNoetherian X] (S : BlowUpSequ
   exact IsProjective.isIso_comp e.hom K.blowUpπ
 
 end AlgebraicGeometry.Scheme.BlowUpSequence
+
+end
+end ResolutionHironaka

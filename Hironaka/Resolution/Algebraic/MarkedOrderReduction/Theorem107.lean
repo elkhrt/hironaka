@@ -33,11 +33,15 @@ the fields are in `Hironaka/Resolution/Algebraic/MarkedOrderReduction/Data.lean`
 induction on the dimension in `Hironaka/Resolution/Algebraic/Stage/`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry Hironaka
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.ResolutionHironaka.Hironaka
 
 namespace Hironaka.BMO
 
@@ -65,3 +69,6 @@ theorem exists_data (hboind : ∀ (d : ℕ) (k : Type u) [Field k] [CharZero k],
   ⟨data bo hboind, fun _ _ _ => rfl⟩
 
 end Hironaka.BMO
+
+end
+end ResolutionHironaka

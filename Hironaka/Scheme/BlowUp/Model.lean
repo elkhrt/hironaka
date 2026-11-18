@@ -49,6 +49,9 @@ used by the construction (for `j ∉ S` the same map is still an isomorphism, wi
 variable except `xⱼ` becomes a ratio.  `A = 0`: everything is the zero ring.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u v w
@@ -435,3 +438,6 @@ theorem coordinateSubspaceEquiv_unique
   exact AlgEquiv.ext fun z => AlgHom.congr_fun key z
 
 end AlgebraicGeometry.affineBlowUpAlgebra
+
+end
+end ResolutionHironaka

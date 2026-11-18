@@ -35,11 +35,15 @@ local ring transported from that of `R̂`; the `ℚ`-hypothesis is used only to 
 (`coefficientField`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 namespace IsLocalRing
+open _root_.IsLocalRing
 
-open IsLocalRing
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing
 
 /-- A field of characteristic zero is formally smooth over `ℚ`, being separably generated
 ([Sta, Tag 0322]): algebraic extensions in characteristic zero are separable. -/
@@ -120,3 +124,6 @@ theorem sub_coefficientField_mem_maximalIdeal (y : R̂) :
 end Completion
 
 end IsLocalRing
+
+end
+end ResolutionHironaka

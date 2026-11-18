@@ -41,13 +41,19 @@ surjective then `h^* B` determines `B` uniquely"). The pullback of a smooth sequ
 back (`Hironaka/Scheme/BlowUpSequence/PullbackInduced.lean`); see also [Wlo05, Proposition 2.4.2].
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry Scheme BlowUpSequence
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
 
 namespace AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme
 
 variable {X : Scheme.{u}}
 
@@ -89,6 +95,7 @@ def CentersInRange (S : BlowUpSequence X) {Y : Scheme.{u}} (h : Y ⟶ X) : Prop 
 end AlgebraicGeometry.Scheme.BlowUpSequence
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
 variable {X Y : Scheme.{u}}
 
@@ -348,7 +355,8 @@ theorem isIso_stalkMap_id (Y : Scheme.{u}) (x : Y) : IsIso ((𝟙 Y : Y ⟶ Y).s
   rw [Scheme.Hom.stalkMap_id]
   exact IsIso.id _
 
-open Scheme.IdealSheafData in
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData in
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData in
 /-- The stalk of the inverse image along the identity is the stalk. -/
 theorem stalkIdeal_comap_id (I : X.IdealSheafData) (x : X) :
     (I.comap (𝟙 X)).stalkIdeal x = I.stalkIdeal x := by
@@ -417,3 +425,6 @@ theorem surjective_of_isIso {Z W : Scheme.{u}} (e : Z ⟶ W) [IsIso e] : Functio
     rfl⟩
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

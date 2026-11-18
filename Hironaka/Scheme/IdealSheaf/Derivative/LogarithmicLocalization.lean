@@ -41,9 +41,13 @@ schemes (`Hironaka/Resolution/Algebraic/Kol07/Theorem88BlowUp.lean`,
 (`Hironaka/Algebra/Local/BlowUpLiftLog.lean`). The statement is not in the sources.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 namespace Derivation
+open _root_.Derivation
 
 variable {k A B : Type*} [CommRing k] [CommRing A] [CommRing B] [Algebra k A] [Algebra k B]
 
@@ -73,6 +77,7 @@ theorem PreservesIdeal.map_of_forall {δ : Derivation k A A} {J : Ideal A}
 end Derivation
 
 namespace Ideal
+open _root_.Ideal
 
 open KaehlerDifferential
 
@@ -166,3 +171,6 @@ theorem logDerivativeIter_map (M : Submonoid A) [IsLocalization M B]
   | succ r ih => rw [logDerivativeIter_succ, logDerivativeIter_succ, ih, logDerivative_map M hJ]
 
 end Ideal
+
+end
+end ResolutionHironaka

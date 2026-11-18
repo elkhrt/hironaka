@@ -77,12 +77,19 @@ factor, proved from the chain forms; the argument is not in the literature. Used
 `Hironaka.Resolution.Algebraic.Wlo05.EmbeddedCP1Remaining`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open Ideal CategoryTheory AlgebraicGeometry TopologicalSpace Hironaka Scheme.BlowUpSequence
-  Scheme.IdealSheafData
+open _root_.Ideal _root_.ResolutionHironaka.Ideal CategoryTheory _root_.AlgebraicGeometry
+open _root_.ResolutionHironaka.AlgebraicGeometry _root_.TopologicalSpace
+open _root_.ResolutionHironaka.TopologicalSpace _root_.ResolutionHironaka.Hironaka
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
 namespace Hironaka.Resolution
 
@@ -381,3 +388,6 @@ theorem markedTransformSeq_bedAux_last_eq_prod (T : MarkedTriple k) (hm : T.m = 
   rw [hL, Scheme.IdealSheafData.prod_eq_inf_of_pairwise_disjoint _ C hPw, Finset.inf_eq_iInf]
 
 end Hironaka.Resolution
+
+end
+end ResolutionHironaka

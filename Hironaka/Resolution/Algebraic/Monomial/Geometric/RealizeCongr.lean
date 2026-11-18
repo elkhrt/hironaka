@@ -47,11 +47,16 @@ so the congruence holds for piece families on any scheme. It is used in
 boundary members.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open AlgebraicGeometry TopologicalSpace Scheme Finset
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry _root_.TopologicalSpace
+open _root_.ResolutionHironaka.TopologicalSpace _root_.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme Finset
 
 namespace Hironaka.Monomial
 
@@ -458,3 +463,6 @@ theorem realize_congr_of_rel {Φ Φ' : PieceFamily X} {ρ σ : ℕ → ℕ} {n m
 end PieceFamily
 
 end Hironaka.Monomial
+
+end
+end ResolutionHironaka

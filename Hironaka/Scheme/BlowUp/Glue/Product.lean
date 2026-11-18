@@ -36,11 +36,18 @@ blowUp.π I : X' ⟶ X` and `b' = blowUp.π (J.comap b) : X'' ⟶ X'`,
   (as the blow-up does, `blowUp.isBlowUp` of `Hironaka.Scheme.BlowUp.Glue.Global`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 namespace AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
 
-open AlgebraicGeometry CategoryTheory Scheme.IdealSheafData
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
 universe u
 
@@ -129,3 +136,6 @@ theorem blowUp.exists_powIso (m : ℕ) (hm : 1 ≤ m) :
   exact blowUp.hom_ext I (blowUpπ (I * I ^ k)) (IsInvertible.of_mul h).1 ψ e.hom hψ he
 
 end AlgebraicGeometry.Scheme.IdealSheafData
+
+end
+end ResolutionHironaka

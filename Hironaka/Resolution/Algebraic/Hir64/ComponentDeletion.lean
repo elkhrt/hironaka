@@ -66,16 +66,24 @@ normal crossings with any such boundary; (iv) holds vacuously on the empty last 
   components of a regular scheme (`hasDisjointIntegralComponents_of_isRegular`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory TopologicalSpace AlgebraicGeometry Scheme Scheme.IdealSheafData
-  Scheme.BlowUpSequence
+open CategoryTheory _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
-open Hironaka.Sequence
+open _root_.ResolutionHironaka.Hironaka.Sequence
 
 variable {X Y : Scheme.{u}}
 
@@ -99,6 +107,7 @@ theorem Scheme.Hom.comap_ker_self (f : Y ⟶ X) : f.ker.comap f = ⊥ := by
       rw [show f.imageι = f.ker.subschemeι from rfl, comap_subschemeι_eq_bot, comap_bot]
 
 namespace Scheme.IdealSheafData
+open _root_.AlgebraicGeometry.Scheme _root_.AlgebraicGeometry.Scheme.IdealSheafData
 
 /-- Hironaka's Definition 2 [Hir64, Ch. 0, §5, Definition 2] transports along an open immersion
 `u`: the regular system of parameters at `u y`, the minimal primes of the stalk of `E` and the
@@ -147,7 +156,8 @@ end AlgebraicGeometry
 
 namespace Hironaka.Sequence
 
-open AlgebraicGeometry Hironaka.Resolution
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.ResolutionHironaka.Hironaka.Resolution
 
 variable {X Y : Scheme.{u}}
 
@@ -427,3 +437,6 @@ theorem exists_blowUpSequence_isEmpty_last_of_smooth {k : Type u} [Field k] [Cha
   exact exists_blowUpSequence_isEmpty_last_of_isRegular E₀ hE₀
 
 end Hironaka.Sequence
+
+end
+end ResolutionHironaka

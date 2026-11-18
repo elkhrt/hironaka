@@ -44,12 +44,19 @@ point outside a finite union of closed sets has an affine neighbourhood outside 
 `Hironaka/Resolution/Algebraic/Kol07/Thm35/Disjoin/Center.lean`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open AlgebraicGeometry CategoryTheory TopologicalSpace IsLocalRing Ideal Scheme
-  Scheme.IdealSheafData
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace _root_.IsLocalRing
+open _root_.ResolutionHironaka.IsLocalRing _root_.Ideal _root_.ResolutionHironaka.Ideal
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
 namespace Hironaka.Monomial
 
@@ -57,7 +64,7 @@ variable {X : Scheme.{u}}
 
 namespace PieceFamily
 
-open AlgebraicGeometry
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
 
 variable {k : Type u} [Field k] (Φ : PieceFamily X) {E : DivisorFamily X}
 
@@ -212,3 +219,6 @@ theorem smooth_centerOf [PerfectField k] (f : X ⟶ Spec (CommRingCat.of k)) [Sm
 end PieceFamily
 
 end Hironaka.Monomial
+
+end
+end ResolutionHironaka

@@ -39,11 +39,15 @@ define `BO_m` and `BMO_m`.
   of the tower's `BO_{T.dim, m}` at `T`; `dimFreeBMO base m k` likewise.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry Hironaka
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.ResolutionHironaka.Hironaka
 
 namespace Hironaka
 
@@ -52,8 +56,9 @@ variable {k : Type u} [Field k]
 end Hironaka
 
 namespace AlgebraicGeometry.Triple
+open _root_.AlgebraicGeometry
 
-open Hironaka
+open _root_.ResolutionHironaka.Hironaka
 
 variable {k : Type u} [Field k]
 
@@ -130,3 +135,6 @@ theorem dimFreeBMO_seq (T : MarkedTriple k) (hT : T.BMOClassFree m) :
   rfl
 
 end Hironaka.Stage
+
+end
+end ResolutionHironaka

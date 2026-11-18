@@ -31,12 +31,22 @@ in the library:
   [Kol07, Definition 47] is the order at its generic points).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace Scheme BlowUpSequence CoordinateSubspace
-  affineBlowUpAlgebra Remark33 Algebra AlgebraicGeometry.Scheme.IdealSheafData MvPolynomial
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.ResolutionHironaka.AlgebraicGeometry.CoordinateSubspace
+open _root_.ResolutionHironaka.AlgebraicGeometry.affineBlowUpAlgebra
+open _root_.ResolutionHironaka.AlgebraicGeometry.Remark33 Algebra
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData MvPolynomial
 
 namespace Hironaka.Sequence
 
@@ -75,3 +85,6 @@ theorem leOrdAlong_one_of_le {I Z : X.IdealSheafData} (h : I ≤ Z) :
 end General
 
 end Hironaka.Sequence
+
+end
+end ResolutionHironaka

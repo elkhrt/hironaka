@@ -74,12 +74,19 @@ p⁻¹Uᵢ)` from `BRAffine k (∐ Uᵢ) = g^* BR X`; the affine (34.1) over `L`
 p⁻¹Uᵢ → XL` computes it from `BR XL`; cancelling the flat surjection gives `BR XL = p^* BR X`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory CategoryTheory.Limits AlgebraicGeometry TopologicalSpace Scheme Hironaka
-  BlowUpSequence Hironaka.Sequence
+open CategoryTheory CategoryTheory.Limits _root_.AlgebraicGeometry
+open _root_.ResolutionHironaka.AlgebraicGeometry _root_.TopologicalSpace
+open _root_.ResolutionHironaka.TopologicalSpace _root_.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.Hironaka
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.ResolutionHironaka.Hironaka.Sequence
 
 namespace Hironaka.Resolution
 
@@ -293,3 +300,6 @@ theorem BR_baseChange_of_class (X : Scheme.{u}) [X.Over (Spec (CommRingCat.of k)
   exact pullback_injective_of_surjective (Sigma.desc (coverPreimageι p)) hsurj (h2.symm.trans h1)
 
 end Hironaka.Resolution
+
+end
+end ResolutionHironaka

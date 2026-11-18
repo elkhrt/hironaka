@@ -29,15 +29,19 @@ stage agree with it). On a nonempty `X` the relative dimension is unique
 their dimension as data.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
 
 namespace AlgebraicGeometry.Triple
+open _root_.AlgebraicGeometry
 
-open Hironaka
+open _root_.ResolutionHironaka.Hironaka
 
 variable {k : Type u} [Field k]
 
@@ -58,3 +62,6 @@ theorem hasDimLE_dim (T : Triple k) : T.HasDimLE T.dim :=
   ⟨T.dim, le_rfl, T.hasDim_dim⟩
 
 end AlgebraicGeometry.Triple
+
+end
+end ResolutionHironaka

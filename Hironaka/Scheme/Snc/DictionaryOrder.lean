@@ -41,14 +41,24 @@ Kollár's smooth blow-up sequences of order `d` [Kol07, Definition 66] (definiti
   relative dimension `n` over `k` by `IsSmooth.stageMap_smoothOfRelativeDimension`), hence `= d`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open AlgebraicGeometry CategoryTheory TopologicalSpace IsLocalRing Scheme
-  DivisorFamily BlowUpSequence Scheme.IdealSheafData
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace _root_.IsLocalRing
+open _root_.ResolutionHironaka.IsLocalRing _root_.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.DivisorFamily
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
 variable {k : Type u} [Field k] {X : Scheme.{u}}
 
@@ -211,3 +221,6 @@ theorem IsOrderSeq.ord_eq_of_mem_center (h : S.IsOrderSeq f J F d) (hmax : J.max
 end OrderSeq
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

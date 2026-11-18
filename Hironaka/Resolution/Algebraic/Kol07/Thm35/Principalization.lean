@@ -48,11 +48,18 @@ Theorem 35, and the clauses (1)–(5) of Theorem 35 are proved in the modules
 * `Hironaka.Sequence.disjoinSeq_of_isEmpty`: for `E = ∅` the disjoining sequence is empty.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open AlgebraicGeometry CategoryTheory Scheme Hironaka BlowUpSequence Hironaka.Stage
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.Hironaka
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.ResolutionHironaka.Hironaka.Stage
 
 namespace Hironaka.Sequence
 
@@ -77,3 +84,6 @@ noncomputable def BP [CharZero k] (T : Triple k) : BlowUpSequence T.X.left :=
     ((BMO_m 1 k).seq ⟨disjoinedTriple T, 1⟩ ⟨le_rfl, rfl⟩)).eraseEmpty
 
 end Hironaka.Sequence
+
+end
+end ResolutionHironaka

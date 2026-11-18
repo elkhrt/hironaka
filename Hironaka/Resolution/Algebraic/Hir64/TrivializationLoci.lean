@@ -37,12 +37,19 @@ of the resulting sequence "are mapped into the closed subset `T − S`" of `X`.
   `T − S`".
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry Scheme.IdealSheafData Scheme BlowUpSequence
-  TopologicalSpace
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence _root_.TopologicalSpace
+open _root_.ResolutionHironaka.TopologicalSpace
 
 namespace Hironaka.Sequence
 
@@ -118,3 +125,6 @@ theorem le_ord_stageMap_of_le_ord_weakTransformSeq (X : Scheme.{u})
   le_ord_stageMap_of_le_ord_weakTransformSeq_gen S J d hii i z hz
 
 end Hironaka.Sequence
+
+end
+end ResolutionHironaka

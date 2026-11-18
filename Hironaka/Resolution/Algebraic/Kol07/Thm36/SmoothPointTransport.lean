@@ -48,12 +48,18 @@ functorial under smooth surjections (the hypothesis `hfun`), and applied to `F :
 replaces the integrality of `X` in `not_restrictedCenterHasPointOver_of_mem_smoothLocus`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory CategoryTheory.Limits AlgebraicGeometry Hironaka Scheme BlowUpSequence
-  TopologicalSpace
+open CategoryTheory CategoryTheory.Limits _root_.AlgebraicGeometry
+open _root_.ResolutionHironaka.AlgebraicGeometry _root_.ResolutionHironaka.Hironaka
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence _root_.TopologicalSpace
+open _root_.ResolutionHironaka.TopologicalSpace
 
 namespace Hironaka.Resolution
 
@@ -215,3 +221,6 @@ theorem not_restrictedCenterHasPointOver_of_mem_smoothLocus_of_exists (hE : IsEm
     hx₀U hpU hx₀c hpc i').2 hi'⟩
 
 end Hironaka.Resolution
+
+end
+end ResolutionHironaka

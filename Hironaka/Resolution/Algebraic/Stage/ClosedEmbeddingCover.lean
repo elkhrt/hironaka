@@ -53,12 +53,23 @@ Kollár's sentence, read with Theorem 80 at `(ker j, 1)`, is the whole content; 
 general lemma of the library.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open CategoryTheory CategoryTheory.Limits AlgebraicGeometry TopologicalSpace Hironaka Scheme
-  IdealSheafData BlowUpSequence Scheme.IdealSheafData Hironaka.Sequence Hironaka.BO
+open CategoryTheory CategoryTheory.Limits _root_.AlgebraicGeometry
+open _root_.ResolutionHironaka.AlgebraicGeometry _root_.TopologicalSpace
+open _root_.ResolutionHironaka.TopologicalSpace _root_.ResolutionHironaka.Hironaka
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.Hironaka.Sequence _root_.ResolutionHironaka.Hironaka.BO
 
 namespace Hironaka.Stage
 
@@ -234,3 +245,6 @@ theorem exists_hypersurfaceCover {n : ℕ} (TX TY : MarkedTriple k) (j : TY.X.le
     rw [hE', ← hfac, DivisorFamily.comap_comp]
 
 end Hironaka.Stage
+
+end
+end ResolutionHironaka

@@ -30,6 +30,9 @@ hypotheses above its support is exactly `Sing X` (`coe_support_singIdeal_eq_sing
 radical ideal sheaf (the reduced induced structure), and it is the unit ideal iff `X` is regular.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
@@ -37,6 +40,7 @@ universe u
 open CategoryTheory TopologicalSpace
 
 namespace AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme
 
 /-- The ideal sheaf `𝒥` of the singular locus with its reduced structure: the vanishing ideal
 sheaf of `closure (Sing X)`, whose support is `Sing X` itself when the latter is closed. It is a
@@ -115,3 +119,6 @@ theorem singIdeal_eq_top_iff_isRegular (X : Scheme.{u}) : X.singIdeal = ⊤ ↔ 
     exact IdealSheafData.vanishingIdeal_bot
 
 end AlgebraicGeometry.Scheme
+
+end
+end ResolutionHironaka

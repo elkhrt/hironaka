@@ -42,12 +42,21 @@ empty (`length_bedAux_eq_zero_of_eq_top`). The initial state satisfies the invar
 `Hironaka.Resolution.Algebraic.Wlo05.EmbeddedNilSmooth`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace Scheme Hironaka
-  BlowUpSequence Scheme.IdealSheafData Hironaka.Stage
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.Hironaka
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.Hironaka.Stage
 
 namespace Hironaka.Resolution
 
@@ -275,3 +284,6 @@ theorem length_bedAux_eq_zero_of_invariant (hcore : Core k) :
     exact ih _ hlt _ (isolatedTriple_m T hm C 0) _ rfl hinv
 
 end Hironaka.Resolution
+
+end
+end ResolutionHironaka

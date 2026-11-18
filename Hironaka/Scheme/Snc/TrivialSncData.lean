@@ -43,13 +43,20 @@ arguments of `Hironaka.Resolution` and `Hironaka.BoundaryClearing`.
 Sources: [Kol07, Definition 24; Definition 65; Warning 20].
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open AlgebraicGeometry CategoryTheory IsLocalRing Ideal Scheme.IdealSheafData
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing _root_.Ideal
+open _root_.ResolutionHironaka.Ideal _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
 section Iso
 
@@ -205,3 +212,6 @@ theorem exists_snc_data_trivialTotalTransform (x' : B) {n : ℕ}
 end Data
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

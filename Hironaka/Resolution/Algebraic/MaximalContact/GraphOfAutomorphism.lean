@@ -46,13 +46,21 @@ automorphism of `κ(p)` over `k` applied to the coefficients is `k`-linear, fixe
 and is not the identity.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
 namespace AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
 
-open CategoryTheory IsLocalRing Scheme Hironaka.Local AlgebraicGeometry
+open CategoryTheory _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.Hironaka.Local _root_.AlgebraicGeometry
+open _root_.ResolutionHironaka.AlgebraicGeometry
 
 variable {k : Type u} [Field k] [CharZero k] {X : Scheme.{u}} (f : X ⟶ Spec (.of k)) (n : ℕ)
   [SmoothOfRelativeDimension n f]
@@ -287,3 +295,6 @@ theorem conditions_formalAutomorphism_symm (I : X.IdealSheafData) {m : ℕ} (hm 
   · rw [completionIdeal_eq_top_of_notMem_support _ hpi, Ideal.map_top]
 
 end AlgebraicGeometry.Scheme.IdealSheafData
+
+end
+end ResolutionHironaka

@@ -47,13 +47,17 @@ Statements about `J(W)` for a basic open `W = D(s) ⊆ U` are transported along 
 affine opens `D(s) = D(t)` as propositions, never by rewriting the section rings.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open AlgebraicGeometry CategoryTheory
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
 
 namespace Ideal
+open _root_.Ideal
 
 variable {A : Type u} {B : Type u} [CommRing A] [CommRing B]
 
@@ -101,6 +105,8 @@ theorem IsInvertible.map_of_isLocalization_away {J : Ideal A} (hJ : J.IsInvertib
 end Ideal
 
 namespace AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
 
 variable {X : Scheme.{u}} (J : X.IdealSheafData)
 
@@ -271,3 +277,6 @@ theorem IsInvertible.comap_of_isOpenImmersion {Y : Scheme.{u}} (f : Y ⟶ X) [Is
     exact ⟨e.symm c, by rw [hc, map_mul, RingEquiv.symm_apply_apply]⟩
 
 end AlgebraicGeometry.Scheme.IdealSheafData
+
+end
+end ResolutionHironaka

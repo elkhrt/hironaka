@@ -43,12 +43,21 @@ zero). If `π(y) ∉ Z` then `π` is an isomorphism near `y` and `I'` contains `
 same relative dimension (`smoothOfRelativeDimension_blowUpπ_comp_of_smooth`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
-open CategoryTheory AlgebraicGeometry Scheme IdealSheafData BlowUpSequence
-  AlgebraicGeometry.Scheme.IdealSheafData
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
 universe u
 
@@ -169,3 +178,6 @@ theorem eq_of_pullback_eq_of_cosupp_le_range (f : X ⟶ Spec (.of k)) (n : ℕ)
     (centersInRange_of_cosupp_le_range f n hS' ψ h) heq
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

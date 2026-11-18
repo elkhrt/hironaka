@@ -86,15 +86,21 @@ globalization (`Hironaka/Resolution/Algebraic/Kol07/MaximalContactGlobalization.
 embedded resolution (`Hironaka/Resolution/`) and in boundary clearing
 (`Hironaka/Resolution/Algebraic/BoundaryClearing/Restriction.lean`). -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry Scheme.IdealSheafData IsLocalRing
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData _root_.IsLocalRing
+open _root_.ResolutionHironaka.IsLocalRing
 
 namespace Hironaka.Local
 
-open IsLocalRing
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing
 
 section Chart
 
@@ -222,6 +228,7 @@ theorem colon_pow_le_colon_of_prime {S : Type*} [CommRing S] {y u' : S}
 end Hironaka.Local
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
 variable {X : Scheme.{u}}
 
@@ -242,7 +249,8 @@ theorem IsSmoothDivisor.ordAlongEq_one_of_le {H Z : X.IdealSheafData} (hH : IsSm
 
 /-- The unit ideal sheaf is a smooth divisor (the empty hypersurface): its closed subscheme has no
 points. -/
-theorem _root_.Hironaka.Snc.isSmoothDivisor_top : IsSmoothDivisor (⊤ : X.IdealSheafData) := by
+theorem _root_.ResolutionHironaka.Hironaka.Snc.isSmoothDivisor_top
+    : IsSmoothDivisor (⊤ : X.IdealSheafData) := by
   refine ⟨⟨fun z => ?_⟩, fun x hx => ?_⟩
   · have hz : (⊤ : X.IdealSheafData).subschemeι z ∈ ((⊤ : X.IdealSheafData).support : Set X) := by
       rw [← (⊤ : X.IdealSheafData).range_subschemeι]
@@ -332,7 +340,7 @@ end AlgebraicGeometry
 
 namespace Hironaka.Sequence
 
-open AlgebraicGeometry
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
 
 section Exceptional
 
@@ -436,6 +444,8 @@ end Exceptional
 end Hironaka.Sequence
 
 namespace AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
 
 variable {k : Type u} [Field k] {X : Scheme.{u}} (f : X ⟶ Spec (.of k))
 variable [CharZero k] (n : ℕ) [SmoothOfRelativeDimension n f]
@@ -560,3 +570,6 @@ theorem isSmoothDivisor_strictTransform_of_le : IsSmoothDivisor (H.strictTransfo
         (H.strictTransform Z)
 
 end AlgebraicGeometry.Scheme.IdealSheafData
+
+end
+end ResolutionHironaka

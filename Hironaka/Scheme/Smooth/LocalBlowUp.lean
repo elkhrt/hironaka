@@ -40,15 +40,21 @@ Used for the charts of the local blow-up (`LocalBlowUpChart.lean`) and for the o
 along the exceptional divisor (`Hironaka/Scheme/IdealSheaf/Order/ExceptionalOrder.lean`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
-open AlgebraicGeometry CategoryTheory
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
 
 universe u
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
-open AlgebraicGeometry Scheme.IdealSheafData
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
 variable {X : Scheme.{u}}
 
@@ -135,7 +141,7 @@ theorem Spec_map_eq_closedPoint {R S : Type u} [CommRing R] [IsLocalRing R] [Com
 
 section Origin
 
-open IsLocalRing
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing
 
 variable {R : Type u} [CommRing R] [IsRegularLocalRing R] {n : ℕ} (x : Fin n → R)
   (hx : maximalIdeal R = Ideal.span (Set.range x)) (hn : (n : WithBot ℕ∞) = ringKrullDim R)
@@ -177,7 +183,7 @@ end Origin
 
 section Bridge
 
-open IsLocalRing
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing
 
 /-- Granted that the stalks of the local blow-up are those of `B_Z X` (the hypothesis `hiso`, proved
 in `LocalBlowUpStalk.lean`): the origin of the chart of `y_ρ` of the local blow-up is a point `x'`
@@ -254,3 +260,6 @@ theorem exists_stalk_equiv_localization_chartOrigin_of_isIso (Z : X.IdealSheafDa
 end Bridge
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

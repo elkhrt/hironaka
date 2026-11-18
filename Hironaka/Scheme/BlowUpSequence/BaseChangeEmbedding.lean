@@ -28,13 +28,18 @@ pullback-square form of `IsBaseChangeOf` (two cartesian squares over the same `q
 * `baseChangeEmbedding_eq_pullback_map`: on the canonical pullbacks it is `pullback.map`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open CategoryTheory CategoryTheory.Limits AlgebraicGeometry
+open CategoryTheory CategoryTheory.Limits _root_.AlgebraicGeometry
+open _root_.ResolutionHironaka.AlgebraicGeometry
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
 variable {X A S X' A' S' : Scheme.{u}} (emb : X ⟶ A) {fX : X ⟶ S} {fA : A ⟶ S}
   (hemb : emb ≫ fA = fX) {q : S' ⟶ S} {pX : X' ⟶ X} {fX' : X' ⟶ S'} (hX : IsPullback pX fX' fX q)
@@ -88,3 +93,6 @@ theorem baseChangeEmbedding_eq_pullback_map (fX : X ⟶ S) (fA : A ⟶ S) (hemb 
   · rw [baseChangeEmbedding_over, pullback.lift_snd, Category.comp_id]
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

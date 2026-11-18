@@ -78,11 +78,17 @@ The pullback of an effective Cartier divisor along a blow-up is [Sta, Tag 0809];
 property of the blow-up is [Sta, Tag 0806]; [Hau14, Definition 4.4].
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
-open AlgebraicGeometry CategoryTheory Scheme.IdealSheafData TopologicalSpace
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData TopologicalSpace
 
 universe u
 
@@ -396,3 +402,6 @@ theorem IsBlowUp.comp_iso {X X' B : Scheme.{u}} {I : X.IdealSheafData} {Ï€ : B â
 end Iso
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

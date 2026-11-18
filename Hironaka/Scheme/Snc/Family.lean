@@ -34,13 +34,18 @@ data, so the lemmas here take the data as explicit hypotheses.
   (`prod_stalkIdeal_eq_span`; [Hau14, Remark 3.16, Proposition 3.17, Remark 3.20]).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open AlgebraicGeometry IsLocalRing Ideal
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry _root_.IsLocalRing
+open _root_.ResolutionHironaka.IsLocalRing Ideal
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
 variable {X : Scheme.{u}} {ι : Type*} {E : ι → X.IdealSheafData} {x : X} {n : ℕ}
   {z : Fin n → X.presheaf.stalk x}
@@ -144,3 +149,6 @@ theorem prod_stalkIdeal_eq_span [Fintype ι] [DecidablePred fun i : ι => x ∈ 
   exact Ideal.prod_span_singleton _ _
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

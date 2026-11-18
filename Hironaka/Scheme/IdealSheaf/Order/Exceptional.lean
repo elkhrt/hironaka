@@ -60,13 +60,20 @@ Used for the order along centres and the strict transforms of components
 (`Hironaka/Scheme/IdealSheaf/Order/ExceptionalOrder.lean`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open AlgebraicGeometry CategoryTheory IsLocalRing TopologicalSpace Scheme.IdealSheafData
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing _root_.TopologicalSpace
+open _root_.ResolutionHironaka.TopologicalSpace _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
 variable {X : Scheme.{u}}
 
@@ -286,3 +293,6 @@ theorem exceptionalDivisor_pow_dvd_comap_of_le_ord (m : ℕ) (hm : (m : ℕ∞) 
 end Global
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

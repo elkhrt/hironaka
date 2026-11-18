@@ -69,15 +69,19 @@ supremum in `ℕ` of the exponents `c` with `E ^ c ∣ J.comap π` (`0` when unb
 controlled transform is the total transform.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u v w
 
-open AlgebraicGeometry CategoryTheory
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
 
 /-! ### Ring-level lemmas -/
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
 /-- `J ≤ (I : K)` iff `J K ≤ I`, for ideals. -/
 theorem le_colon_iff_mul_le {R : Type u} [CommRing R] {I J K : Ideal R} :
@@ -126,7 +130,8 @@ theorem map_colon_of_fg {R : Type u} {S : Type v} [CommRing R] [CommRing S] [Alg
 
 /-- An invertible ideal is finitely generated: it is principal on finitely many basic opens
 covering the spectrum, and the generators, together with the covering relation, generate it. -/
-theorem _root_.Ideal.IsInvertible.fg {A : Type u} [CommRing A] {J : Ideal A} (hJ : J.IsInvertible) :
+theorem _root_.ResolutionHironaka.Ideal.IsInvertible.fg
+    {A : Type u} [CommRing A] {J : Ideal A} (hJ : J.IsInvertible) :
     J.FG := by
   classical
   rcases subsingleton_or_nontrivial A with hA | hA
@@ -260,6 +265,8 @@ theorem iSup_colon_pow_span_singleton_eq {R : Type u} [CommRing R] [IsDomain R] 
 end AlgebraicGeometry
 
 namespace AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
 
 variable {X : Scheme.{u}} (I J K : X.IdealSheafData)
 
@@ -512,8 +519,10 @@ end AlgebraicGeometry.Scheme.IdealSheafData
 /-! ### Transforms along a morphism with a distinguished divisor -/
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
-open Scheme.IdealSheafData
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
 section Along
 
@@ -574,3 +583,6 @@ noncomputable abbrev Scheme.IdealSheafData.markedTransform (J D : X.IdealSheafDa
 end Marked
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

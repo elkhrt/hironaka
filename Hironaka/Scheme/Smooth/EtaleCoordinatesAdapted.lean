@@ -35,11 +35,16 @@ These charts cover the closed points of the center; `Hironaka/Scheme/Smooth/Blow
 `ExceptionalDivisor.lean` glue the smoothness of `B_Z X` and of its exceptional divisor from them.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
-open AlgebraicGeometry CategoryTheory IsLocalRing KaehlerDifferential TensorProduct
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory IsLocalRing
+open KaehlerDifferential TensorProduct
 
 universe u
 
@@ -86,3 +91,6 @@ theorem nonempty_etaleCoordinatesAdapted (hrn : r ≤ n) {x : X} (hxZ : x ∈ Z.
     etale_toAffineSpace_restrict f hU'U w', hAd⟩⟩
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

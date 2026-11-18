@@ -44,11 +44,17 @@ The ideal sheaf of `I` on `Spec R` is written `ofIdealTop (I.map (Scheme.ΓSpecI
 (sections transported by `ΓSpecIso`), as throughout `Hironaka.BlowUp`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
-open AlgebraicGeometry CategoryTheory Scheme.IdealSheafData
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
 universe u
 
@@ -146,3 +152,6 @@ theorem affineBlowUp.isInvertible_exceptionalIdeal :
   exact ⟨⟨(affineBlowUp.chart I a).opensRange, isAffineOpen_opensRange _⟩, hx, f, hf, hJ⟩
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

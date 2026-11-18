@@ -47,15 +47,20 @@ unions. This module proves the elementary facts about these predicates.
   why the nullary union is excluded from `ClosedUnderSigma`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory CategoryTheory.Limits AlgebraicGeometry
+open CategoryTheory CategoryTheory.Limits _root_.AlgebraicGeometry
+open _root_.ResolutionHironaka.AlgebraicGeometry
 
 namespace AlgebraicGeometry.Scheme.DivisorFamily
+open _root_.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme
 
-open Hironaka
+open _root_.ResolutionHironaka.Hironaka
 
 variable {X : Scheme.{u}}
 
@@ -72,8 +77,9 @@ namespace Hironaka
 end Hironaka
 
 namespace AlgebraicGeometry.Triple
+open _root_.AlgebraicGeometry
 
-open Hironaka
+open _root_.ResolutionHironaka.Hironaka
 
 variable {k : Type u} [Field k] {σ : Type u} {T : Triple k} {Ts : σ → Triple k}
   {ι : ∀ i, (Ts i).X.left ⟶ T.X.left}
@@ -182,3 +188,6 @@ theorem ClosedUnderSigma.and {D₁ D₂ : MarkedTriple k → Prop}
 end MarkedTriple
 
 end Hironaka
+
+end
+end ResolutionHironaka

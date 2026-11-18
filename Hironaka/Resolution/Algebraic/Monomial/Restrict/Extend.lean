@@ -23,6 +23,9 @@ is also the renumbering along which the geometric run is pulled back in
 `Hironaka/Resolution/Algebraic/Monomial/Geometric/ChainRun.lean`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 namespace Hironaka.Monomial.MonomialState
@@ -328,3 +331,6 @@ end Extend
 end Rel
 
 end Hironaka.Monomial.MonomialState
+
+end
+end ResolutionHironaka

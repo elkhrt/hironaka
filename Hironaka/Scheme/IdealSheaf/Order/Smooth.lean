@@ -42,9 +42,13 @@ Used for the pull-back of the resolution data along smooth morphisms
 `Hironaka/Resolution/Algebraic/MarkedOrderReduction/UpToUnits.lean`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 namespace IsLocalRing
+open _root_.IsLocalRing
 
 open CategoryTheory
 
@@ -81,8 +85,10 @@ theorem OrdFaithful.of_arrow_iso {A B A' B' : CommRingCat} [IsLocalRing A] [IsLo
 end IsLocalRing
 
 namespace AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
 
-open CategoryTheory IsLocalRing
+open CategoryTheory _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing
 
 universe u
 
@@ -122,3 +128,6 @@ theorem ord_comap_of_etale {Y : Scheme.{u}} (f : Y ⟶ X) [Etale f] (y : Y) :
   ord_comap_of_smooth I f y
 
 end AlgebraicGeometry.Scheme.IdealSheafData
+
+end
+end ResolutionHironaka

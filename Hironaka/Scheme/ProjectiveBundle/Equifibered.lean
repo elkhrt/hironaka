@@ -28,6 +28,9 @@ commute with the base change `Spec Γ(X, U) ⟶ Spec Γ(X, V)`
 isomorphisms `Spec Γ(X, U) ≅ U`, `Spec Γ(X, V) ≅ V` over `U ⊆ V`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
@@ -35,6 +38,7 @@ universe u
 open CategoryTheory
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
 variable {X : Scheme.{u}} (F : X.Modules) [F.IsQuasicoherent]
 
@@ -58,3 +62,6 @@ theorem projectiveBundleNatTrans_equifibered : (projectiveBundleNatTrans F).Equi
     (IsPullback.of_vert_isIso ⟨specMap_presheaf_map_isoSpec_inv hle⟩)
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

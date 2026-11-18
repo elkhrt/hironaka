@@ -35,12 +35,21 @@ Bookkeeping for the descent of the local form of the ideal along the local cover
 `Hironaka.Resolution.Algebraic.Wlo05.EmbeddedCP1Cover`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory CategoryTheory.Limits AlgebraicGeometry TopologicalSpace Scheme BlowUpSequence
-  Scheme.IdealSheafData Hironaka.Sequence
+open CategoryTheory CategoryTheory.Limits _root_.AlgebraicGeometry
+open _root_.ResolutionHironaka.AlgebraicGeometry _root_.TopologicalSpace
+open _root_.ResolutionHironaka.TopologicalSpace _root_.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.Hironaka.Sequence
 
 namespace Hironaka.Resolution
 
@@ -115,3 +124,6 @@ theorem stalkIdeal_comap_vanishingIdeal_closure_eq (φ : Y ⟶ X) {ζ q : Y} (h�
   exact (Set.mem_singleton_iff.mp hmin).symm
 
 end Hironaka.Resolution
+
+end
+end ResolutionHironaka

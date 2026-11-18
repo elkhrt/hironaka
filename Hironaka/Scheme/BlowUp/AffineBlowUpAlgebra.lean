@@ -35,6 +35,9 @@ the zero ring `R_a`.  The properties of `R[I/a]` (its generators, `a` a nonzerod
 spectrum is the chart of the affine blow-up at `a` (`Hironaka.Scheme.BlowUp.Rees.ChartRing`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 namespace AlgebraicGeometry
@@ -126,3 +129,6 @@ theorem mem_affineBlowUpAlgebra_iff (ha : a ∈ I) {y : Localization.Away a} :
     exact awayFrac_mem_affineBlowUpAlgebra n hx
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

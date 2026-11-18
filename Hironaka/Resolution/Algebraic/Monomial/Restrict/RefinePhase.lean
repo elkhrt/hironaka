@@ -27,6 +27,9 @@ geometric consequence is in `Hironaka/Resolution/Algebraic/Monomial/Geometric/Ch
 `Hironaka/Resolution/Algebraic/Monomial/Geometric/PullbackRun.lean`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 namespace Hironaka.Monomial.MonomialState
@@ -196,3 +199,6 @@ theorem step3_refine {ρ : ℕ → ℕ} {Y L : MonomialState} (h : Refines ρ Y 
     exact refineRun_getElem? ρ' Y (step3 L).2 k
 
 end Hironaka.Monomial.MonomialState
+
+end
+end ResolutionHironaka

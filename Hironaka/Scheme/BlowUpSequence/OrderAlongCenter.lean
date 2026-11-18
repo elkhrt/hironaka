@@ -61,16 +61,26 @@ center of any shape). They enter the transforms of triples and Remark 67
 (`Hironaka/Scheme/BlowUpSequence/Triple.lean`, `Remark67.lean`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace IsLocalRing Ideal
-  Scheme.IdealSheafData Scheme.BlowUpSequence AlgebraicGeometry.Scheme.IdealSheafData
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace _root_.IsLocalRing
+open _root_.ResolutionHironaka.IsLocalRing _root_.Ideal _root_.ResolutionHironaka.Ideal
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
-open Hironaka
+open _root_.ResolutionHironaka.Hironaka
 
 variable {X : Scheme.{u}}
 
@@ -518,3 +528,6 @@ theorem maxOrd_controlledTransform_le_of_smooth {m : ℕ} (hm : I.OrdAlongEq Z.s
 end SmoothCenterOrder
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

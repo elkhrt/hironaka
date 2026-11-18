@@ -44,11 +44,16 @@ Used for the cosupport of marked ideals and maximal contact
 `Hironaka/Resolution/Algebraic/MarkedOrderReduction/BaseChangeParameters.lean`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 namespace AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
 
-open CategoryTheory IsLocalRing
+open CategoryTheory _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing
 
 universe u
 
@@ -86,3 +91,6 @@ theorem le_ord_iff_mem_support_derivativeIter (I : X.IdealSheafData) (x : X) {m 
     show m - (m - 1) = 1 by omega, Nat.cast_one, one_le_ord_iff]
 
 end AlgebraicGeometry.Scheme.IdealSheafData
+
+end
+end ResolutionHironaka

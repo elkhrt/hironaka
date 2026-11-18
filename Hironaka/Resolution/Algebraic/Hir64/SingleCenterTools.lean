@@ -46,12 +46,20 @@ every stage above it, that the generic point of an integral scheme is regular, a
 centre lies over the singular locus of a reduced irreducible scheme, no centre is a whole stage.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry Scheme IdealSheafData BlowUpSequence
-open AlgebraicGeometry.Scheme.IdealSheafData
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
 namespace Hironaka.Resolution
 
@@ -169,3 +177,6 @@ theorem support_center_ne_top_of_forall_mem_singularLocus (X : Scheme.{u}) [IsRe
   exact hη (hz ▸ hcenters i z hzc)
 
 end Hironaka.Resolution
+
+end
+end ResolutionHironaka

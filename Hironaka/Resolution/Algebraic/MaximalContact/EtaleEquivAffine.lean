@@ -47,13 +47,21 @@ The result, `exists_etaleEquiv_isAffine`, is Theorem 92 with an affine `U`; the 
 `Hironaka/Resolution/Algebraic/MaximalContact/FunctorIndependence.lean`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
 namespace AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
 
-open CategoryTheory CategoryTheory.Limits TopologicalSpace Scheme AlgebraicGeometry
+open CategoryTheory CategoryTheory.Limits _root_.TopologicalSpace
+open _root_.ResolutionHironaka.TopologicalSpace _root_.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme _root_.AlgebraicGeometry
+open _root_.ResolutionHironaka.AlgebraicGeometry
 
 variable {k : Type u} [Field k] {X : Scheme.{u}} (f : X ⟶ Spec (.of k))
 
@@ -136,3 +144,6 @@ theorem exists_etaleEquiv_isAffine [CharZero k] (n : ℕ) [SmoothOfRelativeDimen
   infer_instance
 
 end AlgebraicGeometry.Scheme.IdealSheafData
+
+end
+end ResolutionHironaka

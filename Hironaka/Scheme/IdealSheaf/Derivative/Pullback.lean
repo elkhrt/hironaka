@@ -47,9 +47,13 @@ pull-back (`Hironaka/Resolution/Algebraic/Tuning/Pullback.lean`), for functorial
 the base field (`Hironaka/Scheme/IdealSheaf/Derivative/BaseChange.lean`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
 open CategoryTheory
 
@@ -130,6 +134,7 @@ theorem Scheme.Hom.essFiniteType_stalk (fX : X ⟶ Spec (.of k)) [LocallyOfFinit
   exact Algebra.EssFiniteType.comp k Γ(X, U.1) (X.presheaf.stalk x)
 
 namespace Scheme.IdealSheafData
+open _root_.AlgebraicGeometry.Scheme _root_.AlgebraicGeometry.Scheme.IdealSheafData
 
 variable (fX : X ⟶ Spec (.of k)) (f : Y ⟶ X) [Smooth fX] [Smooth f]
 
@@ -161,3 +166,6 @@ theorem derivativeIter_comap_of_smooth (r : ℕ) (I : X.IdealSheafData) :
 end Scheme.IdealSheafData
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

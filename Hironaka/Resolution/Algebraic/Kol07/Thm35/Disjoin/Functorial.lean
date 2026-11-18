@@ -37,16 +37,23 @@ Kollár's first paragraph, "we should not introduce arbitrary choices in the pro
 statement `disjoinSeq_of_equiv`: the sequence does not depend on the order of the index set.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open AlgebraicGeometry CategoryTheory TopologicalSpace Scheme.IdealSheafData
-  Scheme BlowUpSequence
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
 
 namespace Hironaka.Sequence
 
-open AlgebraicGeometry
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
 
 variable {X Y : Scheme.{u}} {ι : Type*} [Fintype ι]
 
@@ -137,3 +144,6 @@ theorem disjoinSeq_of_equiv {E₁ E₂ : DivisorFamily X} (σ : E₁.ι ≃ E₂
 end Reindex
 
 end Hironaka.Sequence
+
+end
+end ResolutionHironaka

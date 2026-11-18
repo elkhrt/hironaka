@@ -24,6 +24,9 @@ A ring map `φ : R → S` and a `φ`-semilinear map `f : M → N` induce the gra
 maps of the projective bundle `P(E) = Proj_X (Sym E)` of a quasi-coherent sheaf [Sta, Tag 01OB].
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
@@ -31,6 +34,7 @@ universe u
 open scoped DirectSum
 
 namespace SymmetricAlgebra
+open _root_.SymmetricAlgebra
 
 variable (R : Type u) (M : Type u) [CommRing R] [AddCommGroup M] [Module R M]
 
@@ -78,6 +82,7 @@ instance gradedAlgebra : GradedAlgebra (grading R M) :=
 end SymmetricAlgebra
 
 namespace SymmetricAlgebra
+open _root_.SymmetricAlgebra
 
 variable {R : Type u} {M : Type u} [CommRing R] [AddCommGroup M] [Module R M]
 
@@ -139,3 +144,6 @@ noncomputable def gradedMap (φ : R →+* S) (f : M →ₛₗ[φ] N) : grading R
       exact Submodule.mul_mem_mul (LinearMap.mem_range_self _ _) ih
 
 end SymmetricAlgebra
+
+end
+end ResolutionHironaka

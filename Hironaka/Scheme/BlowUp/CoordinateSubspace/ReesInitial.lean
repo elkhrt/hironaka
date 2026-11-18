@@ -23,15 +23,19 @@ the associated graded ring of the coordinate ideal with the polynomial ring
 (`Hironaka.Scheme.BlowUp.CoordinateSubspace.ExceptionalProj`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open MvPolynomial reesAlgebra
+open MvPolynomial _root_.reesAlgebra _root_.ResolutionHironaka.reesAlgebra
 
 attribute [local instance] MvPolynomial.gradedAlgebra
 
 namespace AlgebraicGeometry.CoordinateSubspace
+open _root_.AlgebraicGeometry
 
 variable (A : Type u) [CommRing A] (n r : ℕ) (hrn : r ≤ n)
 
@@ -291,3 +295,6 @@ theorem reesInitial_mk_monomial_eq_zero_iff {k : ℕ} {c : MvPolynomial (Fin n) 
     ← mem_pow_iff_centerSplitEquiv_mem]
 
 end AlgebraicGeometry.CoordinateSubspace
+
+end
+end ResolutionHironaka

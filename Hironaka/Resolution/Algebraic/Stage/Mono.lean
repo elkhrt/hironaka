@@ -26,24 +26,29 @@ triple of the smaller class in the larger one; the coherence statements of
 stage-`n'` class (`OrderSeqAssignment.restrict`) use them.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open AlgebraicGeometry
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
 
 namespace Hironaka
 
 variable {k : Type u} [Field k]
 
 /-- A triple of dimension `≤ n'` has dimension `≤ n` for `n' ≤ n`. -/
-theorem _root_.AlgebraicGeometry.Triple.hasDimLE_mono {n n' : ℕ} (h : n' ≤ n) {T : Triple k}
+theorem _root_.ResolutionHironaka.AlgebraicGeometry.Triple.hasDimLE_mono
+    {n n' : ℕ} (h : n' ≤ n) {T : Triple k}
     (hT : T.HasDimLE n') : T.HasDimLE n := by
   obtain ⟨d, hd, hdim⟩ := hT
   exact ⟨d, le_trans hd h, hdim⟩
 
 /-- The class `BOClass n' m` of [Kol07, Theorem 103] lies in `BOClass n m` for `n' ≤ n`. -/
-theorem _root_.AlgebraicGeometry.Triple.boClass_mono {n n' m : ℕ} (h : n' ≤ n) {T : Triple k}
+theorem _root_.ResolutionHironaka.AlgebraicGeometry.Triple.boClass_mono
+    {n n' m : ℕ} (h : n' ≤ n) {T : Triple k}
     (hT : T.BOClass n' m) : T.BOClass n m :=
   ⟨hT.1, Triple.hasDimLE_mono h hT.2.1, hT.2.2⟩
 
@@ -53,3 +58,6 @@ theorem MarkedTriple.bmoClass_mono {n n' m : ℕ} (h : n' ≤ n) {T : MarkedTrip
   ⟨hT.1, Triple.hasDimLE_mono h hT.2.1, hT.2.2⟩
 
 end Hironaka
+
+end
+end ResolutionHironaka

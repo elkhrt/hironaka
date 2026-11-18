@@ -54,15 +54,19 @@ Properties of a succession of blow-ups.
 * `EmbeddedPair.IsDesingularizedBy` [Wlo05, Theorem 1.0.2 (a)–(c), (e)].
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
 
 noncomputable section
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
 /-! ### Algebraic `k`-schemes -/
 
@@ -204,7 +208,7 @@ abbrev hom {X Y : C} (h : X ⟶ Y) : scheme X ⟶ scheme Y := (forget.map h).lef
 
 end HasUnderlyingScheme
 
-open HasUnderlyingScheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.HasUnderlyingScheme
 
 instance ReducedEquidimensionalScheme.hasUnderlyingScheme (k : Type u) [Field k] :
     HasUnderlyingScheme (ReducedEquidimensionalScheme k) k where
@@ -323,6 +327,7 @@ def Scheme.IsSncDivisor {X : Scheme.{u}} (Z : Set X) : Prop :=
   ∃ F : Scheme.DivisorFamily X, F.IsSnc ∧ (F.support : Set X) = Z
 
 namespace Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry.Scheme
 
 section Hironaka
 
@@ -450,3 +455,7 @@ structure EmbeddedPair.IsDesingularizedBy (P : EmbeddedPair k)
       P.Y.comap S.composite = S.strictTransformSeq P.Y (Fin.last S.length) * J
 
 end AlgebraicGeometry
+
+end
+end
+end ResolutionHironaka

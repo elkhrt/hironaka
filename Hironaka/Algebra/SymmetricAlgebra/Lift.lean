@@ -17,11 +17,15 @@ symmetric algebra of an ideal onto its Rees algebra, which embeds a blow-up in a
 [Sta, Tag 02NS].
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
 namespace SymmetricAlgebra
+open _root_.SymmetricAlgebra
 
 variable {R : Type u} {M : Type u} [CommRing R] [AddCommGroup M] [Module R M]
 variable {A : Type u} [CommRing A] [Algebra R A] (𝒜 : ℕ → Submodule R A) [GradedAlgebra 𝒜]
@@ -50,3 +54,6 @@ theorem gradedLift_apply (g : M →ₗ[R] A) (hg : ∀ x, g x ∈ 𝒜 1) (a : S
   rfl
 
 end SymmetricAlgebra
+
+end
+end ResolutionHironaka

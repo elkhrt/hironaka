@@ -39,11 +39,15 @@ The ideal `P` is `chartCenter c.x r = ⟨xᵢ : i ≤ r⟩` of
 `Hironaka/Algebra/Local/RegularSystem.lean`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 namespace IsLocalRing
+open _root_.IsLocalRing
 
-open IsLocalRing MvPowerSeries
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing MvPowerSeries
 
 /-! ### The power-series fact: `⟨Xᵢ : i ∈ T⟩ᵐ = {F | m ≤ weightedOrder_T F}` -/
 
@@ -329,3 +333,6 @@ instance RegularCoords.isPrime_chartCenter {R : Type*} [CommRing R] [IsRegularLo
   IsLocalRing.isPrime_chartCenter c.x c.span_x c.card r
 
 end IsLocalRing
+
+end
+end ResolutionHironaka

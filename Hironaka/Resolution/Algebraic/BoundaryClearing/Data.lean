@@ -55,15 +55,20 @@ blow-up sequences, divisor families and triples:
 * `BD.piMinusOne I m D`, the one-step blow-up sequence `π_{-1}` with center `Z_{-1}`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
 
 namespace AlgebraicGeometry.Scheme.DivisorFamily
+open _root_.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme
 
-open Hironaka
+open _root_.ResolutionHironaka.Hironaka
 
 variable {X : Scheme.{u}}
 
@@ -80,8 +85,9 @@ namespace Hironaka
 end Hironaka
 
 namespace AlgebraicGeometry.Triple
+open _root_.AlgebraicGeometry
 
-open Hironaka
+open _root_.ResolutionHironaka.Hironaka
 
 variable {k : Type u} [Field k]
 
@@ -135,7 +141,10 @@ end Hironaka
 
 namespace Hironaka.BD
 
-open Scheme BlowUpSequence AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
 variable {X : Scheme.{u}}
 
@@ -160,3 +169,6 @@ noncomputable def piMinusOne (I : X.IdealSheafData) (m : ℕ) (D : X.IdealSheafD
   cons X (Zminus1 I m D) (nil _)
 
 end Hironaka.BD
+
+end
+end ResolutionHironaka

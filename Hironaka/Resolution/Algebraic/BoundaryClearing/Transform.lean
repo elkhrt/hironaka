@@ -67,12 +67,20 @@ last statement, the nonvanishing required of the ideal of a triple ([Kol07, Defi
 not made explicit by Kollár. Used by `Restriction.lean`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace Scheme.IdealSheafData
-  Hironaka Scheme.BlowUpSequence IsLocalRing
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.Hironaka
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence _root_.IsLocalRing
+open _root_.ResolutionHironaka.IsLocalRing
 
 namespace Hironaka.BD
 
@@ -275,3 +283,6 @@ theorem isNonzeroEverywhere_comap_weakTransform [CharZero k] (T : Triple k) (m :
   exact top_ne_bot
 
 end Hironaka.BD
+
+end
+end ResolutionHironaka

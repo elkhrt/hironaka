@@ -57,12 +57,17 @@ Used for the examples (`HironakaExamples/OrderStrata.lean`,
 `HironakaExamples/Sequence/CuspWitness.lean`, `HironakaExamples/Sequence/Remark33OrderSeq.lean`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
-open AlgebraicGeometry CategoryTheory MvPolynomial KaehlerDifferential
-open AlgebraicGeometry
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
+open MvPolynomial KaehlerDifferential
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
 
 universe u
 
@@ -158,7 +163,8 @@ theorem derivativeIter_span_singleton_le_iff (r : ℕ) (f : MvPolynomial (Fin n)
 
 /-- `Dʳ(J B) = Dʳ(J) B` for a localization `B` of `A` with `Ω_{A/k}` finitely presented
 (`Ideal.derivative_map` of `Hironaka/Algebra/Derivative/Localization.lean`, iterated). -/
-theorem _root_.Ideal.derivativeIter_map {k A B : Type*} [CommRing k] [CommRing A] [CommRing B]
+theorem _root_.ResolutionHironaka.Ideal.derivativeIter_map
+    {k A B : Type*} [CommRing k] [CommRing A] [CommRing B]
     [Algebra k A] [Algebra A B] [Algebra k B] [IsScalarTower k A B] (M : Submonoid A)
     [IsLocalization M B] [Module.FinitePresentation A (Ω[A⁄k])] (r : ℕ) (J : Ideal A) :
     Ideal.derivativeIter k r (J.map (algebraMap A B)) =
@@ -653,3 +659,6 @@ theorem ord_hauserEx3_eq_three_iff (hk : 1 ≤ k) (hm : 1 ≤ m) (a : Fin 3 → 
 end HauserEx3Main
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

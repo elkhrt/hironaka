@@ -33,11 +33,14 @@ coefficient is what the regularity of the updated system forces (`isUnit_coeff_o
 Not in the literature; used by `Hironaka.Resolution.Algebraic.Wlo05.EmbeddedCP3Chain`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open IsLocalRing
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing
 
 namespace Hironaka.Resolution
 
@@ -773,3 +776,6 @@ theorem terminalIn_of_terminalIn_update [IsRegularLocalRing R] {n : ℕ}
 end Rebase
 
 end Hironaka.Resolution
+
+end
+end ResolutionHironaka

@@ -26,13 +26,22 @@ of `I` is `≥ m` by condition (4′) of Definition 66, above the maximal order.
 clause of the order reduction functors uses this at `m = 1` for the unit ideal: when the ideal
 `J` on the hypersurface is the unit ideal, both sides of the clause are the empty sequence. -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace Scheme BlowUpSequence Scheme.IdealSheafData
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
 variable {k : Type u} [Field k] {X : Scheme.{u}}
 
@@ -55,3 +64,6 @@ theorem eq_nil_of_isOrderGeSeq_of_maxOrd_lt (f : X ⟶ Spec (.of k)) {S : BlowUp
     exact absurd (h1.trans (IdealSheafData.le_maxOrd I η)) (not_le.mpr hI)
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

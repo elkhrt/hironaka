@@ -41,11 +41,17 @@ equivalence on an étale neighbourhood
 (`Hironaka/Resolution/Algebraic/MaximalContact/AgreeOnSpread.lean`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 namespace AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
 
-open CategoryTheory IsLocalRing TopologicalSpace AlgebraicGeometry
+open CategoryTheory _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing TopologicalSpace
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
 
 universe u
 
@@ -106,3 +112,6 @@ theorem exists_comap_eq_of_map_adicCompletion_eq
   exists_comap_eq_of_stalkIdeal_eq J J' q (stalkIdeal_eq_of_map_adicCompletion_eq J J' q h)
 
 end AlgebraicGeometry.Scheme.IdealSheafData
+
+end
+end ResolutionHironaka

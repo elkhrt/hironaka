@@ -35,11 +35,16 @@ Used for the point `(p, p)` of the graph of two coordinate systems (`GraphComple
 `HironakaExamples/Sequence/Remark33Warning63.lean`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
-open AlgebraicGeometry CategoryTheory IsLocalRing MvPolynomial
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory IsLocalRing
+open MvPolynomial
 
 universe u
 
@@ -151,3 +156,6 @@ theorem map_maximalIdeal_stalkMap_of_etale {Y Z : Scheme.{u}} (g : Y ⟶ Z) [Eta
   exact Algebra.FormallyUnramified.map_maximalIdeal
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

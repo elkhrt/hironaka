@@ -67,12 +67,24 @@ Used by `FunctorialityPullback.lean` and `Assembly.lean`, and outside this direc
 (`Hironaka/Resolution/Algebraic/Wlo05/EmbeddedCP1Step22Core.lean` imports it without using it).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace Hironaka Scheme
-  IdealSheafData BlowUpSequence Scheme.IdealSheafData Hironaka.Sequence DivisorFamily
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.ResolutionHironaka.Hironaka _root_.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.Hironaka.Sequence
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.DivisorFamily
 
 namespace Hironaka.BD
 
@@ -329,3 +341,6 @@ theorem exists_functor :
 end Functor
 
 end Hironaka.BD
+
+end
+end ResolutionHironaka

@@ -26,13 +26,18 @@ inclusion of the selected members preserves the components (`isSncAt_of_injectiv
 Source: [Kol07, Definition 24].
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry Hironaka.Snc
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.ResolutionHironaka.Hironaka.Snc
 
 namespace AlgebraicGeometry.Scheme.DivisorFamily
+open _root_.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme
 
 variable {X : Scheme.{u}}
 
@@ -45,3 +50,6 @@ theorem IsSnc.subfamily {E : DivisorFamily X} (hE : E.IsSnc) (p : E.ι → Prop)
       Subtype.val_injective (fun _ => rfl) h⟩⟩
 
 end AlgebraicGeometry.Scheme.DivisorFamily
+
+end
+end ResolutionHironaka

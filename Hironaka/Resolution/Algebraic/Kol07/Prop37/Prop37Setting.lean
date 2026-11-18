@@ -51,11 +51,15 @@ module proves the elementary facts about them and defines the triples `coverTrip
   statements package them without the constructions.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open CategoryTheory CategoryTheory.Limits AlgebraicGeometry
+open CategoryTheory CategoryTheory.Limits _root_.AlgebraicGeometry
+open _root_.ResolutionHironaka.AlgebraicGeometry
 
 namespace Hironaka
 
@@ -72,12 +76,13 @@ theorem MarkedTriple.closedUnderSigma_isAffineScheme :
 end Hironaka
 
 namespace AlgebraicGeometry.Triple
+open _root_.AlgebraicGeometry
 
-open Hironaka
+open _root_.ResolutionHironaka.Hironaka
 
 variable {k : Type u} [Field k]
 
-open Scheme
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
 
 variable (T : Triple k)
 
@@ -397,3 +402,6 @@ theorem exists_prop37Setting [PerfectField k] :
 end MarkedTriple
 
 end Hironaka
+
+end
+end ResolutionHironaka

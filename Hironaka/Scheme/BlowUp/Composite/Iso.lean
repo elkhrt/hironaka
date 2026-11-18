@@ -34,13 +34,20 @@ result is used for the composite of a blow-up sequence
 (`Hironaka.Scheme.BlowUpSequence.CompositeBlowUp`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
-open Scheme.IdealSheafData
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
-open AlgebraicGeometry CategoryTheory Scheme.IdealSheafData
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
 universe u
 
@@ -128,3 +135,6 @@ theorem Scheme.IdealSheafData.blowUp.exists_comp_iso [IsNoetherian X] :
 end BlowUp
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

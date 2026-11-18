@@ -49,16 +49,24 @@ The remaining case of the induction step — `max-ord(ker j) = ⊤`, a component
 `Hironaka.Resolution.Algebraic.Stage.ClosedEmbeddingCodimZero`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace Hironaka Scheme.BlowUpSequence
-  Scheme.IdealSheafData Hironaka.Snc
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.ResolutionHironaka.Hironaka
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.Hironaka.Snc
 
 namespace Hironaka.Stage
 
-open AlgebraicGeometry
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
 
 variable {k : Type u} [Field k] [CharZero k]
 
@@ -178,3 +186,6 @@ theorem seq_eq_pushforward_of_maxOrd_ker_le_one (base : OrderReductionStage.{u} 
     exact seq_eq_pushforward_of_isEmpty base (n + 1) TX TY j hj hTX hY
 
 end Hironaka.Stage
+
+end
+end ResolutionHironaka

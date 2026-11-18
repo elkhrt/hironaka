@@ -33,9 +33,13 @@ generators suffices for the inclusion `⊆` of [Kol07, (88.1)], proved in
 `Hironaka/Algebra/Local/TransformDerivNormalForm.lean`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 namespace IsLocalRing
+open _root_.IsLocalRing
 
 section Congr
 
@@ -93,3 +97,6 @@ theorem iterate_chartDerivRing_transformElem_mem {h : Fin n} (hh : h < r) {I : I
 end RegularCoords
 
 end IsLocalRing
+
+end
+end ResolutionHironaka

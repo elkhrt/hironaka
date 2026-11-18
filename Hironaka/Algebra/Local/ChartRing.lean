@@ -52,11 +52,15 @@ The properties of these constructions (beginning with `∂'ⱼ yₖ = δⱼₖ` 
 under the `∂'ⱼ`) are proved in `Hironaka/Algebra/Local/Chart.lean`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 namespace IsLocalRing
+open _root_.IsLocalRing
 
-open IsLocalRing
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing
 
 universe u
 
@@ -183,6 +187,7 @@ end Family
 end IsLocalRing
 
 namespace Derivation
+open _root_.Derivation
 
 variable {k A : Type*} [CommRing k] [CommRing A] [Algebra k A]
 
@@ -197,8 +202,9 @@ noncomputable def extendAway (D : Derivation k A A) (a : A) :
 end Derivation
 
 namespace IsLocalRing.RegularCoords
+open _root_.IsLocalRing
 
-open IsLocalRing
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing
 
 universe u
 
@@ -235,3 +241,6 @@ theorem chartDeriv_of_gt {j : Fin n} (h : r < j) : c.chartDeriv r j = c.awayPder
   rw [chartDeriv, ite_eq_right (not_lt.mpr h.le), ite_eq_right h.ne']
 
 end IsLocalRing.RegularCoords
+
+end
+end ResolutionHironaka

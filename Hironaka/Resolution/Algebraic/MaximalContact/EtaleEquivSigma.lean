@@ -44,13 +44,21 @@ is taken over all closed points of the cosupport, an index type in `Type u`. The
 form is `Hironaka/Resolution/Algebraic/MaximalContact/EtaleEquivAffine.lean`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
 namespace AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
 
-open CategoryTheory CategoryTheory.Limits TopologicalSpace Scheme AlgebraicGeometry
+open CategoryTheory CategoryTheory.Limits _root_.TopologicalSpace
+open _root_.ResolutionHironaka.TopologicalSpace _root_.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme _root_.AlgebraicGeometry
+open _root_.ResolutionHironaka.AlgebraicGeometry
 
 variable {k : Type u} [Field k] {X : Scheme.{u}} (f : X ⟶ Spec (.of k))
 
@@ -186,3 +194,6 @@ theorem nonempty_etaleEquiv_of_forall_isClosed (I : X.IdealSheafData) (m : ℕ)
 end Standing
 
 end AlgebraicGeometry.Scheme.IdealSheafData
+
+end
+end ResolutionHironaka

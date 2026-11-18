@@ -49,12 +49,19 @@ Used by `Center.lean` and, outside this directory, by
 `Hironaka/Resolution/Algebraic/Wlo05/EmbeddedComponentTools.lean`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace Hironaka Scheme.BlowUpSequence
-  Scheme.IdealSheafData
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.ResolutionHironaka.Hironaka
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
 namespace Hironaka
 
@@ -65,17 +72,17 @@ section Data
 variable {k : Type u} [Field k]
 
 /-- `HasDimLE T n` unfolds to some `HasDim n'` with `n' ≤ n`. -/
-theorem _root_.AlgebraicGeometry.Triple.hasDimLE_iff (T : Triple k)
+theorem _root_.ResolutionHironaka.AlgebraicGeometry.Triple.hasDimLE_iff (T : Triple k)
     (n : ℕ) : T.HasDimLE n ↔ ∃ n' ≤ n, T.HasDim n' :=
   Iff.rfl
 
 /-- The domain of `BD_{n,m,j}` unfolds to its three conditions. -/
-theorem _root_.AlgebraicGeometry.Triple.bdClass_iff (n m j : ℕ) (T : Triple k) :
+theorem _root_.ResolutionHironaka.AlgebraicGeometry.Triple.bdClass_iff (n m j : ℕ) (T : Triple k) :
     Triple.BDClass n m j T ↔ T.HasDimLE n ∧ T.I.maxOrd ≤ (m : ℕ∞) ∧ j < Fintype.card T.E.ι :=
   Iff.rfl
 
 /-- `E^j` is the component at position `j` of the linear order of the index set. -/
-theorem _root_.AlgebraicGeometry.Scheme.DivisorFamily.nth_eq {X : Scheme.{u}}
+theorem _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.DivisorFamily.nth_eq {X : Scheme.{u}}
     (E : Scheme.DivisorFamily X)
     (j : Fin (Fintype.card E.ι)) : E.nth j = E.component (monoEquivOfFin E.ι rfl j) :=
   rfl
@@ -156,7 +163,7 @@ end Hironaka.BD
 
 namespace Hironaka.BD
 
-open Triple
+open _root_.ResolutionHironaka.AlgebraicGeometry.Triple
 
 /-- A triple's ambient scheme is a Noetherian space: finite type and quasi-compact over the field
 (`Scheme.Hom.isNoetherian_of_field`, `Hironaka/Scheme/IdealSheaf/Order/Constructible.lean`). -/
@@ -214,3 +221,6 @@ theorem mem_support_Zminus1_iff_ord_eq (T : Triple k) (m : ℕ) (j : T.E.ι)
     exact ⟨η, hη, hm.ge, hηx⟩
 
 end Hironaka.BD
+
+end
+end ResolutionHironaka

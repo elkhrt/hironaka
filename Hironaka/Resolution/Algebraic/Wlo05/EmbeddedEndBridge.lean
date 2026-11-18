@@ -53,12 +53,20 @@ intersection of the reduced ideals of the irreducible components of its support.
 `Hironaka.Resolution.Algebraic.Wlo05.EmbeddedFunctorClauses`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace Hironaka Scheme.IdealSheafData
-  Scheme.BlowUpSequence Hironaka.Sequence Hironaka.BMO IsLocalRing
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.ResolutionHironaka.Hironaka _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.ResolutionHironaka.Hironaka.Sequence _root_.ResolutionHironaka.Hironaka.BMO
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing
 
 namespace Hironaka.Resolution
 
@@ -179,3 +187,6 @@ theorem BED_comap_composite_eq_strictTransform_mul_sncDivisor_of_embeddedEnd :
 end OfEnd
 
 end Hironaka.Resolution
+
+end
+end ResolutionHironaka

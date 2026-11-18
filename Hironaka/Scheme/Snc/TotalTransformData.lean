@@ -41,13 +41,17 @@ Sources: [Hau14, Proposition 5.3] (the proof); [Hau14, Proposition 5.4 (7); Defi
 [Kol07, Definition 24].
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u v w
 
-open IsLocalRing Ideal
+open IsLocalRing _root_.Ideal _root_.ResolutionHironaka.Ideal
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
 section Data
 
@@ -190,3 +194,6 @@ theorem TotalTransformData.iSup_colon_eq (h : TotalTransformData F T) :
 end Assembly
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

@@ -17,11 +17,15 @@ are instances, and conversely `FiniteType f` is inferred from the two parts (the
 while the lemmas feeding them keep the two unbundled ones. `finiteType_iff` unbundles it.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
 attribute [mk_iff] FiniteType
 
@@ -30,3 +34,6 @@ instance FiniteType.of_locallyOfFiniteType_of_quasiCompact {X Y : Scheme.{u}} (f
     [LocallyOfFiniteType f] [QuasiCompact f] : FiniteType f where
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

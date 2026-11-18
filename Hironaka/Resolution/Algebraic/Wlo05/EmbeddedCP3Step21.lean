@@ -34,13 +34,23 @@ the output is empty), and the passes concatenate (`cp3For_concat`). Used in
 `Hironaka.Resolution.Algebraic.Wlo05.EmbeddedCP3Tower`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace Hironaka Scheme.BlowUpSequence
-  Scheme.IdealSheafData Hironaka.Sequence Hironaka.BO Hironaka.BD Hironaka.Local IsLocalRing
-  Hironaka.Stage
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.ResolutionHironaka.Hironaka
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.Hironaka.Sequence _root_.ResolutionHironaka.Hironaka.BO
+open _root_.ResolutionHironaka.Hironaka.BD _root_.ResolutionHironaka.Hironaka.Local
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing
+open _root_.ResolutionHironaka.Hironaka.Stage
 
 namespace Hironaka.Resolution
 
@@ -142,3 +152,6 @@ theorem cp3For_step21Seq
 end Step2
 
 end Hironaka.Resolution
+
+end
+end ResolutionHironaka

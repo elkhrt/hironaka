@@ -45,12 +45,23 @@ identity in its triple form (`weakTransformSeq_eq_nonmonomialPart_markedTransfor
 `Hironaka.Resolution.Algebraic.Wlo05.EmbeddedCP3Step1`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace Scheme IdealSheafData
-  Hironaka BlowUpSequence Scheme.IdealSheafData Hironaka.BMO
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.Hironaka
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.Hironaka.BMO
 
 namespace Hironaka.Resolution
 
@@ -202,3 +213,6 @@ theorem weakTransformSeq_eq_nonmonomialPart_markedTransformSeq (T : MarkedTriple
   rwa [hm] at h
 
 end Hironaka.Resolution
+
+end
+end ResolutionHironaka

@@ -56,12 +56,20 @@ These transports are not in the literature. Used in
 `Hironaka.Resolution.Algebraic.Wlo05.EmbeddedCP3Tower`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace Scheme IsLocalRing BlowUpSequence
-  Scheme.IdealSheafData
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
 namespace Hironaka.Resolution
 
@@ -426,3 +434,6 @@ theorem centerClassifiedAt_comap_of_isIso_stalkMap {Y : Scheme.{u}} (φ : Y ⟶ 
       exact this
 
 end Hironaka.Resolution
+
+end
+end ResolutionHironaka

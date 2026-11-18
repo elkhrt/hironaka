@@ -56,12 +56,23 @@ of the theorem uses them, and no main theorem depends on them.
 `InvCE`, `IsLocalStratum` and `NotContainedInMembers` are in use.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace Scheme IdealSheafData
-  Hironaka BlowUpSequence Scheme.IdealSheafData Hironaka.BMO
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.Hironaka
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.Hironaka.BMO
 
 namespace Hironaka.Resolution
 
@@ -154,3 +165,6 @@ def CentersInNonmonomialSupportOrStratum (k : Type u) [Field k] [CharZero k] : P
       (bmoOneRun T hm).stageMap i p ∈ (nonmonomialPart T.I T.E).support
 
 end Hironaka.Resolution
+
+end
+end ResolutionHironaka

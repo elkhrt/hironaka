@@ -57,11 +57,15 @@ manifolds (`Hironaka/Manifold/BlowUp/Transform/DerivTransform.lean`) and of the 
 blow-up in `Hironaka/Algebra/Local/BlowUpLift.lean`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 namespace IsLocalRing
+open _root_.IsLocalRing
 
-open IsLocalRing
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing
 
 namespace RegularCoords
 
@@ -406,3 +410,6 @@ theorem smul_awayPderiv_mem (j : Fin n) {z : Localization.Away (c.x r)}
 end RegularCoords
 
 end IsLocalRing
+
+end
+end ResolutionHironaka

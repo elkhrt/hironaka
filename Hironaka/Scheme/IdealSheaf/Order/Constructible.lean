@@ -64,17 +64,23 @@ Used for the maximal order throughout (`Hironaka/Resolution/Algebraic/MaximalCon
 `Hironaka/Resolution/Algebraic/BoundaryClearing/Basic.lean`, among others).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 namespace AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
 
-open CategoryTheory Topology TopologicalSpace
+open CategoryTheory Topology _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
 
 universe u
 
 /-- A closed set in a Noetherian space is constructible — its complement is open and, like every
 subset of a Noetherian space, compact, hence retrocompact. -/
-theorem _root_.IsClosed.isConstructible {Y : Type*} [TopologicalSpace Y] [NoetherianSpace Y]
+theorem _root_.ResolutionHironaka.IsClosed.isConstructible
+    {Y : Type*} [TopologicalSpace Y] [NoetherianSpace Y]
     {s : Set Y} (hs : IsClosed s) : IsConstructible s :=
   isConstructible_compl.mp ((NoetherianSpace.isCompact sᶜ).isConstructible hs.isOpen_compl)
 
@@ -171,7 +177,8 @@ variable {k : Type u} [Field k] (f : X ⟶ Spec (.of k))
 our schemes will be assumed to be noetherian"): a scheme quasi-compact and locally of finite type
 over a field is Noetherian, hence a Noetherian topological space (Mathlib's
 `IsNoetherian.noetherianSpace`). -/
-theorem _root_.AlgebraicGeometry.Scheme.Hom.isNoetherian_of_field [LocallyOfFiniteType f]
+theorem _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.Hom.isNoetherian_of_field
+    [LocallyOfFiniteType f]
     [QuasiCompact f] : IsNoetherian X :=
   haveI := f.isLocallyNoetherian_of_field
   haveI := QuasiCompact.compactSpace_of_compactSpace f
@@ -356,8 +363,11 @@ end AlgebraicGeometry.Scheme.IdealSheafData
 universe u
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
-open AlgebraicGeometry Scheme.IdealSheafData
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
 /-- The unit ideal sheaf has maximal order `0` (`ord_top` at every point); in the namespace of
 its users, `Hironaka/Resolution/Algebraic/Stage/Base.lean` and
@@ -367,3 +377,6 @@ theorem maxOrd_top {X : Scheme.{u}} : (⊤ : X.IdealSheafData).maxOrd = 0 :=
       by rw [Scheme.IdealSheafData.ord_top]) zero_le
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

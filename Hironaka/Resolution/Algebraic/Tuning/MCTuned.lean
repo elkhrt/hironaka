@@ -33,15 +33,20 @@ the stalks of `MC` and of `W` are their counterparts in regular coordinates (`st
 `stalkIdeal_W`), and an equality of ideal sheaves on a Jacobson scheme is checked at the closed
 points (`le_of_forall_stalkIdeal_le_of_isClosed`). -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
 
 namespace AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
 
-open IsLocalRing
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing
 
 variable {k : Type u} [Field k] [CharZero k] {X : Scheme.{u}} (f : X ⟶ Spec (.of k)) (n : ℕ)
   [SmoothOfRelativeDimension n f] (I : X.IdealSheafData) (m : ℕ)
@@ -87,3 +92,6 @@ theorem isMaximalContact_W_tuningParam (hI : I.maxOrd = m) (hm : 1 ≤ m) {H : X
   rwa [MC_W_tuningParam f n I m hI hm]
 
 end AlgebraicGeometry.Scheme.IdealSheafData
+
+end
+end ResolutionHironaka

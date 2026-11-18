@@ -49,13 +49,20 @@ Kollár's "hypersurface of maximal contact" is taken in the static form `IsMaxim
 normal crossing (the triple's `isSnc` field and `hsnc'`), which is all that Theorem 92 requires.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
 namespace AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
 
-open CategoryTheory Hironaka Scheme AlgebraicGeometry Algebra
+open CategoryTheory _root_.ResolutionHironaka.Hironaka _root_.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme _root_.AlgebraicGeometry
+open _root_.ResolutionHironaka.AlgebraicGeometry Algebra
 
 variable {k : Type u} [Field k]
 
@@ -137,3 +144,6 @@ theorem functor_independent_of_maximalContact_of_closed [CharZero k] {m : ℕ}
   functor_independent_of_maximalContact B hB hDom T hT E H H' hE hsnc' hT' hm hI hH hH'
 
 end AlgebraicGeometry.Scheme.IdealSheafData
+
+end
+end ResolutionHironaka

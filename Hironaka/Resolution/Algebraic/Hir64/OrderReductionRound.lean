@@ -37,15 +37,23 @@ centers. The only transport along the refinement's isomorphism is `max-ord`
 (`maxOrd_comap_of_isIso`). Main Theorem II(N) is proved by concatenating such rounds.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry Hironaka Scheme IdealSheafData BlowUpSequence
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.ResolutionHironaka.Hironaka _root_.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
 
 namespace Hironaka.Sequence
 
-open AlgebraicGeometry
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
 
 -- `maxOrd_comap_of_isIso` is in `Hironaka/Scheme/IdealSheaf/Order/Invariance.lean`.
 
@@ -136,3 +144,6 @@ theorem IsOrderSeq.clause2 (T : Triple k) {d : ℕ} {S : BlowUpSequence T.X.left
     fun z hz => IsOrderSeq.ord_eq_of_mem_center (T.X.left ↘ Spec (.of k)) n h hd i hz⟩
 
 end Hironaka.Sequence
+
+end
+end ResolutionHironaka

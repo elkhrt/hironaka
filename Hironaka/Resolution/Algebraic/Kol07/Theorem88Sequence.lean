@@ -52,13 +52,21 @@ the first blow-up and monotonicity. Stage `0` and the empty sequence are (88.1) 
 the `j = s` summand is `D^s I`, the others lie in it.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry Scheme.IdealSheafData Scheme BlowUpSequence
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
 
 namespace Ideal
+open _root_.Ideal
 
 variable {k A : Type*} [CommRing k] [CommRing A] [Algebra k A]
 
@@ -85,7 +93,7 @@ end Ideal
 
 namespace Hironaka.Sequence
 
-open AlgebraicGeometry
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
 
 variable {k : Type u} [Field k] {X : Scheme.{u}}
 
@@ -255,3 +263,6 @@ theorem derivativeIter_markedTransformSeq_eq_iSup (hS : IsSmoothDivisor S)
 end Sequence
 
 end Hironaka.Sequence
+
+end
+end ResolutionHironaka

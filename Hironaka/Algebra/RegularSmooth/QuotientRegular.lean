@@ -32,6 +32,9 @@ pinch the dimension to `dim R - c`. No "regular implies domain" is needed; the c
 here. The dimension arithmetic lives in `WithBot ℕ∞` and is done by extracting natural numbers.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
@@ -39,6 +42,7 @@ universe u
 open IsLocalRing
 
 namespace IsRegularLocalRing
+open _root_.IsRegularLocalRing
 
 variable {R : Type u} [CommRing R] [IsRegularLocalRing R]
 
@@ -162,3 +166,6 @@ theorem quotient_span_range_of_linearIndependent {ι : Type*} [Fintype ι] (f : 
   omega
 
 end IsRegularLocalRing
+
+end
+end ResolutionHironaka

@@ -50,11 +50,18 @@ stated in Hironaka's own vocabulary for every smooth scheme, not from these but 
   statement of Main Theorem II(N), is not followed.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry Scheme Hironaka IdealSheafData BlowUpSequence
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.Hironaka _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
 
 namespace Hironaka.Sequence
 
@@ -70,7 +77,7 @@ def IINStage {Y : Scheme.{u}} (D J E : Y.IdealSheafData) : Prop :=
 /-- The conclusion of [Hir64, Main Theorem II(N)] for a sequence `S` started at `(J, E₀)`: clauses
 (1)–(3) at every stage, clause (4) (the final boundary has only normal crossings and the final
 weak transform is the unit ideal) at the end. -/
-def _root_.AlgebraicGeometry.Scheme.BlowUpSequence.IsHironakaIIN {X : Scheme.{u}}
+def _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence.IsHironakaIIN {X : Scheme.{u}}
     (S : BlowUpSequence X)
     (J E₀ : X.IdealSheafData) : Prop :=
   (∀ i : Fin S.length,
@@ -194,3 +201,6 @@ theorem exists_principalization_irreducible (T : Triple k) :
   exact ⟨S, fun i => (h1 i).1, fun i => (h1 i).2.1, fun i => (h1 i).2.2, h2, h3⟩
 
 end Hironaka.Sequence
+
+end
+end ResolutionHironaka

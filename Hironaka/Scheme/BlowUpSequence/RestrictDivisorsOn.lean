@@ -32,13 +32,20 @@ crossings with `E` has simple normal crossings with every sub-family of `E` (res
 injection of [Kol07, Definition 24 (3)]).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry Scheme BlowUpSequence IsLocalRing Ideal
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence _root_.IsLocalRing
+open _root_.ResolutionHironaka.IsLocalRing _root_.Ideal _root_.ResolutionHironaka.Ideal
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
 variable {X : Scheme.{u}}
 
@@ -189,3 +196,6 @@ theorem hasSncWith_append_of_le_on (f : X ⟶ Spec (.of k)) [Smooth f]
       rw [hzt_t₀]; exact hJg
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

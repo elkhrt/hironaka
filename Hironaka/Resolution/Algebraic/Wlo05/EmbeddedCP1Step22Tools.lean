@@ -47,12 +47,20 @@ empty, [Kol07, Theorem 68]). The coordinates are those of [Kol07, Definition 24]
 `Hironaka.Resolution.Algebraic.Wlo05.EmbeddedCP1Step22`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace Scheme BlowUpSequence Scheme.IdealSheafData
-  Hironaka.Sequence Hironaka.Snc
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.Hironaka.Sequence _root_.ResolutionHironaka.Hironaka.Snc
 
 namespace Hironaka.Resolution
 
@@ -152,3 +160,6 @@ theorem maxOrd_eq_one_of_mem_support_markedTransformSeq {k : Type u} [Field k]
   · exact heq
 
 end Hironaka.Resolution
+
+end
+end ResolutionHironaka

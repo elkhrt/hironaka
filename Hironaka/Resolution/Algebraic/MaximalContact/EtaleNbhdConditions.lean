@@ -40,13 +40,21 @@ the disjoint union in `Hironaka/Resolution/Algebraic/MaximalContact/EtaleEquivSi
   (`AgreeOn.restrict_of_le`, the pullback square `AlgebraicGeometry.isPullback_subschemeι_comap`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
 namespace AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
 
-open CategoryTheory CategoryTheory.Limits IsLocalRing TopologicalSpace Scheme AlgebraicGeometry
+open CategoryTheory CategoryTheory.Limits _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
 
 section Restrict
 
@@ -158,3 +166,6 @@ theorem exists_opens_conditions_of_formalAutomorphism [Smooth f] (I : X.IdealShe
     exact AgreeOn.restrict_of_le Q.ψ Q.ψ' _ inf_le_right hV₄
 
 end AlgebraicGeometry.Scheme.IdealSheafData
+
+end
+end ResolutionHironaka

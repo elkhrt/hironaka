@@ -44,13 +44,23 @@ classified at each of its points (`cp3For_bmoOneRun`). This completes the proof 
 universal form. Used in `Hironaka.Resolution.Algebraic.Wlo05.EmbeddedCP5`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace Hironaka Scheme.BlowUpSequence
-  Scheme.IdealSheafData Hironaka.Sequence Hironaka.BO Hironaka.BD Hironaka.Local IsLocalRing
-  Hironaka.Stage
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.ResolutionHironaka.Hironaka
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.Hironaka.Sequence _root_.ResolutionHironaka.Hironaka.BO
+open _root_.ResolutionHironaka.Hironaka.BD _root_.ResolutionHironaka.Hironaka.Local
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing
+open _root_.ResolutionHironaka.Hironaka.Stage
 
 namespace Hironaka.Resolution
 
@@ -166,3 +176,6 @@ theorem cp3For_bmoOneRun (T : MarkedTriple k) (hm : T.m = 1) : CP3For (bmoOneRun
 end Tower
 
 end Hironaka.Resolution
+
+end
+end ResolutionHironaka

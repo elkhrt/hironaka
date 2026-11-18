@@ -26,6 +26,9 @@ The global statement is the pointwise one with Mathlib's `Scheme.Hom.smoothLocus
 (finite type over the Noetherian `Spec k` is finite presentation); see also `SingularLocus.lean`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
@@ -33,6 +36,7 @@ universe u
 open CategoryTheory IsLocalRing
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
 variable {k : Type u} [Field k] {X : Scheme.{u}}
 
@@ -63,3 +67,6 @@ theorem Scheme.smooth_iff_isRegular [PerfectField k] (f : X ⟶ Spec (.of k))
     exact IsConcreteLE.le_iff.mpr fun x _ => (Scheme.mem_smoothLocus_iff_isRegularAt f x).mpr (h x)
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

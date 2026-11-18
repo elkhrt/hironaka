@@ -51,11 +51,18 @@ Step 2.2 and the maximal-contact case are treated in
 `Hironaka/Resolution/Algebraic/OrderReduction/Step2EraseEmpty.lean`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry Hironaka Scheme BlowUpSequence Hironaka.Sequence
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.ResolutionHironaka.Hironaka _root_.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.ResolutionHironaka.Hironaka.Sequence
 
 namespace Hironaka.BO
 
@@ -306,3 +313,6 @@ theorem step21Seq_eraseEmpty_pullback {T' : Triple k} (hn' : T'.HasDimLE n)
 end Step21
 
 end Hironaka.BO
+
+end
+end ResolutionHironaka

@@ -41,11 +41,15 @@ Used for the logarithmic derivative ideal sheaf
 (`Hironaka/Resolution/Algebraic/Kol07/Corollary89.lean`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 open KaehlerDifferential
 
 namespace Derivation
+open _root_.Derivation
 
 variable {k A B : Type*} [CommRing k] [CommRing A] [CommRing B] [Algebra k A] [Algebra k B]
 
@@ -92,6 +96,7 @@ theorem exists_preservesIdeal_ker_of_surjective [Module.Projective A (Ω[A⁄k])
 end Derivation
 
 namespace Ideal
+open _root_.Ideal
 
 variable {k A B : Type*} [CommRing k] [CommRing A] [CommRing B] [Algebra k A] [Algebra k B]
 
@@ -153,3 +158,6 @@ theorem logDerivative_map_mk [Algebra.FormallySmooth k A] (J I : Ideal A) :
   exact h
 
 end Ideal
+
+end
+end ResolutionHironaka

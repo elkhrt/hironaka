@@ -51,11 +51,18 @@ coordinates adapted to the center on an affine neighbourhood
 (`Hironaka/Scheme/Smooth/EtaleCoordinatesAdapted.lean`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
-open AlgebraicGeometry CategoryTheory IsLocalRing Scheme.IdealSheafData
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
 universe u
 
@@ -223,3 +230,6 @@ theorem exists_adaptedCoordinates [PerfectField k] (f : X ⟶ Spec (.of k)) (n r
   exact ⟨y, hn.symm, hspan, hI⟩
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

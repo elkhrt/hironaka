@@ -29,13 +29,18 @@ members of a simple normal crossing family are smooth divisors (`Hironaka.Scheme
 hypersurface of maximal contact is required to be one
 (`Hironaka.Resolution.Algebraic.MaximalContact.Basic`). -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open AlgebraicGeometry CategoryTheory IsLocalRing Ideal
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing Ideal
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
 variable {X : Scheme.{u}}
 
@@ -83,3 +88,6 @@ theorem isSmoothDivisor_of_smoothOfRelativeDimension [PerfectField k] (f : X ⟶
     notMem_sq_of_span_eq y hspan hm _, hI⟩
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

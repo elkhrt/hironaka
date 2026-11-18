@@ -30,11 +30,17 @@ import Hironaka.Scheme.IdealSheaf.StalkIdeal
   one, which needs no reducedness of `Y`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
-open AlgebraicGeometry CategoryTheory Scheme.IdealSheafData TopologicalSpace
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData TopologicalSpace
 
 universe u
 
@@ -134,3 +140,6 @@ theorem affineBlowUp.hom_ext (f : Y ⟶ Spec (.of R))
     _ = V.1.ι ≫ g' := IsOpenImmersion.lift_fac _ _ _
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

@@ -26,11 +26,15 @@ formula and the composite of blow-ups — is proved once for an arbitrary `π` w
 (`Hironaka.Scheme.BlowUp.Glue.Global`).  The predicate is `Prop`-valued (no data).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
-open AlgebraicGeometry CategoryTheory
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
 
 universe u
 
@@ -68,3 +72,6 @@ theorem comap_comp_isInvertible_iff {Z : Scheme.{u}} (g : X ⟶ Z) (J : Z.IdealS
 end IsBlowUp
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

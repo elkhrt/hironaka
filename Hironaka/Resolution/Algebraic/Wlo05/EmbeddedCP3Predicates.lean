@@ -35,12 +35,21 @@ the coordinates that the persistence of the chain form provides. The coordinates
 (`Hironaka.Resolution.Algebraic.Wlo05.EmbeddedCP5`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace Scheme Hironaka IsLocalRing BlowUpSequence
-  Scheme.IdealSheafData Hironaka.BO
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.Hironaka _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.Hironaka.BO
 
 namespace Hironaka.Resolution
 
@@ -154,3 +163,6 @@ def CP3BOFor {n : ℕ} (bo : ∀ d : ℕ, BOData.{u} n d) : Prop :=
   ∀ (T : Triple k) (hT : T.BOClass n 1), CP3For (((bo 1).functor k).seq T hT) T.I T.E
 
 end Hironaka.Resolution
+
+end
+end ResolutionHironaka

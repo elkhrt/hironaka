@@ -52,12 +52,21 @@ pushed-forward centre (`stalkIdeal_map_of_isClosedImmersion`). The chain coordin
 `Hironaka.Resolution.Algebraic.Wlo05.EmbeddedCP3Raw`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace Scheme IsLocalRing BlowUpSequence
-  Scheme.IdealSheafData Hironaka.Snc
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.Hironaka.Snc
 
 namespace Hironaka.Resolution
 
@@ -256,3 +265,6 @@ theorem centerClassifiedAt_of_comap_member {Y : Scheme.{u}} (g : Y ⟶ X) [IsClo
         ((h _ c' _ _ _ hfree'' hb').2 hK''))
 
 end Hironaka.Resolution
+
+end
+end ResolutionHironaka

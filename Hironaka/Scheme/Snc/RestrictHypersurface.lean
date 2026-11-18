@@ -54,13 +54,20 @@ and at a point off `H` any regular system of parameters serves
 Sources: [Kol07, Corollary 85] (the proof); [Kol07, Definition 24; Definition 66; Definition 78].
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open AlgebraicGeometry CategoryTheory IsLocalRing Ideal Scheme TopologicalSpace
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing _root_.Ideal
+open _root_.ResolutionHironaka.Ideal _root_.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme TopologicalSpace
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
 variable {X Y : Scheme.{u}}
 
@@ -180,3 +187,6 @@ theorem isSnc_append_empty_of_isSmoothDivisor
         exact hi
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

@@ -30,9 +30,14 @@ Used in the first step of the proof of [Kol07, Theorem 107] ([Kol07, 111]) in th
 `Hironaka/Resolution/Algebraic/MarkedOrderReduction/Step2Separation.lean`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 namespace AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
 
 universe u
 
@@ -53,3 +58,6 @@ theorem maxOrd_anti {I J : X.IdealSheafData} (h : I ≤ J) : J.maxOrd ≤ I.maxO
   (maxOrd_le_iff J).mpr fun x => (ord_anti h x).trans (le_maxOrd I x)
 
 end AlgebraicGeometry.Scheme.IdealSheafData
+
+end
+end ResolutionHironaka

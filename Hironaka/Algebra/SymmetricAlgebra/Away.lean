@@ -31,6 +31,9 @@ corners have the universal property of `S`-algebras with an `R`-linear map from 
 to `1` [Sta, Tag 01N2].
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
@@ -38,6 +41,7 @@ universe u
 open CategoryTheory HomogeneousLocalization
 
 namespace SymmetricAlgebra
+open _root_.SymmetricAlgebra
 
 section Basic
 
@@ -364,3 +368,6 @@ theorem isPushout_away (hspan : Submodule.span S (Set.range f) = ⊤)
 end BaseChange
 
 end SymmetricAlgebra
+
+end
+end ResolutionHironaka

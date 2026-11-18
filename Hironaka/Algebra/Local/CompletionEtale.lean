@@ -34,11 +34,15 @@ point, in Kollár's words, is "to realize the automorphism `φ` on some étale n
 [Kol07, 95]; used in `Hironaka/Scheme/Smooth/GraphCompletion.lean`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 namespace IsLocalRing
+open _root_.IsLocalRing
 
-open IsLocalRing AdicCompletion
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing AdicCompletion
 
 section Level
 
@@ -230,3 +234,6 @@ theorem map_completionMap_map (I : Ideal R) :
 end Completion
 
 end IsLocalRing
+
+end
+end ResolutionHironaka

@@ -32,11 +32,15 @@ compatible, and `R̂` is `𝔪̂`-adically complete (`IsAdicComplete.liftAlgHom`
 the chart's local ring.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 namespace IsLocalRing
+open _root_.IsLocalRing
 
-open IsLocalRing MvPowerSeries
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing MvPowerSeries
 
 /-! ### Polynomials whose variables lie in an ideal -/
 
@@ -224,3 +228,6 @@ theorem cohenMap_C_coefficientField {d : ℕ} (x : Fin d → R) (hx : ∀ i, x i
 end CoefficientAlgebra
 
 end IsLocalRing
+
+end
+end ResolutionHironaka

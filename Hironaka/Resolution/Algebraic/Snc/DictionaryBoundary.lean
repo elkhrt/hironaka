@@ -59,21 +59,34 @@ The converse direction, for the family of irreducible components, is in
 `Hironaka/Resolution/Algebraic/Snc/DictionaryComponents.lean`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open AlgebraicGeometry CategoryTheory TopologicalSpace IsLocalRing Scheme
-  IdealSheafData DivisorFamily BlowUpSequence Scheme.IdealSheafData
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace _root_.IsLocalRing
+open _root_.ResolutionHironaka.IsLocalRing _root_.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.DivisorFamily
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
 namespace Hironaka.Sequence
 
-open Scheme AlgebraicGeometry
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
 
 variable {k : Type u} [Field k] {X : Scheme.{u}}
 
 /-- The support of a family, as a set, is the finite union of the supports of its members. -/
-theorem _root_.AlgebraicGeometry.Scheme.DivisorFamily.coe_support_eq_iUnion (F : DivisorFamily X) :
+theorem _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.DivisorFamily.coe_support_eq_iUnion
+    (F : DivisorFamily X) :
     (F.support : Set X) = ⋃ i, ((F.component i).support : Set X) := by
   change ((⨆ i, (F.component i).support : Closeds X) : Set X) = _
   rw [← Finset.sup_univ_eq_iSup, Closeds.coe_finset_sup, Finset.sup_set_eq_biUnion]
@@ -315,3 +328,6 @@ theorem IsOrderSeq.isSncBoundaryWith_boundarySeq {J : X.IdealSheafData} {d : ℕ
 end Boundaries
 
 end Hironaka.Sequence
+
+end
+end ResolutionHironaka

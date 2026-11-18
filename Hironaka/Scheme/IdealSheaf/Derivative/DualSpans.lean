@@ -35,11 +35,16 @@ with them is the derivative ideal of the stalk. At a non-closed point the parame
 (`Hironaka/Scheme/IdealSheaf/Derivative/StalkCoords.lean`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
-open AlgebraicGeometry CategoryTheory IsLocalRing KaehlerDifferential TensorProduct
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing KaehlerDifferential TensorProduct
 
 universe u
 
@@ -125,3 +130,6 @@ theorem forall_derivation_eq_sum_of_isClosed {x : X} (hx : IsClosed ({x} : Set X
           Derivation.liftKaehlerDifferential_comp_D]
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

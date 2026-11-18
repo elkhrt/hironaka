@@ -35,6 +35,9 @@ that the library adds.
   under a blow-up are built from them.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
@@ -42,6 +45,8 @@ universe u
 open CategoryTheory TopologicalSpace
 
 namespace AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
 
 variable {X : Scheme.{u}}
 
@@ -83,3 +88,6 @@ def colon (I K : X.IdealSheafData) : X.IdealSheafData :=
 def saturate (I K : X.IdealSheafData) : X.IdealSheafData := ⨆ i : ℕ, I.colon (K ^ i)
 
 end AlgebraicGeometry.Scheme.IdealSheafData
+
+end
+end ResolutionHironaka

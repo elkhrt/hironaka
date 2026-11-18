@@ -56,9 +56,13 @@ manifolds (`Hironaka/Manifold/BlowUp/Transform/LogDerivBlowUp.lean`), and for th
 derivations of the chart (`Hironaka/Algebra/Local/ChartLogDerivations.lean`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 namespace Derivation
+open _root_.Derivation
 
 variable {k A : Type*} [CommRing k] [CommRing A] [Algebra k A]
 
@@ -76,8 +80,9 @@ theorem mem_span_sup_span_image (δ : Derivation k A A) (S : Set A) {z : A}
 end Derivation
 
 namespace IsLocalRing.RegularCoords
+open _root_.IsLocalRing
 
-open IsLocalRing
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing
 
 variable {R : Type*} [CommRing R] [IsRegularLocalRing R] [Algebra ℚ R] {n : ℕ}
   (c : RegularCoords R n) (r : Fin n)
@@ -310,3 +315,6 @@ theorem iterate_chartD_transformIdeal_le {h : Fin n} (hh : h < r) {I : Ideal R} 
   exact c.iterate_chartDerivRing_transformElem_mem r hh hI (hj.trans hs) hf
 
 end IsLocalRing.RegularCoords
+
+end
+end ResolutionHironaka

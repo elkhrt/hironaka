@@ -24,11 +24,15 @@ containing the kernel of the projection killing the last two variables, a prime 
   at every point, respectively at the generic points (the form used to build admissible pairs).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry MvPolynomial
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open MvPolynomial
 
 namespace Hironaka.Resolution
 
@@ -208,3 +212,6 @@ theorem exists_affineEmbedding (X : Scheme.{u}) [X.Over (Spec (CommRingCat.of k)
   exact ⟨N, emb, hci, hover, fun η _ => hdim η⟩
 
 end Hironaka.Resolution
+
+end
+end ResolutionHironaka

@@ -27,14 +27,23 @@ Theorem I takes the composite of the resolution sequence as a single blow-up `K.
 enlarges its centre (`Hironaka/Resolution/Algebraic/Hir64/MainTheoremI.lean`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry Scheme BlowUpSequence Scheme.IdealSheafData
-  IdealSheafData
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
 
 /-- A union over `Fin (n + 1)` splits off the index `0`. -/
@@ -122,3 +131,6 @@ theorem exists_blowUp_composite_iso {X : Scheme.{u}} [IsNoetherian X] (S : BlowU
   exists_blowUp_composite_iso' S
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

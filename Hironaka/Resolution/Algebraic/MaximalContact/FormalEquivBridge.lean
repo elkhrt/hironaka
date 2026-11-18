@@ -53,11 +53,17 @@ of Theorem 92 (`Hironaka/Resolution/Algebraic/MaximalContact/FormalEquivExists.l
   `map_comap_completionIdeal_eq_of_isOnePlus` (the equality `φ^* Î = Î`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 namespace AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
 
-open CategoryTheory IsLocalRing MvPowerSeries
+open CategoryTheory _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing _root_.MvPowerSeries
+open _root_.ResolutionHironaka.MvPowerSeries
 
 universe u
 
@@ -286,3 +292,6 @@ theorem cohenAlgEquiv_eq
 end Cohen
 
 end AlgebraicGeometry.Scheme.IdealSheafData
+
+end
+end ResolutionHironaka

@@ -29,15 +29,20 @@ scheme, where the strict transform of a component is again integral [Kol07, Coro
 `strictTransformAlong (D.blowUpπ) (D.exceptionalDivisor) J`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open AlgebraicGeometry CategoryTheory
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
-open Scheme.IdealSheafData
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
 /-! ### Reduced chart rings -/
 
@@ -93,3 +98,6 @@ theorem isReduced_strictTransform_subscheme (D J : X.IdealSheafData) [IsReduced 
   isReduced_strictTransformAlong_subscheme D J
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

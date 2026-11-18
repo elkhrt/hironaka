@@ -30,11 +30,18 @@ ideal of the absorbed strict transforms, which is `Γ`'s ideal near `Γ` by CP1)
 into the protected state (`Hironaka.Resolution.Algebraic.Wlo05.EmbeddedCP2Entry`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace Scheme Scheme.IdealSheafData
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
 namespace Hironaka.Resolution
 
@@ -69,3 +76,6 @@ theorem chainRelativeKAt_colon (f : X ⟶ Spec (CommRingCat.of k))
   exact hcc.2.2.2.2.1 i j hj.symm
 
 end Hironaka.Resolution
+
+end
+end ResolutionHironaka

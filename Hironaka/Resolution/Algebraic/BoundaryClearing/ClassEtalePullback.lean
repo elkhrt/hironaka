@@ -30,11 +30,16 @@ not increase under smooth pull-back (`maxOrd_comap_le_of_smooth`,
 family keeps its index set. Used in `Hironaka/Resolution/Algebraic/OrderReduction/Step22Indep.lean`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry Hironaka Scheme.IdealSheafData
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.ResolutionHironaka.Hironaka _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
 namespace Hironaka.BO
 
@@ -57,3 +62,6 @@ theorem bdClass_closedUnderEtalePullbackOverCosupp (n m j : ℕ) :
   · exact (maxOrd_comap_le_of_smooth h T.I).trans hmax
 
 end Hironaka.BO
+
+end
+end ResolutionHironaka

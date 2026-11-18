@@ -55,12 +55,22 @@ This is Step 2.2 of the proof of [Kol07, Theorem 103] read for CP1; the argument
 literature. Used in `Hironaka.Resolution.Algebraic.Wlo05.EmbeddedCP1Step22`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace Hironaka Scheme BlowUpSequence
-  Scheme.IdealSheafData Hironaka.Sequence Hironaka.BD Hironaka.BMO
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.ResolutionHironaka.Hironaka _root_.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.Hironaka.Sequence _root_.ResolutionHironaka.Hironaka.BD
+open _root_.ResolutionHironaka.Hironaka.BMO
 
 namespace Hironaka.Resolution
 
@@ -208,3 +218,6 @@ theorem cp1For_rawSeq_of_cp1 (T : Triple k) (m : ℕ) (hm1 : m = 1) (j : T.E.ι)
     exact cp1For_pushforward (T.X.left ↘ Spec (.of k)) n' hH hEerase hEH hHJ hηH L hS hη' hCP
 
 end Hironaka.Resolution
+
+end
+end ResolutionHironaka

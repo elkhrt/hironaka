@@ -33,11 +33,16 @@ of the ideal sheaf and the order `ord I x` is valued in `ℕ∞`.
   (Mathlib's `mem_zeroLocus_iff`, `Scheme.mem_basicOpen`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 namespace AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
 
-open IsLocalRing TopologicalSpace
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing TopologicalSpace
 
 universe u
 
@@ -122,3 +127,6 @@ theorem ord_bot : (⊥ : X.IdealSheafData).ord x = ⊤ := by
     IsLocalRing.ord_bot]
 
 end AlgebraicGeometry.Scheme.IdealSheafData
+
+end
+end ResolutionHironaka

@@ -56,15 +56,23 @@ The mathematics, module by module ([Hau14, Proposition 5.3; Proposition 5.4; Def
   `B_Z X`, and every member of the total transform a smooth divisor.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open AlgebraicGeometry CategoryTheory IsLocalRing Ideal Scheme.IdealSheafData
-  Scheme DivisorFamily
-open AlgebraicGeometry
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing Ideal
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.DivisorFamily
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
 
 variable {k : Type u} [Field k] {X : Scheme.{u}}
@@ -208,3 +216,5 @@ end StrictTransforms
 
 end AlgebraicGeometry
 
+end
+end ResolutionHironaka

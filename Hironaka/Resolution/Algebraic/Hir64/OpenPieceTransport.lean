@@ -60,16 +60,25 @@ stage lifts `u_i` of the pull-back `S.pullback u`:
   `Hironaka/Resolution/Algebraic/Hir64/ComponentDeletion.lean`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory TopologicalSpace AlgebraicGeometry Scheme Scheme.IdealSheafData
-  Scheme.BlowUpSequence
+open CategoryTheory _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
 
 namespace Hironaka.Sequence
 
-open AlgebraicGeometry Hironaka.Resolution AlgebraicGeometry.Remark33
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.ResolutionHironaka.Hironaka.Resolution
+open _root_.ResolutionHironaka.AlgebraicGeometry.Remark33
 
 variable {X Y : Scheme.{u}}
 
@@ -549,3 +558,6 @@ theorem isRegularAt_subscheme_of_comap (u : Y ⟶ X) [IsOpenImmersion u] (Z : X.
   exact (isRegularAt_apply_iff_of_isOpenImmersion _ p).mpr h
 
 end Hironaka.Sequence
+
+end
+end ResolutionHironaka

@@ -48,12 +48,19 @@ family of divisors on `X_r` (3).
   (whose sequence at `X` is `BR k X` by definition).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory CategoryTheory.Limits AlgebraicGeometry TopologicalSpace Scheme BlowUpSequence
-  Hironaka.Sequence
+open CategoryTheory CategoryTheory.Limits _root_.AlgebraicGeometry
+open _root_.ResolutionHironaka.AlgebraicGeometry _root_.TopologicalSpace
+open _root_.ResolutionHironaka.TopologicalSpace _root_.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.ResolutionHironaka.Hironaka.Sequence
 
 namespace Hironaka.Resolution
 
@@ -217,3 +224,6 @@ theorem BR_exists_snc_support_of_class (X : Scheme.{u}) [X.Over (Spec (CommRingC
   (theorem36_BR X hX).2.2
 
 end Hironaka.Resolution
+
+end
+end ResolutionHironaka

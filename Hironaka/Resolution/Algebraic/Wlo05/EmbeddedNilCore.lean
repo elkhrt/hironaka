@@ -72,13 +72,25 @@ the theorem do not need this statement; it records that the sequence does nothin
 The general tools are in `Hironaka.Resolution.Algebraic.Wlo05.EmbeddedNilCoreTools`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open CategoryTheory CategoryTheory.Limits AlgebraicGeometry TopologicalSpace
-  Scheme Hironaka IdealSheafData BlowUpSequence Scheme.IdealSheafData Hironaka.Sequence
-  Hironaka.Local Hironaka.Stage Hironaka.BO Hironaka.BD
+open CategoryTheory CategoryTheory.Limits _root_.AlgebraicGeometry
+open _root_.ResolutionHironaka.AlgebraicGeometry _root_.TopologicalSpace
+open _root_.ResolutionHironaka.TopologicalSpace _root_.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.Hironaka
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.Hironaka.Sequence _root_.ResolutionHironaka.Hironaka.Local
+open _root_.ResolutionHironaka.Hironaka.Stage _root_.ResolutionHironaka.Hironaka.BO
+open _root_.ResolutionHironaka.Hironaka.BD
 
 namespace Hironaka.Resolution
 
@@ -307,3 +319,6 @@ theorem bed_eq_nil_of_smooth (TX : Triple k) (hE : IsEmpty TX.E.ι)
   bed_eq_nil_of_smooth_of_core core_bmoOneRun TX hE hY
 
 end Hironaka.Resolution
+
+end
+end ResolutionHironaka

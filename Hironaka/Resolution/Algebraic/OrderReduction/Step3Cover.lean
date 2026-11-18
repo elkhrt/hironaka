@@ -34,11 +34,20 @@ open-immersion coproduct; the triple on `W` is `Triple.pullback` along the open-
 used in `Hironaka/Resolution/Algebraic/OrderReduction/Step3Clauses.lean`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 universe u
 
-open CategoryTheory CategoryTheory.Limits AlgebraicGeometry TopologicalSpace Hironaka Scheme
-  BlowUpSequence Hironaka.Sequence Hironaka.Snc Scheme.IdealSheafData
+open CategoryTheory CategoryTheory.Limits _root_.AlgebraicGeometry
+open _root_.ResolutionHironaka.AlgebraicGeometry _root_.TopologicalSpace
+open _root_.ResolutionHironaka.TopologicalSpace _root_.ResolutionHironaka.Hironaka
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.ResolutionHironaka.Hironaka.Sequence _root_.ResolutionHironaka.Hironaka.Snc
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
 namespace Hironaka.BO
 
@@ -130,3 +139,6 @@ theorem exists_localCover_pullback {T T' TU : Triple k} {h : T'.X.left ⟶ T.X.l
     Limits.pullback.snd g h, sq, hWU, ⟨hT', hL, hM', hs', hW'⟩, hsm', hsurj⟩
 
 end Hironaka.BO
+
+end
+end ResolutionHironaka

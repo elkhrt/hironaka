@@ -73,6 +73,9 @@ The predicates extend Mathlib's `Ideal`, so they live in Mathlib's namespace (do
 (`(I.comap f).IsInvertible`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u v w
@@ -104,6 +107,7 @@ theorem map_mem_nonZeroDivisors_of_ringEquiv {B : Type v} {C : Type w} [CommRing
 end AlgebraicGeometry
 
 namespace Ideal
+open _root_.Ideal
 
 variable {A : Type u} [CommRing A]
 
@@ -335,3 +339,6 @@ theorem IsInvertible.of_mul {J₁ J₂ : Ideal A} (h : (J₁ * J₂).IsInvertibl
   ⟨IsInvertible.of_mul_left h, IsInvertible.of_mul_left (mul_comm J₁ J₂ ▸ h)⟩
 
 end Ideal
+
+end
+end ResolutionHironaka

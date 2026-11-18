@@ -35,6 +35,9 @@ and `star_blowUp` carries the hypothesis of the phase along it
 (`Hironaka/Resolution/Algebraic/Monomial/Step3Phases.lean`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 namespace Hironaka.Monomial.MonomialState
@@ -169,3 +172,6 @@ theorem measure_blowUp_le (s : ℕ) :
 end Decrease
 
 end Hironaka.Monomial.MonomialState
+
+end
+end ResolutionHironaka

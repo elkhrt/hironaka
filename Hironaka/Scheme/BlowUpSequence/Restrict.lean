@@ -46,13 +46,19 @@ smoothness of `Z_i ⊆ S_i` is transported along the isomorphism `V(Z_i ∩ S_i)
 `Hironaka/Scheme/BlowUpSequence/Pushforward.lean` for `j_* j^* B = B`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry Scheme BlowUpSequence
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
 variable {X Y : Scheme.{u}}
 
@@ -187,3 +193,6 @@ theorem map_comap_of_ker_le (g : Y ⟶ X) [IsClosedImmersion g] (Z : X.IdealShea
     _ = Z := Scheme.IdealSheafData.ker_subschemeι Z
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

@@ -26,11 +26,16 @@ of Theorem 92).
   (`IsZariskiLocalAtSource.sigmaDesc`), covering because each `ψ_i` factors through `ψ`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
-open AlgebraicGeometry CategoryTheory CategoryTheory.Limits TopologicalSpace
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
+open CategoryTheory.Limits TopologicalSpace
 
 universe u
 
@@ -90,3 +95,6 @@ theorem EtaleImagePair.sigma_ψ {X : Scheme.{u}} {S : Set X} {ι : Type u}
   ⟨rfl, rfl⟩
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

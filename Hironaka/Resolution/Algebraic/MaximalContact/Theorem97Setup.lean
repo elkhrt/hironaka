@@ -44,13 +44,18 @@ reducedness of the smooth centres). This file holds the definition of that datum
   schemes.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry Scheme.BlowUpSequence
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
 
 namespace AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme
 
 
 variable {U : Scheme.{u}}
@@ -108,6 +113,8 @@ theorem centersInRange_eqToHom_comp (S : BlowUpSequence X) {U' : Scheme.{u}} (e 
 end AlgebraicGeometry.Scheme.BlowUpSequence
 
 namespace AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
 
 variable {U X : Scheme.{u}}
 
@@ -120,3 +127,6 @@ theorem AgreeOn.mono {f g : U ⟶ X} {M J : U.IdealSheafData} (h : M ≤ J) (hfg
   rw [← inclusion_subschemeι h, Category.assoc, Category.assoc, hfg]
 
 end AlgebraicGeometry.Scheme.IdealSheafData
+
+end
+end ResolutionHironaka

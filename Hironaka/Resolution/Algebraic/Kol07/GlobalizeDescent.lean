@@ -70,19 +70,27 @@ fibre product of the composite cover `Y' → Y → X` with a cover `X' → X`, c
 after pullback along the surjective flat `W → Y' → Y`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open CategoryTheory CategoryTheory.Limits AlgebraicGeometry TopologicalSpace
+open CategoryTheory CategoryTheory.Limits _root_.AlgebraicGeometry
+open _root_.ResolutionHironaka.AlgebraicGeometry _root_.TopologicalSpace
+open _root_.ResolutionHironaka.TopologicalSpace
 
 namespace AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme
 
-open Hironaka
+open _root_.ResolutionHironaka.Hironaka
 
 variable {k : Type u} [Field k] {m : ℕ} {GT LT : Triple k → Prop}
 
-open Hironaka.Sequence AlgebraicGeometry Scheme
+open _root_.ResolutionHironaka.Hironaka.Sequence _root_.AlgebraicGeometry
+open _root_.ResolutionHironaka.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
 
 /-! ### Descent of a sequence along a surjective coproduct of open immersions -/
 
@@ -138,19 +146,25 @@ namespace Hironaka
 
 variable {k : Type u} [Field k] {m : ℕ} {GT LT : Triple k → Prop}
 
-open Hironaka.Sequence AlgebraicGeometry Scheme
+open _root_.ResolutionHironaka.Hironaka.Sequence _root_.AlgebraicGeometry
+open _root_.ResolutionHironaka.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
 
 end Hironaka
 
 namespace AlgebraicGeometry.Triple
+open _root_.AlgebraicGeometry
 
-open Hironaka
+open _root_.ResolutionHironaka.Hironaka
 
 variable {k : Type u} [Field k] {m : ℕ} {GT LT : Triple k → Prop}
 
-open Hironaka.Sequence AlgebraicGeometry Scheme
+open _root_.ResolutionHironaka.Hironaka.Sequence _root_.AlgebraicGeometry
+open _root_.ResolutionHironaka.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
 
-open AlgebraicGeometry Scheme
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
 
 /-! ### The descended sequence is a smooth blow-up sequence of order `m` -/
 
@@ -264,11 +278,14 @@ namespace Hironaka
 
 variable {k : Type u} [Field k] {m : ℕ} {GT LT : Triple k → Prop}
 
-open Hironaka.Sequence AlgebraicGeometry Scheme
+open _root_.ResolutionHironaka.Hironaka.Sequence _root_.AlgebraicGeometry
+open _root_.ResolutionHironaka.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
 
 namespace OrderSeqAssignment
 
-open AlgebraicGeometry Scheme
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
 
 /-! ### The extension `B̄` -/
 
@@ -463,3 +480,6 @@ theorem exists_globalization [CharZero k] (D : Triple.GlobalizationData openImme
 end OrderSeqAssignment
 
 end Hironaka
+
+end
+end ResolutionHironaka

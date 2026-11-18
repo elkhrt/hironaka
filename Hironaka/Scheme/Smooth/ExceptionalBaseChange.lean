@@ -51,19 +51,26 @@ one-point spaces and affine).
   `descendsAlong_smoothOfRelativeDimension` where the two are combined).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open AlgebraicGeometry CategoryTheory Limits Scheme.IdealSheafData
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
+open _root_.CategoryTheory.Limits _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
 section Field
 
 /-- A ring map out of a ring isomorphic to a field is flat: every vector space is free, and
 flatness passes along the isomorphism. -/
-theorem _root_.RingHom.Flat.of_ringEquiv_field {k A B : Type*} [Field k] [CommRing A] [CommRing B]
+theorem _root_.ResolutionHironaka.RingHom.Flat.of_ringEquiv_field
+    {k A B : Type*} [Field k] [CommRing A] [CommRing B]
     (e : k ≃+* A) (φ : A →+* B) : φ.Flat := by
   have h : φ = (φ.comp e.toRingHom).comp e.symm.toRingHom := by
     ext x
@@ -88,8 +95,10 @@ end Field
 end AlgebraicGeometry
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
-open AlgebraicGeometry Scheme.Hom
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.AlgebraicGeometry.Scheme.Hom _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.Hom
 
 section FlatBaseChange
 
@@ -271,3 +280,6 @@ theorem smoothOfRelativeDimension_subschemeMap_exceptional_of_descendsAlong
 end Descent
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

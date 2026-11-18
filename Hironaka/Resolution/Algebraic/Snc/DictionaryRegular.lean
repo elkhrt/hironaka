@@ -41,12 +41,20 @@ namespace `Hironaka.Monomial` the declarations carry; their forms for a scheme s
 are in `Hironaka/Resolution/Algebraic/Snc/ComponentStalks.lean`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace Scheme Scheme.IdealSheafData IsLocalRing
-  Ideal Hironaka.BMO
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData _root_.IsLocalRing
+open _root_.ResolutionHironaka.IsLocalRing _root_.Ideal _root_.ResolutionHironaka.Ideal
+open _root_.ResolutionHironaka.Hironaka.BMO
 
 namespace Hironaka.Monomial
 
@@ -114,3 +122,6 @@ theorem notMem_support_of_ne_of_isSnc {X : Scheme.{u}}
   exact not_dvd_of_ne hrs.1.symm hrs.2 hne hmem
 
 end Hironaka.Monomial
+
+end
+end ResolutionHironaka

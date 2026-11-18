@@ -61,16 +61,26 @@ gives `F_U → Z ∩ U` as the base change of `ℙ^{r-1}_k → Spec k` along
   `k → κ(z)`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open AlgebraicGeometry CategoryTheory CategoryTheory.Limits MvPolynomial Scheme.IdealSheafData
-open TopologicalSpace AlgebraicGeometry Scheme.IdealSheafData Scheme.Hom CoordinateSubspace
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
+open CategoryTheory.Limits MvPolynomial _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open TopologicalSpace _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry.Scheme.Hom _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.Hom
+open _root_.ResolutionHironaka.AlgebraicGeometry.CoordinateSubspace
 
 attribute [local instance] MvPolynomial.gradedAlgebra
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
 section EqToHom
 
@@ -346,3 +356,6 @@ theorem exists_iso_fiber_proj (z : Z.subscheme) :
 end Fiber
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

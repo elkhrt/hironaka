@@ -61,12 +61,20 @@ isolated ideal is CP2 (`Hironaka.Resolution.Algebraic.Wlo05.EmbeddedCP2Entry`) a
 (`Hironaka.Resolution.Algebraic.Wlo05.EmbeddedCP6Isolation`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u v
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace Hironaka Scheme.BlowUpSequence
-  Scheme.IdealSheafData Hironaka.Sequence Hironaka.BMO
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.ResolutionHironaka.Hironaka
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.Hironaka.Sequence _root_.ResolutionHironaka.Hironaka.BMO
 
 namespace Hironaka.Resolution
 
@@ -272,3 +280,6 @@ theorem nonmonomialPart_le_nonmonomialPart_isolatedMarkedIdeal (hinv : InvCE T.I
 end Isolated
 
 end Hironaka.Resolution
+
+end
+end ResolutionHironaka

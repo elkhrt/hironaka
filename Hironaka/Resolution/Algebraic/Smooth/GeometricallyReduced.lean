@@ -46,11 +46,16 @@ Used for the functoriality of the embedded resolution under smooth morphisms
 for normal crossings (`Hironaka/Resolution/Algebraic/Snc/SncLocal.lean`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open CategoryTheory CategoryTheory.Limits AlgebraicGeometry TopologicalSpace
+open CategoryTheory CategoryTheory.Limits _root_.AlgebraicGeometry
+open _root_.ResolutionHironaka.AlgebraicGeometry _root_.TopologicalSpace
+open _root_.ResolutionHironaka.TopologicalSpace
 
 namespace Hironaka.Smooth
 
@@ -120,3 +125,6 @@ theorem comap_vanishingIdeal_of_smooth [NoetherianSpace X] (h : Y ⟶ X) [Smooth
     Hironaka.Sequence.support_vanishingIdeal_eq]
 
 end Hironaka.Smooth
+
+end
+end ResolutionHironaka

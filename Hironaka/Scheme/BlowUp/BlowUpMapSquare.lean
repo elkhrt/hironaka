@@ -29,11 +29,16 @@ They are applied to the square `IsPullback (blowUpMap h D) π_Y π_X h` of `isPu
 and to the base change of blow-up sequences.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
-open AlgebraicGeometry CategoryTheory Limits
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
+open _root_.CategoryTheory.Limits
 
 universe u
 
@@ -60,3 +65,6 @@ theorem property_of_isPullback (Q : MorphismProperty Scheme.{u}) [Q.IsStableUnde
   MorphismProperty.IsStableUnderBaseChange.of_isPullback H.flip hg
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

@@ -42,15 +42,22 @@ empty-blow-up transports for it are available (`isOrderGeSeq_concat`, `IsOrderGe
 `BP_isOrderGeSeq_zero` assembles them; `BP_center_smooth_hasSncWith` reads off clause (1).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry Hironaka Scheme BlowUpSequence Hironaka.Stage
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.ResolutionHironaka.Hironaka _root_.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.ResolutionHironaka.Hironaka.Stage
 
 namespace Hironaka.Sequence
 
-open AlgebraicGeometry
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
 
 variable {X : Scheme.{u}}
 
@@ -119,3 +126,6 @@ theorem BP_center_smooth_hasSncWith (T : Triple k) :
   fun i => ⟨(BP_isOrderGeSeq_zero T).1 i, ((BP_isOrderGeSeq_zero T).2 i).1⟩
 
 end Hironaka.Sequence
+
+end
+end ResolutionHironaka

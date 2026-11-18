@@ -42,9 +42,13 @@ blow-up chart (`Hironaka/Algebra/Local/BlowUpLiftTransform.lean`,
 (`Hironaka/Manifold/IdealSheaf/Deriv.lean`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 namespace Ideal
+open _root_.Ideal
 
 variable (k : Type*) {A : Type*} [CommRing k] [CommRing A] [Algebra k A]
 
@@ -259,7 +263,7 @@ end Generators
 
 section Coords
 
-open IsLocalRing
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing
 
 variable {R : Type*} [CommRing R] [IsRegularLocalRing R] [Algebra ℚ R] [Algebra k R] {n : ℕ}
   (c : RegularCoords R n)
@@ -301,3 +305,6 @@ theorem derivativeIter_eq_Dpow (hk : c.IsLinearOver k) (hs : c.SpansDerivations 
 end Coords
 
 end Ideal
+
+end
+end ResolutionHironaka

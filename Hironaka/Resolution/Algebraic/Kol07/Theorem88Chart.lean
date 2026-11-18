@@ -32,11 +32,17 @@ observation in the proof of [Kol07, Lemma 62] that the remaining chart "does not
 of the birational transform".
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry Scheme.IdealSheafData IsLocalRing
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData _root_.IsLocalRing
+open _root_.ResolutionHironaka.IsLocalRing
 
 namespace Hironaka.Sequence
 
@@ -72,3 +78,6 @@ theorem stalkIdeal_strictTransform_eq_top_of_pivot (q : Z.blowUp) {n' : ℕ}
     exact Ideal.mul_mem_left _ t hp
 
 end Hironaka.Sequence
+
+end
+end ResolutionHironaka

@@ -36,11 +36,17 @@ is nevertheless total, so that no existence statement is built into it. The unfo
 `BR_affine'_of_pos` and `BR_affine'_of_neg` are the two branches of the `if`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry Hironaka Scheme BlowUpSequence
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.ResolutionHironaka.Hironaka _root_.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
 
 namespace Hironaka.Resolution
 
@@ -79,3 +85,6 @@ theorem BR_affine'_of_neg (X : Scheme.{u}) [X.Over (Spec (CommRingCat.of k))]
   rw [dite_eq_right h]
 
 end Hironaka.Resolution
+
+end
+end ResolutionHironaka

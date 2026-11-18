@@ -50,15 +50,18 @@ of [Kol07, Theorem 107] needs
 (`Hironaka/Resolution/Algebraic/MarkedOrderReduction/Theorem107.lean`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
 
 namespace Hironaka
 
-open Scheme
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
 
 /-- A blow-up sequence functor of order `m` on a class of triples is **indifferent to empty
 boundary members** when deleting unit-ideal members from the boundary does not change its value:
@@ -90,10 +93,11 @@ def BDFamily.NilAtUnitMember {n m : ℕ} (bdm : ∀ j : ℕ, BDData.{u} n m j) :
 end Hironaka
 
 namespace AlgebraicGeometry.Triple
+open _root_.AlgebraicGeometry
 
-open Hironaka
+open _root_.ResolutionHironaka.Hironaka
 
-open Scheme
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
 
 /-- The triple `T` with its boundary replaced by `E'`, given with its normal-crossings proof:
 `{ T with E := E', isSnc := hsnc' }`, the second triple of the indifference relation
@@ -107,6 +111,9 @@ end AlgebraicGeometry.Triple
 
 namespace Hironaka
 
-open Scheme
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
 
 end Hironaka
+
+end
+end ResolutionHironaka

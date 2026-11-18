@@ -30,15 +30,21 @@ the worked examples (`HironakaExamples.Sequence.Remark33Charts`,
 `HironakaExamples.OrderReduction.Example106BlowUp`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open AlgebraicGeometry CategoryTheory MvPolynomial Scheme.IdealSheafData
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
+open MvPolynomial _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
 namespace AlgebraicGeometry.CoordinateSubspace
+open _root_.AlgebraicGeometry
 
-open affineBlowUpAlgebra
+open _root_.ResolutionHironaka.AlgebraicGeometry.affineBlowUpAlgebra
 
 variable (A : Type u) [CommRing A] (n r : ℕ)
 
@@ -324,3 +330,6 @@ theorem exists_algEquiv_quotient_span_X_over_center :
 end Center
 
 end AlgebraicGeometry.CoordinateSubspace
+
+end
+end ResolutionHironaka

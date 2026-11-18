@@ -43,13 +43,17 @@ property of the blow-up (`Scheme.IdealSheafData.blowUp.isBlowUp`, read through
 smooth over `k` (`Scheme.smooth_iff_isRegular`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open AlgebraicGeometry CategoryTheory
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
 /-- **Resolution of singularities** [Hir64, Main Theorem I, p. 132]. Every integral scheme `X`,
 separated and of finite type over a field `k` of characteristic zero, is resolved by a single
@@ -104,3 +108,6 @@ theorem exists_isBlowUpAlong_smooth {k : Type u} [Field k] [CharZero k]
   exact (Scheme.smooth_iff_isRegular (D.blowUpπ ≫ f)).mpr hreg
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

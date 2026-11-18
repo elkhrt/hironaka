@@ -31,17 +31,23 @@ glue to a morphism of the glued schemes over `X`, and over the chart of `U` it i
 morphism, so it is a closed immersion, being one is local on the target.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open CategoryTheory CategoryTheory.Limits SymmetricAlgebra Polynomial
+open CategoryTheory CategoryTheory.Limits _root_.SymmetricAlgebra
+open _root_.ResolutionHironaka.SymmetricAlgebra Polynomial
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
 variable {X : Scheme.{u}} (I : X.IdealSheafData)
 
 namespace Scheme.IdealSheafData
+open _root_.AlgebraicGeometry.Scheme _root_.AlgebraicGeometry.Scheme.IdealSheafData
 
 /-- The degree-one map `I(U) → Rees(I(U))`, `a ↦ a t`, on the sections of `I.toModules` over an
 affine open `U`. -/
@@ -268,3 +274,6 @@ theorem Scheme.IdealSheafData.isProjective_blowUpπ [IsLocallyNoetherian X] :
     I.isClosedImmersion_blowUpToProjectiveBundle, I.blowUpToProjectiveBundle_π⟩⟩
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

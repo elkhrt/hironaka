@@ -31,11 +31,15 @@ through the completion (`Hironaka/Algebra/Local/Lemma61.lean`, `ChartOrderFaithf
 the completion of the graph of an étale map (`Hironaka/Scheme/Smooth/GraphCompletion.lean`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 namespace IsLocalRing
+open _root_.IsLocalRing
 
-open IsLocalRing AdicCompletion
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing AdicCompletion
 
 section
 
@@ -247,3 +251,6 @@ theorem residue_completionMap_coefficientField [Algebra ℚ A]
 end Residue
 
 end IsLocalRing
+
+end
+end ResolutionHironaka

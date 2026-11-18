@@ -47,15 +47,20 @@ that is cartesian over an open cover of one corner is cartesian (Mathlib's
   and the isomorphism `projBaseChangeIso σ R S` onto Mathlib's `pullback`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open AlgebraicGeometry CategoryTheory CategoryTheory.Limits MvPolynomial HomogeneousLocalization
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
+open CategoryTheory.Limits MvPolynomial HomogeneousLocalization
 
 attribute [local instance] MvPolynomial.gradedAlgebra
 
 namespace AlgebraicGeometry.Proj
+open _root_.AlgebraicGeometry _root_.AlgebraicGeometry.Proj
 
 variable (σ : Type) (R : Type u) [CommRing R]
 
@@ -199,3 +204,6 @@ theorem projBaseChangeIso_hom_snd :
 end BaseChange
 
 end AlgebraicGeometry.Proj
+
+end
+end ResolutionHironaka

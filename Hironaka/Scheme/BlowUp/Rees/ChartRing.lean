@@ -44,9 +44,12 @@ zero rings and the isomorphism is between singletons; for `a = 1 ∈ I = R` it i
 `(R[t]_t)₀ ≅ R`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
-open AlgebraicGeometry
+open _root_.ResolutionHironaka.AlgebraicGeometry
 
 open Polynomial HomogeneousLocalization
 
@@ -226,3 +229,5 @@ theorem reesAlgebra.chartRingEquiv_fromZeroRingHom (a : I) (r : R) :
 
 end ChartHom
 
+end
+end ResolutionHironaka

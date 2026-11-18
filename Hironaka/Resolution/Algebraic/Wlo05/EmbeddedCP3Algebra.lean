@@ -40,11 +40,14 @@ They are used by the CP3 modules `Hironaka.Resolution.Algebraic.Wlo05.EmbeddedCP
 `Hironaka.Resolution.Algebraic.Wlo05.EmbeddedCP3Transport`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open IsLocalRing
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing
 
 namespace Hironaka.Resolution
 
@@ -947,3 +950,6 @@ theorem comap_eq_span_range_of_eq_span_range_succAbove {n : ℕ} {z : Fin (n + 1
 end Algebra
 
 end Hironaka.Resolution
+
+end
+end ResolutionHironaka

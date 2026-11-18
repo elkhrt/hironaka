@@ -32,6 +32,9 @@ positive degrees; for `I = R` it is `R[t]` with the degree grading; for the zero
 `0` [Hau14, Definition 4.6].
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 open Polynomial
@@ -246,3 +249,6 @@ noncomputable def reesAlgebra.mapOfLe (φ : R →+* S) {I : Ideal R} {J : Ideal 
     rw [coeff_map, reesAlgebra.coeff_eq_zero_of_mem_grading hp hj, map_zero]
 
 end GradedMap
+
+end
+end ResolutionHironaka

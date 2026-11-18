@@ -23,12 +23,20 @@ the transform of the centre itself with mark `1` is the unit ideal, `(F : F) = ð
 Remark 33 (`HironakaExamples/Sequence/Warning63.lean`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace Scheme.IdealSheafData
-  Scheme.BlowUpSequence AlgebraicGeometry.Scheme.IdealSheafData
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
 namespace Hironaka.Sequence
 
@@ -49,3 +57,6 @@ theorem markedTransform_top (Z : X.IdealSheafData) (m :
   exact le_antisymm le_top (le_colon_self _ _)
 
 end Hironaka.Sequence
+
+end
+end ResolutionHironaka

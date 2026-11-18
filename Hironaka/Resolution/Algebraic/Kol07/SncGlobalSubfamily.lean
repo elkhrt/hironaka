@@ -42,16 +42,27 @@ of the proof of Theorem 103 restricts to the hypersurface [Kol07, 104, Step 2.2]
 is also a simple normal crossing divisor" holds for the exceptional sub-family.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace IsLocalRing Ideal Scheme
-  IdealSheafData BlowUpSequence Scheme.IdealSheafData Hironaka.Snc
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace _root_.IsLocalRing
+open _root_.ResolutionHironaka.IsLocalRing _root_.Ideal _root_.ResolutionHironaka.Ideal
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.Hironaka.Snc
 
 namespace Hironaka.Sequence
 
-open AlgebraicGeometry
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
 
 section Family
 
@@ -61,7 +72,7 @@ variable {X : Scheme.{u}}
 members that are not the birational transform of an original member (`originalIdx`). It is the
 family `F_r` for which "`H_r + F_r` is a simple normal crossing divisor" holds in the maximal
 contact case of the proof of Theorem 103 [Kol07, 104, Step 2.2]. -/
-noncomputable def _root_.AlgebraicGeometry.Scheme.BlowUpSequence.exceptionalFamily
+noncomputable def _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence.exceptionalFamily
     (S : BlowUpSequence X)
     (E : DivisorFamily X) : DivisorFamily (S.stage (Fin.last _)) :=
   (S.totalTransformSeq E (Fin.last _)).subfamily fun b => ∀ a, b ≠ S.originalIdx E (Fin.last _) a
@@ -157,3 +168,6 @@ theorem isSnc_exceptionalFamily_append (n : ℕ) {X : Scheme.{u}} (f : X ⟶ Spe
       (isSncOn_subfamily_false_append f E hH Set.univ)
 
 end Hironaka.Sequence
+
+end
+end ResolutionHironaka

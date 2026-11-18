@@ -38,12 +38,20 @@ used in `Hironaka.Resolution.Algebraic.Wlo05.EmbeddedCP4Sheaf` and
 `Hironaka.Resolution.Algebraic.Wlo05.EmbeddedCP6Tools`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open Ideal CategoryTheory AlgebraicGeometry TopologicalSpace IsLocalRing Scheme.BlowUpSequence
-  Scheme.IdealSheafData
+open _root_.Ideal _root_.ResolutionHironaka.Ideal CategoryTheory _root_.AlgebraicGeometry
+open _root_.ResolutionHironaka.AlgebraicGeometry _root_.TopologicalSpace
+open _root_.ResolutionHironaka.TopologicalSpace _root_.IsLocalRing
+open _root_.ResolutionHironaka.IsLocalRing
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
 namespace Hironaka.Resolution
 
@@ -253,3 +261,6 @@ theorem span_mul_chainIdeal_eq_span_inf (b : Fin n → ℕ) (hb : ∀ k, k ∈ S
 end IntersectionAlgebra
 
 end Hironaka.Resolution
+
+end
+end ResolutionHironaka

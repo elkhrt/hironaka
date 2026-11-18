@@ -40,11 +40,15 @@ protected state (`Hironaka.Resolution.Algebraic.Wlo05.EmbeddedChainColon`) and i
 the last round (`Hironaka.Resolution.Algebraic.Wlo05.EmbeddedCP6Tools`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open Ideal IsLocalRing
+open _root_.Ideal _root_.ResolutionHironaka.Ideal _root_.IsLocalRing
+open _root_.ResolutionHironaka.IsLocalRing
 
 namespace Hironaka.Resolution
 
@@ -299,3 +303,6 @@ theorem chainIdeal_colon_span_eq' (b : Fin n → ℕ) (hb : ∀ k, k ∈ Set.ran
 end CP2
 
 end Hironaka.Resolution
+
+end
+end ResolutionHironaka

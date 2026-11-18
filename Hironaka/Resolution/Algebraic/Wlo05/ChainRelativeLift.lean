@@ -36,11 +36,15 @@ The lifted family is a regular system of parameters of `R` because it generates 
 [Kol07, Definition 24]. The lift is used by `Hironaka.Resolution.Algebraic.Wlo05.EmbeddedChainLift`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u v
 
-open Ideal IsLocalRing
+open _root_.Ideal _root_.ResolutionHironaka.Ideal _root_.IsLocalRing
+open _root_.ResolutionHironaka.IsLocalRing
 
 namespace Hironaka.Resolution
 
@@ -204,3 +208,6 @@ theorem exists_chain_lift {R' : Type u} [IsRegularLocalRing R] [CommRing R']
       ← RingHom.ker_eq_comap_bot, hker, sup_comm]
 
 end Hironaka.Resolution
+
+end
+end ResolutionHironaka

@@ -81,11 +81,15 @@ part of a regular system of parameters; Kollár's silent "choose local coordinat
 in `Hironaka/Algebra/Local/QuotientParameters.lean`, using `isDomain_of_isRegularLocalRing` below.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 namespace IsLocalRing
+open _root_.IsLocalRing
 
-open IsLocalRing Ideal
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing Ideal
 
 universe u
 
@@ -276,7 +280,8 @@ theorem exists_mem_maximalIdeal_notMem_sq_notMem_minimalPrimes [IsLocalRing R]
 /-- For `x ∈ 𝔪 ∖ 𝔪²` in a regular local ring, `R/⟨x⟩` is regular local and
 `dim R/⟨x⟩ + 1 = dim R` [Sta, Tag 00NQ] (named as in Mathlib pull request 28683).  No
 nonzerodivisor hypothesis is used. -/
-theorem _root_.IsRegularLocalRing.quotient_span_singleton [IsRegularLocalRing R] {x : R}
+theorem _root_.ResolutionHironaka.IsRegularLocalRing.quotient_span_singleton
+    [IsRegularLocalRing R] {x : R}
     (mem : x ∈ maximalIdeal R) (nmem : x ∉ maximalIdeal R ^ 2) :
     IsRegularLocalRing (R ⧸ span {x}) ∧ ringKrullDim (R ⧸ span {x}) + 1 = ringKrullDim R := by
   have : IsLocalRing (R ⧸ span {x}) :=
@@ -374,7 +379,8 @@ instance (priority := 10) instIsDomainOfIsRegularLocalRing (R : Type u) [CommRin
 
 /-- If `x ∈ 𝔪` is a nonzerodivisor of the Noetherian local ring `R` and `R/⟨x⟩` is regular local,
 then `R` is regular local and `dim R/⟨x⟩ + 1 = dim R` [Sta, Tag 00NU]. -/
-theorem _root_.IsRegularLocalRing.of_quotient_span_singleton [IsLocalRing R] [IsNoetherianRing R]
+theorem _root_.ResolutionHironaka.IsRegularLocalRing.of_quotient_span_singleton
+    [IsLocalRing R] [IsNoetherianRing R]
     {x : R} (hx : x ∈ maximalIdeal R) (reg : x ∈ nonZeroDivisors R)
     (hq : IsRegularLocalRing (R ⧸ span {x})) :
     IsRegularLocalRing R ∧ ringKrullDim (R ⧸ span {x}) + 1 = ringKrullDim R := by
@@ -408,3 +414,6 @@ theorem prod_pow_mem_pow_sum {B : Type*} [CommRing B] {ι : Type*} (s : Finset �
 end Monomials
 
 end IsLocalRing
+
+end
+end ResolutionHironaka

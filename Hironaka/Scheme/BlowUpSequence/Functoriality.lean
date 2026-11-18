@@ -63,13 +63,20 @@ about them.
   forms in `PullbackInduced.lean`, `PullbackSnc.lean` and `PullbackEraseEmpty.lean`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory CategoryTheory.Limits AlgebraicGeometry Scheme BlowUpSequence
+open CategoryTheory CategoryTheory.Limits _root_.AlgebraicGeometry
+open _root_.ResolutionHironaka.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
 
 namespace AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme
 
 namespace DivisorFamily
 
@@ -99,6 +106,8 @@ end DivisorFamily
 end AlgebraicGeometry.Scheme
 
 namespace AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
 
 variable {X Y : Scheme.{u}}
 
@@ -131,6 +140,7 @@ theorem eq_of_comap_eq_of_covers {σ : Type u} {W : σ → Scheme.{u}} (g : ∀ 
 end AlgebraicGeometry.Scheme.IdealSheafData
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
 variable {Y : Scheme.{u}}
 
@@ -196,12 +206,13 @@ variable {k : Type u} [Field k]
 end Hironaka
 
 namespace AlgebraicGeometry.Triple
+open _root_.AlgebraicGeometry
 
-open Hironaka
+open _root_.ResolutionHironaka.Hironaka
 
 variable {k : Type u} [Field k]
 
-open Scheme
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
 
 /-- The pullback of a triple along a smooth morphism carries the pullback data
 `(Y, h^* I, h^{-1}(E))` of [Kol07, 34.1]. -/
@@ -249,7 +260,7 @@ variable {k : Type u} [Field k]
 
 namespace MarkedTriple
 
-open Scheme
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
 
 /-- The pullback of a marked triple along a smooth morphism carries the pullback data of
 [Kol07, 34.1], with the same mark. -/
@@ -440,3 +451,6 @@ theorem commutesWith_of_surjective_comp (B : OrderGeSeqAssignment k Dom) {T T' T
 end OrderGeSeqAssignment
 
 end Hironaka
+
+end
+end ResolutionHironaka

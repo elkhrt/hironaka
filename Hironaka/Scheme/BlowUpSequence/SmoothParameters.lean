@@ -45,14 +45,20 @@ The facts about formally smooth algebras used here are standard ([Sta, Tags 00TA
 none of the lemmas of this module is stated in the printed proofs.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry IsLocalRing KaehlerDifferential
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing _root_.KaehlerDifferential
+open _root_.ResolutionHironaka.KaehlerDifferential
 open scoped TensorProduct
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
 /-! ### Extension of derivations along a formally smooth map -/
 
@@ -298,3 +304,6 @@ theorem exists_isRegularSystemOfParameters_stalkMap [PerfectField k] (f : X ⟶ 
 end Stalk
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

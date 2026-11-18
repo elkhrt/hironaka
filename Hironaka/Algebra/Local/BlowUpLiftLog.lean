@@ -42,11 +42,15 @@ The logarithmic derivative ideal `D(−log J)` is `Ideal.logDerivative k J` of
 (`Hironaka/Scheme/BlowUpSequence/TransformLogDerivative.lean`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 namespace Derivation
+open _root_.Derivation
 
-open IsLocalRing
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing
 
 universe u
 
@@ -154,3 +158,6 @@ theorem transformIdeal_logDerivative_le {I : Ideal R} {m : ℕ}
   rwa [← algebraMap_pow_mul_right_injective x r m hwz]
 
 end Derivation
+
+end
+end ResolutionHironaka

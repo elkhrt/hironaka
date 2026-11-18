@@ -43,13 +43,19 @@ smooth blow-up of order `≥ m` for `I|_S` "corresponds to a smooth blow-up of o
   `ord_η I ≤ max-ord I = m`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory TopologicalSpace IsLocalRing
+open CategoryTheory _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing
 
 namespace AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
 
 variable {X : Scheme.{u}}
 
@@ -159,3 +165,6 @@ theorem IsDBalanced.isOrderBlowUp_of_restrict {I : X.IdealSheafData} {m : ℕ}
   exact hηZ
 
 end AlgebraicGeometry.Scheme.IdealSheafData
+
+end
+end ResolutionHironaka

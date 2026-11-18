@@ -60,12 +60,23 @@ those of [Kol07, Definition 24]. This argument is not in the literature. Used in
 `Hironaka.Resolution.Algebraic.Wlo05.EmbeddedCP3Step22`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace Scheme IsLocalRing IdealSheafData
-  BlowUpSequence Scheme.IdealSheafData Hironaka.Snc
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.Hironaka.Snc
 
 namespace Hironaka.Resolution
 
@@ -594,3 +605,6 @@ theorem centerClassifiedAt_of_comap_chain {Y : Scheme.{u}} (g : Y ⟶ X) [IsClos
           span_range_update_eq_of_mem_chainIdeal hz σ hσinj a hxC t hupd]
 
 end Hironaka.Resolution
+
+end
+end ResolutionHironaka

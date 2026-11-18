@@ -39,11 +39,16 @@ restriction `S.composite ∣_ U` itself, the form in which clause (3) of the pri
 is stated. Holds on any scheme.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry Scheme BlowUpSequence
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
 
 namespace Hironaka.Sequence
 
@@ -119,3 +124,6 @@ theorem isIso_eraseEmpty_composite_restrict (S : BlowUpSequence X) (U : X.Opens)
   isIso_restrict_congr (eraseEmptyLastHom_comp_composite S) U
 
 end Hironaka.Sequence
+
+end
+end ResolutionHironaka

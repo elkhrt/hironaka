@@ -47,11 +47,16 @@ automorphism of [Kol07, Definition 91]
 (`Hironaka/Resolution/Algebraic/MaximalContact/EtaleToFormal.lean`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
-open AlgebraicGeometry CategoryTheory CategoryTheory.Limits IsLocalRing TopologicalSpace
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
+open CategoryTheory.Limits _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing TopologicalSpace
 
 universe u
 
@@ -190,7 +195,8 @@ variable {k : Type u} [Field k] {X : Scheme.{u}} {f : X ⟶ Spec (.of k)} {n : �
 
 /-- The germ at `x ∈ V` of a section of `X` over `V`, pushed to the stalk of the open subscheme
 `V` along `V.ι`, is the germ of the same section read as a global section of `V`. -/
-theorem _root_.AlgebraicGeometry.Scheme.Opens.germ_comp_ι_stalkMap (V : X.Opens) (x : V) :
+theorem _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.Opens.germ_comp_ι_stalkMap
+    (V : X.Opens) (x : V) :
     X.presheaf.germ V (V.ι.base x) x.2 ≫ V.ι.stalkMap x =
       V.topIso.inv ≫ V.toScheme.presheaf.germ ⊤ x trivial := by
   rw [← Scheme.Opens.stalkIso_inv, ← Scheme.Opens.germ_stalkIso_inv V ⊤ x trivial]
@@ -263,3 +269,6 @@ theorem formalAutomorphism_cohenEquivOfResidue_X [IsLocallyNoetherian X]
 end EtaleCoordinates
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

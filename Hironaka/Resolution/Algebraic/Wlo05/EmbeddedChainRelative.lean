@@ -84,12 +84,20 @@ Włodarczyk's Claim.
   (`Hironaka.Resolution.Algebraic.Wlo05.EmbeddedCPBridge`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace Scheme Hironaka IsLocalRing BlowUpSequence
-  Scheme.IdealSheafData
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.Hironaka _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
 namespace Hironaka.Resolution
 
@@ -223,3 +231,6 @@ noncomputable def transportedComponents (T : MarkedTriple k) (hm : T.m = 1)
   C.image fun c => ((bmoOneRun T hm).take n).strictTransformSeq c (Fin.last _)
 
 end Hironaka.Resolution
+
+end
+end ResolutionHironaka

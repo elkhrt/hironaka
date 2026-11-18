@@ -35,14 +35,19 @@ transcendence degree entering through `Cardinal.toENat`. The scheme forms are in
 `Hironaka/Algebra/RegularSmooth/SchemeForms.lean`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open IsLocalRing KaehlerDifferential
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing _root_.KaehlerDifferential
+open _root_.ResolutionHironaka.KaehlerDifferential
 open scoped TensorProduct
 
 namespace Algebra.IsStandardSmoothOfRelativeDimension
+open _root_.Algebra _root_.Algebra.IsStandardSmoothOfRelativeDimension
 
 variable {k : Type u} [Field k] {S : Type u} [CommRing S] [Algebra k S]
 
@@ -64,7 +69,7 @@ theorem ringKrullDim_localization_add_finrank_kaehlerDifferential_residueField [
   have : Algebra.EssFiniteType k 𝔮.ResidueField := Algebra.EssFiniteType.comp k S 𝔮.ResidueField
   have : Algebra.FormallySmooth k 𝔮.ResidueField := Algebra.FormallySmooth.of_perfectField
   have hcount :=
-    _root_.KaehlerDifferential.finrank_residueField_tensor_kaehlerDifferential k
+    ResolutionHironaka.KaehlerDifferential.finrank_residueField_tensor_kaehlerDifferential k
       (Localization.AtPrime 𝔮)
   have hn : Module.finrank 𝔮.ResidueField
       (𝔮.ResidueField ⊗[Localization.AtPrime 𝔮] Ω[Localization.AtPrime 𝔮⁄k]) = n := by
@@ -116,3 +121,6 @@ theorem ringKrullDim_localization_of_isMaximal [PerfectField k] (n : ℕ)
   rwa [Module.finrank_zero_of_subsingleton, Nat.cast_zero, add_zero] at h
 
 end Algebra.IsStandardSmoothOfRelativeDimension
+
+end
+end ResolutionHironaka

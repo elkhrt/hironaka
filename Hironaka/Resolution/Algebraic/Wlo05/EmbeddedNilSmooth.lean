@@ -36,12 +36,21 @@ Given the core lemma, the empty succession follows: `BED(X, I_Y, ∅)` has lengt
 `Hironaka.Resolution.Algebraic.Wlo05.EmbeddedNilCore`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace Hironaka Scheme BlowUpSequence
-  Scheme.IdealSheafData Hironaka.Stage Hironaka.Sequence
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.ResolutionHironaka.Hironaka _root_.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.Hironaka.Stage _root_.ResolutionHironaka.Hironaka.Sequence
 
 namespace Hironaka.Resolution
 
@@ -125,3 +134,6 @@ theorem bed_eq_nil_of_smooth_of_core (hcore : Core k) (TX : Triple k) (hE : IsEm
       (invariant_componentIdeals TX hE hY))
 
 end Hironaka.Resolution
+
+end
+end ResolutionHironaka

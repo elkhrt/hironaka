@@ -50,15 +50,20 @@ an étale equivalence of `H` and `H'` with respect to `(X, I, E)` (`EtaleEquiv`)
   `(U, ψ, ψ')` (`etaleEquivSeq_of_functor`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry Hironaka Scheme Algebra
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.ResolutionHironaka.Hironaka _root_.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme Algebra
 
 namespace Hironaka
 
-open Scheme
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
 
 variable {k : Type u} [Field k]
 
@@ -74,7 +79,8 @@ theorem OrderSeqAssignment.seq_congr {m : ℕ} {Dom : Triple k → Prop}
 
 /-- Two pull-backs of triples along maps from the same `Y` (with `Y`'s given `k`-structure) are
 equal when the pulled-back ideals and divisor families agree. -/
-theorem _root_.AlgebraicGeometry.Triple.pullback_eq_pullback [PerfectField k] (T T' : Triple k)
+theorem _root_.ResolutionHironaka.AlgebraicGeometry.Triple.pullback_eq_pullback
+    [PerfectField k] (T T' : Triple k)
     {Y : Scheme.{u}}
     [Y.Over (Spec (.of k))] [QuasiCompact (Y ↘ Spec (.of k))] [IsSeparated (Y ↘ Spec (.of k))]
     (hY : ∃ n : ℕ, SmoothOfRelativeDimension n (Y ↘ Spec (.of k))) (ψ : Y ⟶ T.X.left)
@@ -88,7 +94,8 @@ theorem _root_.AlgebraicGeometry.Triple.pullback_eq_pullback [PerfectField k] (T
 /-- The conditions (1′) and (3′) of [Kol07, Definition 91] read on the family `H + E`:
 `ψ^{-1}(H + E) = ψ'^{-1}(H' + E)` when `ψ^{-1}H = ψ'^{-1}H'` and `ψ^{-1}E^i = ψ'^{-1}E^i` for
 every component; `H + E` is `E.append H`, with `H` the last member. -/
-theorem _root_.AlgebraicGeometry.Scheme.DivisorFamily.comap_append_eq {X U : Scheme.{u}}
+theorem _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.DivisorFamily.comap_append_eq
+    {X U : Scheme.{u}}
     (E : DivisorFamily X)
     (H H' : X.IdealSheafData) (ψ ψ' : U ⟶ X) (h1 : H.comap ψ = H'.comap ψ')
     (h3 : ∀ i, (E.component i).comap ψ = (E.component i).comap ψ') :
@@ -103,6 +110,8 @@ theorem _root_.AlgebraicGeometry.Scheme.DivisorFamily.comap_append_eq {X U : Sch
 end Hironaka
 
 namespace AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
 
 variable {k : Type u} [Field k]
 
@@ -158,3 +167,6 @@ theorem etaleEquivSeq_of_functor [CharZero k] {m : ℕ} {Dom : Triple k → Prop
   exact ⟨{ Q.toEtaleImagePair with comp_eq := Q.comp_eq, h1 := Q.h2, h2 := Q.h4, h3 := h3 }⟩
 
 end AlgebraicGeometry.Scheme.IdealSheafData
+
+end
+end ResolutionHironaka

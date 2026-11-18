@@ -58,11 +58,18 @@ it from `BRAffine Z`; comparing and cancelling the flat surjection gives
 when `h` is surjective (`BR_eq_pullback_of_smooth_surjective`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open CategoryTheory CategoryTheory.Limits AlgebraicGeometry TopologicalSpace Scheme BlowUpSequence
+open CategoryTheory CategoryTheory.Limits _root_.AlgebraicGeometry
+open _root_.ResolutionHironaka.AlgebraicGeometry _root_.TopologicalSpace
+open _root_.ResolutionHironaka.TopologicalSpace _root_.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
 
 namespace Hironaka.Resolution
 
@@ -362,3 +369,6 @@ theorem BR_eq_pullback_of_smooth_surjective (X Y : Scheme.{u})
     eraseEmpty_pullback_of_flat_surjective _ _ hs, eraseEmpty_BR]
 
 end Hironaka.Resolution
+
+end
+end ResolutionHironaka

@@ -26,13 +26,20 @@ injectivity of `Spec.map`.  Used by `Hironaka.Scheme.BlowUp.Composite.Bound` and
 chart maps in `Hironaka.Resolution.Algebraic.MaximalContact.AgreeOnBlowUpKernel`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
-open Scheme.IdealSheafData
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
-open AlgebraicGeometry CategoryTheory Scheme.IdealSheafData TopologicalSpace
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData TopologicalSpace
 
 universe u
 
@@ -165,3 +172,6 @@ theorem mem_ideal_map_iff_chart [IsLocallyNoetherian X] (s : Set (I.ideal U))
 end Chart
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

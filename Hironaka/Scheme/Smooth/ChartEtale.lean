@@ -30,15 +30,21 @@ in this form in the sources. Used to give the standard charts of a smooth blow-u
 étale coordinates (`Hironaka/Scheme/Snc/ChartSncData.lean`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
-open AlgebraicGeometry CategoryTheory affineBlowUpAlgebra CoordinateSubspace
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
+open _root_.ResolutionHironaka.AlgebraicGeometry.affineBlowUpAlgebra
+open _root_.ResolutionHironaka.AlgebraicGeometry.CoordinateSubspace
 
 open scoped TensorProduct
 
 universe u
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
 variable {k : Type u} [Field k] {X : Scheme.{u}} {f : X ⟶ Spec (.of k)} {n r : ℕ}
   {Z : X.IdealSheafData} {x : X} (E : EtaleCoordinatesAdapted f n r Z x) {j : Fin n}
@@ -225,3 +231,6 @@ theorem etale_aeval_chartCoordinates :
     (fun i hi => E.v_mem_centerIdeal hi)
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

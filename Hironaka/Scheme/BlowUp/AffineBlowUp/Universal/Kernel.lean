@@ -35,11 +35,17 @@ cancellation (`isUnit_of_span_mul_eq_span`) makes `g♯u` a unit; a local homomo
 units (`isUnit_map_iff`), so `u` is a unit at `g y`, and `g y` lies in the chart of `a`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
-open AlgebraicGeometry CategoryTheory Scheme.IdealSheafData TopologicalSpace
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData TopologicalSpace
 
 universe u
 
@@ -111,3 +117,6 @@ theorem affineBlowUp.mem_chart_of_generates (f : Y ⟶ Spec (.of R))
   exact (isUnit_map_iff (g.stalkMap y).hom u).mp hunit
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

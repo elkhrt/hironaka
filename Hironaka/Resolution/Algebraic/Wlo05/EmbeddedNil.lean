@@ -39,12 +39,21 @@ point of `Y` the invariant is already terminal. The theorem is `bed_eq_nil_of_sm
 The invariant of the induction is in `Hironaka.Resolution.Algebraic.Wlo05.EmbeddedNilInvariant`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace Scheme Hironaka
-  BlowUpSequence Scheme.IdealSheafData Hironaka.Stage
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.Hironaka
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.Hironaka.Stage
 
 namespace Hironaka.Resolution
 
@@ -134,3 +143,6 @@ theorem length_bedAux_eq_zero_of_eq_top (T : MarkedTriple k) (hm : T.m = 1)
   rfl
 
 end Hironaka.Resolution
+
+end
+end ResolutionHironaka

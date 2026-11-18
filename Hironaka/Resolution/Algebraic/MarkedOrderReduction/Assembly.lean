@@ -52,11 +52,17 @@ since the orders that Steps 1–2 call are not bounded in terms of `m`. Clause (
 `BMO.data : BMOData n m` are assembled from them in `Theorem107.lean`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry Hironaka Scheme BlowUpSequence
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.ResolutionHironaka.Hironaka _root_.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
 
 namespace Hironaka.BMO
 
@@ -139,3 +145,6 @@ noncomputable def functor (m : ℕ) : OrderGeSeqAssignment k (MarkedTriple.BMOCl
 theorem functor_seq : (functor bo m).seq T hT = bmoSeq bo T hT := rfl
 
 end Hironaka.BMO
+
+end
+end ResolutionHironaka

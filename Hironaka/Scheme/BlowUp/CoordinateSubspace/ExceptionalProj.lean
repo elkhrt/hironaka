@@ -44,12 +44,18 @@ Everything is checked on the chart cover `U_j`, `j < r`, of `B`:
   together with `Φ(c) = c̄` on constants.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open AlgebraicGeometry CategoryTheory CategoryTheory.Limits MvPolynomial HomogeneousLocalization
-open Graded reesAlgebra Scheme.IdealSheafData
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
+open CategoryTheory.Limits MvPolynomial HomogeneousLocalization
+open Graded _root_.reesAlgebra _root_.ResolutionHironaka.reesAlgebra
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
 attribute [local instance] MvPolynomial.gradedAlgebra
 
@@ -69,6 +75,7 @@ theorem HomogeneousLocalization.Away.mk_eq_zero_iff_of_isRegular {σ A : Type*} 
     exact mk_eq_zero_of_num _ rfl
 
 namespace AlgebraicGeometry.CoordinateSubspace
+open _root_.AlgebraicGeometry
 
 variable (A : Type u) [CommRing A] (n r : ℕ) (hrn : r ≤ n)
 
@@ -132,7 +139,7 @@ theorem ker_chartInitialMap :
   · intro z hz
     obtain ⟨k, p, hp, rfl⟩ := HomogeneousLocalization.Away.mk_surjective _ (degreeOne_mem a) z
     rw [RingHom.mem_ker, chartInitialMap, Away.map_mk,
-      Away.mk_eq_zero_iff_of_isRegular _ _ hreg] at hz
+      HomogeneousLocalization.Away.mk_eq_zero_iff_of_isRegular _ _ hreg] at hz
     obtain ⟨hpc, hc⟩ := eq_monomial_of_mem_grading hp
     set c := ((p : reesAlgebra (centerIdeal A n r)) : Polynomial (MvPolynomial (Fin n) A)).coeff
       (k • 1) with hc_def
@@ -381,3 +388,6 @@ theorem exists_iso_exceptional_proj :
   · rw [Iso.symm_inv, asIso_hom, IsClosedImmersion.lift_fac_assoc, projInitial_π]
 
 end AlgebraicGeometry.CoordinateSubspace
+
+end
+end ResolutionHironaka

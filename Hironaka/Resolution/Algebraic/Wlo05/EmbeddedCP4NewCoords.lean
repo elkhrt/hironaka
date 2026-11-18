@@ -52,12 +52,21 @@ The chart is that of [Kol07, Definition 60]. The pointwise statements are assemb
 `Hironaka.Resolution.Algebraic.Wlo05.EmbeddedCP4Sheaf` uses them for the un-isolated ideal.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace IsLocalRing Ideal Scheme.IdealSheafData
-  Scheme IdealSheafData
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace _root_.IsLocalRing
+open _root_.ResolutionHironaka.IsLocalRing _root_.Ideal _root_.ResolutionHironaka.Ideal
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
 namespace Hironaka.Resolution
 
@@ -708,3 +717,6 @@ theorem exists_isSncAt_totalTransform_of_notMem (Γ : X.IdealSheafData) {n : ℕ
 end OffCentre
 
 end Hironaka.Resolution
+
+end
+end ResolutionHironaka

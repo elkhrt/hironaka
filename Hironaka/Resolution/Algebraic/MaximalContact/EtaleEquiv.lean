@@ -40,11 +40,18 @@ morphisms of `k`-varieties: the field `comp_eq` (`ψ ≫ f = ψ' ≫ f`) records
 * `EtaleEquiv.refl`: `H` is étale equivalent to itself through `U = X`, `ψ = ψ' = 𝟙 X`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 namespace AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
 
-open CategoryTheory Scheme AlgebraicGeometry
+open CategoryTheory _root_.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme _root_.AlgebraicGeometry
+open _root_.ResolutionHironaka.AlgebraicGeometry
 
 universe u
 
@@ -132,3 +139,6 @@ def EtaleEquiv.refl (f : X ⟶ Spec (.of k)) (I : X.IdealSheafData) (m : ℕ) (E
   h4 := rfl
 
 end AlgebraicGeometry.Scheme.IdealSheafData
+
+end
+end ResolutionHironaka

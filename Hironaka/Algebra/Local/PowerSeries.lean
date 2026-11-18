@@ -40,9 +40,13 @@ coordinate structure `IsLocalRing.RegularCoords`:
   an instance argument, in `Hironaka/Algebra/Local/PowerSeriesRegular.lean`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 namespace MvPowerSeries
+open _root_.MvPowerSeries
 
 variable {σ : Type*} {R : Type*} [CommSemiring R]
 
@@ -60,6 +64,7 @@ theorem pderiv_pderiv_comm (i j : σ) (f : MvPowerSeries σ R) :
 end MvPowerSeries
 
 namespace MvPowerSeries
+open _root_.MvPowerSeries
 
 section Span
 
@@ -209,8 +214,10 @@ theorem ordElem_eq_order {σ : Type*} [Finite σ] {K : Type*} [Field K] (f : MvP
 end MvPowerSeries
 
 namespace IsLocalRing.RegularCoords
+open _root_.IsLocalRing
 
-open MvPowerSeries IsLocalRing
+open _root_.MvPowerSeries _root_.ResolutionHironaka.MvPowerSeries _root_.IsLocalRing
+open _root_.ResolutionHironaka.IsLocalRing
 
 variable (K : Type*) [Field K] [CharZero K] (n : ℕ)
 
@@ -235,3 +242,6 @@ noncomputable def mvPowerSeries [IsRegularLocalRing (MvPowerSeries (Fin n) K)]
   pderiv_comm i j f := pderiv_pderiv_comm i j f
 
 end IsLocalRing.RegularCoords
+
+end
+end ResolutionHironaka

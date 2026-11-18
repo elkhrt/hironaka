@@ -55,13 +55,20 @@ The definition and these lemmas are also imported by the sequence modules
 `Hironaka.Scheme.BlowUpSequence.StrictTransformIntegral`) and by the worked examples.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
-open Scheme.IdealSheafData
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
-open AlgebraicGeometry CategoryTheory Scheme.IdealSheafData TopologicalSpace
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData TopologicalSpace
 
 universe u
 
@@ -325,3 +332,6 @@ theorem Scheme.IdealSheafData.blowUp.isNoetherian [IsNoetherian X] : IsNoetheria
 end Noetherian
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

@@ -39,11 +39,18 @@ Stated for any blow-up sequence on a locally Noetherian scheme; used by
 `Hironaka.Resolution.Algebraic.Kol07.Thm36.BRAffinePullback`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry Scheme BlowUpSequence Scheme.IdealSheafData
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
 namespace Hironaka.Resolution
 
@@ -135,3 +142,6 @@ theorem take_eraseEmpty_firstCenterIndex [IsLocallyNoetherian X] (S : BlowUpSequ
   rw [firstCenterIndex_eraseEmpty, eraseEmpty_take]
 
 end Hironaka.Resolution
+
+end
+end ResolutionHironaka

@@ -41,11 +41,18 @@ These are the facts about a blow-up sequence away from its centres that `Hironak
 Sources: [Kol07, Definition 25]; [Hau14, Proposition 5.3] (the proof).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
-open AlgebraicGeometry CategoryTheory IsLocalRing Ideal Scheme.IdealSheafData TopologicalSpace
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing Ideal
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData TopologicalSpace
 
 universe u
 
@@ -97,7 +104,7 @@ theorem stalkMapπEquiv_apply {x' : blowUp Z} (hx' : x' ∉ (Z.comap (blowUpπ Z
     stalkMapπEquiv Z hx' a = (blowUpπ Z).stalkMap x' a := rfl
 
 /-- The colon by the unit ideal is the ideal itself. -/
-theorem _root_.Ideal.colon_coe_top {R : Type*} [CommRing R] (I : Ideal R) :
+theorem _root_.ResolutionHironaka.Ideal.colon_coe_top {R : Type*} [CommRing R] (I : Ideal R) :
     I.colon ((⊤ : Ideal R) : Set R) = I := by
   ext r
   rw [Submodule.mem_colon]
@@ -195,3 +202,6 @@ theorem exists_snc_data_totalTransform_of_notMem_support {x' : blowUp Z}
 end Data
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

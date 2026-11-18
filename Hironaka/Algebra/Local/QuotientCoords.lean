@@ -26,9 +26,13 @@ Kollár's `x₁` is any coordinate `x_{i₀}`; the other coordinates are enumera
 (87.1) in `Hironaka/Algebra/Local/LogDeriv.lean`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 namespace Derivation
+open _root_.Derivation
 
 variable {k R : Type*} [CommRing k] [CommRing R] [Algebra k R] (D : Derivation k R R) (J : Ideal R)
 
@@ -60,8 +64,9 @@ noncomputable def quotientOfMapLE (hJ : ∀ f ∈ J, D f ∈ J) : Derivation k (
 end Derivation
 
 namespace IsLocalRing
+open _root_.IsLocalRing
 
-open IsLocalRing Ideal
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing Ideal
 
 namespace RegularCoords
 
@@ -200,3 +205,6 @@ theorem quotientCoords_pderiv_mk (j : Fin k) (f : R) :
 end RegularCoords
 
 end IsLocalRing
+
+end
+end ResolutionHironaka

@@ -27,15 +27,20 @@ and `boundarySeq_concat_last` (the identification `eqToHom (last_concat S T)` of
 changes nothing).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
 
 namespace AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme
 
-open IdealSheafData
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
 variable {X : Scheme.{u}}
 
@@ -84,6 +89,8 @@ theorem forall_stage_concat
 end AlgebraicGeometry.Scheme.BlowUpSequence
 
 namespace AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
 
 /-- Having only normal crossings [Hir64, Definition 2] is unchanged by the inverse image along the
 identification of two equal schemes. -/
@@ -96,8 +103,10 @@ theorem IsSncBoundary.comap_eqToHom {Y Z : Scheme.{u}} (h : Y = Z)
 end AlgebraicGeometry.Scheme.IdealSheafData
 
 namespace AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme
 
-open IdealSheafData
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
 variable {X : Scheme.{u}}
 
@@ -122,3 +131,6 @@ theorem weakTransformSeq_concat_last_eq_top (S : BlowUpSequence X) (T : BlowUpSe
   rfl
 
 end AlgebraicGeometry.Scheme.BlowUpSequence
+
+end
+end ResolutionHironaka

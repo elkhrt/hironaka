@@ -47,13 +47,21 @@ Convention: in the printed (87.3) the subscripts of `S` appear interchanged; her
 left and its transform `S_i` on the right.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry Scheme.IdealSheafData Scheme BlowUpSequence
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
 variable {X : Scheme.{u}} {k : Type u} [Field k] [CharZero k] (f : X ⟶ Spec (.of k)) (n : ℕ)
   [SmoothOfRelativeDimension n f] (B : BlowUpSequence X) (S I : X.IdealSheafData)
@@ -110,3 +118,6 @@ theorem exceptionalAt_pow_dvd_comap_step_logDerivativeIter (h : B.IsOrderGeSeq f
     (ord_anti hle η)
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

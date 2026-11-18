@@ -46,11 +46,15 @@ hypersurface of maximal contact
 (`Hironaka/Resolution/Algebraic/MaximalContact/FormalEquivExists.lean`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 namespace IsLocalRing
+open _root_.IsLocalRing
 
-open IsLocalRing MvPowerSeries
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing MvPowerSeries
 
 section Field
 
@@ -173,3 +177,6 @@ theorem exists_algEquiv_of_regularSystems {d : ℕ} (x x' : Fin d → R)
 end Completion
 
 end IsLocalRing
+
+end
+end ResolutionHironaka

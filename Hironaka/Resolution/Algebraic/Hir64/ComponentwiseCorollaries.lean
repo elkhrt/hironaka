@@ -57,16 +57,24 @@ The corollaries themselves are stated and proved at the end of the file:
   is the inverse image of the radical (`radical_comap_of_isOpenImmersion`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory TopologicalSpace AlgebraicGeometry Scheme Scheme.IdealSheafData
-  BlowUpSequence
+open CategoryTheory _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
 
 namespace Hironaka.Sequence
 
-open AlgebraicGeometry Hironaka.Resolution
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.ResolutionHironaka.Hironaka.Resolution
 
 variable {X Y : Scheme.{u}}
 
@@ -624,9 +632,13 @@ end
 
 universe u
 
-open CategoryTheory AlgebraicGeometry Scheme.IdealSheafData Scheme
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
 /-- **Hironaka's Corollary 1** [Hir64, Corollary 1, pp. 143–144], the trivialization of a system of
 coherent sheaves of ideals. Let `X` be a smooth algebraic `k`-scheme (`AlgScheme k`), `k` of
@@ -742,3 +754,6 @@ theorem exists_blowUpSequence_isInvertible_isSncBoundary_radical_comap
       hS.nc_last z (hmem z)⟩
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

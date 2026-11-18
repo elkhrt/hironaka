@@ -58,11 +58,17 @@ Theorem 92, `Hironaka/Resolution/Algebraic/MaximalContact/FormalEquivExists.lean
 mark `m` is an explicit parameter.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 namespace AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
 
-open CategoryTheory IsLocalRing Scheme
+open CategoryTheory _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
 
 universe u
 
@@ -194,3 +200,6 @@ theorem adicCompletion_MC_completionIdeal (I : X.IdealSheafData) (m : ℕ) (p : 
 end Smooth
 
 end AlgebraicGeometry.Scheme.IdealSheafData
+
+end
+end ResolutionHironaka

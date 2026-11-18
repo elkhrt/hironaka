@@ -72,12 +72,20 @@ weak transform is the order computation in the regular local ring `𝒪_{B,ε}` 
 [Hau14, Definition 6.2] (the strict transform); the order along a centre is [Kol07, Lemma 61].
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace IsLocalRing
-  Scheme.IdealSheafData Scheme BlowUpSequence Hironaka.Sequence Hironaka.BMO
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace _root_.IsLocalRing
+open _root_.ResolutionHironaka.IsLocalRing _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.ResolutionHironaka.Hironaka.Sequence _root_.ResolutionHironaka.Hironaka.BMO
 
 namespace Hironaka.Resolution
 
@@ -458,3 +466,6 @@ theorem ord_weakTransform_eq_zero_of_mem_genericPoints_strictTransform [IsNoethe
   exact hJD ξ hξ
 
 end Hironaka.Resolution
+
+end
+end ResolutionHironaka

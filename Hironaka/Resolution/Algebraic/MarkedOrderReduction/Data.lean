@@ -35,11 +35,14 @@ the way Kollár prints [Kol07, Theorem 107] and the way the later constructions 
   itself by structure eta.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
 
 namespace Hironaka
 
@@ -52,7 +55,7 @@ theorem MarkedTriple.bmoClass_iff (n m : ℕ) (T : MarkedTriple k) :
 
 namespace BMOData
 
-open Scheme
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
 
 variable [CharZero k] {n m : ℕ} (B : BMOData.{u} n m) (T : MarkedTriple k)
   (hT : MarkedTriple.BMOClass n m T)
@@ -102,3 +105,6 @@ theorem seq_append_top
 end BMOData
 
 end Hironaka
+
+end
+end ResolutionHironaka

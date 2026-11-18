@@ -53,13 +53,18 @@ uniqueness and the compatibility with smooth pull-back and change of fields, are
 `SplitMain.lean`, `SplitSupport.lean`, `SplitFunctorial.lean` and, on a triple, `SplitTriple.lean`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
 
 namespace AlgebraicGeometry.Scheme.DivisorFamily
+open _root_.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme
 
 variable {X : Scheme.{u}}
 
@@ -76,7 +81,7 @@ end AlgebraicGeometry.Scheme.DivisorFamily
 
 namespace Hironaka.BMO
 
-open Scheme
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
 
 variable {X : Scheme.{u}}
 
@@ -102,3 +107,6 @@ theorem nonmonomialPart_eq_colon (I : X.IdealSheafData) (E : DivisorFamily X) :
     nonmonomialPart I E = I.colon (monomialPart I E) := rfl
 
 end Hironaka.BMO
+
+end
+end ResolutionHironaka

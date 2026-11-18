@@ -21,6 +21,9 @@ therefore the sheaf associated to `I(U)` (Mathlib's `isIso_fromTildeΓ_iff_isLoc
 hence quasi-coherent and of finite type (`Scheme.IdealSheafData.isFinitePresentation_toModules`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
@@ -28,6 +31,8 @@ universe u
 open CategoryTheory Opposite TopologicalSpace
 
 namespace AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
 
 variable {X : Scheme.{u}} (I : X.IdealSheafData)
 
@@ -119,3 +124,6 @@ theorem isFinitePresentation_toModules [IsLocallyNoetherian X] :
   exact I.toModules.exists_isFinite_presentation_restrict hU
 
 end AlgebraicGeometry.Scheme.IdealSheafData
+
+end
+end ResolutionHironaka

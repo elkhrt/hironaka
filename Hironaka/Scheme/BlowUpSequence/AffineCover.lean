@@ -42,13 +42,18 @@ The `affineCover…` names keep the base names distinct from `Triple.cover…` o
 of these at `T.X.left`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open CategoryTheory CategoryTheory.Limits AlgebraicGeometry
+open CategoryTheory CategoryTheory.Limits _root_.AlgebraicGeometry
+open _root_.ResolutionHironaka.AlgebraicGeometry
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
 variable (X : Scheme.{u}) [CompactSpace X]
 
@@ -285,3 +290,6 @@ theorem isSeparated_affineCoverPair (k : Type u) [Field k] [X.Over (Spec (CommRi
 end Field
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

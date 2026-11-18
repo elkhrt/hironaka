@@ -54,13 +54,20 @@ the snc clause of a sequence on `X` and that of its restriction to `H`.
   equivalences on a smooth `X`, from the four directions.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open AlgebraicGeometry CategoryTheory IsLocalRing Ideal Scheme TopologicalSpace
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing _root_.Ideal
+open _root_.ResolutionHironaka.Ideal _root_.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme TopologicalSpace
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
 variable {X Y : Scheme.{u}}
 
@@ -288,8 +295,9 @@ theorem hasSncWith_append_of_comap_of_isClosedImmersion (g : Y ⟶ X) [IsClosedI
 end AlgebraicGeometry
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
-open AlgebraicGeometry
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
 
 variable {X : Scheme.{u}} {k : Type u} [Field k] (f : X ⟶ Spec (.of k)) [Smooth f]
 
@@ -324,3 +332,6 @@ theorem hasSncWith_append_iff_hasSncWith_comap {E : DivisorFamily X} {H Z : X.Id
     rwa [hker] at this
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

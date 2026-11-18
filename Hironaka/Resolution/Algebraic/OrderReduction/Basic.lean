@@ -61,19 +61,27 @@ The tuning ideal `W f I m s` takes the mark `m` as a parameter, so `T.tuned m hm
 `W(I)` exactly when `max-ord I = m`, the only case in which `ofTuned` evaluates its argument on it.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace Scheme.IdealSheafData IsLocalRing
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData _root_.IsLocalRing
+open _root_.ResolutionHironaka.IsLocalRing
 
 namespace Hironaka
 
 end Hironaka
 
 namespace AlgebraicGeometry.Triple
+open _root_.AlgebraicGeometry
 
-open Hironaka
+open _root_.ResolutionHironaka.Hironaka
 
 variable {k : Type u} [Field k]
 
@@ -120,7 +128,8 @@ end Hironaka
 
 namespace Hironaka.BO
 
-open Scheme.IdealSheafData
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
 variable {k : Type u} [Field k] {X : Scheme.{u}}
 
@@ -150,8 +159,9 @@ namespace Hironaka
 end Hironaka
 
 namespace AlgebraicGeometry.Triple
+open _root_.AlgebraicGeometry
 
-open Hironaka
+open _root_.ResolutionHironaka.Hironaka
 
 variable {k : Type u} [Field k]
 
@@ -246,3 +256,6 @@ theorem BOData.ext {n m : ℕ} {D D' : BOData.{u} n m}
       rfl
 
 end Hironaka
+
+end
+end ResolutionHironaka

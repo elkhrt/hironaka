@@ -46,14 +46,19 @@ first (`finsetEquiv` of `Hironaka.Scheme.Snc.ParameterSubset`).
 Sources: [Hau14, Proposition 5.3] (the proof); [Hau14, Proposition 5.4]; [Kol07, Definition 24 (4)].
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open AlgebraicGeometry CategoryTheory IsLocalRing Ideal TopologicalSpace KaehlerDifferential
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory IsLocalRing
+open Ideal TopologicalSpace KaehlerDifferential
 open scoped TensorProduct
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
 variable {X : Scheme.{u}}
 
@@ -335,3 +340,6 @@ theorem exists_etaleCoordinatesAdapted_of_snc {Z : X.IdealSheafData} {ι : Type*
 end Chart
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

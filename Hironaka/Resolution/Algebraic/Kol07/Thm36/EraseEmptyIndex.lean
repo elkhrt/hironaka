@@ -43,12 +43,19 @@ Used by `Hironaka.Resolution.Algebraic.Kol07.Thm36.FirstCenterEraseEmpty` and th
 of the embedded desingularization (`Hironaka.Resolution.Algebraic.Wlo05.EmbeddedEraseEmpty`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry Scheme BlowUpSequence Scheme.IdealSheafData
-  Hironaka.Sequence
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.Hironaka.Sequence
 
 namespace Hironaka.Resolution
 
@@ -169,3 +176,6 @@ theorem exists_eraseIdx_eq_of_lt (S : BlowUpSequence X) {n m' : ℕ} (hm' : m' <
   omega
 
 end Hironaka.Resolution
+
+end
+end ResolutionHironaka

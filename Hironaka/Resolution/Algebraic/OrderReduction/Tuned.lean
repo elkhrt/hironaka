@@ -53,11 +53,18 @@ what the sheaf-level theory of tuning (`Hironaka/Resolution/Algebraic/Tuning/`) 
   in the proof of Corollary 101).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace Scheme.IdealSheafData IsLocalRing
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData _root_.IsLocalRing
+open _root_.ResolutionHironaka.IsLocalRing
 
 namespace Hironaka
 
@@ -88,7 +95,9 @@ end Hironaka
 
 namespace Hironaka.BO
 
-open Hironaka Scheme BlowUpSequence
+open _root_.ResolutionHironaka.Hironaka _root_.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
 
 variable {k : Type u} [Field k]
 
@@ -206,3 +215,6 @@ theorem isOrderSeq_iff_of_ordAlongEq_iff {X : Scheme.{u}} (S : BlowUpSequence X)
   and_congr Iff.rfl (forall_congr' fun i => and_congr Iff.rfl (h i))
 
 end Hironaka.BO
+
+end
+end ResolutionHironaka

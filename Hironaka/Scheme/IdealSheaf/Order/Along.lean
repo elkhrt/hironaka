@@ -41,9 +41,13 @@ Used for the cosupport of marked ideals and the centres of blow-ups
 `Hironaka/Scheme/BlowUpSequence/FunctorVocabulary.lean`, `Hironaka.BD.Zminus1`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 namespace TopologicalSpace
+open _root_.TopologicalSpace
 
 variable {X : Type*} [TopologicalSpace X]
 
@@ -115,8 +119,10 @@ theorem IrreducibleCloseds.genericPoints_eq [T0Space X] [QuasiSober X] (Z : Irre
 end TopologicalSpace
 
 namespace AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
 
-open TopologicalSpace
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
 
 universe u
 
@@ -173,7 +179,8 @@ theorem maxOrdAlong_le_iff {Z : Set X} {m : ℕ∞} : I.maxOrdAlong Z ≤ m ↔ 
 
 /-- Membership in a finite supremum of closed sets (a general tool, in the namespace of the
 monomial part that uses it, `Hironaka/Resolution/Algebraic/Monomial/Geometric`). -/
-theorem _root_.Hironaka.Monomial.PieceFamily.mem_finset_sup_iff {ι : Type*} (s : Finset ι)
+theorem _root_.ResolutionHironaka.Hironaka.Monomial.PieceFamily.mem_finset_sup_iff
+    {ι : Type*} (s : Finset ι)
     (g : ι → Closeds X) (x : X) :
     x ∈ s.sup g ↔ ∃ i ∈ s, x ∈ g i := by
   rw [← SetLike.mem_coe, Closeds.coe_finset_sup, Finset.sup_eq_iSup]
@@ -181,11 +188,15 @@ theorem _root_.Hironaka.Monomial.PieceFamily.mem_finset_sup_iff {ι : Type*} (s 
 
 /-- A point outside a finite union of closed sets has an affine neighbourhood outside it (used
 by `Hironaka/Resolution/Algebraic/Monomial/Geometric/Local.lean`). -/
-theorem _root_.AlgebraicGeometry.exists_affineOpens_of_not_mem_sup {ι : Type*} (s : Finset ι)
+theorem _root_.ResolutionHironaka.AlgebraicGeometry.exists_affineOpens_of_not_mem_sup
+    {ι : Type*} (s : Finset ι)
     (C : ι → Closeds X) {x : X}
     (hx : x ∉ s.sup C) : ∃ U : X.affineOpens, x ∈ U.1 ∧ ∀ y ∈ U.1, y ∉ s.sup C := by
   obtain ⟨_, ⟨U, hU, rfl⟩, hxU, hUV⟩ := X.isBasis_affineOpens.exists_subset_of_mem_open
-    (show x ∈ ((s.sup C).compl : Opens X) from hx) (s.sup C).compl.isOpen
+    (show x ∈ ((s.sup C).compl : X.Opens) from hx) (s.sup C).compl.isOpen
   exact ⟨⟨U, hU⟩, hxU, fun y hy => hUV hy⟩
 
 end AlgebraicGeometry.Scheme.IdealSheafData
+
+end
+end ResolutionHironaka

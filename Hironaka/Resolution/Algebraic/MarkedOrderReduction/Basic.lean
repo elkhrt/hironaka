@@ -51,11 +51,14 @@ indifference to empty boundary members of
 * `BMOData.ext`: two `BMOData n m` with the same values are equal.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
 
 namespace Hironaka
 
@@ -131,3 +134,6 @@ theorem BMOData.ext {n m : ℕ} {D D' : BMOData.{u} n m}
       rfl
 
 end Hironaka
+
+end
+end ResolutionHironaka

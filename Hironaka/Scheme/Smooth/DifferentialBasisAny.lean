@@ -35,11 +35,16 @@ basis `d s_j`) is linearly independent of size `m + t`, and
 `Hironaka/Scheme/IdealSheaf/Derivative/StalkCoords.lean`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
-open KaehlerDifferential TensorProduct IsLocalRing
+open _root_.KaehlerDifferential _root_.ResolutionHironaka.KaehlerDifferential TensorProduct
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing
 
 open scoped IntermediateField.algebraAdjoinAdjoin
 
@@ -91,7 +96,7 @@ end Field
 
 section Stalk
 
-open AlgebraicGeometry CategoryTheory
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
 
 variable {k : Type u} [Field k] [PerfectField k] {X : Scheme.{u}} (f : X ⟶ Spec (.of k)) (n : ℕ)
   [SmoothOfRelativeDimension n f] (x : X)
@@ -199,3 +204,6 @@ theorem exists_basis_tensor_kaehlerDifferential_sum (m t : ℕ) (y : Fin m → X
 end Stalk
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

@@ -22,13 +22,21 @@ functor (the blow-up sequence the functor assigns to a triple), which is a conca
 rounds, round by round with these lemmas.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry Scheme IdealSheafData BlowUpSequence
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
 variable {X : Scheme.{u}}
 
@@ -209,3 +217,6 @@ theorem totalTransformSeq_concat_heq_mk_of_le : ∀ {X : Scheme.{u}} (S : BlowUp
         (Nat.lt_of_succ_lt_succ hj) (Nat.lt_of_succ_lt_succ hj')
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

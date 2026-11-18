@@ -39,11 +39,20 @@ lattice-level facts about them, which need no smoothness or snc hypothesis:
 * the disjoining sequence has `k − 1` steps (`length_disjoinSeq`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open AlgebraicGeometry CategoryTheory TopologicalSpace Scheme IdealSheafData Scheme.IdealSheafData
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
 namespace Hironaka.Sequence
 
@@ -54,13 +63,15 @@ section Closeds
 variable {α : Type*} [TopologicalSpace α] {σ : Type*}
 
 /-- A point lies in a finite supremum of closed sets iff it lies in one of them. -/
-theorem _root_.TopologicalSpace.Closeds.mem_finset_sup {f : σ → Closeds α} {s : Finset σ} {x : α} :
+theorem _root_.ResolutionHironaka.TopologicalSpace.Closeds.mem_finset_sup
+    {f : σ → Closeds α} {s : Finset σ} {x : α} :
     x ∈ s.sup f ↔ ∃ i ∈ s, x ∈ f i := by
   rw [← SetLike.mem_coe, Closeds.coe_finset_sup, Finset.sup_set_eq_biUnion, Set.mem_iUnion₂]
   simp only [Function.comp_apply, SetLike.mem_coe, exists_prop]
 
 /-- A point lies in a supremum of closed sets indexed by a finite set iff it lies in one of them. -/
-theorem _root_.TopologicalSpace.Closeds.mem_biSup_finset {f : σ → Closeds α} {s : Finset σ}
+theorem _root_.ResolutionHironaka.TopologicalSpace.Closeds.mem_biSup_finset
+    {f : σ → Closeds α} {s : Finset σ}
     {x : α} : x ∈ (⨆ i ∈ s, f i) ↔ ∃ i ∈ s, x ∈ f i := by
   rw [← Finset.sup_eq_iSup]
   exact Closeds.mem_finset_sup
@@ -176,3 +187,6 @@ theorem length_disjoinSeq (E : DivisorFamily X) :
 end MeetLocus
 
 end Hironaka.Sequence
+
+end
+end ResolutionHironaka

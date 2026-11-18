@@ -45,11 +45,15 @@ the embedded desingularization read the clauses from here. Every proof is one pa
 Claim 71.2 is `Hironaka.Resolution.Algebraic.Stage.ClosedEmbeddingGeneral`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry Hironaka
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.ResolutionHironaka.Hironaka
 
 namespace Hironaka.Stage
 
@@ -219,3 +223,6 @@ theorem dimFree_claim71_1 (T : Triple k) (hE : IsEmpty T.E.ι) (hm : 1 ≤ m)
   tower_bmo_eq_bo_of_maxOrd base m T.dim T (Triple.boClass_of_boClassFree ⟨hm, hmax.le⟩) hE hmax
 
 end Hironaka.Stage
+
+end
+end ResolutionHironaka

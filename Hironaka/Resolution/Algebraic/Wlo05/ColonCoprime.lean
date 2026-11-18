@@ -26,6 +26,9 @@ ideal of `Y` by the ideal of the isolated ones, the two being comaximal because 
 smooth `Y` are disjoint (`Hironaka.Resolution.Algebraic.Wlo05.EmbeddedNilInvariant`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
@@ -33,6 +36,8 @@ universe u
 open CategoryTheory TopologicalSpace
 
 namespace AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
 
 variable {X : Scheme.{u}} (I J : X.IdealSheafData)
 
@@ -82,3 +87,6 @@ theorem colon_mul_left_of_sup_eq_top (h : I ⊔ J = ⊤) : (I * J).colon I = J :
     rw [ideal_mul, ideal_mul, Pi.mul_apply, Pi.mul_apply, mul_comm]
 
 end AlgebraicGeometry.Scheme.IdealSheafData
+
+end
+end ResolutionHironaka

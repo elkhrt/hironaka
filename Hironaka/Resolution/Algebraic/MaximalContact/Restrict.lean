@@ -50,13 +50,19 @@ These facts are used throughout `Hironaka/Resolution/Algebraic/MaximalContact/` 
 existence, the transform of a hypersurface through the centre, going down) and in
 `Hironaka/Resolution/Algebraic/Snc/SmoothDivisorLocal.lean`. -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry IsLocalRing
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing
 
 namespace AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
 
 variable {k : Type u} [Field k] {X Y : Scheme.{u}} (f : X ⟶ Spec (.of k))
 variable [CharZero k] (n : ℕ) [SmoothOfRelativeDimension n f]
@@ -106,6 +112,7 @@ theorem isMaximalContact_iff_forall_opens (I : X.IdealSheafData) (m : ℕ) (H : 
 end AlgebraicGeometry.Scheme.IdealSheafData
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
 variable {X Y : Scheme.{u}}
 
@@ -137,3 +144,6 @@ theorem IsSmoothDivisor.comap_of_isOpenImmersion {H : X.IdealSheafData} (hH : Is
     exact ⟨_, hb, hb2, hspan'⟩
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

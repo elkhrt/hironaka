@@ -43,16 +43,24 @@ centers `D(i)` and open immersions `u_i : X̄(i) → X(i)` such that "`u_i(D̄(i
 * `exists_extend_of_isOpenImmersion` is the existential form.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open CategoryTheory CategoryTheory.Limits AlgebraicGeometry Scheme BlowUpSequence
-  Scheme.IdealSheafData TopologicalSpace
+open CategoryTheory CategoryTheory.Limits _root_.AlgebraicGeometry
+open _root_.ResolutionHironaka.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData _root_.TopologicalSpace
+open _root_.ResolutionHironaka.TopologicalSpace
 
 namespace Hironaka.Sequence
 
-open AlgebraicGeometry
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
 
 variable {U X : Scheme.{u}}
 
@@ -287,3 +295,6 @@ theorem exists_extend_of_isOpenImmersion {U X : Scheme.{u}} (u : U ⟶ X) [IsOpe
     stageMap_extendOfOpen_mem u S' C _⟩
 
 end Hironaka.Sequence
+
+end
+end ResolutionHironaka

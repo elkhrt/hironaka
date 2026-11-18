@@ -49,15 +49,19 @@ hypotheses of the functoriality statements for an arbitrary smooth morphism
 boundary-clearing data in `Hironaka/Resolution/Algebraic/BoundaryClearing/Indifference.lean`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
 
 namespace AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme
 
-open Hironaka
+open _root_.ResolutionHironaka.Hironaka
 
 variable {X : Scheme.{u}}
 
@@ -77,7 +81,8 @@ the members matched along `e` and the unit ideal at every index outside the rang
 at `T` and at `T` with boundary `E'` agree. Only deletion of empty members is covered; no
 invariance under permuting or combining members is asserted. Not in the sources: it names the
 reindexing of [Kol07, 34.1] and the convention [Kol07, 32] as a property of the functor. -/
-def _root_.Hironaka.OrderGeSeqAssignment.IndifferentToEmptyMembers {k : Type u} [Field k]
+def _root_.ResolutionHironaka.Hironaka.OrderGeSeqAssignment.IndifferentToEmptyMembers
+    {k : Type u} [Field k]
     {Dom : MarkedTriple k → Prop}
     (B : OrderGeSeqAssignment k Dom) : Prop :=
   ∀ (T : MarkedTriple k) (E' : DivisorFamily T.X.left) (hsnc' : E'.IsSnc) (e : E'.ι ↪o T.E.ι),
@@ -94,7 +99,7 @@ positions `j` of `T.E` and `j'` of `E'` with `e (E'.nthIdx j') = T.E.nthIdx j`, 
 `bdm j` at `T` and of `bdm j'` at `T` with boundary `E'` agree. Only deletion of empty members is
 covered; no invariance under permuting or combining members is asserted. Not in the sources: it
 names the reindexing of [Kol07, 34.1] for the boundary-clearing functor. -/
-def _root_.Hironaka.BDFamily.IndifferentToEmptyMembers {n m : ℕ} (bdm : ∀ j : ℕ,
+def _root_.ResolutionHironaka.Hironaka.BDFamily.IndifferentToEmptyMembers {n m : ℕ} (bdm : ∀ j : ℕ,
     BDData.{u} n m j) : Prop :=
   ∀ (k : Type u) [Field k] [CharZero k] (T : Triple k) (E' : DivisorFamily T.X.left)
     (hsnc' : E'.IsSnc) (e : E'.ι ↪o T.E.ι),
@@ -107,3 +112,6 @@ def _root_.Hironaka.BDFamily.IndifferentToEmptyMembers {n m : ℕ} (bdm : ∀ j 
           ((bdm j').functor k).seq { T with E := E', isSnc := hsnc' } hT'
 
 end AlgebraicGeometry.Scheme
+
+end
+end ResolutionHironaka

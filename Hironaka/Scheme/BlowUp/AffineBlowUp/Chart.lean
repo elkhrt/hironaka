@@ -38,11 +38,16 @@ The underlying scheme is Mathlib's `Proj`; every statement here is a statement a
 its `awayι` charts read through the ring isomorphism of `Hironaka.Scheme.BlowUp.Rees.ChartRing`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
-open AlgebraicGeometry CategoryTheory HomogeneousLocalization Polynomial
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
+open HomogeneousLocalization Polynomial
 
 universe u
 
@@ -50,7 +55,7 @@ variable {R : Type u} [CommRing R] (I : Ideal R)
 
 /-- The chart ring isomorphism `(Rees(I)_{at})₀ ≅ R[I/a]` (`reesAlgebra.chartRingEquiv`) as an
 isomorphism of `CommRingCat`. -/
-noncomputable def _root_.reesAlgebra.chartIso (a : I) :
+noncomputable def _root_.ResolutionHironaka.reesAlgebra.chartIso (a : I) :
     CommRingCat.of (Away (reesAlgebra.grading I) (reesAlgebra.degreeOne I a)) ≅
       CommRingCat.of (affineBlowUpAlgebra I a) :=
   (reesAlgebra.chartRingEquiv a).toCommRingCatIso
@@ -158,7 +163,7 @@ noncomputable def affineBlowUpAlgebra.ratio (a b : I) : affineBlowUpAlgebra I a 
   ⟨awayFrac (a : R) 1 (b : R), awayFrac_mem_affineBlowUpAlgebra 1 (by simp)⟩
 
 /-- Mathlib's localization element `bt/at` of `(R̃_{at})₀` corresponds to `b/a ∈ R[I/a]`. -/
-theorem _root_.reesAlgebra.chartRingEquiv_isLocalizationElem (a b : I) :
+theorem _root_.ResolutionHironaka.reesAlgebra.chartRingEquiv_isLocalizationElem (a b : I) :
     reesAlgebra.chartRingEquiv a
         (Away.isLocalizationElem (reesAlgebra.degreeOne_mem a) (reesAlgebra.degreeOne_mem b)) =
       affineBlowUpAlgebra.ratio I a b := by
@@ -184,3 +189,6 @@ theorem affineBlowUp.chart_preimage_chart (a b : I) :
   rfl
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

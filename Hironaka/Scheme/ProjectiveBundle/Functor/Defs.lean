@@ -31,6 +31,9 @@ of `X`, as the blow-up is glued from the affine blow-ups:
   its affine opens.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
@@ -38,6 +41,7 @@ universe u
 open CategoryTheory
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
 variable {X : Scheme.{u}} (F : X.Modules) [F.IsQuasicoherent]
 
@@ -98,3 +102,6 @@ noncomputable def projectiveBundleNatTrans :
     rw [affineProjectiveBundle.mapHom_π_assoc, key, Category.assoc]
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

@@ -44,15 +44,23 @@ local principality) and `Hironaka.Resolution.Algebraic.BoundaryClearing.Restrict
 Sources: [Kol07, Theorem 35 (2); Definition 24; Warning 20; Corollary 22]; [Sta, Tag 01WS].
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open AlgebraicGeometry CategoryTheory IsLocalRing Ideal Scheme IdealSheafData
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing _root_.Ideal
+open _root_.ResolutionHironaka.Ideal _root_.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
 namespace Hironaka.Snc
 
-open AlgebraicGeometry
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
 
 variable {X : Scheme.{u}} {k : Type u} [Field k]
 
@@ -92,7 +100,7 @@ theorem IsSnc.isInvertible_component (f : X ⟶ Spec (.of k)) [Smooth f]
 /-- [Kol07, Theorem 35 (2)] read as the proof of [Kol07, Corollary 22] does: the ideal sheaf of an
 effective divisor supported on a simple normal crossing family, `∏ⁱ (E^i)^{a_i}`, is invertible — a
 finite product of powers of invertible ideal sheaves. -/
-theorem _root_.AlgebraicGeometry.Scheme.IdealSheafData.IsIdealOfSncDivisor.isInvertible
+theorem _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData.IsIdealOfSncDivisor.isInvertible
     (f : X ⟶ Spec (.of k)) [Smooth f] {I : X.IdealSheafData} (h : IsIdealOfSncDivisor I) :
     I.IsInvertible := by
   obtain ⟨F, a, hF, rfl⟩ := h
@@ -102,3 +110,6 @@ theorem _root_.AlgebraicGeometry.Scheme.IdealSheafData.IsIdealOfSncDivisor.isInv
     (fun j _ => Scheme.IdealSheafData.isInvertible_pow (IsSnc.isInvertible_component f hF j) (a j))
 
 end Hironaka.Snc
+
+end
+end ResolutionHironaka

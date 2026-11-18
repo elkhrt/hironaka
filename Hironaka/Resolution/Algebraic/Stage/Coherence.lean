@@ -39,11 +39,15 @@ agree at every order — the congruence `Hironaka.BMO.data_congr`
 (`commutesWithSmooth`) is 34.1 at that stage.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry Hironaka
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.ResolutionHironaka.Hironaka
 
 namespace Hironaka.Stage
 
@@ -189,3 +193,6 @@ theorem tower_bmo_pullback_eraseEmpty (hle : n' ≤ n) (T T' : MarkedTriple k)
 end CrossDim
 
 end Hironaka.Stage
+
+end
+end ResolutionHironaka

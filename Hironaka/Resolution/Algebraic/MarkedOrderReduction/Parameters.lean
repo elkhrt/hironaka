@@ -33,11 +33,17 @@ step with those on `X` (`Hironaka/Resolution/Algebraic/MarkedOrderReduction/Loop
 Not in the sources as such.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace Hironaka Scheme.IdealSheafData
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.ResolutionHironaka.Hironaka _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
 namespace Hironaka.BMO
 
@@ -100,3 +106,6 @@ theorem sepOrder_of_isPullbackOf (T T' : MarkedTriple k) (h : T'.X.left ⟶ T.X.
 end Parameters
 
 end Hironaka.BMO
+
+end
+end ResolutionHironaka

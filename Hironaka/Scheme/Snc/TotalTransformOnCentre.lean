@@ -51,14 +51,21 @@ Sources: [Hau14, Proposition 5.3] (the proof); [Hau14, Proposition 5.4]; [Hau03,
 [Kol07, Definition 24; Definition 60].
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open AlgebraicGeometry CategoryTheory IsLocalRing Ideal TopologicalSpace Scheme.IdealSheafData
-  Scheme.Hom
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing Ideal TopologicalSpace
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry.Scheme.Hom _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.Hom
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
 section Transport
 
@@ -471,3 +478,6 @@ theorem exists_totalTransformData_of_mem_support {ι : Type*} [Finite ι]
 end Main
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

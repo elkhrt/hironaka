@@ -43,16 +43,23 @@ From the proof of the principalization theorem [Kol07, 72]: by construction `Π^
   of the empty blow-ups, by `IsIdealOfSncDivisor.comap_of_smooth`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry Scheme.IdealSheafData Hironaka Scheme.BlowUpSequence
-  Hironaka.Stage
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.Hironaka
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.ResolutionHironaka.Hironaka.Stage
 
 namespace Hironaka.Sequence
 
-open AlgebraicGeometry
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
 
 variable {k : Type u} [Field k] [CharZero k]
 
@@ -141,3 +148,6 @@ theorem BP_isIdealOfSncDivisor (T : Triple k) :
       (eqToHom (last_concat S₀ R)) hsmε _ hK)
 
 end Hironaka.Sequence
+
+end
+end ResolutionHironaka

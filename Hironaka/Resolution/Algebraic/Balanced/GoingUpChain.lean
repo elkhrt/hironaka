@@ -62,15 +62,23 @@ pushed-forward sequence. Throughout, `cosupp(A, c)` is the order-`≥ c` locus
   `= cosupp T_*^{-1}((D^j I)|_S, m−j)` (`cosupp_pow` again). Intersecting over `j < m` gives the
   inclusion `cosupp(J_i, m) ⊆ ⋂_{j<m} cosupp T_*^{-1}((D^j I)|_S, m − j)` that item 90 needs. -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace Scheme BlowUpSequence Scheme.IdealSheafData
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
 namespace Hironaka.Sequence
 
-open AlgebraicGeometry
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
 
 variable {X : Scheme.{u}}
 
@@ -228,3 +236,6 @@ theorem cosupp_markedTransformSeq_subset_iInter (hI : I.IsDBalanced f m) (hS : I
 end Chain
 
 end Hironaka.Sequence
+
+end
+end ResolutionHironaka

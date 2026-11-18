@@ -30,6 +30,9 @@ its own refinement relation with it
 (`Hironaka/Resolution/Analytic/OrderReduction/BMO/Step3Monomial/RefinesAlong.lean`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 namespace Hironaka.Monomial.MonomialState
@@ -250,3 +253,6 @@ theorem choice_eq_empty_iff (r : ℕ) : P.choice r = ∅ ↔ D.choice r = ∅ :=
 end Rel
 
 end Hironaka.Monomial.MonomialState
+
+end
+end ResolutionHironaka

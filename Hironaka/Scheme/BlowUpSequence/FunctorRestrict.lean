@@ -22,11 +22,14 @@ compared stage against stage through such restrictions, using the uniqueness of 
 globalization of [Kol07, Theorem 105].
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
 
 namespace Hironaka.OrderSeqAssignment
 
@@ -55,3 +58,6 @@ theorem restrict_commutesWithSurjectionsIn {Dom' : Triple k → Prop} (B : Order
   fun T T' g hM hs hpb hT hT' => hB T T' g hM hs hpb (h T hT) (h T' hT')
 
 end Hironaka.OrderSeqAssignment
+
+end
+end ResolutionHironaka

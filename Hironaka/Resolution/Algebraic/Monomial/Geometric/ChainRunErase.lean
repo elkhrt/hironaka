@@ -43,6 +43,9 @@ The proofs are `phase_restrict` and `phase_chain`
 sources; bookkeeping for the deletion of empty blow-ups of [Kol07, 32] and [Kol07, 34.1].
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 namespace Hironaka.Monomial.MonomialState
@@ -374,3 +377,6 @@ theorem step3_chainE {Y D P N : MonomialState} {ρY ρ' σ' ρ : ℕ → ℕ} (h
   exact ⟨h5, h6⟩
 
 end Hironaka.Monomial.MonomialState
+
+end
+end ResolutionHironaka

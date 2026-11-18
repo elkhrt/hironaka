@@ -27,13 +27,20 @@ definition of `K_m` needs no gluing of local pieces.  `Hironaka.Scheme.BlowUp.Co
 the equality into the isomorphism of blow-ups.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
-open Scheme.IdealSheafData
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
-open AlgebraicGeometry CategoryTheory Scheme.IdealSheafData TopologicalSpace
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData TopologicalSpace
 
 universe u
 
@@ -137,3 +144,6 @@ theorem exists_comap_descendCenter_eq [IsNoetherian X] :
 end Main
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

@@ -24,13 +24,18 @@ multiple of `z_j`, so its class in `𝔪/𝔪²` is proportional to that of `z_j
 proportional members).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open IsLocalRing Ideal AlgebraicGeometry
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing Ideal _root_.AlgebraicGeometry
+open _root_.ResolutionHironaka.AlgebraicGeometry
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
 section RegularLocalRing
 
@@ -105,3 +110,6 @@ theorem exists_fin_span_eq_maximalIdeal_stalk (f : X ⟶ Spec (.of k)) [Smooth f
 end Scheme
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

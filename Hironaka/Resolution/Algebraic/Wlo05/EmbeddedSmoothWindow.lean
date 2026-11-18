@@ -60,12 +60,21 @@ then gives a form of (b) stronger than Włodarczyk's: every centre of `BED` miss
 point of `Y` and the clause itself are in `Hironaka.Resolution.Algebraic.Wlo05.EmbeddedRegWindow`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace Hironaka Scheme
-  BlowUpSequence Scheme.IdealSheafData Hironaka.Stage Hironaka.Sequence
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.ResolutionHironaka.Hironaka _root_.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.Hironaka.Stage _root_.ResolutionHironaka.Hironaka.Sequence
 
 namespace Hironaka.Resolution
 
@@ -533,3 +542,6 @@ theorem centersMiss_BED_of_smoothWindow (TX : Triple k) {W : Scheme.{u}} (j : W 
   centersMiss_bedAux_of_smoothWindow _ ⟨TX, 1⟩ rfl (componentIdeals TX) rfl j hw
 
 end Hironaka.Resolution
+
+end
+end ResolutionHironaka

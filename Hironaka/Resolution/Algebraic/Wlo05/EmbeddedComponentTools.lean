@@ -41,12 +41,21 @@ order `≥ 1`) contains `c̄` for a generic point `η` of `V(I)`, `η` is a gene
 `Hironaka.Resolution.Algebraic.Wlo05.EmbeddedCP1Cover` and the `EmbeddedCP3*` modules.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace Scheme BlowUpSequence Scheme.IdealSheafData
-  Hironaka.Sequence Hironaka.Snc Hironaka.BD IsLocalRing
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.Hironaka.Sequence _root_.ResolutionHironaka.Hironaka.Snc
+open _root_.ResolutionHironaka.Hironaka.BD _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing
 
 namespace Hironaka.Resolution
 
@@ -136,3 +145,6 @@ theorem mem_genericPoints_of_Zminus1_le [NoetherianSpace X] (I H : X.IdealSheafD
   exact hξ
 
 end Hironaka.Resolution
+
+end
+end ResolutionHironaka

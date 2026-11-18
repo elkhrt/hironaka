@@ -56,11 +56,18 @@ base-change stalk map:
   stalk map of `p ∣_ U`, hence of `p` (`morphismRestrictStalkMap`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory CategoryTheory.Limits AlgebraicGeometry IsLocalRing Scheme BlowUpSequence
+open CategoryTheory CategoryTheory.Limits _root_.AlgebraicGeometry
+open _root_.ResolutionHironaka.AlgebraicGeometry _root_.IsLocalRing
+open _root_.ResolutionHironaka.IsLocalRing _root_.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
 
 /-! ### Every field extension in characteristic zero is formally smooth -/
 
@@ -83,6 +90,7 @@ theorem Algebra.FormallySmooth.of_charZero {k L : Type u} [Field k] [Field L] [A
   exact Algebra.FormallySmooth.of_algebraicIndependent_of_isSeparable hx.1
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
 variable {X Y : Scheme.{u}}
 
@@ -270,3 +278,6 @@ theorem hasSncWith_comap_of_isPullback_specMap [CharZero k]
 end StalkMap
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

@@ -58,6 +58,9 @@ torsion (compare [Hau14, Example 4.31], the blow-up along a zero divisor).  `a =
 the zero ring and every element of the source is `0`-power torsion (`0¹ • z = 0`), consistently.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u v
@@ -209,3 +212,6 @@ theorem presentationHom_apply_eq_zero_iff (z : MvPolynomial ι R ⧸ presentatio
   algHom_apply_eq_zero_iff a g _ z
 
 end AlgebraicGeometry.affineBlowUpAlgebra
+
+end
+end ResolutionHironaka

@@ -38,11 +38,15 @@ variable by variable:
 Used for the smooth case in `Hironaka/Algebra/Local/OrderSmooth.lean`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 namespace IsLocalRing
+open _root_.IsLocalRing
 
-open IsLocalRing Polynomial
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing Polynomial
 
 section OneVariableLocal
 
@@ -260,3 +264,6 @@ theorem ord_map_eq_of_atPrime_mvPolynomial [IsLocalRing R] {n : ℕ}
 end MvPolynomial
 
 end IsLocalRing
+
+end
+end ResolutionHironaka

@@ -29,9 +29,13 @@ provides what that proof needs (`Hironaka/Algebra/Local/Prop94.lean`):
   `Hironaka/Algebra/Local/CoordsOver.lean`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 namespace IsLocalRing
+open _root_.IsLocalRing
 
 open MvPolynomial
 
@@ -257,7 +261,8 @@ end PolynomialTaylor
 
 section PowerSeriesTaylor
 
-open MvPowerSeries IsLocalRing
+open _root_.MvPowerSeries _root_.ResolutionHironaka.MvPowerSeries _root_.IsLocalRing
+open _root_.ResolutionHironaka.IsLocalRing
 
 variable {K : Type*} [Field K] {n : ℕ}
 
@@ -589,7 +594,7 @@ end PowerSeriesTaylor
 
 section Krull
 
-open IsLocalRing
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing
 
 variable {R : Type*} [CommRing R] [IsNoetherianRing R] [IsLocalRing R]
 
@@ -620,3 +625,6 @@ theorem iInf_sup_pow_eq (I : Ideal R) : ⨅ s : ℕ, (I ⊔ maximalIdeal R ^ s) 
 end Krull
 
 end IsLocalRing
+
+end
+end ResolutionHironaka

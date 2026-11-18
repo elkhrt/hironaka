@@ -44,12 +44,21 @@ deleted (`not_centerContains_bdData_seq`, through `exists_eraseIdx_eq` and
 `Hironaka.Resolution.Algebraic.Wlo05.EmbeddedCP1Step2`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace Hironaka Scheme.BlowUpSequence
-  Scheme.IdealSheafData Hironaka.Sequence Hironaka.BO Hironaka.BD IsLocalRing
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.ResolutionHironaka.Hironaka
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.Hironaka.Sequence _root_.ResolutionHironaka.Hironaka.BO
+open _root_.ResolutionHironaka.Hironaka.BD _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing
 
 namespace Hironaka.Resolution
 
@@ -191,3 +200,6 @@ theorem cp1For_step21Seq {η : T.X.left} (hη : η ∈ T.I.support.genericPoints
 end Data
 
 end Hironaka.Resolution
+
+end
+end ResolutionHironaka

@@ -30,12 +30,21 @@ two birational transforms of components meet, and a birational transform lies ov
 * `support_center_disjoinSeq_le`: the statement for the disjoining sequence.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open AlgebraicGeometry CategoryTheory TopologicalSpace Scheme IdealSheafData
-  BlowUpSequence Scheme.IdealSheafData
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
+open TopologicalSpace _root_.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
 namespace Hironaka.Sequence
 
@@ -90,3 +99,6 @@ theorem support_center_disjoinSeq_le {X : Scheme.{u}} (E : DivisorFamily X)
   rwa [Category.comp_id] at key
 
 end Hironaka.Sequence
+
+end
+end ResolutionHironaka

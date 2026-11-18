@@ -49,11 +49,17 @@ codimension `≥ 2` at the generic point) are the hypotheses of the theorems tha
 clauses for it later in this directory; the definition itself needs none of them.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry Scheme Hironaka BlowUpSequence
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.Hironaka
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
 
 namespace Hironaka.Resolution
 
@@ -124,3 +130,6 @@ theorem length_BR_affine (TA : Triple k) {X : Scheme.{u}} (emb : X ⟶ TA.X.left
   rw [BR_affine, length_pullback, length_take]
 
 end Hironaka.Resolution
+
+end
+end ResolutionHironaka

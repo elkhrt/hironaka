@@ -31,11 +31,15 @@ congruence tolerating arbitrary permutations of the components is not proved; no
 in the sources: Kollár's `E^j` are indexed by a fixed ordered set and the question does not arise.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open AlgebraicGeometry TopologicalSpace
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry _root_.TopologicalSpace
+open _root_.ResolutionHironaka.TopologicalSpace
 
 namespace Hironaka.Monomial.PieceFamily
 
@@ -78,3 +82,6 @@ theorem Rel.refl (Φ : PieceFamily X) : Φ.Rel id id Φ where
     rw [h, Finset.image_id]
 
 end Hironaka.Monomial.PieceFamily
+
+end
+end ResolutionHironaka

@@ -50,12 +50,22 @@ embedded form `exists_centerContains_BP_of_isInvertible`, for the principalizati
 ambient triple, is the input of `Hironaka.Resolution.Algebraic.Kol07.Thm36.AffineTheorem36`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace Scheme Hironaka
-  BlowUpSequence Scheme.IdealSheafData Hironaka.Sequence IsLocalRing
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.Hironaka
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.Hironaka.Sequence _root_.IsLocalRing
+open _root_.ResolutionHironaka.IsLocalRing
 
 namespace Hironaka.Resolution
 
@@ -313,3 +323,6 @@ theorem exists_centerContains_BP_of_isInvertible (TA : Triple k) (emb : X ⟶ TA
 end Embedded
 
 end Hironaka.Resolution
+
+end
+end ResolutionHironaka

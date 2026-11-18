@@ -56,11 +56,17 @@ are explicit hypotheses here.
   `strictTransformAlong_eq_comap_of_saturate_eq` — the sheaf-level statements.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open AlgebraicGeometry CategoryTheory IsLocalRing Ideal Scheme.IdealSheafData
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing _root_.Ideal
+open _root_.ResolutionHironaka.Ideal _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
 /-- `(I : I) = ⊤` for an ideal `I` of a commutative ring. -/
 theorem Ideal.colon_coe_self {R : Type*} [CommRing R] (I : Ideal R) : I.colon (↑I : Set R) = ⊤ :=
@@ -82,6 +88,7 @@ theorem Ideal.colon_pow_eq_self_of_isPrime {R : Type*} [CommRing R] {p J : Ideal
   exact (hp.mem_or_mem h).resolve_right hyp
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
 /-! ### Algebra in a regular local ring -/
 
@@ -277,3 +284,6 @@ theorem strictTransformAlong_eq_comap_of_saturate_eq {B X : Scheme.{u}} (π : B 
   rw [strictTransformAlong_of_isIso, h]
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

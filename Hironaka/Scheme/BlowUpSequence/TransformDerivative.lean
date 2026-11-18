@@ -70,16 +70,25 @@ structures are those of `f` and `π ≫ f` on the stalks (`stalkAlgebra`), and `
 bookkeeping, then monotonicity of `D` and `D(D^j(I)) = D^{j+1}(I)`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace IsLocalRing
-  Scheme.IdealSheafData Scheme.BlowUpSequence AlgebraicGeometry.Scheme.IdealSheafData
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace _root_.IsLocalRing
+open _root_.ResolutionHironaka.IsLocalRing _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
 /-! ### Derivative ideals and ring isomorphisms -/
 
 namespace Derivation
+open _root_.Derivation
 
 variable {k A B : Type*} [CommRing k] [CommRing A] [CommRing B] [Algebra k A] [Algebra k B]
   (e : A ≃+* B) (hk : ∀ a : k, e (algebraMap k A a) = algebraMap k B a)
@@ -109,6 +118,7 @@ theorem congrRingEquiv_apply (D : Derivation k A A) (b : B) :
 end Derivation
 
 namespace Ideal
+open _root_.Ideal
 
 variable {k A B : Type*} [CommRing k] [CommRing A] [CommRing B] [Algebra k A] [Algebra k B]
   (e : A ≃+* B) (hk : ∀ a : k, e (algebraMap k A a) = algebraMap k B a)
@@ -146,6 +156,7 @@ theorem mem_iff_map_mem_map (J : Ideal A) (x : A) :
 end Ideal
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
 variable {k : Type u} [Field k] {X : Scheme.{u}}
 
@@ -505,3 +516,6 @@ theorem markedTransform_derivativeIter_le {m : ℕ} (hm : I.LeOrdAlong Z.support
 end Main
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

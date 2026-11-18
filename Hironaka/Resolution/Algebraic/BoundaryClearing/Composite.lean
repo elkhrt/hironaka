@@ -81,12 +81,22 @@ Used by `Output.lean`, and outside this directory by the embedded-resolution mod
 `Hironaka/Resolution/Algebraic/Wlo05/EmbeddedCP3Raw.lean`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace Scheme.IdealSheafData
-  Hironaka Scheme Scheme.Hom BlowUpSequence Hironaka.Sequence Hironaka.Snc
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.Hironaka _root_.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme _root_.AlgebraicGeometry.Scheme.Hom
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.Hom
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.ResolutionHironaka.Hironaka.Sequence _root_.ResolutionHironaka.Hironaka.Snc
 
 namespace Hironaka.BD
 
@@ -343,3 +353,6 @@ theorem center_rawSeq_ne_top_of_pos (i : Fin (rawSeq T m j hI hmax hn B hDom).le
 end Restricted
 
 end Hironaka.BD
+
+end
+end ResolutionHironaka

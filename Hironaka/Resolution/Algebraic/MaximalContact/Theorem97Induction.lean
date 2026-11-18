@@ -60,12 +60,21 @@ general neither D-balanced nor MC-invariant.
   [Kol07, Definition 96], (ii) the marked ideals, (iii) the lifts.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 namespace AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
 
-open CategoryTheory Scheme IdealSheafData BlowUpSequence AlgebraicGeometry Algebra
-  Hironaka.Sequence
+open CategoryTheory _root_.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence _root_.AlgebraicGeometry
+open _root_.ResolutionHironaka.AlgebraicGeometry Algebra _root_.ResolutionHironaka.Hironaka.Sequence
 
 universe u
 
@@ -246,3 +255,6 @@ theorem eq_of_etaleEquivSeq_of_step
     (e.centersInRange' f n hB')
 
 end AlgebraicGeometry.Scheme.IdealSheafData
+
+end
+end ResolutionHironaka

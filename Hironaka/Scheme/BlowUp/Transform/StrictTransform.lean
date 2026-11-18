@@ -61,13 +61,18 @@ with `subschemeι`; factorizations through them are `IsClosedImmersion.lift` (ke
 The strict transform is `strictTransformAlong π E J`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open AlgebraicGeometry CategoryTheory
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
 
 namespace AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
 
 variable {X Y : Scheme.{u}}
 
@@ -230,10 +235,12 @@ end AlgebraicGeometry.Scheme.IdealSheafData
 /-! ### The strict transform is the blow-up of the closed subscheme -/
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
-open Scheme.IdealSheafData
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
-open AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
 
 variable {X B B' : Scheme.{u}} {D J : X.IdealSheafData}
 
@@ -304,3 +311,6 @@ theorem exists_iso_strictTransform_subscheme {π : B ⟶ X} {π' : B' ⟶ J.subs
   rw [← Category.assoc, hφ', hφ]
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

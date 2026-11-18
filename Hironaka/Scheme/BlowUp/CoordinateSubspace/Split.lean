@@ -24,6 +24,9 @@ identification of the exceptional divisor with `ℙ^{r-1}_L`
 (`Hironaka.Scheme.BlowUp.CoordinateSubspace.ReesInitial`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
@@ -31,6 +34,7 @@ universe u
 open MvPolynomial
 
 namespace AlgebraicGeometry.CoordinateSubspace
+open _root_.AlgebraicGeometry
 
 section Degree
 
@@ -263,3 +267,6 @@ theorem mem_pow_iff_centerSplitEquiv_mem {k : ℕ} {c : MvPolynomial (Fin n) A} 
 end Split
 
 end AlgebraicGeometry.CoordinateSubspace
+
+end
+end ResolutionHironaka

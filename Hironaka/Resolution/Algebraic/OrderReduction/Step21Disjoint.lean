@@ -36,12 +36,21 @@ lies in the cosupport (`disjoint_cosupp_strictTransformSeq_last_of_disjoint`). A
 Step 2.1.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace Hironaka Scheme BlowUpSequence
-  Scheme.IdealSheafData Hironaka.Sequence
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.ResolutionHironaka.Hironaka _root_.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.Hironaka.Sequence
 
 namespace Hironaka.BO
 
@@ -126,3 +135,6 @@ theorem disjoint_cosupp_step21_final {i : ℕ} (hi : i < Fintype.card T.E.ι) :
   disjoint_cosupp_step21 T hn hmax bd (Fintype.card T.E.ι) hi hi
 
 end Hironaka.BO
+
+end
+end ResolutionHironaka

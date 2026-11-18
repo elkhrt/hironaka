@@ -52,13 +52,17 @@ difference is a trivial relation).
 * `colon_comap_of_flat_of_isLocallyNoetherian`: the colon commutes with flat pull-back.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u v
 
-open CategoryTheory AlgebraicGeometry
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
 section Ring
 
@@ -70,7 +74,7 @@ finite intersection of ideals commutes with flat base change. Given
 with `a_i ∈ I`, `b_j ∈ J`, the relation `Σ φ(a_i) s_i − Σ φ(b_j) t_j = 0` is trivial, `s_i = Σ_l
 c_{il} y_l`, `t_j = Σ_l d_{jl} y_l` with `Σ_i a_i c_{il} = Σ_j b_j d_{jl}` for every `l`; the common
 value `e_l` lies in `I ⊓ J` and `x = Σ_l φ(e_l) y_l`. -/
-theorem _root_.Ideal.map_inf_of_flat (I J : Ideal R) :
+theorem _root_.ResolutionHironaka.Ideal.map_inf_of_flat (I J : Ideal R) :
     (I ⊓ J).map (algebraMap R S) = I.map (algebraMap R S) ⊓ J.map (algebraMap R S) := by
   classical
   refine le_antisymm (Ideal.map_inf_le _) fun x hx => ?_
@@ -122,7 +126,8 @@ theorem _root_.Ideal.map_inf_of_flat (I J : Ideal R) :
   exact Ideal.sum_mem _ fun j _ => Ideal.mul_mem_right _ _ (hbJ j)
 
 /-- A finite infimum of ideals commutes with flat base change. -/
-theorem _root_.Ideal.map_finset_inf_of_flat {ι : Type*} (s : Finset ι) (I : ι → Ideal R) :
+theorem _root_.ResolutionHironaka.Ideal.map_finset_inf_of_flat
+    {ι : Type*} (s : Finset ι) (I : ι → Ideal R) :
     (s.inf I).map (algebraMap R S) = s.inf fun i => (I i).map (algebraMap R S) := by
   classical
   induction s using Finset.induction_on with
@@ -131,7 +136,8 @@ theorem _root_.Ideal.map_finset_inf_of_flat {ι : Type*} (s : Finset ι) (I : ι
 
 /-- The colon by the span of a finite set is the finite infimum of the colons by its elements
 (`Ideal.colon_span`, `Submodule.colon_iUnion`). -/
-theorem _root_.Ideal.colon_span_finset {T : Type*} [CommRing T] (K : Ideal T) (t : Finset T) :
+theorem _root_.ResolutionHironaka.Ideal.colon_span_finset
+    {T : Type*} [CommRing T] (K : Ideal T) (t : Finset T) :
     K.colon (Ideal.span (t : Set T) : Set T) = t.inf fun x => K.colon {x} := by
   classical
   rw [Ideal.colon_span, show (t : Set T) = ⋃ x ∈ t, {x} from (Set.biUnion_of_singleton _).symm,
@@ -140,7 +146,7 @@ theorem _root_.Ideal.colon_span_finset {T : Type*} [CommRing T] (K : Ideal T) (t
 
 /-- The colon by a finitely generated ideal commutes with flat base change,
 `(I : J) S = (I S : J S)` [Mat89, Theorem 7.4 (iii)]. -/
-theorem _root_.Ideal.map_colon_of_fg_of_flat (I J : Ideal R) (hJ : J.FG) :
+theorem _root_.ResolutionHironaka.Ideal.map_colon_of_fg_of_flat (I J : Ideal R) (hJ : J.FG) :
     (I.colon (J : Set R)).map (algebraMap R S) =
       (I.map (algebraMap R S)).colon (J.map (algebraMap R S) : Set S) := by
   classical
@@ -154,6 +160,8 @@ end Ring
 end AlgebraicGeometry
 
 namespace AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
 
 variable {X Y : Scheme.{u}}
 
@@ -197,3 +205,6 @@ theorem colon_comap_of_flat_of_isLocallyNoetherian (h : Y ⟶ X) [Flat h] [IsLoc
   exact Ideal.map_colon_of_fg_of_flat (S := Y.presheaf.stalk y) _ _ hfg
 
 end AlgebraicGeometry.Scheme.IdealSheafData
+
+end
+end ResolutionHironaka

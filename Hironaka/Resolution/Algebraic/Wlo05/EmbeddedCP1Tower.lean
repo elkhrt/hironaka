@@ -34,12 +34,20 @@ it for every generic point of `V(I)` off the boundary at which `I` is reduced
 `Hironaka.Resolution.Algebraic.Wlo05.EmbeddedCP1Absorbed`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace Hironaka Scheme.BlowUpSequence
-  Scheme.IdealSheafData Hironaka.Stage
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.ResolutionHironaka.Hironaka
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.Hironaka.Stage
 
 namespace Hironaka.Resolution
 
@@ -75,3 +83,6 @@ theorem cp1For_bmoOneRun_of_cp1BMOAt (h : ∀ n, CP1BMOAt k n) (T : MarkedTriple
   h T.toTriple.dim T (MarkedTriple.bmoClass_of_bmoClassFree ⟨le_rfl, hm⟩) η hη hηE hIc
 
 end Hironaka.Resolution
+
+end
+end ResolutionHironaka

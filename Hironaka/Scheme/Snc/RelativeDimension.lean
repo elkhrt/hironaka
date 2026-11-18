@@ -40,14 +40,20 @@ dimension `n − 1`", which the passage to a hypersurface of maximal contact
 (`Hironaka.Resolution.Algebraic.MaximalContact.GoingDown`) and the dimension bookkeeping of
 `Hironaka.Stage` use. -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open AlgebraicGeometry CategoryTheory IsLocalRing KaehlerDifferential
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing _root_.KaehlerDifferential
+open _root_.ResolutionHironaka.KaehlerDifferential
 open scoped TensorProduct
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
 section Ring
 
@@ -71,7 +77,7 @@ theorem isStandardSmoothOfRelativeDimension_of_ringKrullDim_add_trdeg [PerfectFi
   have : Algebra.EssFiniteType k 𝔮.ResidueField := Algebra.EssFiniteType.comp k S 𝔮.ResidueField
   have : Algebra.FormallySmooth k 𝔮.ResidueField := Algebra.FormallySmooth.of_perfectField
   have hcount :=
-    _root_.KaehlerDifferential.finrank_residueField_tensor_kaehlerDifferential k
+    ResolutionHironaka.KaehlerDifferential.finrank_residueField_tensor_kaehlerDifferential k
       (Localization.AtPrime 𝔮)
   have hdim : ringKrullDim (Localization.AtPrime 𝔮) =
       (Module.finrank 𝔮.ResidueField (CotangentSpace (Localization.AtPrime 𝔮)) : WithBot ℕ∞) := by
@@ -209,3 +215,6 @@ theorem smoothOfRelativeDimension_of_isSmoothDivisor [PerfectField k] (f : X ⟶
 end Scheme
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

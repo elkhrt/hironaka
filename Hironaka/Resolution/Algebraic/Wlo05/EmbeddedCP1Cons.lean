@@ -23,12 +23,22 @@ sequences of [Kol07, Definition 29]), and CP1 holds vacuously along the single b
 `Hironaka.Resolution.Algebraic.Wlo05.EmbeddedCP1Step22Core`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace Scheme IdealSheafData
-  BlowUpSequence Scheme.IdealSheafData Hironaka.Sequence
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.Hironaka.Sequence
 
 namespace Hironaka.Resolution
 
@@ -57,3 +67,6 @@ theorem cp1For_cons_of_not_centerContains [IsLocallyNoetherian X] (D : X.IdealSh
   exact cp1For_concat (BlowUpSequence.cons X D (BlowUpSequence.nil _)) R I E hη hηE hIc hS hR
 
 end Hironaka.Resolution
+
+end
+end ResolutionHironaka

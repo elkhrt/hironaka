@@ -48,16 +48,25 @@ condition of `B` enters; commutation of `B` with smooth morphisms is not assumed
 `Hironaka/Resolution/Algebraic/MarkedOrderReduction/SmoothLoop.lean`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace Scheme Hironaka
-  IdealSheafData BlowUpSequence Scheme.IdealSheafData
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.Hironaka _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
 namespace Hironaka.Sequence
 
-open AlgebraicGeometry
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
 
 variable {k : Type u} [Field k] [CharZero k]
 
@@ -131,7 +140,8 @@ end Hironaka.Sequence
 
 namespace Hironaka.BMO
 
-open Hironaka.Sequence AlgebraicGeometry
+open _root_.ResolutionHironaka.Hironaka.Sequence _root_.AlgebraicGeometry
+open _root_.ResolutionHironaka.AlgebraicGeometry
 
 variable {k : Type u} [Field k] [CharZero k]
 
@@ -172,3 +182,6 @@ theorem pullback_eraseEmpty_eq_nil_of_maxOrd_lt {d : ℕ} {Dom : Triple k → Pr
   exact exists_isTopErasure_totalTransformSeq_of_center_eq_top _ (T.E.comap h) hc
 
 end Hironaka.BMO
+
+end
+end ResolutionHironaka

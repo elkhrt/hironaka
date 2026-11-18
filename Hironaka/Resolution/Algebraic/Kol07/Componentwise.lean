@@ -46,13 +46,20 @@ and the conditions of [Kol07, Definition 66] transport from the center to the co
 sequence.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace Scheme BlowUpSequence
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
 
 namespace AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme
 
 
 variable {X : Scheme.{u}}
@@ -82,6 +89,7 @@ theorem length_ofCenters (c : ℕ) (D : Fin c → X.IdealSheafData) : (ofCenters
 end AlgebraicGeometry.Scheme.BlowUpSequence
 
 namespace AlgebraicGeometry.Scheme.DivisorFamily
+open _root_.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme
 
 variable {X : Scheme.{u}}
 
@@ -93,6 +101,8 @@ theorem prod_orderedComponent (F : DivisorFamily X) :
 end AlgebraicGeometry.Scheme.DivisorFamily
 
 namespace AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
 
 variable {X : Scheme.{u}}
 
@@ -113,3 +123,6 @@ theorem length_componentwiseSeq (Z : X.IdealSheafData) [Finite Z.support.generic
   exact (@Nat.card_eq_fintype_card Z.componentFamily.ι Z.componentFamily.fintype).symm
 
 end AlgebraicGeometry.Scheme.IdealSheafData
+
+end
+end ResolutionHironaka

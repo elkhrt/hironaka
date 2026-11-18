@@ -43,11 +43,16 @@ Used for the constructibility and the finiteness of the order
 (`Hironaka/Manifold/IdealSheaf/Order.lean`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 namespace AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
 
-open CategoryTheory IsLocalRing TopologicalSpace
+open CategoryTheory _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing TopologicalSpace
 
 universe u
 
@@ -55,7 +60,8 @@ variable {k : Type u} [Field k] {X : Scheme.{u}} (f : X ⟶ Spec (.of k))
 
 /-- A scheme locally of finite type over a field is locally Noetherian: on every affine open the
 ring of sections is a finitely generated `k`-algebra, hence Noetherian. -/
-theorem _root_.AlgebraicGeometry.Scheme.Hom.isLocallyNoetherian_of_field [LocallyOfFiniteType f] :
+theorem _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.Hom.isLocallyNoetherian_of_field
+    [LocallyOfFiniteType f] :
     IsLocallyNoetherian X := by
   refine isLocallyNoetherian_of_affine_cover (S := fun U : X.affineOpens => U)
     (iSup_affineOpens_eq_top X) fun U => ?_
@@ -127,3 +133,6 @@ theorem upperSemicontinuous_ord (I : X.IdealSheafData) : UpperSemicontinuous fun
 end Smooth
 
 end AlgebraicGeometry.Scheme.IdealSheafData
+
+end
+end ResolutionHironaka

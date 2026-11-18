@@ -34,11 +34,18 @@ both classes, take the same value at every marked triple of the smaller class:
   triples after Steps 1 and 2 transported along the equalities of the steps.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry Hironaka Scheme BlowUpSequence Hironaka.Sequence
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.ResolutionHironaka.Hironaka _root_.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.ResolutionHironaka.Hironaka.Sequence
 
 namespace Hironaka.BMO
 
@@ -221,3 +228,6 @@ theorem data_congr {n n' m : ℕ} (hle : n' ≤ n) (bo : ∀ d : ℕ, BOData.{u}
   bmoSeq_congr bo bo' (fun d T h₁ h₂ => hagree d k T h₁ h₂) hle T hT hT'
 
 end Hironaka.BMO
+
+end
+end ResolutionHironaka

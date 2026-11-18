@@ -37,11 +37,15 @@ Uniqueness of the quotient `x_r^{-m} φ(f)` needs no domain hypothesis: `x_r` is
 ambient ring `R[1/x_r]`, so multiplication by `x_r^m` is injective on `R'`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 namespace IsLocalRing
+open _root_.IsLocalRing
 
-open IsLocalRing
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing
 
 universe u
 
@@ -137,3 +141,6 @@ noncomputable def transformIdeal (I : Ideal R) (m : ℕ) : Ideal (chartRing x r)
     algebraMap R (chartRing x r) (x r) ^ m * g = algebraMap R (chartRing x r) f}
 
 end IsLocalRing
+
+end
+end ResolutionHironaka

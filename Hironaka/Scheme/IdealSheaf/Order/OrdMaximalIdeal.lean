@@ -27,15 +27,19 @@ Used for the embedded resolution (`Hironaka/Resolution/Algebraic/Wlo05/EmbeddedC
 `Hironaka/Resolution/Algebraic/Wlo05/EmbeddedGenericOrder.lean`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open IsLocalRing
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
-open IsLocalRing
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing
 
 variable {R : Type*} [CommRing R] [IsLocalRing R] [IsNoetherianRing R]
 
@@ -58,8 +62,10 @@ theorem ord_maximalIdeal_eq_one (h : maximalIdeal R ≠ ⊥) : ord (maximalIdeal
 end AlgebraicGeometry
 
 namespace AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
 
-open AlgebraicGeometry
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
 
 /-- An ideal sheaf whose stalk at `x` is the maximal ideal of a stalk that is not a field has order
 `1` at `x`. -/
@@ -70,3 +76,6 @@ theorem ord_eq_one_of_stalkIdeal_eq_maximalIdeal {X : Scheme.{u}} [IsLocallyNoet
   exact ord_maximalIdeal_eq_one hne
 
 end AlgebraicGeometry.Scheme.IdealSheafData
+
+end
+end ResolutionHironaka

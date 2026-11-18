@@ -46,13 +46,20 @@ This is the chart model of a point that `Hironaka.Scheme.Snc.InducedCoordinates`
 Sources: [Kol07, Definition 60]; [Hau14, Definition 4.13; Definitions 4.15–4.16]; [Sta, Tag 0BFL].
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
-open AlgebraicGeometry CategoryTheory IsLocalRing Ideal Scheme.IdealSheafData
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing Ideal
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
 universe u
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
 variable {X : Scheme.{u}}
 
@@ -230,3 +237,6 @@ theorem exists_stalk_equiv_localization_atPrime (Z : X.IdealSheafData) (x' : blo
   exact h
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

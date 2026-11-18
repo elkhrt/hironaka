@@ -35,11 +35,15 @@ affine open `⊤` of `Spec k`, and the invariance of formal smoothness under the
 `Hironaka/Algebra/RegularSmooth/Regular.lean`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
 open CategoryTheory
 
@@ -77,7 +81,8 @@ theorem Scheme.Hom.locallyOfFinitePresentation_of_field {k : Type u} [Field k]
 
 /-- Formal smoothness of a ring map is unchanged by precomposition with a ring isomorphism (the
 second half of `RingHom.FormallySmooth.respectsIso`, as an equivalence). -/
-theorem _root_.RingHom.FormallySmooth.comp_ringEquiv_iff {R S T : Type u} [CommRing R] [CommRing S]
+theorem _root_.ResolutionHironaka.RingHom.FormallySmooth.comp_ringEquiv_iff
+    {R S T : Type u} [CommRing R] [CommRing S]
     [CommRing T] (g : S →+* T) (e : R ≃+* S) :
     (g.comp e.toRingHom).FormallySmooth ↔ g.FormallySmooth := by
   refine ⟨fun H => ?_, fun H => RingHom.FormallySmooth.respectsIso.2 _ e H⟩
@@ -146,3 +151,6 @@ theorem isIso_toStalk_Spec_of_field {k : Type u} [Field k] (y : Spec (.of k)) :
   rwa [h] at this
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

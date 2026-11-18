@@ -47,13 +47,20 @@ If `q ∉ V(M)`, the complement of `V(M)` is the neighbourhood and `V(M|_V) = �
 No hypothesis on the `k`-structures of `ψ, ψ'` is needed: the argument never chooses generators.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
 namespace AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
 
-open CategoryTheory CategoryTheory.Limits IsLocalRing TopologicalSpace Topology AlgebraicGeometry
+open CategoryTheory CategoryTheory.Limits _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace Topology
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
 
 section Auxiliary
 
@@ -321,3 +328,6 @@ theorem exists_agreeOn_of_forall_completionMap_sub_mem [LocallyOfFiniteType f] {
     exact agreeOn_top _ _
 
 end AlgebraicGeometry.Scheme.IdealSheafData
+
+end
+end ResolutionHironaka

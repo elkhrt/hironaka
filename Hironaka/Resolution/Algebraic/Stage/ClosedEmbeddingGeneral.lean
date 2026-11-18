@@ -37,12 +37,19 @@ The identity at any stage `n` over any base of the tower is the induction's stat
 `OrderGeSeqAssignment.CommutesWithClosedEmbeddingsOfEmptyDivisor`) follows.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace Hironaka Scheme BlowUpSequence
-  Hironaka.Sequence Hironaka.Snc
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.ResolutionHironaka.Hironaka _root_.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.ResolutionHironaka.Hironaka.Sequence _root_.ResolutionHironaka.Hironaka.Snc
 
 namespace Hironaka.Stage
 
@@ -80,3 +87,6 @@ theorem tower_bmo_one_commutesWithClosedEmbeddingsOfEmptyDivisor
     tower_bmo_one_eq_pushforward_closedEmbedding_aux base n TX TY j hj hE hX
 
 end Hironaka.Stage
+
+end
+end ResolutionHironaka

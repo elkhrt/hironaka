@@ -25,11 +25,19 @@ index `S.length + i` it is the stop rule on `T` at `i` for the strict transform 
 form the recursion needs). Structural recursion on `S`, as for `centerContains_take_iff`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry Scheme IdealSheafData BlowUpSequence Hironaka.Resolution
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.ResolutionHironaka.Hironaka.Resolution
 
 namespace Hironaka.Sequence
 
@@ -64,3 +72,6 @@ theorem centerContains_concat_add_iff :
     exact centerContains_concat_add_iff rest T (c.strictTransform D) i
 
 end Hironaka.Sequence
+
+end
+end ResolutionHironaka

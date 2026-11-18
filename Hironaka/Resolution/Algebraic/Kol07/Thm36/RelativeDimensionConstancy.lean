@@ -49,11 +49,16 @@ The argument uses no dimension theory:
   source-locality assembles `h`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace Topology Scheme
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open TopologicalSpace Topology _root_.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
 
 namespace Hironaka.Resolution
 
@@ -219,3 +224,6 @@ theorem smoothOfRelativeDimension_sub_of_smoothLocus (X Y : Scheme.{u})
   omega
 
 end Hironaka.Resolution
+
+end
+end ResolutionHironaka

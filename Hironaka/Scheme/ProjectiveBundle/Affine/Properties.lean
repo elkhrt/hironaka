@@ -23,6 +23,9 @@ public import Mathlib.AlgebraicGeometry.ProjectiveSpectrum.Proper
   algebra of finite type over its degree-zero part.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
@@ -30,10 +33,12 @@ universe u
 open CategoryTheory CategoryTheory.Limits HomogeneousLocalization
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
 /-- A surjective graded ring map induces surjections of the degree-zero parts of the localizations
 at homogeneous elements. -/
-theorem _root_.HomogeneousLocalization.Away.map_surjective {A B : Type*} [CommRing A] [CommRing B]
+theorem _root_.ResolutionHironaka.HomogeneousLocalization.Away.map_surjective
+    {A B : Type*} [CommRing A] [CommRing B]
     {σ τ : Type*} [SetLike σ A] [AddSubgroupClass σ A] [SetLike τ B] [AddSubgroupClass τ B]
     {𝒜 : ℕ → σ} {ℬ : ℕ → τ} [GradedRing 𝒜] [GradedRing ℬ] (F : 𝒜 →+*ᵍ ℬ)
     (hF : Function.Surjective F) {i : ℕ} {s : A} (hs : s ∈ 𝒜 i) :
@@ -73,7 +78,7 @@ theorem Proj.isClosedImmersion_map_of_surjective {A B : Type u} [CommRing A] [Co
   obtain ⟨⟨i, hi⟩, s, hs⟩ := j
   have hsq := Proj.isPullback_awayι_map F hF hi s hs
   have : IsClosedImmersion (Spec.map (CommRingCat.ofHom (Away.map F s))) :=
-    IsClosedImmersion.spec_of_surjective _ (Away.map_surjective F hsurj hs)
+    IsClosedImmersion.spec_of_surjective _ (HomogeneousLocalization.Away.map_surjective F hsurj hs)
   exact (MorphismProperty.arrow_mk_iso_iff @IsClosedImmersion
     (Arrow.isoMk (hsq.isoPullback) (Iso.refl _)
       (by simp only [Scheme.Cover.pullbackHom, Iso.refl_hom, Category.comp_id]
@@ -122,3 +127,6 @@ theorem isProper_π [Module.Finite R M] : IsProper (π R M) := by
 end affineProjectiveBundle
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

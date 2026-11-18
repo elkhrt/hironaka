@@ -26,13 +26,18 @@ the stalk `𝒪_{X,x}` is the localization `Γ(X, U)_𝔮` (`IsAffineOpen.isLoca
 invariant under ring isomorphism (`IsRegularLocalRing.of_ringEquiv`), which is all the proof uses.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
 namespace Scheme
+open _root_.AlgebraicGeometry.Scheme
 
 variable {X : Scheme.{u}}
 
@@ -69,3 +74,6 @@ theorem isRegular_iff_singularLocus_eq_empty : IsRegular X ↔ X.singularLocus =
   simp only [isRegular_iff, Set.eq_empty_iff_forall_notMem, Scheme.mem_singularLocus_iff, not_not]
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

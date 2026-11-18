@@ -34,11 +34,15 @@ origin:
   commutation then descends to `R'` (`chartDerivRing`) and extends to `A'`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 namespace IsLocalRing
+open _root_.IsLocalRing
 
-open IsLocalRing
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing
 
 /-! ### Commutators of scaled derivations -/
 
@@ -47,7 +51,8 @@ section Commutator
 variable {k B : Type*} [CommRing k] [CommRing B] [Algebra k B]
 
 /-- `[f D₁, g D₂] = f (D₁ g) D₂ − g (D₂ f) D₁` for commuting derivations `D₁`, `D₂`. -/
-theorem _root_.Derivation.commutator_smul_smul (D₁ D₂ : Derivation k B B) (h : ⁅D₁, D₂⁆ = 0)
+theorem _root_.ResolutionHironaka.Derivation.commutator_smul_smul
+    (D₁ D₂ : Derivation k B B) (h : ⁅D₁, D₂⁆ = 0)
     (f g : B) : ⁅f • D₁, g • D₂⁆ = (f * D₁ g) • D₂ - (g * D₂ f) • D₁ := by
   ext z
   have h' : D₁ (D₂ z) = D₂ (D₁ z) := by
@@ -201,3 +206,6 @@ end ChartCoords
 end RegularCoords
 
 end IsLocalRing
+
+end
+end ResolutionHironaka

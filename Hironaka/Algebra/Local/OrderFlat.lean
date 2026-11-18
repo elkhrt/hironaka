@@ -43,11 +43,15 @@ transport of the bound of [Kol07, Lemma 61] along the chart-ring map is
 `Hironaka/Scheme/IdealSheaf/Order/Smooth.lean`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 namespace IsLocalRing
+open _root_.IsLocalRing
 
-open IsLocalRing
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing
 
 variable {A B : Type*} [CommRing A] [CommRing B] [IsLocalRing A] [IsLocalRing B]
 
@@ -166,3 +170,6 @@ theorem ordFaithful_algebraMap_atPrime_of_flat {D : Type*} [CommRing D] [Algebra
     Localization.AtPrime.map_eq_maximalIdeal]
 
 end IsLocalRing
+
+end
+end ResolutionHironaka

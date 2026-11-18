@@ -42,12 +42,21 @@ in place of the stalk equality, is the one that proves CP1
 `Hironaka.Resolution.Algebraic.Wlo05.EmbeddedCP1At`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace Hironaka Scheme BlowUpSequence
-  Scheme.IdealSheafData Hironaka.BMO Hironaka.Stage
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.ResolutionHironaka.Hironaka _root_.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.Hironaka.BMO _root_.ResolutionHironaka.Hironaka.Stage
 
 namespace Hironaka.Resolution
 
@@ -110,3 +119,6 @@ theorem claimKC_of_claimBMOAt (h : ∀ n, ClaimBMOAt k n) : ClaimKC k := by
   exact h' T (MarkedTriple.bmoClass_of_bmoClassFree ⟨le_rfl, hm⟩) η hη hηE hIc n hn hfirst p hp
 
 end Hironaka.Resolution
+
+end
+end ResolutionHironaka

@@ -39,11 +39,17 @@ finite type over `k`, hence Jacobson — `exists_isClosed_singleton_mem_speciali
 has every relative dimension (`smoothOfRelativeDimension_of_isEmpty`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace Hironaka Scheme
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.ResolutionHironaka.Hironaka _root_.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
 
 namespace Hironaka.Stage
 
@@ -93,3 +99,6 @@ theorem bmoClass_of_closedEmbedding [CharZero k] {TX TY : MarkedTriple k}
   ⟨le_rfl, hasDimLE_of_closedEmbedding j hTX.2.1, hj.2.trans hTX.2.2⟩
 
 end Hironaka.Stage
+
+end
+end ResolutionHironaka

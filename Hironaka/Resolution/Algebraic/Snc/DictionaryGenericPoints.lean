@@ -43,12 +43,20 @@ These lemmas serve the splitting of an ideal into its monomial and nonmonomial p
 simple normal crossing divisor [Kol07, Definition–Lemma 110], in the marked order reduction.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace Scheme.IdealSheafData Scheme IsLocalRing
-  Ideal
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing _root_.Ideal
+open _root_.ResolutionHironaka.Ideal
 
 namespace Hironaka.BMO
 
@@ -147,3 +155,6 @@ theorem AlgebraicGeometry.Scheme.DivisorFamily.mem_support_iff_exists {X : Schem
   unfold DivisorFamily.support
   rw [← Finset.sup_univ_eq_iSup, Closeds.mem_finset_sup]
   simp only [Finset.mem_univ, true_and]
+
+end
+end ResolutionHironaka

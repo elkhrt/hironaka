@@ -43,11 +43,15 @@ and the induction on the dimension in `Hironaka/Resolution/Algebraic/Stage/` com
 at `n` and at `n' ≤ n` on the same triple (`Hironaka/Resolution/Algebraic/Stage/CongrBMO.lean`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open AlgebraicGeometry TopologicalSpace Finset
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry _root_.TopologicalSpace
+open _root_.ResolutionHironaka.TopologicalSpace Finset
 
 namespace Hironaka.Monomial
 
@@ -169,3 +173,6 @@ theorem realize_eq_of_le {X : Scheme.{u}} (Φ : PieceFamily X) {n n' m : ℕ} (h
 end PieceFamily
 
 end Hironaka.Monomial
+
+end
+end ResolutionHironaka

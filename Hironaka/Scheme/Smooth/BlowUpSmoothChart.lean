@@ -43,13 +43,17 @@ smoothness of `B_Z X`: Kollár's "`B_Z X` is smooth" for a smooth blow-up [Kol07
 read on one chart, whose coordinates are those of [Hau14, Proposition 5.4].
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
-open AlgebraicGeometry CategoryTheory
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
 
 universe u
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
 section AffineModel
 
@@ -69,8 +73,12 @@ end AffineModel
 end AlgebraicGeometry
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
-open Scheme.IdealSheafData AlgebraicGeometry CoordinateSubspace
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData _root_.AlgebraicGeometry
+open _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.ResolutionHironaka.AlgebraicGeometry.CoordinateSubspace
 
 section Model
 
@@ -163,3 +171,6 @@ theorem smoothOfRelativeDimension_blowUpπ_comap (E : EtaleCoordinatesAdapted f 
 end Chart
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

@@ -26,6 +26,9 @@ instance chain for Dedekind domains), a polynomial ring over a regular ring is r
 and a localization of a regular ring at a prime is regular local by definition of `IsRegularRing`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u v
@@ -34,6 +37,7 @@ open IsLocalRing KaehlerDifferential MvPolynomial
 open scoped TensorProduct
 
 namespace KaehlerDifferential
+open _root_.KaehlerDifferential
 
 /-- The `i`-th coordinate of `d x` in the basis `d x_j` of `Ω[R[x_j] ⁄ R]` is `∂x/∂x_i`
 ([Sta, Tag 00RX], "`d f = ∑ (∂f/∂x_i) d x_i`"). -/
@@ -106,6 +110,7 @@ theorem residueFieldTensorMvPolynomialLocalizationBasis_repr_tmul_D (x : MvPolyn
     ← IsScalarTower.algebraMap_apply]
 
 end KaehlerDifferential
+open _root_.ResolutionHironaka.KaehlerDifferential
 
 /-- For a field `k` and a prime `Q` of `k[x_1, …, x_N]`, the localization `k[x]_Q` is a regular
 local ring (the regularity of the ambient ring in the proof of [Sta, Tag 00TS]). -/
@@ -113,3 +118,6 @@ theorem MvPolynomial.isRegularLocalRing_localization_atPrime {k : Type u} [Field
     [Finite ι] (Q : Ideal (MvPolynomial ι k)) [Q.IsPrime] :
     IsRegularLocalRing (Localization.AtPrime Q) :=
   IsRegularRing.isRegularLocalRing_localization Q
+
+end
+end ResolutionHironaka

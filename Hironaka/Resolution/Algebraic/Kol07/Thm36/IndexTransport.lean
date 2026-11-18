@@ -40,13 +40,22 @@ isomorphism, because the predicate `CenterContains` transports exactly.
   principalization sequence).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry Scheme IdealSheafData Scheme.Hom Hironaka
-  BlowUpSequence
-open AlgebraicGeometry (comap_map_of_isClosedImmersion ker_blowUpMap_of_isClosedImmersion)
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry.Scheme.Hom _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.Hom
+open _root_.ResolutionHironaka.Hironaka
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.ResolutionHironaka.AlgebraicGeometry (comap_map_of_isClosedImmersion
+    ker_blowUpMap_of_isClosedImmersion)
 
 namespace Hironaka.Resolution
 
@@ -284,3 +293,6 @@ theorem BR_affine_eq_of_BP_eq_pullback (TA TA' : Triple k) (φ : TA'.X.left ⟶ 
 end BRAffine
 
 end Hironaka.Resolution
+
+end
+end ResolutionHironaka

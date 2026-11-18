@@ -76,16 +76,24 @@ condition of
   summands first (`IsOrderSeq.pullback_of_equidim`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open CategoryTheory CategoryTheory.Limits AlgebraicGeometry Scheme.IdealSheafData
-  Scheme IsLocalRing BlowUpSequence TopologicalSpace
+open CategoryTheory CategoryTheory.Limits _root_.AlgebraicGeometry
+open _root_.ResolutionHironaka.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence _root_.TopologicalSpace
+open _root_.ResolutionHironaka.TopologicalSpace
 
 namespace Hironaka.Sequence
 
-open AlgebraicGeometry
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
 
 variable {X : Scheme.{u}}
 
@@ -261,7 +269,7 @@ end Hironaka.Sequence
 
 namespace Hironaka.Sequence
 
-open AlgebraicGeometry
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
 
 variable {k : Type u} [Field k] {X : Scheme.{u}}
 
@@ -387,7 +395,7 @@ of order `m` ([Kol07, Definition 65]) for the `Ts i`, then `Z` is one for `T`: t
 are local on `X` (`smooth_subschemeι_comp_of_covers`, `hasSncWith_of_covers`,
 `ordAlongEq_of_covers`). This is the step left implicit in the proof of
 [Kol07, Proposition 37]. -/
-theorem _root_.AlgebraicGeometry.Triple.isOrderBlowUp_of_isPullbackOf_covers
+theorem _root_.ResolutionHironaka.AlgebraicGeometry.Triple.isOrderBlowUp_of_isPullbackOf_covers
     {T : Triple k} {σ : Type u}
     {Ts : σ → Triple k} (ι : ∀ i, (Ts i).X.left ⟶ T.X.left) [∀ i, IsOpenImmersion (ι i)]
     (hcov : ∀ x, ∃ i w, ι i w = x) (hp : ∀ i, (Ts i).IsPullbackOf T (ι i))
@@ -426,8 +434,9 @@ theorem MarkedTriple.isOrderGeBlowUp_of_isPullbackOf_covers {T : MarkedTriple k}
 end Hironaka
 
 namespace AlgebraicGeometry.Triple
+open _root_.AlgebraicGeometry
 
-open Hironaka
+open _root_.ResolutionHironaka.Hironaka
 
 variable {k : Type u} [Field k]
 
@@ -516,12 +525,13 @@ end MarkedTriple
 end Hironaka
 
 namespace AlgebraicGeometry.Triple
+open _root_.AlgebraicGeometry
 
-open Hironaka
+open _root_.ResolutionHironaka.Hironaka
 
 variable {k : Type u} [Field k]
 
-open Scheme
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
 
 /-- The descent of the proof of [Kol07, Proposition 37] with the order condition of
 [Kol07, Definition 66]: if each `S i` is a smooth blow-up sequence of order `m` for the
@@ -579,7 +589,7 @@ variable {k : Type u} [Field k]
 
 namespace MarkedTriple
 
-open Scheme
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
 
 /-- The marked version of the descent with the order. -/
 theorem exists_isOrderGeSeq_pullback_eq_of_agreeOnOverlaps [CharZero k] {T : MarkedTriple k}
@@ -621,3 +631,6 @@ theorem exists_isOrderGeSeq_pullback_coverDesc_eq [CharZero k] (T : MarkedTriple
 end MarkedTriple
 
 end Hironaka
+
+end
+end ResolutionHironaka

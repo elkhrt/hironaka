@@ -32,11 +32,16 @@ The finite family is assembled into one étale pair on a disjoint union in
 `Hironaka/Resolution/Algebraic/MaximalContact/EtaleEquivSigma.lean`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
-open AlgebraicGeometry CategoryTheory CategoryTheory.Limits TopologicalSpace
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
+open CategoryTheory.Limits TopologicalSpace
 
 universe u
 
@@ -101,3 +106,6 @@ theorem exists_finset_subset_biUnion_range (f : X ⟶ Spec (.of k)) [LocallyOfFi
     ht.trans (Set.iUnion₂_mono fun p _ => Set.inter_subset_right)⟩
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

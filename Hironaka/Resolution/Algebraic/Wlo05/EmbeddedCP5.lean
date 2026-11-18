@@ -78,12 +78,21 @@ the literature. Used in `Hironaka.Resolution.Algebraic.Wlo05.EmbeddedCP6Loop` an
 `Hironaka.Resolution.Algebraic.Wlo05.EmbeddedCPBridge`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace Scheme.IdealSheafData
-  Scheme Hironaka BlowUpSequence Hironaka.Sequence Hironaka.Stage
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.Hironaka
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.ResolutionHironaka.Hironaka.Sequence _root_.ResolutionHironaka.Hironaka.Stage
 
 namespace Hironaka.Resolution
 
@@ -445,3 +454,6 @@ theorem protected_bedAux (N : ℕ) : ∀ (T : MarkedTriple k) (hm : T.m = 1)
       fun p _ => stalkIdeal_markedTransformSeq_bmoOneRun_last_eq_top T hm p⟩
 
 end Hironaka.Resolution
+
+end
+end ResolutionHironaka

@@ -33,15 +33,22 @@ the affine model (`HironakaExamples/Sequence/Remark33Iso.lean`):
   when the divisor is invertible.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry Scheme.IdealSheafData CoordinateSubspace MvPolynomial
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.CoordinateSubspace MvPolynomial
 
 /-! ### Ring-level helpers: colon ideals along surjective and bijective ring maps -/
 
 namespace Ideal
+open _root_.Ideal
 
 variable {R S : Type*} [CommRing R] [CommRing S]
 
@@ -80,6 +87,7 @@ theorem map_colon_of_bijective (f : R →+* S) (hf : Function.Bijective f) (I J 
 end Ideal
 
 namespace AlgebraicGeometry.Remark33
+open _root_.AlgebraicGeometry
 
 /-! ### Sheaf-level helpers: inequalities on a cover by open immersions, colons along them -/
 
@@ -137,3 +145,6 @@ theorem specIdealSheaf_colon (P Q : Ideal R) (hQ : (specIdealSheaf Q).IsInvertib
 end Spec
 
 end AlgebraicGeometry.Remark33
+
+end
+end ResolutionHironaka

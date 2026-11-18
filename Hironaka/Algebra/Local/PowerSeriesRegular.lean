@@ -33,11 +33,16 @@ so `spanFinrank 𝔪 ≤ n ≤ dim ≤ spanFinrank 𝔪`: the ring is regular
 primes needs to be exhibited, and no characteristic hypothesis enters.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 namespace IsLocalRing
+open _root_.IsLocalRing
 
-open IsLocalRing MvPowerSeries
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing _root_.MvPowerSeries
+open _root_.ResolutionHironaka.MvPowerSeries
 
 variable (K : Type*) [Field K]
 
@@ -90,3 +95,6 @@ noncomputable abbrev RegularCoords.stdMvPowerSeries [CharZero K] (n : ℕ) :
     (ringKrullDim_mvPowerSeries K n).symm
 
 end IsLocalRing
+
+end
+end ResolutionHironaka

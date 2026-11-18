@@ -36,11 +36,15 @@ two triples of a pull-back pair (`MarkedTriple.IsPullbackOf`), of a base-change 
 is the corresponding field of `bmo T.m` read through the mark congruence `seq_congr_mark`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry Hironaka
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.ResolutionHironaka.Hironaka
 
 namespace Hironaka
 
@@ -135,3 +139,6 @@ theorem amalgam_indifferentToEmptyMembers : (amalgam bmo k).IndifferentToEmptyMe
     (bmoClass_of_amalgamClass k hT) ⟨hT'.1, hT'.2, rfl⟩
 
 end Hironaka.Stage
+
+end
+end ResolutionHironaka

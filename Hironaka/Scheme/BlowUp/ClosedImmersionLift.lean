@@ -36,15 +36,22 @@ theorems can use (`AlgebraicGeometry.Scheme.Hom.pushforwardBlowUp`, the morphism
   cartesian (`comap_map_of_isPullback`, `isPullback_blowUpMap_of_isPullback`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open CategoryTheory CategoryTheory.Limits AlgebraicGeometry
+open CategoryTheory CategoryTheory.Limits _root_.AlgebraicGeometry
+open _root_.ResolutionHironaka.AlgebraicGeometry
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
-open Scheme.IdealSheafData Scheme.Hom
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry.Scheme.Hom _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.Hom
 
 variable {X Y : Scheme.{u}}
 
@@ -223,3 +230,6 @@ theorem isPullback_blowUpMap_of_isPullback {X' Y' : Scheme.{u}} {j : Y ⟶ X} {h
       eqToHom_comp_blowUpπ (comap_comap_eq_of_comm D j h j' hS sq.w), sq.w]
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

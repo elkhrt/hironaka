@@ -50,13 +50,20 @@ equation is `HomIsOver.comp_over`), and a base change of triples is a cartesian 
 ambient triple, which is what `Triple.ClosedEmbedding` asks.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry Scheme.IdealSheafData Scheme
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
 /-- **Kollár's functorial principalization** [Kol07, Theorem 35]. There is a family `BP` of blow-up
 sequence functors on triples (`BlowUpSequenceFunctor (Triple k)`), one for each field `k` of
@@ -139,3 +146,6 @@ theorem exists_functorial_principalization :
       ⟨HomIsOver.comp_over (f := j.left) (S := Spec (.of k)), hI, rfl⟩ hTE
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

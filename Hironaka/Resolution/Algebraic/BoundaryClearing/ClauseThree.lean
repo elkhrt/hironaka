@@ -57,12 +57,24 @@ the trivial blow-up in this library's total-transform convention (`Assembly.lean
 `Hironaka/Resolution/Algebraic/OrderReduction/ClosedEmbedding.lean`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace IsLocalRing Scheme
-  Scheme.Hom Hironaka IdealSheafData BlowUpSequence Scheme.IdealSheafData Hironaka.Local
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace _root_.IsLocalRing
+open _root_.ResolutionHironaka.IsLocalRing _root_.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme _root_.AlgebraicGeometry.Scheme.Hom
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.Hom _root_.ResolutionHironaka.Hironaka
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.Hironaka.Local
 
 namespace Hironaka.BD
 
@@ -297,3 +309,6 @@ theorem eq_pushforward_of_quotient {n : ℕ} (hn : T.HasDimLE n) {Dom : MarkedTr
     exact (pushforward_nil _).symm
 
 end Hironaka.BD
+
+end
+end ResolutionHironaka

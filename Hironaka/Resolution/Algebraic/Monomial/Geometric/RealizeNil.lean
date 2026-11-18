@@ -33,11 +33,18 @@ whose sum is the order of the monomial ideal there (`ord_monomial_eq_total` of
 `Hironaka/Resolution/Algebraic/MarkedOrderReduction/Clause3.lean` uses for the Step 3 half of clause
 (3). Not in the sources as statements. -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace Scheme Scheme.IdealSheafData
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
 namespace Hironaka.Monomial
 
@@ -117,3 +124,6 @@ theorem realize_eq_nil {k : Type u} [Field k] {X : Scheme.{u}}
 end PieceFamily
 
 end Hironaka.Monomial
+
+end
+end ResolutionHironaka

@@ -1,4 +1,12 @@
+# Hironaka's resolution of singularities in characteristic zero, formalized in Lean 4 over Mathlib:
+# the library `Hironaka`
+# (schemes, analytic manifolds and analytic spaces) and the worked examples `HironakaExamples`.
 name = "hironaka"
+keywords = ["math", "algebraic-geometry", "resolution-of-singularities", "analytic-geometry"]
+description = "Hironaka's resolution of singularities in characteristic zero, formalized in Lean 4 over Mathlib."
+license = "Apache-2.0"
+licenseFiles = ["LICENSE"]
+readmeFile = "README.md"
 defaultTargets = ["Hironaka"]
 enableArtifactCache = true
 
@@ -7,6 +15,7 @@ pp.unicode.fun = true
 relaxedAutoImplicit = false
 autoImplicit = false
 weak.linter.mathlibStandardSet = true
+# The copyright block of every file is checked by scripts/check_header.py, so Mathlib's header style check is off.
 weak.linter.style.header = false
 maxSynthPendingDepth = 3
 

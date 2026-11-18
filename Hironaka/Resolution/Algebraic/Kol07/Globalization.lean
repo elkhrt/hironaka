@@ -74,11 +74,16 @@ surjections commutes with the surjections in every class of Theorem 105, whose m
 smooth.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open CategoryTheory CategoryTheory.Limits AlgebraicGeometry Hironaka TopologicalSpace
+open CategoryTheory CategoryTheory.Limits _root_.AlgebraicGeometry
+open _root_.ResolutionHironaka.AlgebraicGeometry _root_.ResolutionHironaka.Hironaka
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
 
 namespace Hironaka.Sequence
 
@@ -321,8 +326,9 @@ theorem IsGlobalizationClass.respectsIso {M : MorphismProperty Scheme.{u}}
 end Hironaka
 
 namespace AlgebraicGeometry.Triple
+open _root_.AlgebraicGeometry
 
-open Hironaka
+open _root_.ResolutionHironaka.Hironaka
 
 variable {k : Type u} [Field k]
 
@@ -417,3 +423,6 @@ theorem CommutesWithSurjectionsIn.commutesWith {B : OrderGeSeqAssignment k Dom}
 end OrderGeSeqAssignment
 
 end Hironaka
+
+end
+end ResolutionHironaka

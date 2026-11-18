@@ -49,12 +49,21 @@ whole run, and `I_r = ùí™` at the end of the run by [Kol07, Theorem 69 (1)]) ‚Ä
 those two unproved hypotheses and are not used by the proof of the theorem.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace Scheme Hironaka BlowUpSequence
-  Scheme.IdealSheafData Hironaka.Sequence Hironaka.BMO
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.Hironaka
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.Hironaka.Sequence _root_.ResolutionHironaka.Hironaka.BMO
 
 namespace Hironaka.Resolution
 
@@ -194,3 +203,6 @@ theorem embeddedEnd_bmoOneRun (hG : StratumBlowUp k) (hL : CentersInNonmonomialS
       (hs.pairwise ha hb hab) (Fin.last _)
 
 end Hironaka.Resolution
+
+end
+end ResolutionHironaka

@@ -48,11 +48,16 @@ blow-up sequence functors that we construct". This module provides
   (`IsPullbackOf.induced_isPullbackOf`) and two transports along an equality of stage indices.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open CategoryTheory CategoryTheory.Limits AlgebraicGeometry Scheme.BlowUpSequence
+open CategoryTheory CategoryTheory.Limits _root_.AlgebraicGeometry
+open _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
 
 namespace Hironaka
 
@@ -66,7 +71,8 @@ images of `T.I` and `T.E` along the first projection. Finite type, quasi-compact
 separatedness, smoothness and the relative dimension over `L` are base-change stability;
 nonvanishing on components is flat pullback; simple normal crossings is
 `isSnc_comap_of_isPullback_specMap`. -/
-noncomputable def _root_.AlgebraicGeometry.Triple.baseChange [CharZero k] (T : Triple k)
+noncomputable def _root_.ResolutionHironaka.AlgebraicGeometry.Triple.baseChange
+    [CharZero k] (T : Triple k)
     (σ : k →+* L) : Triple L where
   X := .ofHom (pullback.snd (T.X.left ↘ Spec (.of k)) (Spec.map (CommRingCat.ofHom σ)))
     (
@@ -93,14 +99,16 @@ noncomputable def _root_.AlgebraicGeometry.Triple.baseChange [CharZero k] (T : T
     isSnc_comap_of_isPullback_specMap (IsPullback.of_hasPullback _ _) T.isSnc
 
 /-- The ambient scheme of the base change is the fibre product. -/
-theorem _root_.AlgebraicGeometry.Triple.baseChange_X [CharZero k] (T : Triple k) (σ : k →+* L) :
+theorem _root_.ResolutionHironaka.AlgebraicGeometry.Triple.baseChange_X
+    [CharZero k] (T : Triple k) (σ : k →+* L) :
     (T.baseChange σ).X.left = Limits.pullback (T.X.left ↘ Spec (.of k))
     (Spec.map (CommRingCat.ofHom σ)) :=
   rfl
 
 /-- The base change of `T` carries the base-change data of `T` (`IsBaseChangeOf`) through the
 first projection. -/
-theorem _root_.AlgebraicGeometry.Triple.isBaseChangeOf_baseChange [CharZero k] (T : Triple k)
+theorem _root_.ResolutionHironaka.AlgebraicGeometry.Triple.isBaseChangeOf_baseChange
+    [CharZero k] (T : Triple k)
     (σ : k →+* L) : (T.baseChange σ).IsBaseChangeOf T σ (pullback.fst _ _) :=
   ⟨IsPullback.of_hasPullback _ _, rfl, rfl⟩
 
@@ -120,12 +128,13 @@ theorem MarkedTriple.isBaseChangeOf_baseChange [CharZero k] (T : MarkedTriple k)
 end Hironaka
 
 namespace AlgebraicGeometry.Triple.IsBaseChangeOf
+open _root_.AlgebraicGeometry
 
-open Hironaka
+open _root_.ResolutionHironaka.Hironaka
 
 variable {k : Type u} [Field k] {L : Type u} [Field L]
 
-open Scheme
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
 
 variable {T : Triple k} {T' : Triple L} {σ : k →+* L} {p : T'.X.left ⟶ T.X.left}
 
@@ -199,7 +208,7 @@ variable {k : Type u} [Field k] {L : Type u} [Field L]
 
 namespace MarkedTriple.IsBaseChangeOf
 
-open Scheme
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
 
 variable {T : MarkedTriple k} {T' : MarkedTriple L} {σ : k →+* L} {p : T'.X.left ⟶ T.X.left}
 
@@ -276,12 +285,13 @@ The analogues of `induced_isBaseChangeOf` above for the pullback along a smooth 
 `inducedTriple_pullback` of `Hironaka/Scheme/BlowUpSequence/PullbackInduced.lean`. -/
 
 namespace AlgebraicGeometry.Triple
+open _root_.AlgebraicGeometry
 
-open Hironaka
+open _root_.ResolutionHironaka.Hironaka
 
-open Scheme
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
 
-open AlgebraicGeometry
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
 
 variable {k : Type u} [Field k]
 
@@ -332,3 +342,6 @@ theorem isBaseChangeOf_induced_of_eq_idx {L : Type u} [Field L] [CharZero L] {T'
   exact hq
 
 end AlgebraicGeometry.Triple
+
+end
+end ResolutionHironaka

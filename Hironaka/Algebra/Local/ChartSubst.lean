@@ -26,6 +26,9 @@ The transfer of this bound from `K⟦x⟧` to a regular local ring `R` through t
 `R̂ ≅ K⟦x⟧` is made in `Hironaka/Algebra/Local/ChartCompletion.lean` and the modules following it.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 namespace IsLocalRing
@@ -218,3 +221,6 @@ theorem exists_X_pow_mul_eq_subst_chartSubst {f : MvPowerSeries (Fin n) K} {m : 
     exact_mod_cast (by omega : (chartExp r d - Finsupp.single r m).degree ≤ m)
 
 end IsLocalRing
+
+end
+end ResolutionHironaka

@@ -35,11 +35,15 @@ The membership criterion of the charts is in `Hironaka.Scheme.BlowUp.Glue.Global
 from the affine criterion of the universal property.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
-open AlgebraicGeometry CategoryTheory
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
 
 universe u
 
@@ -120,3 +124,6 @@ theorem blowUpOf.isProper_π [IsLocallyNoetherian X] : IsProper (blowUpOf.π I h
   infer_instance
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

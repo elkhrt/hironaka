@@ -32,9 +32,13 @@ blow-up in the proof of [Kol07, Theorem 88] for one blow-up
 (`Hironaka/Resolution/Algebraic/Kol07/Theorem88BlowUp.lean`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 namespace IsLocalRing
+open _root_.IsLocalRing
 
 section ChartYR
 
@@ -207,3 +211,6 @@ theorem chartDlogpow_le_logDerivativeIter (hh : h < r) (t : ℕ) (K : Ideal (cha
 end RegularCoords
 
 end IsLocalRing
+
+end
+end ResolutionHironaka

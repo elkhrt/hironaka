@@ -43,11 +43,16 @@ so its reducedness is that of a scheme-theoretic image: the kernel of a morphism
 scheme is radical (`radical_ker_eq_self`), so the image is reduced (`isReduced_image`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace Scheme
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
 
 namespace Hironaka.Resolution
 
@@ -199,3 +204,6 @@ theorem comap_irreducibleComponentIdeal_le {Z : Scheme.{u}} [IsNoetherian Z] [Is
   rwa [Scheme.IdealSheafData.vanishingIdeal_support, radical_eq_self_of_isReduced_subscheme] at h2
 
 end Hironaka.Resolution
+
+end
+end ResolutionHironaka

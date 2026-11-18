@@ -50,11 +50,15 @@ inclusion is the local input of [Kol07, Theorem 76] for one blow-up on schemes
 `Hironaka/Algebra/Local/BlowUpLiftLog.lean`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 namespace Derivation
+open _root_.Derivation
 
-open IsLocalRing
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing
 
 universe u
 
@@ -137,3 +141,6 @@ theorem transformIdeal_derivative_le {I : Ideal R} {m : ℕ} (hI : I ≤ chartCe
   rwa [← algebraMap_pow_mul_right_injective x r m hwz]
 
 end Derivation
+
+end
+end ResolutionHironaka

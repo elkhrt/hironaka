@@ -24,9 +24,13 @@ Two notions read off the maximal ideal `𝔪` of a local ring `R`.
   systems of `𝔪`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 namespace IsLocalRing
+open _root_.IsLocalRing
 
 variable {R : Type*} [CommRing R] [IsLocalRing R]
 
@@ -42,3 +46,6 @@ def IsRegularSystemOfParameters {n : ℕ} (z : Fin n → R) : Prop :=
   Ideal.span (Set.range z) = maximalIdeal R ∧ (n : WithBot ℕ∞) = ringKrullDim R
 
 end IsLocalRing
+
+end
+end ResolutionHironaka

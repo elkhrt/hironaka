@@ -47,12 +47,20 @@ proved by the descent along closed embeddings of Kollár's Claim 71.2 ([Kol07, 7
   component of `H` (`isNonzeroEverywhere_comap_subschemeι_of_Zminus1_eq_top`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory CategoryTheory.Limits AlgebraicGeometry TopologicalSpace Scheme.IdealSheafData
-  Scheme.BlowUpSequence Hironaka.Sequence IsLocalRing
+open CategoryTheory CategoryTheory.Limits _root_.AlgebraicGeometry
+open _root_.ResolutionHironaka.AlgebraicGeometry _root_.TopologicalSpace
+open _root_.ResolutionHironaka.TopologicalSpace _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.ResolutionHironaka.Hironaka.Sequence _root_.IsLocalRing
+open _root_.ResolutionHironaka.IsLocalRing
 
 namespace Hironaka.Resolution
 
@@ -232,3 +240,6 @@ theorem isNonzeroEverywhere_comap_subschemeι_of_Zminus1_eq_top {X : Scheme.{u}}
   exact hin
 
 end Hironaka.Resolution
+
+end
+end ResolutionHironaka

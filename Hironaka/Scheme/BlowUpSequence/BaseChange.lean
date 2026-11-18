@@ -46,11 +46,15 @@ construction `Triple.baseChange`, are in `Hironaka/Scheme/BlowUpSequence/BaseCha
 `BaseChangeParameters.lean` and `BaseChangeTriple.lean`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry Limits Scheme.BlowUpSequence
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.CategoryTheory.Limits _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
 
 namespace Hironaka
 
@@ -59,7 +63,7 @@ variable {k : Type u} [Field k] {L : Type u} [Field L]
 /-- `Spec σ` is flat and surjective for a field extension `σ : k → L` (Kollár's
 `Spec L → Spec K`, "possibly not of finite type", [Kol07, 34.2]): `σ` is faithfully flat, `L`
 being a nonzero free `k`-module. -/
-theorem _root_.AlgebraicGeometry.flat_and_surjective_specMap (σ : k →+* L) :
+theorem _root_.ResolutionHironaka.AlgebraicGeometry.flat_and_surjective_specMap (σ : k →+* L) :
     Flat (Spec.map (CommRingCat.ofHom σ)) ∧ Surjective (Spec.map (CommRingCat.ofHom σ)) := by
   rw [flat_and_surjective_SpecMap_iff, CommRingCat.hom_ofHom]
   let _ := σ.toAlgebra
@@ -69,12 +73,14 @@ theorem _root_.AlgebraicGeometry.flat_and_surjective_specMap (σ : k →+* L) :
 end Hironaka
 
 namespace AlgebraicGeometry.Triple.IsBaseChangeOf
+open _root_.AlgebraicGeometry
 
-open Hironaka
+open _root_.ResolutionHironaka.Hironaka
 
 variable {k : Type u} [Field k] {L : Type u} [Field L]
 
-open Scheme AlgebraicGeometry
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
 
 variable {T : Triple k} {T' : Triple L} {σ : k →+* L} {p : T'.X.left ⟶ T.X.left}
 
@@ -157,3 +163,6 @@ namespace Hironaka
 variable {k : Type u} [Field k] {L : Type u} [Field L]
 
 end Hironaka
+
+end
+end ResolutionHironaka

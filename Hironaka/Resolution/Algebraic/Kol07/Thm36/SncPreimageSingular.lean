@@ -68,29 +68,35 @@ in `Hironaka.Resolution.Algebraic.Kol07.Thm36.AffineTheorem36IsoSnc`, giving cla
 36 for `BR_affine`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry Scheme BlowUpSequence
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
 
 namespace Hironaka.Resolution
 
-open Scheme
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
 
 variable {k : Type u} [Field k] [CharZero k] {A X : Scheme.{u}}
 
 /-! ### Bookkeeping: divisor-family supports and the last stage lift -/
 
 /-- The support of a divisor family with no members is empty. -/
-theorem _root_.AlgebraicGeometry.Scheme.DivisorFamily.coe_support_eq_empty_of_isEmpty
+theorem _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.DivisorFamily.coe_support_eq_empty_of_isEmpty
     (E : DivisorFamily A) (hE : IsEmpty E.ι) :
     (E.support : Set A) = ∅ := by
   rw [DivisorFamily.coe_support_eq_iUnion]
   exact Set.iUnion_of_empty _
 
 /-- A point lies on the inverse image family `h⁻¹(E)` iff its image lies on `E`. -/
-theorem _root_.AlgebraicGeometry.Scheme.DivisorFamily.mem_comap_support_iff {Y : Scheme.{u}}
+theorem _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.DivisorFamily.mem_comap_support_iff
+    {Y : Scheme.{u}}
     (E : DivisorFamily A) (g : Y ⟶ A)
     (y : Y) : y ∈ (E.comap g).support ↔ g y ∈ E.support := by
   rw [← SetLike.mem_coe, ← SetLike.mem_coe, DivisorFamily.coe_support_eq_iUnion,
@@ -398,3 +404,6 @@ theorem exists_isSnc_comap_totalTransformSeq_take (f : A ⟶ Spec (CommRingCat.o
     (isSmooth_take f hS j) I E hE emb hI hle' hsnc' hnotle' hsmX hno
 
 end Hironaka.Resolution
+
+end
+end ResolutionHironaka

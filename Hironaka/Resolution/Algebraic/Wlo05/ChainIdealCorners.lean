@@ -35,11 +35,14 @@ of the embedded desingularization, the local form of the ideal at the absorbing 
   `Hironaka.Resolution.Algebraic.Wlo05.EmbeddedChainCaseA`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open Ideal
+open _root_.Ideal _root_.ResolutionHironaka.Ideal
 
 namespace Hironaka.Resolution
 
@@ -100,3 +103,6 @@ theorem chainIdeal_one_eq_span (g : R) (M : Fin 1 → R) :
     exact ⟨0, chainGen_zero _ _⟩
 
 end Hironaka.Resolution
+
+end
+end ResolutionHironaka

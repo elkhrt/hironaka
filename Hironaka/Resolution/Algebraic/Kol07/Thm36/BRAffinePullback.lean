@@ -63,12 +63,19 @@ are integral (`isIntegral_irreducibleComponentOpen`, `isIntegral_irreducibleComp
 Hironaka's Main Theorems (`Hironaka.Resolution.Algebraic.Hir64`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace Scheme Hironaka BlowUpSequence
-  Hironaka.Sequence
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.Hironaka
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.ResolutionHironaka.Hironaka.Sequence
 
 namespace Hironaka.Resolution
 
@@ -180,3 +187,6 @@ theorem BRAffine_eq_eraseEmpty_pullback_of_admissible (X Z : Scheme.{u})
       ← take_pullback, ← pullback_comp, hsq, pullback_comp]
 
 end Hironaka.Resolution
+
+end
+end ResolutionHironaka

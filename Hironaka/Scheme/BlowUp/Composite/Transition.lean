@@ -38,13 +38,20 @@ exceptional divisor (`Hironaka.Scheme.IdealSheaf.Order.ExceptionalOrder`,
 `Hironaka.Scheme.Snc.ChartStalk`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
-open Scheme.IdealSheafData
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
-open AlgebraicGeometry CategoryTheory Scheme.IdealSheafData TopologicalSpace
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData TopologicalSpace
 
 universe u
 
@@ -259,3 +266,6 @@ theorem chartIdeal_map_transition :
 end SchemeLevel
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

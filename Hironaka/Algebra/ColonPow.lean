@@ -36,11 +36,15 @@ behind the weak transform of an ideal sheaf [Hir64, Ch. 0, §5, p. 142] on the s
 behind the algebra of marked transforms of ideal sheaves on analytic manifolds.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 /-! ### Colon algebra in a domain: exact division by a power of a nonzero element -/
 
 namespace Ideal
+open _root_.Ideal
 
 variable {R : Type*} [CommRing R]
 
@@ -129,6 +133,7 @@ end Ideal
 /-! ### The colon by a power of a parameter of order `≤ m` -/
 
 namespace IsLocalRing
+open _root_.IsLocalRing
 
 section ColonOrder
 
@@ -174,3 +179,6 @@ theorem colon_span_singleton_pow_eq_top_of_ord_le
 end ColonOrder
 
 end IsLocalRing
+
+end
+end ResolutionHironaka

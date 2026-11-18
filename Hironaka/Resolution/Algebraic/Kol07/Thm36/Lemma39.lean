@@ -32,11 +32,14 @@ The lemma is the step of the proof of [Kol07, Theorem 36] that makes the resolut
 scheme independent of the embedding; see `Hironaka.Resolution.Algebraic.Kol07.Thm36.Assembly`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
 
 namespace Hironaka.Resolution
 
@@ -297,3 +300,6 @@ theorem exists_aut_conj_embeddings [IsClosedImmersion i₁] [IsClosedImmersion i
 end Shears
 
 end Hironaka.Resolution
+
+end
+end ResolutionHironaka

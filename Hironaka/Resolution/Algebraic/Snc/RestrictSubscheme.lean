@@ -54,15 +54,22 @@ contain `Z` near `x` (`span_singleton_le_span_image_iff`).
 Sources: [Kol07, Definition 24; Theorem 27 (the proof); Theorem 36].
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open AlgebraicGeometry CategoryTheory IsLocalRing Ideal Scheme TopologicalSpace
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing _root_.Ideal
+open _root_.ResolutionHironaka.Ideal _root_.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme _root_.TopologicalSpace
+open _root_.ResolutionHironaka.TopologicalSpace
 
 namespace Hironaka.Snc
 
-open AlgebraicGeometry
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
 
 variable {X Y : Scheme.{u}}
 
@@ -220,3 +227,6 @@ theorem not_stalkIdeal_le_of_isGenericPoint_notMem (T D : X.IdealSheafData) {η 
   not_stalkIdeal_le_of_specializes_notMem T D (hη.specializes hx) hη.mem hηD
 
 end Hironaka.Snc
+
+end
+end ResolutionHironaka

@@ -35,11 +35,16 @@ sequence of order `≥ m` and any stage `i`.
   `BMOClass n m` (the marked triple `(X, I, m, ∅)` of clause (3) of Theorem 107).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry Hironaka Scheme.BlowUpSequence
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.ResolutionHironaka.Hironaka
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
 
 namespace Hironaka.MarkedTriple
 
@@ -75,3 +80,6 @@ theorem bmoClass_of_boClass (T : Triple k) (hT : T.BOClass n m) :
   ⟨hT.1, hT.2.1, rfl⟩
 
 end Hironaka.BMO
+
+end
+end ResolutionHironaka

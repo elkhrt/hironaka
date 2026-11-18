@@ -31,13 +31,21 @@ m` for `J` unmarked, hence `≥ m` for `(I, m)` marked); here both ideals are ma
   `(X, I, m, E)` whenever `I ≤ J` (same centers, same boundaries; no smoothness of `X` enters).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry Scheme.IdealSheafData Scheme BlowUpSequence
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
 variable {k : Type u} [Field k] {X : Scheme.{u}} (f : X ⟶ Spec (CommRingCat.of k))
 
@@ -55,3 +63,6 @@ theorem isOrderGeSeq_of_le {I J : X.IdealSheafData} {E : DivisorFamily X} {m : �
         i.castSucc) η)⟩⟩
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

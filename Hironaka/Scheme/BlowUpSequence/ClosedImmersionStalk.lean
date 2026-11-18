@@ -35,13 +35,17 @@ carries one ideal onto the other (`Ideal.quotientEquiv`).
 The schemes are arbitrary.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
 variable {X Y : Scheme.{u}}
 
@@ -83,3 +87,6 @@ theorem isRegularLocalRing_stalk_of_isIso_stalkMap_of_stalkIdeal_eq {X' Y' : Sch
   exact IsRegularLocalRing.of_ringEquiv (e1.trans (e2.trans (e3.trans e4)))
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

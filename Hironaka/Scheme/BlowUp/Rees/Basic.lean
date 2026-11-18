@@ -20,6 +20,9 @@ Basic facts about the grading `reesAlgebra.grading I` of the Rees algebra `â¨áµ
   (`Hironaka.Scheme.BlowUp.Rees.Irrelevant`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 open Polynomial
@@ -78,3 +81,6 @@ theorem reesAlgebra.grading_one_eq_range :
   Submodule.ext fun _ => reesAlgebra.mem_grading_one_iff.trans LinearMap.mem_range.symm
 
 end DegreeOne
+
+end
+end ResolutionHironaka

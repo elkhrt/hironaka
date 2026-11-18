@@ -53,12 +53,19 @@ The last two results are what `Hironaka/Resolution/Algebraic/Monomial/Geometric/
 to show that the geometric Step 3 is a blow-up sequence of order `≥ m` ending with `max-ord < m`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open AlgebraicGeometry CategoryTheory TopologicalSpace IsLocalRing Ideal Scheme
-  Scheme.IdealSheafData
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace _root_.IsLocalRing
+open _root_.ResolutionHironaka.IsLocalRing _root_.Ideal _root_.ResolutionHironaka.Ideal
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
 namespace Hironaka.Monomial.PieceFamily
 
@@ -251,3 +258,6 @@ theorem leOrdAlong_centerOf (hE : E.IsSnc) (hΦ : Φ.Realizes E e) {n m : ℕ} {
   exact_mod_cast (hge P hP).trans this
 
 end Hironaka.Monomial.PieceFamily
+
+end
+end ResolutionHironaka

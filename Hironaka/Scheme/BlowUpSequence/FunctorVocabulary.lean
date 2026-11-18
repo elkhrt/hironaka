@@ -56,17 +56,21 @@ so that dot notation reaches them; the instances on `T.X.left` (separated, of fi
 smooth over `k`) are those of `Hironaka.Scheme.Resolution.Basic`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open CategoryTheory TopologicalSpace AlgebraicGeometry
+open CategoryTheory _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
 
 noncomputable section
 
 namespace Hironaka
 
-open Scheme
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
 
 variable {X Y : Scheme.{u}}
 
@@ -82,8 +86,10 @@ structure MarkedTriple (k : Type u) [Field k] extends AlgebraicGeometry.Triple k
 end Hironaka
 
 namespace AlgebraicGeometry.Triple
+open _root_.AlgebraicGeometry
 
-open Hironaka Scheme
+open _root_.ResolutionHironaka.Hironaka _root_.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
 
 variable {k : Type u} [Field k]
 
@@ -100,7 +106,7 @@ end AlgebraicGeometry.Triple
 
 namespace Hironaka
 
-open Scheme
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
 
 variable {X Y : Scheme.{u}}
 
@@ -120,10 +126,11 @@ end MarkedTriple
 end Hironaka
 
 namespace AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme
 
-open Scheme
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
 
-open Hironaka
+open _root_.ResolutionHironaka.Hironaka
 
 variable {X Y : Scheme.{u}}
 
@@ -155,7 +162,7 @@ end AlgebraicGeometry.Scheme.BlowUpSequence
 
 namespace Hironaka
 
-open Scheme
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
 
 variable {X Y : Scheme.{u}}
 
@@ -222,8 +229,10 @@ end Hironaka
 /-! ### Disjoint unions of triples (Kollár Warning 38) -/
 
 namespace AlgebraicGeometry.Triple
+open _root_.AlgebraicGeometry
 
-open Hironaka Scheme
+open _root_.ResolutionHironaka.Hironaka _root_.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
 
 variable {k : Type u} [Field k]
 
@@ -253,7 +262,7 @@ end AlgebraicGeometry.Triple
 
 namespace Hironaka
 
-open Scheme
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
 
 variable {X Y : Scheme.{u}}
 
@@ -280,8 +289,10 @@ end Hironaka
 /-! ### Pull-back data and Kollár's 34.1 for blow-up sequence functors -/
 
 namespace AlgebraicGeometry.Triple
+open _root_.AlgebraicGeometry
 
-open Hironaka Scheme
+open _root_.ResolutionHironaka.Hironaka _root_.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
 
 variable {k : Type u} [Field k]
 
@@ -297,7 +308,7 @@ end AlgebraicGeometry.Triple
 
 namespace Hironaka
 
-open Scheme
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
 
 variable {X Y : Scheme.{u}}
 
@@ -370,8 +381,10 @@ end Hironaka
 /-! ### Base-change data and Kollár's 34.2 for blow-up sequence functors -/
 
 namespace AlgebraicGeometry.Triple
+open _root_.AlgebraicGeometry
 
-open Hironaka Scheme
+open _root_.ResolutionHironaka.Hironaka _root_.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
 
 variable {k : Type u} [Field k] {L : Type u} [Field L]
 
@@ -391,7 +404,7 @@ end AlgebraicGeometry.Triple
 
 namespace Hironaka
 
-open Scheme
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
 
 variable {X Y : Scheme.{u}}
 
@@ -445,7 +458,7 @@ end Hironaka
 
 namespace Hironaka
 
-open Scheme
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
 
 variable {X Y : Scheme.{u}}
 
@@ -454,8 +467,10 @@ end Hironaka
 /-! ### Proposition 37's setting: the affine class and the two auxiliary schemes -/
 
 namespace AlgebraicGeometry.Triple
+open _root_.AlgebraicGeometry
 
-open Hironaka Scheme
+open _root_.ResolutionHironaka.Hironaka _root_.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
 
 variable {k : Type u} [Field k]
 
@@ -522,7 +537,7 @@ end AlgebraicGeometry.Triple
 
 namespace Hironaka
 
-open Scheme
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
 
 variable {X Y : Scheme.{u}}
 
@@ -540,8 +555,10 @@ end Hironaka
 /-! ### Closed-embedding situations and Kollár's 34.3 for blow-up sequence functors -/
 
 namespace AlgebraicGeometry.Triple
+open _root_.AlgebraicGeometry
 
-open Hironaka Scheme
+open _root_.ResolutionHironaka.Hironaka _root_.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
 
 variable {k : Type u} [Field k]
 
@@ -561,7 +578,7 @@ end AlgebraicGeometry.Triple
 
 namespace Hironaka
 
-open Scheme
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
 
 variable {X Y : Scheme.{u}}
 
@@ -646,15 +663,18 @@ structure IsGlobalizationClass (M : MorphismProperty Scheme.{u}) : Prop where
 `M = {open immersions}` … this is the only case we need for the proof of (103)"): `f : Y ⟶ X` is a
 **coproduct of open immersions** — `Y` is a coproduct of schemes `Uᵢ` (a cofan `ιᵢ : Uᵢ ⟶ Y` that is
 a colimit, as in `Triple.IsSigmaOf`) and every `ιᵢ ≫ f : Uᵢ ⟶ X` is an open immersion. -/
-def _root_.AlgebraicGeometry.openImmersionCoprods : MorphismProperty Scheme.{u} := fun Y _ f =>
+def _root_.ResolutionHironaka.AlgebraicGeometry.openImmersionCoprods
+    : MorphismProperty Scheme.{u} := fun Y _ f =>
   ∃ (σ : Type u) (U : σ → Scheme.{u}) (ι : ∀ i, U i ⟶ Y),
     Nonempty (Limits.IsColimit (Limits.Cofan.mk Y ι)) ∧ ∀ i, IsOpenImmersion (ι i ≫ f)
 
 end Hironaka
 
 namespace AlgebraicGeometry.Triple
+open _root_.AlgebraicGeometry
 
-open Hironaka Scheme
+open _root_.ResolutionHironaka.Hironaka _root_.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
 
 variable {k : Type u} [Field k]
 
@@ -680,7 +700,7 @@ end AlgebraicGeometry.Triple
 
 namespace Hironaka
 
-open Scheme
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
 
 variable {X Y : Scheme.{u}}
 
@@ -762,10 +782,11 @@ end OrderGeSeqAssignment
 end Hironaka
 
 namespace AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme
 
-open Scheme
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
 
-open Hironaka
+open _root_.ResolutionHironaka.Hironaka
 
 variable {X Y : Scheme.{u}}
 
@@ -785,7 +806,7 @@ end AlgebraicGeometry.Scheme.BlowUpSequence
 
 namespace Hironaka
 
-open Scheme
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
 
 variable {X Y : Scheme.{u}}
 
@@ -794,8 +815,10 @@ end Hironaka
 /-! ### Theorem 105's proof: local covers and the fibre-product hypothesis -/
 
 namespace AlgebraicGeometry.Triple
+open _root_.AlgebraicGeometry
 
-open Hironaka Scheme
+open _root_.ResolutionHironaka.Hironaka _root_.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
 
 variable {k : Type u} [Field k]
 
@@ -832,3 +855,6 @@ end AlgebraicGeometry.Triple
 
 
 end
+
+end
+end ResolutionHironaka

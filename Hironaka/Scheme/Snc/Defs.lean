@@ -41,17 +41,22 @@ stalk, with a regular system of parameters (`IsLocalRing.IsRegularSystemOfParame
   are `AnalyticManifold.IdealSheaf.IsSncBoundary` and `AnalyticSpace.ClosedSubspace.IsSncBoundary`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open CategoryTheory TopologicalSpace AlgebraicGeometry
+open CategoryTheory TopologicalSpace _root_.AlgebraicGeometry
+open _root_.ResolutionHironaka.AlgebraicGeometry
 
 noncomputable section
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
-open Scheme
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
 
 variable {X Y : Scheme.{u}}
 
@@ -70,8 +75,10 @@ structure Scheme.DivisorFamily (X : Scheme.{u}) where
 attribute [instance] DivisorFamily.fintype DivisorFamily.linearOrder
 
 namespace Scheme.DivisorFamily
+open _root_.AlgebraicGeometry.Scheme
 
-open IdealSheafData
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
 /-- The empty divisor `E = ∅`. -/
 def empty (X : Scheme.{u}) : DivisorFamily X where
@@ -189,3 +196,6 @@ def Scheme.IdealSheafData.IsSncBoundary (E : X.IdealSheafData) : Prop :=
 end AlgebraicGeometry
 
 end
+
+end
+end ResolutionHironaka

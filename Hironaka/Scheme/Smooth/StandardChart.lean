@@ -40,15 +40,22 @@ Used for the charts and stalks of a smooth blow-up in `ChartIso.lean`,
 `Hironaka/Resolution/Algebraic/Wlo05/EmbeddedChainColon.lean`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
-open AlgebraicGeometry CategoryTheory IsLocalRing
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory IsLocalRing
 
 universe u
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
-open Scheme.IdealSheafData AlgebraicGeometry affineBlowUpAlgebra
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData _root_.AlgebraicGeometry
+open _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.ResolutionHironaka.AlgebraicGeometry.affineBlowUpAlgebra
 
 variable {k : Type u} [Field k] {X : Scheme.{u}}
 
@@ -95,8 +102,10 @@ end Regular
 end AlgebraicGeometry
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
-open AlgebraicGeometry affineBlowUpAlgebra
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.ResolutionHironaka.AlgebraicGeometry.affineBlowUpAlgebra
 
 variable {k : Type u} [Field k] {X : Scheme.{u}}
 
@@ -157,3 +166,6 @@ theorem ideal_eq_centerIdeal (E : EtaleCoordinatesAdapted f n r Z x) :
 end IdealOfCenter
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

@@ -37,11 +37,15 @@ construction.
   here as `fun _ _ => inferInstance`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
-open AlgebraicGeometry CategoryTheory Polynomial
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory Polynomial
 
 universe u
 
@@ -155,3 +159,6 @@ theorem blowUpOf.isPullback (U : X.affineOpens) :
 end Gluing
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

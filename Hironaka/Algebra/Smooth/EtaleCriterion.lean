@@ -31,9 +31,13 @@ the obvious proof of [Sta, Tag 054L] in given coordinates, which would need the 
 (`Hironaka/Scheme/Smooth/EtaleCoordinates.lean`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 namespace Algebra
+open _root_.Algebra
 
 open KaehlerDifferential _root_.TensorProduct
 
@@ -129,3 +133,6 @@ theorem etale_aeval_of_span_eq_top [Nontrivial S] [Algebra.FormallySmooth k S]
 end Polynomial
 
 end Algebra
+
+end
+end ResolutionHironaka

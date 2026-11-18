@@ -44,13 +44,21 @@ in the statement of the functoriality clauses of the blow-up sequence functors; 
 [Wlo05, Proposition 2.4.2].
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry Scheme IdealSheafData BlowUpSequence
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
 variable {X Y : Scheme.{u}}
 
@@ -351,7 +359,7 @@ end AlgebraicGeometry
 
 namespace Hironaka
 
-open AlgebraicGeometry
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
 
 variable {k : Type u} [Field k]
 
@@ -360,7 +368,8 @@ variable {k : Type u} [Field k]
 equidimensional over `k` as in [Kol07, Notation 64]. Its data are `Y`, `T.I.comap h`,
 `T.E.comap h`; nonvanishing on the components is `isNonzeroEverywhere_comap_of_flat` and simple
 normal crossings is `isSnc_comap_of_smooth`. -/
-noncomputable def _root_.AlgebraicGeometry.Triple.pullback [PerfectField k] (T : Triple k)
+noncomputable def _root_.ResolutionHironaka.AlgebraicGeometry.Triple.pullback
+    [PerfectField k] (T : Triple k)
     {Y : Scheme.{u}}
     [Y.Over (Spec (.of k))] [QuasiCompact (Y ↘ Spec (.of k))] [IsSeparated (Y ↘ Spec (.of k))]
     (hY : ∃ n : ℕ, SmoothOfRelativeDimension n (Y ↘ Spec (.of k)))
@@ -391,15 +400,18 @@ variable [PerfectField k] {Y : Scheme.{u}} [Y.Over (Spec (.of k))]
   (hY : ∃ n : ℕ, SmoothOfRelativeDimension n (Y ↘ Spec (.of k)))
 
 /-- The ambient scheme of the pulled-back triple is `Y`. -/
-theorem _root_.AlgebraicGeometry.Triple.pullback_X (T : Triple k) (h : Y ⟶ T.X.left) [Smooth h] :
+theorem _root_.ResolutionHironaka.AlgebraicGeometry.Triple.pullback_X
+    (T : Triple k) (h : Y ⟶ T.X.left) [Smooth h] :
     (T.pullback hY h).X.left = Y := rfl
 
 /-- The ideal of the pulled-back triple is `h^* I`. -/
-theorem _root_.AlgebraicGeometry.Triple.pullback_I (T : Triple k) (h : Y ⟶ T.X.left) [Smooth h] :
+theorem _root_.ResolutionHironaka.AlgebraicGeometry.Triple.pullback_I
+    (T : Triple k) (h : Y ⟶ T.X.left) [Smooth h] :
     HEq (T.pullback hY h).I (T.I.comap h) := HEq.rfl
 
 /-- The divisor family of the pulled-back triple is `h^{-1} E`. -/
-theorem _root_.AlgebraicGeometry.Triple.pullback_E (T : Triple k) (h : Y ⟶ T.X.left) [Smooth h] :
+theorem _root_.ResolutionHironaka.AlgebraicGeometry.Triple.pullback_E
+    (T : Triple k) (h : Y ⟶ T.X.left) [Smooth h] :
     HEq (T.pullback hY h).E (T.E.comap h) := HEq.rfl
 
 /-- The mark of the pulled-back marked triple is the mark of `T`. -/
@@ -414,3 +426,6 @@ theorem MarkedTriple.pullback_toTriple (T : MarkedTriple k) (h : Y ⟶ T.X.left)
 end Fields
 
 end Hironaka
+
+end
+end ResolutionHironaka

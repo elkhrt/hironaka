@@ -25,6 +25,9 @@ finite type over a field is a Jacobson space (`LocallyOfFiniteType.jacobsonSpace
 the source.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 
@@ -50,3 +53,5 @@ theorem subset_iUnion_of_isOpen_of_closedPoints [JacobsonSpace X] {S : Set X} (h
   obtain ⟨p, hpc, hpS, hxp⟩ := exists_isClosed_singleton_mem_specializes hS hx
   exact Set.mem_iUnion.mpr ⟨⟨p, hpc, hpS⟩, hxp.mem_open (hO _) (hpO _)⟩
 
+end
+end ResolutionHironaka

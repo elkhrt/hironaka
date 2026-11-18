@@ -43,13 +43,19 @@ I m` (Kollár's `m = max-ord I` is a hypothesis where the theorems need it).
   (`Hironaka.Resolution.Algebraic.Tuning.Sequence`) uses it.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open AlgebraicGeometry CategoryTheory IsLocalRing
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing
 
 namespace AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
 
 variable {X : Scheme.{u}}
 
@@ -192,3 +198,6 @@ theorem stalkIdeal_W (I : X.IdealSheafData) (m s : ℕ) (p : X) {n' : ℕ}
 end Smooth
 
 end AlgebraicGeometry.Scheme.IdealSheafData
+
+end
+end ResolutionHironaka

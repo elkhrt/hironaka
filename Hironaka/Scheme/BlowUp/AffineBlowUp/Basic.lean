@@ -26,11 +26,15 @@ The blow-up of a general scheme along a closed subscheme is glued from these aff
 the affine opens of the base (`blowUpOf`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
-open AlgebraicGeometry CategoryTheory
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
 
 universe u
 
@@ -62,3 +66,6 @@ instance affineBlowUp.isProper_π_of_isNoetherianRing [IsNoetherianRing R] :
   affineBlowUp.isProper_π I (IsNoetherian.noetherian I)
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

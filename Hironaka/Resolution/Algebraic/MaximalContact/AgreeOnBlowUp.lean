@@ -54,11 +54,17 @@ for arbitrary schemes and arbitrary morphisms; flatness enters only the descent 
   scheme into `Spec B`, agreement on `V(M)` is the membership of the generators' defects in `M`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 namespace AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
 
-open CategoryTheory IdealSheafData
+open CategoryTheory _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
 universe u
 
@@ -274,3 +280,6 @@ theorem agreeOn_iff_forall_gen {W : Scheme.{u}} [IsAffine W] {B : CommRingCat.{u
     simpa [RingHom.comp_apply] using key
 
 end AlgebraicGeometry.Scheme.IdealSheafData
+
+end
+end ResolutionHironaka

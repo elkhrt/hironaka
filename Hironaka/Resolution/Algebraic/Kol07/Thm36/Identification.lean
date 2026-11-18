@@ -51,12 +51,19 @@ of a smooth scheme is smooth (`smooth_subschemeι_comp_of_isOpenImmersion_inclus
 subschemes for `hle : Z ≤ T`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace Scheme BlowUpSequence
-  Scheme.IdealSheafData
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
 namespace Hironaka.Resolution
 
@@ -374,3 +381,6 @@ theorem isOpenImmersion_inclusion_of_firstCenterIndex [IsNoetherian A] (S : Blow
 end FirstCenter
 
 end Hironaka.Resolution
+
+end
+end ResolutionHironaka

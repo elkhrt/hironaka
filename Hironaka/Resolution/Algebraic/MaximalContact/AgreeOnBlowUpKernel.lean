@@ -74,13 +74,20 @@ and every identity between stalk elements is proved by explicit congruences and 
 rather than by rewriting, which would unfold the glued blow-up.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry Scheme.IdealSheafData
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
 namespace AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
 
 variable {U X : Scheme.{u}}
 
@@ -1024,3 +1031,6 @@ theorem step_agreeOn (ψ ψ' : U ⟶ X) [Flat ψ] [Flat ψ'] (Z Z' : X.IdealShea
     (hZ.trans (congrArg (fun W : X.IdealSheafData => W.comap ψ') e.symm)) hM hfg⟩
 
 end AlgebraicGeometry.Scheme.IdealSheafData
+
+end
+end ResolutionHironaka

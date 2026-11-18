@@ -47,12 +47,21 @@ reduction follow (`cp3BMOAt_zero`, `cp3BMOAt_succ_of_cp3BOAt`; [Kol07, 70]). Thi
 the literature. Used in `Hironaka.Resolution.Algebraic.Wlo05.EmbeddedCP3Tower`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace Hironaka Scheme.IdealSheafData Scheme
-  BlowUpSequence Hironaka.Sequence Hironaka.BMO Hironaka.Stage
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.ResolutionHironaka.Hironaka _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.ResolutionHironaka.Hironaka.Sequence _root_.ResolutionHironaka.Hironaka.BMO
+open _root_.ResolutionHironaka.Hironaka.Stage
 
 namespace Hironaka.Resolution
 
@@ -312,3 +321,6 @@ theorem cp3BMOAt_succ_of_cp3BOAt (n : ℕ) (hbo : CP3BOAt k (n + 1)) : CP3BMOAt 
   exact cp3For_bmoSeq _ hbo' T hT
 
 end Hironaka.Resolution
+
+end
+end ResolutionHironaka

@@ -76,11 +76,20 @@ the relative dimension (`domain_baseChange`).
 Used by `AssemblyZero.lean`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace Hironaka Scheme
-  IdealSheafData Scheme.IdealSheafData
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.ResolutionHironaka.Hironaka _root_.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
 namespace Hironaka.BD
 
@@ -409,3 +418,6 @@ theorem functor_commutesWithBaseChange (hB : B.CommutesWithBaseChange B' σ) :
 end FunctorLevelBaseChange
 
 end Hironaka.BD
+
+end
+end ResolutionHironaka

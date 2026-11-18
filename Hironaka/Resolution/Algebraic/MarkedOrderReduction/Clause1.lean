@@ -42,12 +42,23 @@ the end data are the end data of Step 3 for the marked triple induced after Step
 (`markedEnd_concat_iff`), whose separation order is `0` (`sepOrder_induced_step2_eq_zero`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace Hironaka Scheme BlowUpSequence
-  Scheme.IdealSheafData Hironaka.Monomial Hironaka.Monomial.PieceFamily Hironaka.Sequence
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.ResolutionHironaka.Hironaka _root_.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.Hironaka.Monomial
+open _root_.ResolutionHironaka.Hironaka.Monomial.PieceFamily
+open _root_.ResolutionHironaka.Hironaka.Sequence
 
 namespace Hironaka.BMO
 
@@ -159,3 +170,6 @@ theorem maxOrd_lt :
 end Assembly
 
 end Hironaka.BMO
+
+end
+end ResolutionHironaka

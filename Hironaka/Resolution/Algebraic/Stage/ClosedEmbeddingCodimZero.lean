@@ -65,12 +65,21 @@ The case is the degenerate end of Kollár's chain; the two-hypersurface argument
 the hypersurface case of Claim 71.2.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory CategoryTheory.Limits AlgebraicGeometry TopologicalSpace Hironaka Scheme
-  BlowUpSequence Scheme.IdealSheafData IsLocalRing
+open CategoryTheory CategoryTheory.Limits _root_.AlgebraicGeometry
+open _root_.ResolutionHironaka.AlgebraicGeometry _root_.TopologicalSpace
+open _root_.ResolutionHironaka.TopologicalSpace _root_.ResolutionHironaka.Hironaka
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData _root_.IsLocalRing
+open _root_.ResolutionHironaka.IsLocalRing
 
 namespace Hironaka.Stage
 
@@ -332,3 +341,6 @@ theorem seq_eq_pushforward_of_not_maxOrd_ker_le_one (base : OrderReductionStage.
   rw [← hcX, h4, hcY]
 
 end Hironaka.Stage
+
+end
+end ResolutionHironaka

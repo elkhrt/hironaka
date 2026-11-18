@@ -24,6 +24,9 @@ final state of `N` (`Sub.foldl`, `sub_foldl_step3`). The induction that uses the
 `Hironaka/Resolution/Algebraic/Monomial/Restrict/Phase.lean`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 namespace Hironaka.Monomial.MonomialState
@@ -139,3 +142,6 @@ theorem sub_foldl_step3 {L N : MonomialState} (h : Sub L N) :
   exact h.foldl _
 
 end Hironaka.Monomial.MonomialState
+
+end
+end ResolutionHironaka

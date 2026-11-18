@@ -39,13 +39,18 @@ product is `Spec (S ⊗_R R/I)` (`pullbackSpecIso`), the projection corresponds 
 of the kernel of its global sections (`ker_of_isAffine`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory Limits TensorProduct
+open CategoryTheory _root_.CategoryTheory.Limits TensorProduct
 
 namespace AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
 
 variable {R S : CommRingCat.{u}}
 
@@ -285,3 +290,6 @@ theorem exists_affineOpen_generator_of_isInvertible (I : X.IdealSheafData) (f : 
       (IsLocalization.nonZeroDivisors_le_comap (Submonoid.powers (t z₀)) _ hh₀)
 
 end AlgebraicGeometry.Scheme.IdealSheafData
+
+end
+end ResolutionHironaka

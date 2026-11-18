@@ -19,13 +19,18 @@ each point, which a smooth `k`-scheme has (`exists_fin_span_eq_maximalIdeal_stal
 `DivisorFamily.empty X` and any family with an empty index type are covered.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open AlgebraicGeometry CategoryTheory Scheme
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
 variable {k : Type u} [Field k] {X : Scheme.{u}}
 
@@ -51,3 +56,6 @@ theorem isSnc_of_isEmpty (f : X ⟶ Spec (.of k)) [Smooth f] (E : DivisorFamily 
     exists_snc_data_of_isEmpty E.component⟩
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

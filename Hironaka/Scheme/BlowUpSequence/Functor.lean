@@ -44,15 +44,21 @@ This module proves the elementary facts about them and defines the induced tripl
   `Hironaka/Scheme/BlowUpSequence/PullbackEraseEmpty.lean` supplies it from the undeleted ones).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry Scheme.BlowUpSequence
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
 
 namespace Hironaka.OrderSeqAssignment
 
-open Scheme.IdealSheafData Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
 
 variable {k : Type u} [Field k]
 
@@ -143,7 +149,9 @@ end Hironaka.OrderSeqAssignment
 
 namespace Hironaka.OrderGeSeqAssignment
 
-open Scheme.IdealSheafData Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
 
 variable {k : Type u} [Field k]
 
@@ -236,3 +244,5 @@ theorem ofEraseEmpty_seq (seq : ∀ T : MarkedTriple k, Dom T → BlowUpSequence
 
 end Hironaka.OrderGeSeqAssignment
 
+end
+end ResolutionHironaka

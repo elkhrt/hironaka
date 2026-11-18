@@ -50,11 +50,18 @@ same Definition 79 in coordinates on a regular local ring, not a duplicate: at a
 through `stalkIdeal_derivativeIter` and `derivativeIter_eq_Dpow`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 namespace AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
 
-open CategoryTheory Scheme BlowUpSequence
+open CategoryTheory _root_.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
 
 universe u
 
@@ -170,3 +177,6 @@ theorem ord_MC_eq_zero {x : X} (hx : I.ord x < m) : (MC f I m).ord x = 0 := by
 end Order
 
 end AlgebraicGeometry.Scheme.IdealSheafData
+
+end
+end ResolutionHironaka

@@ -27,13 +27,19 @@ sheaves with pairwise disjoint supports at a point of one member's support is th
 for the modules of the embedded desingularization.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open TopologicalSpace
 
 namespace AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
 
 variable {X : Scheme.{u}}
 
@@ -59,3 +65,6 @@ theorem stalkIdeal_finset_prod_eq_of_mem_of_pairwise_disjoint {ι : Type*} (A : 
   · exact fun habs => (habs ha).elim
 
 end AlgebraicGeometry.Scheme.IdealSheafData
+
+end
+end ResolutionHironaka

@@ -54,11 +54,16 @@ The completed chart map (`Hironaka/Algebra/Local/ChartCompletion.lean`) applies 
 the chart's local ring `R'_{𝔪'}` with the coefficient field transported from `R̂`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 namespace IsLocalRing
+open _root_.IsLocalRing
 
-open IsLocalRing MvPowerSeries
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing _root_.MvPowerSeries
+open _root_.ResolutionHironaka.MvPowerSeries
 
 /-! ### Transport of the order along a ring isomorphism of local rings -/
 
@@ -259,3 +264,6 @@ theorem ordElem_mul_of_algebraRat (f g : R) : ordElem (f * g) = ordElem f + ordE
 end Regular
 
 end IsLocalRing
+
+end
+end ResolutionHironaka

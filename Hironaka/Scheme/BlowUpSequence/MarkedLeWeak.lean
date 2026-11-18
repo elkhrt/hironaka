@@ -40,13 +40,21 @@ follows because the order is antitone in the ideal.
   same boundaries).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry Scheme.IdealSheafData Scheme BlowUpSequence
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
 variable {X : Scheme.{u}} {k : Type u} [Field k] [CharZero k] (f : X ⟶ Spec (.of k)) (n : ℕ)
   [SmoothOfRelativeDimension n f]
@@ -105,3 +113,6 @@ theorem isOrderGeSeq_of_isOrderSeq_of_le {I J : X.IdealSheafData} {E : DivisorFa
         ord_anti (markedTransformSeq_le_weakTransformSeq_of_le f n hmd hS hIJ i.castSucc) η⟩⟩
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

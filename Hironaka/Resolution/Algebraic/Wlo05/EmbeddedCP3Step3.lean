@@ -63,13 +63,24 @@ bridge `monomial_exponentAt_step3Family`
 not in the literature. Used in `Hironaka.Resolution.Algebraic.Wlo05.EmbeddedCP3Step1`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace Scheme.IdealSheafData Hironaka Scheme
-  IsLocalRing BlowUpSequence Hironaka.BMO Hironaka.BMO.Snc Hironaka.Monomial
-  Hironaka.Monomial.PieceFamily
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.Hironaka _root_.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme _root_.IsLocalRing
+open _root_.ResolutionHironaka.IsLocalRing
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.ResolutionHironaka.Hironaka.BMO _root_.ResolutionHironaka.Hironaka.BMO.Snc
+open _root_.ResolutionHironaka.Hironaka.Monomial
+open _root_.ResolutionHironaka.Hironaka.Monomial.PieceFamily
 
 namespace Hironaka.Resolution
 
@@ -306,3 +317,6 @@ theorem cp3For_step3Seq (T : MarkedTriple k) (hT : MarkedTriple.BMOClass n 1 T) 
 end Step3
 
 end Hironaka.Resolution
+
+end
+end ResolutionHironaka

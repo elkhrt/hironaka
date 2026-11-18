@@ -28,12 +28,21 @@ boundary with the (unit) exceptional members appended, a deletion of `⊤` membe
 functor whose pull-back along a smooth morphism has no point of order `≥ d` and is therefore
 skipped (the second clause of functoriality for smooth morphisms, [Kol07, 34.1]). -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace Scheme IdealSheafData
-  BlowUpSequence Scheme.IdealSheafData
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
 namespace Hironaka.Sequence
 
@@ -81,3 +90,6 @@ theorem isIso_composite_of_center_eq_top {X : Scheme.{u}} (S : BlowUpSequence X)
   isIso_stageMap_of_center_eq_top S (Fin.last _) fun j _ => hc j
 
 end Hironaka.Sequence
+
+end
+end ResolutionHironaka

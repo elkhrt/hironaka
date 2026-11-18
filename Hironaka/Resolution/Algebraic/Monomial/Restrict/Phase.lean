@@ -38,6 +38,9 @@ this gives the functoriality of the geometric Step 3 under smooth morphisms
 (`Hironaka/Resolution/Algebraic/Monomial/Geometric/ChainRunErase.lean`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 namespace Hironaka.Monomial.MonomialState
@@ -316,3 +319,6 @@ theorem step3_restrict {L N : MonomialState} (h : Sub L N) :
     exact List.map_congr_left fun S hS => image_image_congr hρ ((step3_isRun L).centers_lt S hS)
 
 end Hironaka.Monomial.MonomialState
+
+end
+end ResolutionHironaka

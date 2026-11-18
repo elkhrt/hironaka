@@ -25,13 +25,18 @@ blow-ups and for the order along a trivial blow-up in the resolution sequences.
   (J.saturate Z).comap π` for an isomorphism `π`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open AlgebraicGeometry CategoryTheory
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
 
 namespace AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
 
 variable {Y X : Scheme.{u}} (e : Y ⟶ X) [IsIso e] (I K : X.IdealSheafData)
 
@@ -58,6 +63,7 @@ theorem comap_saturate_of_isIso : (I.saturate K).comap e = (I.comap e).saturate 
 end AlgebraicGeometry.Scheme.IdealSheafData
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
 /-- For an isomorphism `π`, the strict transform of `J` along `π` with respect to the divisor
 `Z.comap π` is the inverse image of the saturation `J.saturate Z` computed on `X`. -/
@@ -67,3 +73,6 @@ theorem strictTransformAlong_of_isIso {B X : Scheme.{u}} (π : B ⟶ X) [IsIso �
   (Scheme.IdealSheafData.comap_saturate_of_isIso π J Z).symm
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

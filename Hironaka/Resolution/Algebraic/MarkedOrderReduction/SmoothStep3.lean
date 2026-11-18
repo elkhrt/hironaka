@@ -48,12 +48,23 @@ The result `step3Seq_eraseEmpty_pullback` enters the assembly of clause (2) in
 `Hironaka/Resolution/Algebraic/MarkedOrderReduction/Smooth.lean`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace Scheme Hironaka BlowUpSequence
-  Scheme.IdealSheafData Hironaka.Monomial Hironaka.Monomial.PieceFamily Hironaka.Sequence
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.Hironaka
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.Hironaka.Monomial
+open _root_.ResolutionHironaka.Hironaka.Monomial.PieceFamily
+open _root_.ResolutionHironaka.Hironaka.Sequence
 
 namespace Hironaka.Monomial
 
@@ -251,3 +262,6 @@ theorem step3Seq_eraseEmpty_pullback (T T' : MarkedTriple k) (h : T'.X.left ⟶ 
     (realize_congr_family hfam hVfull hV')
 
 end Hironaka.BMO
+
+end
+end ResolutionHironaka

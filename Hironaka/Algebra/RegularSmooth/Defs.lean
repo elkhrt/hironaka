@@ -21,13 +21,18 @@ class `IsRegular X`, like Mathlib's `IsReduced X`) when it is regular at every p
 locus* `X.singularLocus` is the set of points at which `X` is not regular.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
 namespace Scheme
+open _root_.AlgebraicGeometry.Scheme
 
 variable (X : Scheme.{u})
 
@@ -56,3 +61,6 @@ class IsRegular (X : Scheme.{u}) : Prop where
   isRegularAt : ∀ x : X, X.IsRegularAt x
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

@@ -36,6 +36,9 @@ of `ker (R → κ)`, which is `𝔪` by `IsLocalRing.ker_residue`; the transport
 `Ideal.cotangentEquivOfEq`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
@@ -44,6 +47,7 @@ open IsLocalRing KaehlerDifferential
 open scoped TensorProduct
 
 namespace Ideal
+open _root_.Ideal
 
 variable {R : Type u} [CommRing R]
 
@@ -59,6 +63,7 @@ theorem cotangentEquivOfEq_toCotangent {I J : Ideal R} (h : I = J) (x : I) :
 end Ideal
 
 namespace IsLocalRing
+open _root_.IsLocalRing
 
 variable (R : Type u) [CommRing R] [IsLocalRing R]
 
@@ -68,8 +73,10 @@ theorem ker_algebraMap_residueField :
   ker_residue
 
 end IsLocalRing
+open _root_.ResolutionHironaka.IsLocalRing
 
 namespace KaehlerDifferential
+open _root_.KaehlerDifferential
 
 variable (k R : Type u) [CommRing k] [CommRing R] [IsLocalRing R] [Algebra k R]
 
@@ -168,3 +175,7 @@ theorem finrank_residueField_tensor_kaehlerDifferential [Algebra.EssFiniteType k
     LinearMap.finrank_range_of_inj (injective_cotangentSpaceToTensor k R)]
 
 end KaehlerDifferential
+open _root_.ResolutionHironaka.KaehlerDifferential
+
+end
+end ResolutionHironaka

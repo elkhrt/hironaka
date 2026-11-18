@@ -49,6 +49,9 @@ stays in the universe of `R` for `CommRingCat`.  The chart element is carried as
 (the image of `X j`, equal but not definitionally equal to `X j`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
@@ -58,6 +61,7 @@ open MvPolynomial HomogeneousLocalization TensorProduct
 attribute [local instance] MvPolynomial.gradedAlgebra
 
 namespace AlgebraicGeometry.Proj
+open _root_.AlgebraicGeometry _root_.AlgebraicGeometry.Proj
 
 section Val
 
@@ -353,3 +357,6 @@ theorem isPushout_away :
 end BaseChange
 
 end AlgebraicGeometry.Proj
+
+end
+end ResolutionHironaka

@@ -44,12 +44,20 @@ ring lemma `eq_span_singleton_of_le_of_exists_notMem_sq` (`Γ_p` principal, `N(J
 `chainRelativeAt_mul_monomial`. Used in `Hironaka.Resolution.Algebraic.Wlo05.EmbeddedCP1Step22Core`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace Scheme BlowUpSequence Scheme.IdealSheafData
-  Hironaka.BMO IsLocalRing
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.Hironaka.BMO _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing
 
 namespace Hironaka.Resolution
 
@@ -153,3 +161,6 @@ theorem chainRelativeAt_of_le_isSmoothDivisor (f : X ⟶ Spec (CommRingCat.of k)
   exact chainRelativeAt_mul_monomial hE hNchain _
 
 end Hironaka.Resolution
+
+end
+end ResolutionHironaka

@@ -22,11 +22,15 @@ discussion preceding [Kol07, Theorem 92]), and, since `I R̂ ∩ R = I`, `I` is 
 — the transfer used in the proof of [Kol07, Theorem 92].
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 namespace IsLocalRing
+open _root_.IsLocalRing
 
-open IsLocalRing
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing
 
 section Local
 
@@ -109,3 +113,6 @@ theorem isMCInvariant_adicCompletion_iff (I : Ideal R) (m : ℕ) :
 end RegularCoords
 
 end IsLocalRing
+
+end
+end ResolutionHironaka

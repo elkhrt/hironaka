@@ -57,16 +57,24 @@ then a smooth divisor.
   (`Hironaka/Resolution/Algebraic/Kol07/Thm35/Principalization.lean`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open AlgebraicGeometry CategoryTheory TopologicalSpace IsLocalRing Ideal
-  Scheme.IdealSheafData Scheme BlowUpSequence
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace _root_.IsLocalRing
+open _root_.ResolutionHironaka.IsLocalRing _root_.Ideal _root_.ResolutionHironaka.Ideal
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
 
 namespace Hironaka.Sequence
 
-open AlgebraicGeometry
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
 
 variable {k : Type u} [Field k] {X : Scheme.{u}}
 
@@ -232,7 +240,8 @@ end Hironaka.Sequence
 
 namespace Hironaka
 
-open Hironaka.Sequence AlgebraicGeometry
+open _root_.ResolutionHironaka.Hironaka.Sequence _root_.AlgebraicGeometry
+open _root_.ResolutionHironaka.AlgebraicGeometry
 
 variable {k : Type u} [Field k] [CharZero k]
 
@@ -261,3 +270,6 @@ noncomputable def disjoinedTriple (T : Triple k) : Triple k where
   isSnc := disjoinedFamily_isSnc (T.X.left ↘ Spec (.of k)) T.E T.isSnc
 
 end Hironaka
+
+end
+end ResolutionHironaka

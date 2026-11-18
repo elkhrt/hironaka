@@ -73,16 +73,28 @@ The general case (a chain of hypersurfaces, the identity being "a local question
 `Hironaka.Resolution.Algebraic.Stage.ClosedEmbeddingGeneral`; nothing here depends on it.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace Hironaka Scheme IdealSheafData BlowUpSequence
-  Scheme.IdealSheafData Hironaka.Sequence Hironaka.BO Hironaka.BD
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.ResolutionHironaka.Hironaka _root_.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.Hironaka.Sequence _root_.ResolutionHironaka.Hironaka.BO
+open _root_.ResolutionHironaka.Hironaka.BD
 
 namespace Hironaka.Stage
 
-open AlgebraicGeometry
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
 
 section Transport
 
@@ -386,3 +398,6 @@ theorem tower_bmo_one_eq_pushforward_of_isSmoothDivisor_ker (base : OrderReducti
 end Hypersurface
 
 end Hironaka.Stage
+
+end
+end ResolutionHironaka

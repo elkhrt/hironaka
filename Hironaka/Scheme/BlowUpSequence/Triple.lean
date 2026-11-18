@@ -42,14 +42,23 @@ of every member (`Hironaka/Scheme/Snc/TotalTransformSnc.lean`, `TotalTransformOf
 along a sequence by induction with condition (3) of Definition 66 at every stage.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace IsLocalRing Ideal Scheme
-  BlowUpSequence IdealSheafData
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace _root_.IsLocalRing
+open _root_.ResolutionHironaka.IsLocalRing _root_.Ideal _root_.ResolutionHironaka.Ideal
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
 variable {k : Type u} [Field k] {X : Scheme.{u}}
 
@@ -135,15 +144,17 @@ end AlgebraicGeometry
 
 namespace Hironaka
 
-open Scheme IdealSheafData
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
-open AlgebraicGeometry
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
 
 variable {k : Type u} [Field k] [CharZero k]
 
 /-- The birational transform `π_*^{-1}(X, I, E) = (B_Z X, π_*^{-1} I, π_tot^{-1}(E))` of a triple
 under a smooth blow-up of order `m` with center `Z` [Kol07, Definition 65]. -/
-noncomputable def _root_.AlgebraicGeometry.Triple.transform (T : Triple k)
+noncomputable def _root_.ResolutionHironaka.AlgebraicGeometry.Triple.transform (T : Triple k)
     (Z : T.X.left.IdealSheafData) {m : ℕ} (h : T.IsOrderBlowUp Z m) : Triple k where
   X := .ofHom (Z.blowUpπ ≫ (T.X.left ↘ Spec (.of k)))
     (by
@@ -192,7 +203,7 @@ noncomputable def MarkedTriple.transform (T : MarkedTriple k) (Z : T.X.left.Idea
 /-- The triple `(X_i, I_i, E_i)` induced at stage `i` of a smooth blow-up sequence of order `m`
 starting with `T` [Kol07, Definition 66, condition (1)]; Kollár's `Π_*^{-1}(X, I, E)` is its value
 at `Fin.last S.length`. -/
-noncomputable def _root_.AlgebraicGeometry.Triple.induced (T : Triple k)
+noncomputable def _root_.ResolutionHironaka.AlgebraicGeometry.Triple.induced (T : Triple k)
     (S : BlowUpSequence T.X.left) {m : ℕ}
     (h : S.IsOrderSeq (T.X.left ↘ Spec (.of k)) T.I T.E m) (i : Fin (S.length + 1)) : Triple k where
   X := .ofHom (S.stageMap i ≫ (T.X.left ↘ Spec (.of k)))
@@ -246,3 +257,6 @@ noncomputable def MarkedTriple.induced (T : MarkedTriple k) (S : BlowUpSequence 
   m := T.m
 
 end Hironaka
+
+end
+end ResolutionHironaka

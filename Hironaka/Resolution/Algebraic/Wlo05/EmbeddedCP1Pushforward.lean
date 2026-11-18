@@ -39,11 +39,19 @@ contact are those of [Kol07, Theorem 80]. Used in
 `Hironaka.Resolution.Algebraic.Wlo05.EmbeddedCP1Step22Core`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace Scheme BlowUpSequence Scheme.IdealSheafData
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
 namespace Hironaka.Resolution
 
@@ -114,3 +122,6 @@ theorem cp1For_pushforward (f : X ⟶ Spec (CommRingCat.of k)) (n : ℕ)
   exact hres
 
 end Hironaka.Resolution
+
+end
+end ResolutionHironaka

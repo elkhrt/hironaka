@@ -37,11 +37,15 @@ Used for the invariance of the order under smooth morphisms of schemes
 (`Hironaka/Scheme/IdealSheaf/Order/Smooth.lean`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 namespace IsLocalRing
+open _root_.IsLocalRing
 
-open IsLocalRing
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing
 
 /-- The étale case: for `R → S` étale and a prime `q` of `S` over `p`, the local map `R_p → S_q`
 reflects the powers of the maximal ideal.  It is flat and local with `𝔪_p S_q = 𝔪_q` (unramified
@@ -125,3 +129,6 @@ theorem ordFaithful_localRingHom_of_isSmoothAt {R S : Type*} [CommRing R] [CommR
   exact e.symm.commutes (algebraMap R S r)
 
 end IsLocalRing
+
+end
+end ResolutionHironaka

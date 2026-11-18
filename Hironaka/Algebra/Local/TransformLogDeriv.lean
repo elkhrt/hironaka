@@ -47,11 +47,15 @@ version on manifolds (`Hironaka/Manifold/BlowUp/Transform/DerivTransform.lean`,
 `Hironaka/Manifold/BlowUp/Transform/LogDerivBlowUp.lean`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 namespace IsLocalRing
+open _root_.IsLocalRing
 
-open IsLocalRing
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing
 
 namespace RegularCoords
 
@@ -240,3 +244,6 @@ theorem transform_Dlogpow_le_chartDlogpow {h : Fin n} (hh : h < r) {I : Ideal R}
 end RegularCoords
 
 end IsLocalRing
+
+end
+end ResolutionHironaka

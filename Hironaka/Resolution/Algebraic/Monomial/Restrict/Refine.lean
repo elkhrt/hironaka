@@ -29,6 +29,9 @@ face of `L` lifts. Not in the sources. The induction along the phases is
 `Hironaka/Resolution/Algebraic/Monomial/Restrict/RefinePhase.lean`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 namespace Hironaka.Monomial.MonomialState
@@ -283,3 +286,6 @@ end Extend
 end Refines
 
 end Hironaka.Monomial.MonomialState
+
+end
+end ResolutionHironaka

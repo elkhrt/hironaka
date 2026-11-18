@@ -66,11 +66,15 @@ of smooth `k`-schemes at their points, the power series ring `K⟦X₁, …, X�
 `SpansDerivations` for the derivations of its setting.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 namespace IsLocalRing
+open _root_.IsLocalRing
 
-open IsLocalRing
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing
 
 universe u v
 
@@ -395,3 +399,6 @@ theorem spansDerivations_changeCoords (hs : c.SpansDerivations ℚ) (x' : Fin n 
 end RegularCoords
 
 end IsLocalRing
+
+end
+end ResolutionHironaka

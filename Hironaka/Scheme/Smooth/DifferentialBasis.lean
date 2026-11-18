@@ -36,11 +36,17 @@ Used to spread adapted parameters out to étale coordinates on an affine neighbo
 `CoordinateSystemPair.lean`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
-open AlgebraicGeometry CategoryTheory IsLocalRing KaehlerDifferential TensorProduct
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing _root_.KaehlerDifferential
+open _root_.ResolutionHironaka.KaehlerDifferential TensorProduct
 
 universe u
 
@@ -193,3 +199,6 @@ theorem exists_basis_tensor_kaehlerDifferential_of_span_eq_maximalIdeal
 end Stalk
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

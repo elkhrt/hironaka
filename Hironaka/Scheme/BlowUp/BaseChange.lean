@@ -59,6 +59,9 @@ No hypothesis `a ∈ I` is needed ([Sta, Tag 0BIP] assumes it; it is not used he
 `0`-power torsion (`0¹ • w = 0`), consistently.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u v
@@ -303,3 +306,6 @@ theorem tensorHom_bijective_of_flat [Module.Flat R S] : Function.Bijective (tens
 end affineBlowUpAlgebra
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

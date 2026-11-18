@@ -32,11 +32,16 @@ For two coordinate systems `u, v` on the affine open `U` (`CoordinateSystem.lean
   to the coordinate functions (`graphFst_appTop_eq`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
-open AlgebraicGeometry CategoryTheory CategoryTheory.Limits
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
+open CategoryTheory.Limits
 
 universe u
 
@@ -128,3 +133,6 @@ theorem existsUnique_lift_graph {T : Scheme.{u}} (a b : T ⟶ (U.1 : Scheme.{u})
 end EtaleCoordinates
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

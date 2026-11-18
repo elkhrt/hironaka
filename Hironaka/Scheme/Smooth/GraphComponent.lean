@@ -22,11 +22,16 @@ The neighbourhood pair on which two hypersurfaces of maximal contact are compare
 the diagonal point (`GraphDiagonalPair.lean`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
-open AlgebraicGeometry CategoryTheory CategoryTheory.Limits IsLocalRing TopologicalSpace
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
+open CategoryTheory.Limits IsLocalRing TopologicalSpace
 
 universe u
 
@@ -57,3 +62,6 @@ theorem NbhdPair.toEtaleNbhdPair_ψ {p : X} {hpU : p ∈ U.1} (P : c.NbhdPair c'
 end EtaleCoordinates
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

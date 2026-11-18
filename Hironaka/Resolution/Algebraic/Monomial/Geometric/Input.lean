@@ -38,11 +38,18 @@ The first is what makes `step3Family` of
 is how the centres of the geometric Step 3 are read off.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open AlgebraicGeometry CategoryTheory TopologicalSpace Scheme Scheme.IdealSheafData
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
 namespace Hironaka.Monomial
 
@@ -161,3 +168,6 @@ theorem realizeAux_center (Φ : PieceFamily X) (m : ℕ) (L : List (Finset (Fins
 end PieceFamily
 
 end Hironaka.Monomial
+
+end
+end ResolutionHironaka

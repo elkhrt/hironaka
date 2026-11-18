@@ -50,15 +50,25 @@ the square of a trivial blow-up is cartesian because its vertical maps are isomo
 `eraseEmpty (S.pushforward j) = (eraseEmpty S).pushforward j` (`eraseEmpty_pushforward`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 universe u
 
-open CategoryTheory AlgebraicGeometry Scheme Scheme.Hom BlowUpSequence
-  Scheme.IdealSheafData IdealSheafData
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.Hom _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.Hom
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
-open Hironaka
+open _root_.ResolutionHironaka.Hironaka
 
 variable {X Y : Scheme.{u}}
 
@@ -182,3 +192,6 @@ theorem eraseEmpty_cons_eraseEmpty (D : X.IdealSheafData)
   · rw [eraseEmpty_cons_of_ne_top _ hD, eraseEmpty_cons_of_ne_top rest hD, eraseEmpty_eraseEmpty]
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

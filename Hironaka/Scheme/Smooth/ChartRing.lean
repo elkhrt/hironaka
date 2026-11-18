@@ -35,15 +35,20 @@ origin after a suitable linear change". Used for the local blow-up
 divisor (`Hironaka/Scheme/IdealSheaf/Order/ExceptionalOrder.lean`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
-open IsLocalRing
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing
 
 universe u
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
-open AlgebraicGeometry IsLocalRing
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry _root_.IsLocalRing
+open _root_.ResolutionHironaka.IsLocalRing
 
 section Identification
 
@@ -159,3 +164,6 @@ theorem exists_eq_chartOriginAt (𝔮 : Ideal (chartRing x r)) [𝔮.IsPrime]
 end Fibre
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

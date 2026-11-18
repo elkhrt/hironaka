@@ -35,11 +35,18 @@ of the two maps induces the `k`-structure of `U`.
 * `EtaleEquivSeq.refl`: `B` is étale equivalent to itself through `U = X`, `ψ = ψ' = 𝟙 X`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 namespace AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
 
-open CategoryTheory Scheme AlgebraicGeometry
+open CategoryTheory _root_.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme _root_.AlgebraicGeometry
+open _root_.ResolutionHironaka.AlgebraicGeometry
 
 universe u
 
@@ -112,3 +119,6 @@ theorem EtaleEquiv.isOver_ψ' [X.Over (Spec (.of k))] {I : X.IdealSheafData} {m 
   ⟨by rw [← Q.comp_eq]; exact comp_over (f := Q.ψ) (S := Spec (.of k))⟩
 
 end AlgebraicGeometry.Scheme.IdealSheafData
+
+end
+end ResolutionHironaka

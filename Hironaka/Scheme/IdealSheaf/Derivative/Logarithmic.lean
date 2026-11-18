@@ -44,9 +44,13 @@ Used in coordinates (`Hironaka/Algebra/Local/LogDerivCoords.lean`), for the blow
 (`Hironaka/Manifold/IdealSheaf/LogDeriv.lean`).
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 namespace Derivation
+open _root_.Derivation
 
 variable {k A : Type*} [CommRing k] [CommRing A] [Algebra k A]
 
@@ -84,6 +88,7 @@ theorem mem_preserving {J : Ideal A} {δ : Derivation k A A} :
 end Derivation
 
 namespace Ideal
+open _root_.Ideal
 
 variable (k : Type*) {A : Type*} [CommRing k] [CommRing A] [Algebra k A]
 
@@ -160,6 +165,8 @@ theorem logDerivativeIter_le_derivativeIter (J : Ideal A) (r : ℕ) (I : Ideal A
 end Ideal
 
 namespace AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
 
 open CategoryTheory
 
@@ -205,3 +212,6 @@ theorem logDerivative_le_derivative : logDerivative f S I ≤ derivative f I :=
   ofIdeals_mono fun U => letI := f.sectionsAlgebra U.1; Ideal.logDerivative_le_derivative _ _
 
 end AlgebraicGeometry.Scheme.IdealSheafData
+
+end
+end ResolutionHironaka

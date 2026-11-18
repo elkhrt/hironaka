@@ -41,11 +41,15 @@ its naturality squares are pullbacks, `relativeGluingDataOf I h` is the gluing d
 `blowUpOf I h` with `blowUpOf.π I h` the glued scheme over `X`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
-open AlgebraicGeometry CategoryTheory
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
 
 universe u
 
@@ -256,3 +260,6 @@ end Glued
 end Gluing
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

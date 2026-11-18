@@ -36,12 +36,20 @@ so every `u_i` lies in `𝔪_{x'}`; but `F_{x'} = π^* Z_x = (u_i e : i) ⊆ �
 Hence no `(m+1)`-fold intersection survives.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open AlgebraicGeometry CategoryTheory TopologicalSpace IsLocalRing Ideal Scheme
-  IdealSheafData Scheme.IdealSheafData
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
+open TopologicalSpace _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing Ideal
+open _root_.AlgebraicGeometry.Scheme _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
 namespace Hironaka.Sequence
 
@@ -137,3 +145,6 @@ theorem meetLocus_strictTransform_disjoinCenter {k : Type u} [Field k] [PerfectF
   exact (maximalIdeal.isMaximal _).ne_top ((Ideal.eq_top_iff_one _).mpr this)
 
 end Hironaka.Sequence
+
+end
+end ResolutionHironaka

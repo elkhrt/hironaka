@@ -25,13 +25,20 @@ Noetherian (finitely generated `I(U)` and `J'_c`).  This is the chart computatio
 `Hironaka.Scheme.BlowUp.Composite.Main` takes the maximum over finitely many `U` and `c`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
-open Scheme.IdealSheafData
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
-open AlgebraicGeometry CategoryTheory Scheme.IdealSheafData TopologicalSpace
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData TopologicalSpace
 
 universe u
 
@@ -219,3 +226,6 @@ theorem exists_chartIdeal_mul_pow_le [IsLocallyNoetherian X] (s : Finset (I.idea
 end Bound
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

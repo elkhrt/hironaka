@@ -68,25 +68,31 @@ maximal contact [Kol07, Theorem 80 (2)].
   `GlobalizationData`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory CategoryTheory.Limits AlgebraicGeometry
+open CategoryTheory CategoryTheory.Limits _root_.AlgebraicGeometry
+open _root_.ResolutionHironaka.AlgebraicGeometry
 
-open AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
-open AlgebraicGeometry (comap_map_of_isClosedImmersion)
+open _root_.ResolutionHironaka.AlgebraicGeometry (comap_map_of_isClosedImmersion)
 
-open Hironaka.Sequence
-  (exists_eq_of_isColimit_cofan isOpenImmersion_of_isColimit_cofan openImmersionCoprods_etale
-      openImmersionCoprods_of_isOpenImmersion)
+open _root_.ResolutionHironaka.Hironaka.Sequence (exists_eq_of_isColimit_cofan
+    isOpenImmersion_of_isColimit_cofan openImmersionCoprods_etale
+    openImmersionCoprods_of_isOpenImmersion)
 
 namespace AlgebraicGeometry.Triple
+open _root_.AlgebraicGeometry
 
-open Hironaka
+open _root_.ResolutionHironaka.Hironaka
 
-open AlgebraicGeometry
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
 
 variable {k : Type u} [Field k]
 
@@ -355,3 +361,6 @@ theorem globalizationData_maximalContact [CharZero k] (n m : ℕ) :
   globalizationData_of_exists_isPullbackOf n m (exists_isPullbackOf_maximalContactClass n m)
 
 end AlgebraicGeometry.Triple
+
+end
+end ResolutionHironaka

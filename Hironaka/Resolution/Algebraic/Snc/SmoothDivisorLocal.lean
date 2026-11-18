@@ -40,16 +40,21 @@ Source: Step 3 of the proof of [Kol07, Theorem 103] ("the disjoint union `H^* :=
 is a smooth hypersurface of maximal contact"), which uses this locality tacitly.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open AlgebraicGeometry CategoryTheory IsLocalRing Ideal
-open AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
+open _root_.IsLocalRing _root_.ResolutionHironaka.IsLocalRing Ideal
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
 
 namespace Hironaka.Snc
 
-open AlgebraicGeometry
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
 
 variable {X Y : Scheme.{u}}
 
@@ -177,3 +182,6 @@ theorem comap_map_eq_top_of_disjoint {Z : Scheme.{u}} (I : Y.IdealSheafData) (g 
   exact Set.disjoint_left.mp hdisj (hcl hz) ⟨z, rfl⟩
 
 end Hironaka.Snc
+
+end
+end ResolutionHironaka

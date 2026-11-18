@@ -19,11 +19,15 @@ on `U` [Kol07, Definition 60] is `E.centerIdeal = (v_0, …, v_{r-1}) ⊆ Γ(X, 
 live. Germs of elements of an affine ring at a point of `Spec` are `AlgebraicGeometry.specGerm`.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 namespace AlgebraicGeometry
+open _root_.AlgebraicGeometry
 
-open AlgebraicGeometry CategoryTheory
+open _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry CategoryTheory
 
 universe u
 
@@ -54,3 +58,6 @@ theorem coe_coord (E : EtaleCoordinatesAdapted f n r Z x) (j : Fin n) (hj : j.va
 end EtaleCoordinatesAdapted
 
 end AlgebraicGeometry
+
+end
+end ResolutionHironaka

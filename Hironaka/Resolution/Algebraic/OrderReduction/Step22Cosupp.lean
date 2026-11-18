@@ -46,12 +46,20 @@ hypersurface of maximal contact, the cosupport lies in `Π⁻¹_* H`, hence is e
   of [Kol07, Theorem 103] for Step 2.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry TopologicalSpace IsLocalRing Hironaka Scheme.BlowUpSequence
-  Scheme.IdealSheafData Hironaka.Sequence
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.TopologicalSpace _root_.ResolutionHironaka.TopologicalSpace _root_.IsLocalRing
+open _root_.ResolutionHironaka.IsLocalRing _root_.ResolutionHironaka.Hironaka
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.Hironaka.Sequence
 
 namespace Hironaka.BO
 
@@ -176,3 +184,6 @@ theorem maxOrd_step22_lt :
     Set.eq_empty_iff_forall_notMem.mp (cosupp_step22_eq_empty T hn hmax bd hm hH hle) x hx
 
 end Hironaka.BO
+
+end
+end ResolutionHironaka

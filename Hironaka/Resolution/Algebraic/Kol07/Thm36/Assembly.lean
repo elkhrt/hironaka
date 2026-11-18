@@ -65,12 +65,20 @@ independence theorem is the input to the affine part of Kollár's resolution fun
 change of fields.
 -/
 
+namespace ResolutionHironaka
+open ResolutionHironaka
+
 @[expose] public section
 
 universe u
 
-open CategoryTheory AlgebraicGeometry Hironaka Scheme IdealSheafData BlowUpSequence
-  Hironaka.Sequence
+open CategoryTheory _root_.AlgebraicGeometry _root_.ResolutionHironaka.AlgebraicGeometry
+open _root_.ResolutionHironaka.Hironaka _root_.AlgebraicGeometry.Scheme
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme
+open _root_.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.IdealSheafData
+open _root_.ResolutionHironaka.AlgebraicGeometry.Scheme.BlowUpSequence
+open _root_.ResolutionHironaka.Hironaka.Sequence
 
 namespace Hironaka.Resolution
 
@@ -338,3 +346,6 @@ theorem BR_affine'_eq (TA : Triple k) (emb : X ⟶ TA.X.left) (h : AdmissibleEmb
 end Assembly
 
 end Hironaka.Resolution
+
+end
+end ResolutionHironaka
